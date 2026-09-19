@@ -106,7 +106,7 @@
   color: #f7f1e7;
 }
 
-.linart-brand svg {
+.linart-brand-seal {
   flex: 0 0 auto;
   filter: drop-shadow(0 7px 18px rgba(0,0,0,.32));
   transition: transform .4s cubic-bezier(.22,1,.36,1), filter .4s ease;
@@ -129,6 +129,19 @@
   color: #d7c19a;
 }
 
+.linart-brand-tagline {
+  margin-top: .62rem;
+  padding-top: .5rem;
+  border-top: 1px solid rgba(212,187,145,.28);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: .95rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: .025em;
+  color: #e1c99e;
+}
+
 .linart-brand-meta {
   font-size: .59rem;
   font-weight: 700;
@@ -138,8 +151,8 @@
   color: rgba(255,255,255,.6);
 }
 
-.site-header a:hover .linart-brand svg,
-footer a:hover .linart-brand svg {
+.site-header a:hover .linart-brand-seal,
+footer a:hover .linart-brand-seal {
   transform: translateY(-1px) scale(1.025);
   filter: drop-shadow(0 8px 22px rgba(0,0,0,.4)) drop-shadow(0 0 13px rgba(173,134,83,.14));
 }
