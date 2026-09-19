@@ -43,7 +43,7 @@ const HomePage = () => (
     <section className="relative min-h-[94svh] overflow-hidden bg-[#0b0d10] text-white">
       <Img
         src="/images/home/linart-residence-hero.webp"
-        alt="Large brick and stone residence under construction by Linart Construction"
+        alt="Large brick and stone residence under construction by Linart Construction in New Jersey"
         className="home-hero-image absolute inset-0 h-full w-full object-cover opacity-75"
         sizes="100vw"
         priority

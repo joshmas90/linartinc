@@ -5,12 +5,13 @@
  *   npm run images:optimize
  *
  * For every source WebP in public/images, this writes responsive variants at
- * true pixel widths, re-encodes the source with a 1600px cap, and generates the
+ * true pixel widths, re-encodes the source with a 2048px cap, and generates the
  * manifest consumed by <Img>. Sources narrower than a target are never enlarged
- * or mislabeled in srcset.
+ * or mislabeled in srcset. Pass one or more source paths to process only those
+ * photos while still refreshing the complete manifest.
  *
- * Run this whenever you add project photos. If you forget, <Img> will request
- * variant files that do not exist and those images will 404.
+ * Run this whenever you add project photos. Until the manifest is regenerated,
+ * <Img> safely falls back to the original photo without a responsive srcset.
  */
 
 import { mkdir, readFile, readdir, stat, unlink, writeFile } from 'node:fs/promises';
@@ -19,9 +20,10 @@ import sharp from 'sharp';
 
 const ROOT = path.resolve('public/images');
 const MANIFEST = path.resolve('src/generated/imageManifest.js');
-const WIDTHS = [480, 960, 1600];
+const WIDTHS = [480, 960, 1600, 2048];
 const QUALITY = 80;
-const MAX_EDGE = 1600;
+const MAX_EDGE = 2048;
+const requestedFiles = new Set(process.argv.slice(2).map((file) => path.resolve(file)));
 async function* walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const filenames = new Set(entries.filter((entry) => entry.isFile()).map((entry) => entry.name));
@@ -43,11 +45,12 @@ const fmt = (b) => `${(b / 1024).toFixed(0)} KB`;
 let before = 0;
 let after = 0;
 let count = 0;
+let processed = 0;
 const manifest = {};
 const expectedVariants = new Set();
+const matchedRequests = new Set();
 
 for await (const file of walk(ROOT)) {
-  before += (await stat(file)).size;
   const source = await readFile(file);
   const base = file.replace(/\.webp$/i, '');
   const { width, height } = await sharp(source).metadata();
@@ -59,38 +62,52 @@ for await (const file of walk(ROOT)) {
   const outputWidth = Math.min(width, MAX_EDGE);
   const outputHeight = Math.round(height * (outputWidth / width));
   const candidates = [...new Set(WIDTHS.map((target) => Math.min(outputWidth, target)))].sort((a, b) => a - b);
+  const absoluteFile = path.resolve(file);
+  const shouldProcess = requestedFiles.size === 0 || requestedFiles.has(absoluteFile);
 
-  const directory = path.dirname(file);
-  const stem = path.basename(base);
-  for (const entry of await readdir(directory, { withFileTypes: true })) {
-    const candidate = entry.name.match(/^(.*)-(\d+)\.webp$/i);
-    if (entry.isFile() && candidate?.[1] === stem) {
-      await unlink(path.join(directory, entry.name));
+  for (const w of candidates) expectedVariants.add(path.resolve(`${base}-${w}.webp`));
+
+  if (shouldProcess) {
+    before += (await stat(file)).size;
+    matchedRequests.add(absoluteFile);
+
+    const directory = path.dirname(file);
+    const stem = path.basename(base);
+    for (const entry of await readdir(directory, { withFileTypes: true })) {
+      const candidate = entry.name.match(/^(.*)-(\d+)\.webp$/i);
+      if (entry.isFile() && candidate?.[1] === stem) {
+        await unlink(path.join(directory, entry.name));
+      }
     }
-  }
 
-  // Re-encode the original with a size cap
-  const capped = await sharp(source)
-    .resize({ width: outputWidth, withoutEnlargement: true })
-    .webp({ quality: QUALITY, effort: 6 })
-    .toBuffer();
-  for (const w of candidates) {
-    const out = `${base}-${w}.webp`;
-    await sharp(source)
-      .resize({ width: w, withoutEnlargement: true })
+    // Re-encode the original with a size cap
+    const capped = await sharp(source)
+      .resize({ width: outputWidth, withoutEnlargement: true })
       .webp({ quality: QUALITY, effort: 6 })
-      .toFile(out);
-    expectedVariants.add(path.resolve(out));
-    after += (await stat(out)).size;
-  }
+      .toBuffer();
+    for (const w of candidates) {
+      const out = `${base}-${w}.webp`;
+      await sharp(source)
+        .resize({ width: w, withoutEnlargement: true })
+        .webp({ quality: QUALITY, effort: 6 })
+        .toFile(out);
+      after += (await stat(out)).size;
+    }
 
-  await writeFile(file, capped);
-  after += (await stat(file)).size;
+    await writeFile(file, capped);
+    after += (await stat(file)).size;
+    processed += 1;
+    process.stdout.write(`  ${path.relative(ROOT, file)} (${width}×${height})\n`);
+  }
 
   const relative = path.relative(path.resolve('public'), file).split(path.sep).join('/');
   manifest[`/${relative}`] = { width: outputWidth, height: outputHeight, candidates };
   count += 1;
-  process.stdout.write(`  ${path.relative(ROOT, file)} (${width}×${height})\n`);
+}
+
+const unmatchedRequests = [...requestedFiles].filter((file) => !matchedRequests.has(file));
+if (unmatchedRequests.length) {
+  throw new Error(`Requested image source not found: ${unmatchedRequests.join(', ')}`);
 }
 
 const sourceFiles = new Set(
@@ -125,6 +142,6 @@ await writeFile(
   `// Generated by tools/optimize-images.mjs. Do not edit manually.\nexport const responsiveImages = ${JSON.stringify(orderedManifest, null, 2)};\n`,
 );
 
-console.log(`\n${count} source images processed.`);
-console.log(`Originals before: ${fmt(before)}   Generated set on disk: ${fmt(after)}`);
+console.log(`\n${processed} of ${count} source images processed.`);
+console.log(`Selected sources before: ${fmt(before)}   Selected generated set: ${fmt(after)}`);
 console.log(`Manifest: ${path.relative(process.cwd(), MANIFEST)}`);

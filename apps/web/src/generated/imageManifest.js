@@ -54,12 +54,13 @@ export const responsiveImages = {
     ]
   },
   "/images/home/linart-residence-hero.webp": {
-    "width": 1600,
-    "height": 1200,
+    "width": 2048,
+    "height": 865,
     "candidates": [
       480,
       960,
-      1600
+      1600,
+      2048
     ]
   },
   "/images/projects/addition/addition-main.webp": {

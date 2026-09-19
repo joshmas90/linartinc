@@ -1,10 +1,10 @@
 export const siteUrl = 'https://linartinc.com';
 
 export const socialImage = {
-  url: `${siteUrl}/images/home/linart-residence-hero.webp`,
-  alt: 'Residential construction by Linart Construction Inc.',
-  width: '1600',
-  height: '1200',
+  url: `${siteUrl}/branding/linart-home-social.webp`,
+  alt: 'Brick and stone residence by Linart Construction Inc.',
+  width: '1200',
+  height: '630',
 };
 
 export const routeMeta = {
