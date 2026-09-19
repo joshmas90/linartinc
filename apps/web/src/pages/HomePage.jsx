@@ -31,8 +31,8 @@ const HomePage = () => (
 
     <section className="relative min-h-[94svh] overflow-hidden bg-[#0b0d10] text-white">
       <img src="https://horizons-cdn.hostinger.com/ee08914b-5384-4cd2-8f63-8b9f3f228829/remotemediafile_6619721_0_2022_05_05_12_30_52-sS9RR.jpeg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-75" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0b0d10]/96 via-[#0b0d10]/72 to-[#0b0d10]/12" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d10]/58 via-transparent to-black/20" />
+      <div className="absolute inset-0 hero-readable-vignette" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#08090a]/56 via-transparent to-black/20" />
 
       <div className="site-container relative z-10 flex min-h-[94svh] items-end pb-14 pt-32 sm:pb-20 lg:items-center lg:pb-0">
         <motion.div
@@ -42,24 +42,24 @@ const HomePage = () => (
           className="max-w-[880px]"
         >
           <div className="mb-7 flex items-center gap-4">
-            <span className="h-px w-12 bg-[#9b7b4f]" />
-            <span className="eyebrow !text-[#ccb895]">New Jersey · Family-owned since 2004</span>
+            <span className="h-px w-12 bg-[#c19b68]" />
+            <span className="text-[13px] font-bold uppercase tracking-[0.16em] text-[#e1c99e] hero-copy-shadow">New Jersey · Family-owned since 2004</span>
           </div>
 
           <h1 className="display-serif text-[4.2rem] leading-[0.84] tracking-[-0.045em] sm:text-[6rem] lg:text-[8.2rem]">
             Built with
-            <span className="block italic text-[#d7c6a9]">intention.</span>
+            <span className="block italic text-[#e0c89e]">intention.</span>
           </h1>
 
-          <div className="mt-8 grid max-w-4xl gap-8 border-t border-white/18 pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
-            <p className="max-w-2xl text-[17px] leading-8 text-white/88 sm:text-[19px] sm:leading-9">
+          <div className="mt-8 grid max-w-4xl gap-8 border-t border-[#d4bb91]/48 pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+            <p className="max-w-2xl hero-copy-shadow text-[18px] leading-8 text-white/96 sm:text-[20px] sm:leading-9">
               Additions, renovations and structural remodeling for homeowners who care how the work is planned, managed and finished.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
               <Link to="/contact" className="premium-button-light">
                 Discuss Your Project <ArrowUpRight size={16} />
               </Link>
-              <Link to="/projects" className="premium-button border border-white/24 text-white hover:bg-white/8">
+              <Link to="/projects" className="premium-button border border-[#d4bb91]/50 bg-black/20 text-white hover:bg-black/35">
                 Selected Work
               </Link>
             </div>
@@ -142,7 +142,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#0b0d10] py-20 text-white sm:py-28">
+    <section className="brand-stone py-20 text-white sm:py-28">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div>
@@ -153,14 +153,14 @@ const HomePage = () => (
             </p>
           </div>
 
-          <div className="border-t border-white/14">
+          <div className="border-t border-[#d4bb91]/22">
             {services.map(([name, copy], index) => (
               <Link
                 to="/services"
                 key={name}
-                className="group grid gap-3 border-b border-white/14 py-6 sm:grid-cols-[60px_220px_1fr_24px] sm:items-start"
+                className="group grid gap-3 border-b border-[#d4bb91]/22 py-6 sm:grid-cols-[60px_220px_1fr_24px] sm:items-start"
               >
-                <span className="text-[12px] font-semibold tracking-[0.16em] text-white/56">{String(index + 1).padStart(2, '0')}</span>
+                <span className="text-[12px] font-semibold tracking-[0.16em] text-white/80">{String(index + 1).padStart(2, '0')}</span>
                 <h3 className="text-[17px] font-semibold">{name}</h3>
                 <p className="text-[16px] leading-8 text-white/80">{copy}</p>
                 <ArrowUpRight size={16} className="text-[#9b7b4f] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -204,7 +204,7 @@ const HomePage = () => (
 
     <section className="bg-[#f5f1e8] py-20 sm:py-28">
       <div className="site-container">
-        <div className="overflow-hidden bg-[#171b20] text-white">
+        <div className="brand-stone brand-frame overflow-hidden text-white">
           <div className="grid lg:grid-cols-[1.3fr_0.7fr]">
             <div className="p-8 sm:p-12 lg:p-16">
               <p className="eyebrow">Start a Conversation</p>

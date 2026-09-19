@@ -45,17 +45,17 @@ const ProjectsPage = () => (
       <meta name="description" content="Selected residential additions and renovation work by Linart Construction Inc. throughout New Jersey." />
     </Helmet>
 
-    <section className="bg-[#0b0d10] pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+    <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
           <div>
             <p className="eyebrow">Selected Work</p>
             <h1 className="display-serif mt-5 text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
               Work worth
-              <span className="block italic text-[#d7c6a9]">looking closely at.</span>
+              <span className="block italic text-[#e0c89e]">looking closely at.</span>
             </h1>
           </div>
-          <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px] lg:justify-self-end">
+          <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px] lg:justify-self-end">
             This temporary portfolio structure is ready for Linart’s real project photography. Each project is presented as work—not as a generic card.
           </p>
         </div>

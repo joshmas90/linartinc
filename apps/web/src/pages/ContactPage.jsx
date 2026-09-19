@@ -46,15 +46,15 @@ ${form.message}`
         <meta name="description" content="Contact Linart Construction Inc. about a residential addition, renovation or remodeling project in New Jersey." />
       </Helmet>
 
-      <section className="bg-[#0b0d10] pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+      <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
         <div className="site-container">
           <p className="eyebrow">Project Inquiry</p>
           <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
             <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
               Tell us what
-              <span className="block italic text-[#d7c6a9]">you’re planning.</span>
+              <span className="block italic text-[#e0c89e]">you’re planning.</span>
             </h1>
-            <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
+            <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px]">
               The first conversation is about fit: where the project is, what you want to change, your timing and the level of work involved.
             </p>
           </div>
@@ -67,10 +67,10 @@ ${form.message}`
             <aside>
               <p className="eyebrow">Direct Contact</p>
               <a href="tel:6092097810" className="mt-5 flex items-center gap-3 text-xl font-semibold">
-                <Phone size={18} className="text-[#9b7b4f]" /> 609-209-7810
+                <Phone size={18} className="text-[#a97f47]" /> 609-209-7810
               </a>
               <a href="mailto:services@linartinc.com" className="mt-4 flex items-center gap-3 text-[16px] font-medium text-[#3f3a35] hover:text-black">
-                <Mail size={17} className="text-[#9b7b4f]" /> services@linartinc.com
+                <Mail size={17} className="text-[#a97f47]" /> services@linartinc.com
               </a>
 
               <div className="mt-10 border-t hairline pt-6">

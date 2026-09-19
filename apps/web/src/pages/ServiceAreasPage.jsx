@@ -16,15 +16,15 @@ const ServiceAreasPage = () => (
       <meta name="description" content="Linart Construction Inc. serves residential construction and remodeling clients throughout New Jersey." />
     </Helmet>
 
-    <section className="bg-[#0b0d10] pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+    <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
         <p className="eyebrow">Where We Work</p>
         <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
             New Jersey,
-            <span className="block italic text-[#d7c6a9]">project by project.</span>
+            <span className="block italic text-[#e0c89e]">project by project.</span>
           </h1>
-          <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
+          <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px]">
             Linart works throughout New Jersey. Project fit depends on scope, schedule and location—not on whether a town happens to appear in a marketing list.
           </p>
         </div>
@@ -39,7 +39,7 @@ const ServiceAreasPage = () => (
               <img src="/placeholders/service-map.svg" alt="Temporary New Jersey service area visual" />
             </div>
             <div className="mt-4 flex items-start gap-3 text-[15px] leading-7 text-[#49443e]">
-              <MapPin size={15} className="mt-0.5 shrink-0 text-[#9b7b4f]" />
+              <MapPin size={15} className="mt-0.5 shrink-0 text-[#a97f47]" />
               Replace with a real New Jersey project map or a strong geographic/project montage once final assets are selected.
             </div>
           </div>

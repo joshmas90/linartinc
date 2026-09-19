@@ -49,15 +49,15 @@ const ServicesPage = () => (
       <meta name="description" content="Home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing and structural remodeling in New Jersey." />
     </Helmet>
 
-    <section className="bg-[#0b0d10] pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+    <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
         <p className="eyebrow">Capabilities</p>
         <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
             Residential work,
-            <span className="block italic text-[#d7c6a9]">properly coordinated.</span>
+            <span className="block italic text-[#e0c89e]">properly coordinated.</span>
           </h1>
-          <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
+          <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px]">
             The service list matters less than how the work is managed. Linart focuses on substantial residential projects where sequencing, communication and finish quality all matter.
           </p>
         </div>

@@ -6,13 +6,13 @@
 
 @layer base {
   :root {
-    --ink: 220 24% 6%;
-    --graphite: 216 18% 11%;
-    --stone: 36 18% 79%;
-    --ivory: 39 31% 95%;
-    --paper: 42 33% 98%;
-    --bronze: 36 30% 47%;
-    --muted-ink: 214 10% 43%;
+    --ink: 220 18% 4%;
+    --graphite: 220 11% 10%;
+    --stone: 35 18% 78%;
+    --ivory: 40 30% 94%;
+    --paper: 40 33% 97%;
+    --bronze: 35 38% 52%;
+    --muted-ink: 220 7% 38%;
 
     --charcoal: var(--ink);
     --slate-gray: var(--muted-ink);
@@ -74,6 +74,7 @@
 @layer components {
   .display-serif {
     font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
   }
 
   .site-container {
@@ -187,4 +188,63 @@
     font-size: 16px;
     line-height: 1.75;
   }
+}
+
+
+/* Logo-led Linart brand language */
+.brand-metal {
+  color: #d4bb91;
+}
+
+.brand-bronze {
+  color: #ad8653;
+}
+
+.brand-rule {
+  background: linear-gradient(90deg, transparent, #ad8653 18%, #d4bb91 50%, #ad8653 82%, transparent);
+}
+
+.brand-stone {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,.035), transparent 32%),
+    radial-gradient(circle at 80% 70%, rgba(173,134,83,.05), transparent 30%),
+    linear-gradient(180deg, #111316 0%, #0a0b0d 100%);
+}
+
+.brand-frame {
+  border: 1px solid rgba(212,187,145,.42);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    0 24px 70px rgba(0,0,0,.26);
+}
+
+.hero-readable-vignette {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,9,10,.95) 0%,
+      rgba(8,9,10,.90) 18%,
+      rgba(8,9,10,.76) 37%,
+      rgba(8,9,10,.34) 62%,
+      rgba(8,9,10,.10) 100%
+    );
+}
+
+.hero-copy-shadow {
+  text-shadow: 0 2px 28px rgba(0,0,0,.68);
+}
+
+.logo-wordmark {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: .18em;
+  font-weight: 600;
+}
+
+.logo-submark {
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.luxury-divider {
+  border-color: rgba(173,134,83,.34);
 }

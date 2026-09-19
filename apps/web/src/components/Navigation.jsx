@@ -25,15 +25,17 @@ const Navigation = () => {
   useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0b0d10]/96 shadow-[0_8px_30px_rgba(0,0,0,0.14)] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#b58f5c]/20 bg-[#0a0b0d]/97 shadow-[0_10px_34px_rgba(0,0,0,0.24)] backdrop-blur-xl">
       <div className="site-container">
         <div className={`flex items-center justify-between transition-all ${scrolled ? 'h-[68px]' : 'h-[82px]'}`}>
-          <Link to="/" className="relative z-50 flex items-center gap-3 text-white" aria-label="Linart Construction home">
-            <span className="display-serif text-[2rem] leading-none tracking-[-0.04em]">L</span>
-            <span className="h-7 w-px bg-[#9b7b4f]" />
+          <Link to="/" className="relative z-50 flex items-center gap-3.5 text-white" aria-label="Linart Construction home">
+            <span className="relative flex h-10 w-10 items-center justify-center border border-[#b58f5c]/55 bg-black/25">
+              <span className="display-serif text-[2rem] leading-none text-[#d4bb91]">L</span>
+              <span className="absolute right-[5px] top-[8px] h-px w-[17px] rotate-[38deg] bg-[#b58f5c]" />
+            </span>
             <span className="flex flex-col">
-              <span className="text-[1.05rem] font-bold leading-none tracking-[0.09em]">LINART</span>
-              <span className="mt-1 text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-white/82">
+              <span className="logo-wordmark text-[1.05rem] leading-none text-white">LINART</span>
+              <span className="logo-submark mt-1.5 text-[0.58rem] font-semibold text-white/74">
                 Construction Inc.
               </span>
             </span>
@@ -52,7 +54,7 @@ const Navigation = () => {
                     }`}
                   >
                     {link.name}
-                    <span className={`absolute bottom-0 left-0 h-px bg-[#9b7b4f] transition-all ${active ? 'w-full' : 'w-0'}`} />
+                    <span className={`absolute bottom-0 left-0 h-px bg-[#b58f5c] transition-all ${active ? 'w-full' : 'w-0'}`} />
                   </Link>
                 );
               })}
@@ -101,7 +103,7 @@ const Navigation = () => {
                   >
                     <Link to={link.path} className="flex items-center justify-between py-5 text-2xl font-medium text-white">
                       {link.name}
-                      <ArrowUpRight size={18} className="text-[#9b7b4f]" />
+                      <ArrowUpRight size={18} className="text-[#c9a978]" />
                     </Link>
                   </motion.div>
                 ))}

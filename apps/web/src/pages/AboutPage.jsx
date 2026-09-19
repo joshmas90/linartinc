@@ -10,15 +10,15 @@ const AboutPage = () => (
       <meta name="description" content="Linart Construction Inc. is a family-owned New Jersey residential construction company established in 2004." />
     </Helmet>
 
-    <section className="bg-[#0b0d10] pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+    <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
         <p className="eyebrow">About Linart</p>
         <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
             The family name
-            <span className="block italic text-[#d7c6a9]">is on the work.</span>
+            <span className="block italic text-[#e0c89e]">is on the work.</span>
           </h1>
-          <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
+          <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px]">
             Linart Construction has been family-owned since 2004. The company’s reputation is built one project at a time, in the same communities where the team lives and works.
           </p>
         </div>
@@ -78,14 +78,14 @@ const AboutPage = () => (
             <p className="eyebrow">What Clients Should Feel</p>
             <h2 className="display-serif mt-5 text-5xl leading-[0.95] sm:text-6xl">Confidence before the finish line.</h2>
           </div>
-          <div className="border-t border-white/14">
+          <div className="border-t border-[#d4bb91]/22">
             {[
               ['Clarity', 'The scope, decisions and next steps should be understandable.'],
               ['Respect', 'The home remains a home while construction is underway.'],
               ['Continuity', 'The details should be carried consistently from planning through closeout.'],
               ['Accountability', 'A problem should have an owner, not a chain of excuses.'],
             ].map(([title, copy], i) => (
-              <div key={title} className="grid gap-3 border-b border-white/14 py-6 sm:grid-cols-[70px_170px_1fr]">
+              <div key={title} className="grid gap-3 border-b border-[#d4bb91]/22 py-6 sm:grid-cols-[70px_170px_1fr]">
                 <span className="text-[12px] font-semibold tracking-[0.16em] text-white/54">0{i + 1}</span>
                 <h3 className="font-semibold">{title}</h3>
                 <p className="text-[16px] leading-8 text-white/80">{copy}</p>

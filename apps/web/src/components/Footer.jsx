@@ -6,16 +6,18 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0b0d10] text-white">
+    <footer className="brand-stone text-white">
       <div className="site-container py-16 sm:py-20">
-        <div className="grid gap-12 border-b border-white/12 pb-14 lg:grid-cols-[1.25fr_0.75fr_0.75fr_1fr]">
+        <div className="grid gap-12 border-b border-[#d4bb91]/18 pb-14 lg:grid-cols-[1.25fr_0.75fr_0.75fr_1fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="display-serif text-4xl leading-none">L</span>
-              <span className="h-8 w-px bg-[#9b7b4f]" />
+            <div className="flex items-center gap-3.5">
+              <span className="relative flex h-12 w-12 items-center justify-center border border-[#b58f5c]/55">
+                <span className="display-serif text-4xl leading-none text-[#d4bb91]">L</span>
+                <span className="absolute right-[6px] top-[10px] h-px w-[19px] rotate-[38deg] bg-[#b58f5c]" />
+              </span>
               <div>
-                <div className="text-[16px] font-bold tracking-[0.11em]">LINART</div>
-                <div className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/74">Construction Inc.</div>
+                <div className="logo-wordmark text-[18px] leading-none">LINART</div>
+                <div className="logo-submark mt-2 text-[0.62rem] font-semibold text-white/72">Construction Inc.</div>
               </div>
             </div>
             <p className="mt-6 max-w-sm text-[16px] leading-8 text-white/78">
@@ -46,13 +48,13 @@ const Footer = () => {
             <p className="eyebrow">Contact</p>
             <div className="mt-5 space-y-4 text-[16px] text-white/80">
               <a href="tel:6092097810" className="flex items-center gap-3 hover:text-white">
-                <Phone size={15} className="text-[#9b7b4f]" /> 609-209-7810
+                <Phone size={15} className="text-[#c9a978]" /> 609-209-7810
               </a>
               <a href="mailto:services@linartinc.com" className="flex items-center gap-3 hover:text-white">
-                <Mail size={15} className="text-[#9b7b4f]" /> services@linartinc.com
+                <Mail size={15} className="text-[#c9a978]" /> services@linartinc.com
               </a>
               <div className="flex items-start gap-3">
-                <MapPin size={15} className="mt-0.5 shrink-0 text-[#9b7b4f]" />
+                <MapPin size={15} className="mt-0.5 shrink-0 text-[#c9a978]" />
                 <span>Serving New Jersey</span>
               </div>
               <Link to="/contact" className="link-arrow pt-2 text-white">
