@@ -18,7 +18,7 @@ const AboutPage = () => (
             The family name
             <span className="block italic text-[#d7c6a9]">is on the work.</span>
           </h1>
-          <p className="max-w-xl text-[16px] leading-8 text-white/76 sm:text-[17px]">
+          <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
             Linart Construction has been family-owned since 2004. The company’s reputation is built one project at a time, in the same communities where the team lives and works.
           </p>
         </div>
@@ -46,15 +46,15 @@ const AboutPage = () => (
             <div className="mt-12 grid grid-cols-2 border-y hairline sm:grid-cols-3">
               <div className="py-6">
                 <div className="display-serif text-4xl">2004</div>
-                <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5a544c]">Established</div>
+                <div className="mt-1 text-[13px] font-bold uppercase tracking-[0.11em] text-[#4f4942]">Established</div>
               </div>
               <div className="border-l hairline px-6 py-6">
                 <div className="display-serif text-4xl">80+</div>
-                <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5a544c]">Combined years</div>
+                <div className="mt-1 text-[13px] font-bold uppercase tracking-[0.11em] text-[#4f4942]">Combined years</div>
               </div>
               <div className="col-span-2 border-t hairline py-6 sm:col-span-1 sm:border-l sm:border-t-0 sm:px-6">
                 <div className="display-serif text-4xl">NJ</div>
-                <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5a544c]">Residential focus</div>
+                <div className="mt-1 text-[13px] font-bold uppercase tracking-[0.11em] text-[#4f4942]">Residential focus</div>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ const AboutPage = () => (
             <div className="project-frame aspect-[4/5]">
               <img src="/placeholders/about-team.svg" alt="Temporary Linart team and project placeholder" />
             </div>
-            <p className="mt-4 text-[13px] leading-6 text-[#575149]">
+            <p className="mt-4 text-[15px] leading-7 text-[#49443e]">
               Recommended replacement: Linart owner/team on a real project site, photographed naturally rather than posed.
             </p>
           </div>
@@ -86,9 +86,9 @@ const AboutPage = () => (
               ['Accountability', 'A problem should have an owner, not a chain of excuses.'],
             ].map(([title, copy], i) => (
               <div key={title} className="grid gap-3 border-b border-white/14 py-6 sm:grid-cols-[70px_170px_1fr]">
-                <span className="text-[10px] tracking-[0.2em] text-white/30">0{i + 1}</span>
+                <span className="text-[12px] font-semibold tracking-[0.16em] text-white/54">0{i + 1}</span>
                 <h3 className="font-semibold">{title}</h3>
-                <p className="text-[15px] leading-7 text-white/72">{copy}</p>
+                <p className="text-[16px] leading-8 text-white/80">{copy}</p>
               </div>
             ))}
           </div>

@@ -37,7 +37,7 @@ ${form.message}`
   };
 
   const inputClass =
-    'w-full border-0 border-b border-black/20 bg-transparent px-0 py-3 text-[16px] outline-none transition-colors placeholder:text-black/30 focus:border-[#9b7b4f] focus:ring-0';
+    'w-full border-0 border-b border-black/28 bg-transparent px-0 py-3.5 text-[17px] font-medium text-[#22262a] outline-none transition-colors placeholder:text-black/30 focus:border-[#9b7b4f] focus:ring-0';
 
   return (
     <>
@@ -54,7 +54,7 @@ ${form.message}`
               Tell us what
               <span className="block italic text-[#d7c6a9]">you’re planning.</span>
             </h1>
-            <p className="max-w-xl text-[16px] leading-8 text-white/76 sm:text-[17px]">
+            <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
               The first conversation is about fit: where the project is, what you want to change, your timing and the level of work involved.
             </p>
           </div>
@@ -69,13 +69,13 @@ ${form.message}`
               <a href="tel:6092097810" className="mt-5 flex items-center gap-3 text-xl font-semibold">
                 <Phone size={18} className="text-[#9b7b4f]" /> 609-209-7810
               </a>
-              <a href="mailto:services@linartinc.com" className="mt-4 flex items-center gap-3 text-[15px] text-[#46413b] hover:text-black">
+              <a href="mailto:services@linartinc.com" className="mt-4 flex items-center gap-3 text-[16px] font-medium text-[#3f3a35] hover:text-black">
                 <Mail size={17} className="text-[#9b7b4f]" /> services@linartinc.com
               </a>
 
               <div className="mt-10 border-t hairline pt-6">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#77726a]">What helps</p>
-                <ul className="mt-4 space-y-3 text-[15px] leading-7 text-[#49443e]">
+                <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#514b44]">What helps</p>
+                <ul className="mt-4 space-y-3 text-[16px] leading-8 text-[#3f3a35]">
                   <li>• Municipality or ZIP</li>
                   <li>• Type of project</li>
                   <li>• Approximate timing</li>
@@ -87,23 +87,23 @@ ${form.message}`
             <form onSubmit={submit} className="border-t hairline">
               <div className="grid gap-x-8 sm:grid-cols-2">
                 <label className="py-5">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5c554c]">Name</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Name</span>
                   <input required name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your name" />
                 </label>
                 <label className="py-5">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5c554c]">City / ZIP</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">City / ZIP</span>
                   <input required name="city" value={form.city} onChange={change} className={inputClass} placeholder="Project location" />
                 </label>
                 <label className="py-5">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5c554c]">Email</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Email</span>
                   <input required type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="name@example.com" />
                 </label>
                 <label className="py-5">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5c554c]">Phone</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Phone</span>
                   <input required type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="Phone number" />
                 </label>
                 <label className="py-5">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5c554c]">Project Type</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Type</span>
                   <select name="service" value={form.service} onChange={change} className={inputClass}>
                     <option>Home Addition</option>
                     <option>Whole-Home Renovation</option>
@@ -115,7 +115,7 @@ ${form.message}`
                   </select>
                 </label>
                 <label className="py-5">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5c554c]">Timing</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Timing</span>
                   <select name="timing" value={form.timing} onChange={change} className={inputClass}>
                     <option>Planning / researching</option>
                     <option>Within 3 months</option>
@@ -125,7 +125,7 @@ ${form.message}`
                   </select>
                 </label>
                 <label className="py-5 sm:col-span-2">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5c554c]">Preferred Contact</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Preferred Contact</span>
                   <select name="contact" value={form.contact} onChange={change} className={inputClass}>
                     <option>Phone</option>
                     <option>Email</option>
@@ -133,7 +133,7 @@ ${form.message}`
                   </select>
                 </label>
                 <label className="py-5 sm:col-span-2">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5c554c]">Project Description</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Description</span>
                   <textarea
                     required
                     name="message"
@@ -147,7 +147,7 @@ ${form.message}`
               </div>
 
               <div className="flex flex-col gap-4 border-t hairline pt-7 sm:flex-row sm:items-center sm:justify-between">
-                <p className="max-w-md text-[13px] leading-6 text-[#575149]">
+                <p className="max-w-md text-[14px] leading-6 text-[#49443e]">
                   This version opens your email application with the project brief pre-addressed to services@linartinc.com. A server-side submission can be added next.
                 </p>
                 <button type="submit" className="premium-button-dark shrink-0">

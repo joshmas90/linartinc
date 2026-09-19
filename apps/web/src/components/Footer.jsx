@@ -14,18 +14,18 @@ const Footer = () => {
               <span className="display-serif text-4xl leading-none">L</span>
               <span className="h-8 w-px bg-[#9b7b4f]" />
               <div>
-                <div className="text-sm font-semibold tracking-[0.14em]">LINART</div>
-                <div className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-white/62">Construction Inc.</div>
+                <div className="text-[16px] font-bold tracking-[0.11em]">LINART</div>
+                <div className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/74">Construction Inc.</div>
               </div>
             </div>
-            <p className="mt-6 max-w-sm text-[15px] leading-7 text-white/72">
+            <p className="mt-6 max-w-sm text-[16px] leading-8 text-white/78">
               Residential additions, renovations and structural remodeling throughout New Jersey. Family-owned since 2004.
             </p>
           </div>
 
           <div>
             <p className="eyebrow">Company</p>
-            <div className="mt-5 space-y-3 text-[15px] text-white/72">
+            <div className="mt-5 space-y-3 text-[16px] text-white/80">
               <Link className="block hover:text-white" to="/about">About</Link>
               <Link className="block hover:text-white" to="/projects">Projects</Link>
               <Link className="block hover:text-white" to="/service-areas">Service Areas</Link>
@@ -34,7 +34,7 @@ const Footer = () => {
 
           <div>
             <p className="eyebrow">Services</p>
-            <div className="mt-5 space-y-3 text-[15px] text-white/72">
+            <div className="mt-5 space-y-3 text-[16px] text-white/80">
               <Link className="block hover:text-white" to="/services">Additions</Link>
               <Link className="block hover:text-white" to="/services">Renovations</Link>
               <Link className="block hover:text-white" to="/services">Kitchens & Baths</Link>
@@ -44,7 +44,7 @@ const Footer = () => {
 
           <div>
             <p className="eyebrow">Contact</p>
-            <div className="mt-5 space-y-4 text-[15px] text-white/72">
+            <div className="mt-5 space-y-4 text-[16px] text-white/80">
               <a href="tel:6092097810" className="flex items-center gap-3 hover:text-white">
                 <Phone size={15} className="text-[#9b7b4f]" /> 609-209-7810
               </a>
@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 pt-7 text-[12px] text-white/52 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 pt-7 text-[13px] text-white/66 sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} Linart Construction Inc. All rights reserved.</p>
           <p>Residential construction · New Jersey · Since 2004</p>
         </div>

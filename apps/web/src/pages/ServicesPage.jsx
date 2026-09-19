@@ -57,7 +57,7 @@ const ServicesPage = () => (
             Residential work,
             <span className="block italic text-[#d7c6a9]">properly coordinated.</span>
           </h1>
-          <p className="max-w-xl text-[16px] leading-8 text-white/76 sm:text-[17px]">
+          <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
             The service list matters less than how the work is managed. Linart focuses on substantial residential projects where sequencing, communication and finish quality all matter.
           </p>
         </div>
@@ -71,7 +71,7 @@ const ServicesPage = () => (
             <div className="project-frame aspect-[4/5]">
               <img src="/placeholders/service-detail.svg" alt="Temporary construction detail placeholder" />
             </div>
-            <p className="mt-4 text-[13px] leading-6 text-[#575149]">
+            <p className="mt-4 text-[15px] leading-7 text-[#45413b]">
               Replace this placeholder with a strong Linart detail image: craftsmanship, framing, millwork, tile or finish work.
             </p>
           </div>
@@ -79,11 +79,11 @@ const ServicesPage = () => (
           <div className="border-t hairline">
             {services.map((service) => (
               <div key={service.number} className="grid gap-5 border-b hairline py-8 sm:grid-cols-[60px_1fr]">
-                <span className="text-[11px] font-semibold tracking-[0.18em] text-[#665e54]">{service.number}</span>
+                <span className="text-[13px] font-bold tracking-[0.14em] text-[#504a43]">{service.number}</span>
                 <div>
                   <h2 className="display-serif text-4xl leading-none sm:text-5xl">{service.title}</h2>
                   <p className="body-copy mt-4 max-w-2xl">{service.copy}</p>
-                  <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#49443e] sm:grid-cols-4">
+                  <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-[13px] font-semibold uppercase tracking-[0.065em] text-[#3d3934] sm:grid-cols-4">
                     {service.details.map((detail) => <span key={detail}>{detail}</span>)}
                   </div>
                 </div>

@@ -55,6 +55,8 @@
     background: #f5f1e8;
     color: #0b0d10;
     font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -75,12 +77,12 @@
   }
 
   .site-container {
-    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-10;
   }
 
   .eyebrow {
-    @apply text-[12px] font-bold uppercase tracking-[0.19em];
-    color: #8d6a38;
+    @apply text-[13px] font-bold uppercase tracking-[0.15em];
+    color: #765326;
   }
 
   .section-title {
@@ -88,8 +90,8 @@
   }
 
   .body-copy {
-    @apply text-base leading-8 sm:text-[17px] sm:leading-8;
-    color: #3f444a;
+    @apply text-[17px] leading-8 sm:text-[18px] sm:leading-9;
+    color: #30353a;
   }
 
   .hairline {
@@ -97,13 +99,13 @@
   }
 
   .link-arrow {
-    @apply inline-flex items-center gap-2 text-[15px] font-bold transition-all duration-300;
+    @apply inline-flex items-center gap-2 text-[16px] font-bold transition-all duration-300;
   }
 
   .link-arrow:hover { gap: 0.75rem; }
 
   .premium-button {
-    @apply inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-7 text-[14px] font-bold tracking-[0.01em] transition-all duration-300;
+    @apply inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full px-7 text-[15px] font-bold tracking-[0.01em] transition-all duration-300;
   }
 
   .premium-button-dark {
@@ -156,8 +158,33 @@
 .readable-dark-soft { color: rgba(255,255,255,.66); }
 .readable-footer { color: rgba(255,255,255,.70); }
 
-@media (min-width: 1024px) {
-  .site-container {
-    max-width: 1480px;
+
+
+
+/* High-legibility production pass */
+.production-copy {
+  color: #30353a;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.production-copy-dark {
+  color: rgba(255,255,255,.80);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.production-meta {
+  color: #59534c;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@media (max-width: 767px) {
+  body { font-size: 16px; }
+  .body-copy,
+  .production-copy {
+    font-size: 16px;
+    line-height: 1.75;
   }
 }

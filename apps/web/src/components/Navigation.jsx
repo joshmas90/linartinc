@@ -24,25 +24,16 @@ const Navigation = () => {
 
   useEffect(() => setOpen(false), [location.pathname]);
 
-  const home = location.pathname === '/';
-  const dark = !home || scrolled;
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        dark
-          ? 'border-b border-white/10 bg-[#0b0d10]/96 backdrop-blur-xl'
-          : 'bg-gradient-to-b from-black/55 via-black/20 to-transparent'
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0b0d10]/96 shadow-[0_8px_30px_rgba(0,0,0,0.14)] backdrop-blur-xl">
       <div className="site-container">
         <div className={`flex items-center justify-between transition-all ${scrolled ? 'h-[68px]' : 'h-[82px]'}`}>
           <Link to="/" className="relative z-50 flex items-center gap-3 text-white" aria-label="Linart Construction home">
             <span className="display-serif text-[2rem] leading-none tracking-[-0.04em]">L</span>
             <span className="h-7 w-px bg-[#9b7b4f]" />
             <span className="flex flex-col">
-              <span className="text-[0.93rem] font-semibold leading-none tracking-[0.12em]">LINART</span>
-              <span className="mt-1 text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-white/70">
+              <span className="text-[1.05rem] font-bold leading-none tracking-[0.09em]">LINART</span>
+              <span className="mt-1 text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-white/82">
                 Construction Inc.
               </span>
             </span>
@@ -56,8 +47,8 @@ const Navigation = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`relative py-2 text-[0.84rem] font-bold uppercase tracking-[0.10em] ${
-                      active ? 'text-white' : 'text-white/80 hover:text-white'
+                    className={`relative py-2 text-[0.9rem] font-bold uppercase tracking-[0.075em] ${
+                      active ? 'text-white' : 'text-white/88 hover:text-white'
                     }`}
                   >
                     {link.name}
@@ -69,7 +60,7 @@ const Navigation = () => {
 
             <span className="h-6 w-px bg-white/12" />
 
-            <a href="tel:6092097810" className="flex items-center gap-2 text-[0.82rem] font-semibold text-white/84 hover:text-white">
+            <a href="tel:6092097810" className="flex items-center gap-2 text-[0.9rem] font-semibold text-white/90 hover:text-white">
               <Phone size={14} />
               609-209-7810
             </a>
@@ -118,7 +109,7 @@ const Navigation = () => {
               <div className="mt-auto border-t border-white/12 pt-6">
                 <p className="eyebrow">Direct</p>
                 <a href="tel:6092097810" className="mt-3 block text-xl text-white">609-209-7810</a>
-                <a href="mailto:services@linartinc.com" className="mt-2 block text-sm text-white/60">services@linartinc.com</a>
+                <a href="mailto:services@linartinc.com" className="mt-2 block text-[15px] text-white/78">services@linartinc.com</a>
               </div>
             </div>
           </motion.div>

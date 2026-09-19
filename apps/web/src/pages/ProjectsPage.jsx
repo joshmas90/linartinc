@@ -55,7 +55,7 @@ const ProjectsPage = () => (
               <span className="block italic text-[#d7c6a9]">looking closely at.</span>
             </h1>
           </div>
-          <p className="max-w-xl text-[16px] leading-8 text-white/76 sm:text-[17px] lg:justify-self-end">
+          <p className="max-w-xl text-[17px] leading-8 text-white/84 sm:text-[18px] lg:justify-self-end">
             This temporary portfolio structure is ready for Linart’s real project photography. Each project is presented as work—not as a generic card.
           </p>
         </div>
@@ -77,12 +77,12 @@ const ProjectsPage = () => (
               <div className={`${index % 2 ? 'lg:order-first lg:pr-10' : 'lg:pl-10'} border-t hairline pt-5`}>
                 <div className="flex items-center justify-between">
                   <p className="eyebrow">{project.kicker}</p>
-                  <span className="text-[11px] font-semibold tracking-[0.17em] text-[#675f55]">0{index + 1}</span>
+                  <span className="text-[13px] font-bold tracking-[0.13em] text-[#504a43]">0{index + 1}</span>
                 </div>
                 <h2 className="display-serif mt-4 text-5xl leading-none sm:text-6xl">{project.title}</h2>
-                <p className="mt-5 text-sm font-semibold uppercase tracking-[0.12em] text-[#5f5a52]">{project.location}</p>
-                <p className="mt-3 max-w-lg text-[16px] leading-8 text-[#47433d]">{project.scope}</p>
-                <div className="mt-8 text-[12px] font-bold uppercase tracking-[0.12em] text-[#825f2d]">
+                <p className="mt-5 text-[14px] font-bold uppercase tracking-[0.095em] text-[#47423c]">{project.location}</p>
+                <p className="mt-3 max-w-lg text-[17px] leading-8 text-[#393631]">{project.scope}</p>
+                <div className="mt-8 text-[13px] font-bold uppercase tracking-[0.10em] text-[#735024]">
                   Project photography to be replaced
                 </div>
               </div>

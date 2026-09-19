@@ -76,7 +76,7 @@ const HomePage = () => (
             <h2 className="section-title mt-5 max-w-lg">A residential builder should feel accountable.</h2>
           </div>
           <div className="lg:pt-10">
-            <p className="body-copy max-w-2xl text-lg sm:text-xl sm:leading-9">
+            <p className="body-copy max-w-2xl text-[19px] sm:text-[21px] sm:leading-9">
               The best renovation experience is not defined by a single finish. It is defined by the decisions made before demolition, the communication during construction and the discipline to carry details through to completion.
             </p>
             <div className="mt-10 grid border-y hairline sm:grid-cols-3 sm:divide-x divide-black/10">
@@ -87,7 +87,7 @@ const HomePage = () => (
               ].map(([value, label]) => (
                 <div key={value} className="py-6 sm:px-6 first:pl-0">
                   <div className="display-serif text-4xl">{value}</div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.14em] text-[#5f584f]">{label}</div>
+                  <div className="mt-1 text-[13px] font-semibold uppercase tracking-[0.11em] text-[#4e4943]">{label}</div>
                 </div>
               ))}
             </div>
@@ -118,7 +118,7 @@ const HomePage = () => (
                 <p className="eyebrow">{featured[0].type}</p>
                 <h3 className="display-serif mt-2 max-w-xl text-3xl leading-tight sm:text-4xl">{featured[0].title}</h3>
               </div>
-              <span className="text-xs tracking-[0.18em] text-[#6b6257]">{featured[0].number}</span>
+              <span className="text-[13px] font-semibold tracking-[0.14em] text-[#514b44]">{featured[0].number}</span>
             </div>
           </article>
 
@@ -133,7 +133,7 @@ const HomePage = () => (
                     <p className="eyebrow">{item.type}</p>
                     <h3 className="display-serif mt-2 text-2xl leading-tight">{item.title}</h3>
                   </div>
-                  <span className="text-xs tracking-[0.18em] text-[#6b6257]">{item.number}</span>
+                  <span className="text-[13px] font-semibold tracking-[0.14em] text-[#514b44]">{item.number}</span>
                 </div>
               </article>
             ))}
@@ -148,7 +148,7 @@ const HomePage = () => (
           <div>
             <p className="eyebrow">Capabilities</p>
             <h2 className="section-title mt-5 max-w-md">One team. One standard.</h2>
-            <p className="mt-6 max-w-md text-[15px] leading-7 text-white/74">
+            <p className="mt-6 max-w-md text-[16px] leading-8 text-white/82">
               Substantial residential work benefits from continuity. We coordinate the project as a whole rather than treating every trade as a separate experience.
             </p>
           </div>
@@ -160,9 +160,9 @@ const HomePage = () => (
                 key={name}
                 className="group grid gap-3 border-b border-white/14 py-6 sm:grid-cols-[60px_220px_1fr_24px] sm:items-start"
               >
-                <span className="text-[10px] tracking-[0.2em] text-white/30">{String(index + 1).padStart(2, '0')}</span>
-                <h3 className="text-base font-semibold">{name}</h3>
-                <p className="text-[15px] leading-7 text-white/72">{copy}</p>
+                <span className="text-[12px] font-semibold tracking-[0.16em] text-white/56">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="text-[17px] font-semibold">{name}</h3>
+                <p className="text-[16px] leading-8 text-white/80">{copy}</p>
                 <ArrowUpRight size={16} className="text-[#9b7b4f] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             ))}
@@ -193,9 +193,9 @@ const HomePage = () => (
             ['04', 'Finish', 'Review details and close the project carefully.'],
           ].map(([n, title, copy]) => (
             <div key={n} className="border-b border-black/16 py-7 md:border-b-0 md:border-r md:px-6 first:pl-0 last:border-r-0">
-              <span className="text-[10px] tracking-[0.2em] text-[#766b5d]">{n}</span>
-              <h3 className="mt-6 text-base font-semibold">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-[#47433d]">{copy}</p>
+              <span className="text-[12px] font-semibold tracking-[0.15em] text-[#595249]">{n}</span>
+              <h3 className="mt-6 text-[17px] font-semibold">{title}</h3>
+              <p className="mt-3 text-[15.5px] leading-7 text-[#3d3934]">{copy}</p>
             </div>
           ))}
         </div>
@@ -211,7 +211,7 @@ const HomePage = () => (
               <h2 className="display-serif mt-5 max-w-3xl text-5xl leading-[0.95] sm:text-6xl">
                 Planning a serious renovation?
               </h2>
-              <p className="mt-6 max-w-2xl text-[15px] leading-7 text-white/76 sm:text-[17px]">
+              <p className="mt-6 max-w-2xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
                 Tell us where the project is, what you are considering and how you want the finished home to work.
               </p>
             </div>
@@ -219,7 +219,7 @@ const HomePage = () => (
               <Link to="/contact" className="premium-button-light">
                 Start Your Project <ArrowUpRight size={16} />
               </Link>
-              <a href="tel:6092097810" className="mt-5 flex items-center justify-center gap-2 text-[15px] text-white/80 hover:text-white">
+              <a href="tel:6092097810" className="mt-5 flex items-center justify-center gap-2 text-[16px] text-white/88 hover:text-white">
                 <Phone size={15} /> 609-209-7810
               </a>
             </div>
