@@ -1,19 +1,68 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Single canonical host (drop the www duplicate — pick one and stay on it)
+  RewriteCond %{HTTP_HOST} ^www\.linartinc\.com$ [NC]
+  RewriteRule ^ https://linartinc.com%{REQUEST_URI} [L,R=301]
+
+  # Never hand the SPA fallback to the form handler or the crawler files
+  RewriteRule ^contact\.php$ - [L]
+  RewriteRule ^(robots\.txt|sitemap\.xml)$ - [L]
+
+  # SPA history fallback
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]
 </IfModule>
 
-<IfModule mod_headers.c>
-  Header set X-Powered-By "Hostinger Horizons"
-
-  # Cache everything on CDN by default
-  Header set Cache-Control "public, s-maxage=604800, max-age=0"
-  
-  # Cache in browser all assets
-  <If "%{REQUEST_URI} =~ m#^/assets/.*$#">
-    Header set Cache-Control "public, max-age=604800"
-  </If>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml \
+    application/javascript application/json application/xml \
+    image/svg+xml application/ld+json
 </IfModule>
+
+<IfModule mod_headers.c>
+  # Sensible defaults: HTML always revalidates, CDN may hold it a week
+  Header set Cache-Control "public, s-maxage=604800, max-age=0"
+
+  # Vite writes content-hashed filenames into /assets, so these are immutable
+  <If "%{REQUEST_URI} =~ m#^/assets/.*$#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+
+  # Images and branding are stable but not hashed — a month is safe
+  <If "%{REQUEST_URI} =~ m#^/(images|branding)/.*$#">
+    Header set Cache-Control "public, max-age=2592000"
+  </If>
+
+  # Never cache the form handler
+  <If "%{REQUEST_URI} =~ m#^/contact\.php$#">
+    Header set Cache-Control "no-store"
+  </If>
+
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # Do not advertise the build platform
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+</IfModule>
+
+# The lead log must never be served over HTTP
+<FilesMatch "\.(log)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+ErrorDocument 404 /index.html

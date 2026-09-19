@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap');
+/* Fonts load via <link rel="preconnect"> + <link rel="stylesheet"> in index.html.
+   A CSS @import here serializes the font request behind this stylesheet and
+   delays first paint. Do not move it back. */
 
 @tailwind base;
 @tailwind components;
@@ -782,14 +784,16 @@ header button {
   transition: transform .32s cubic-bezier(.22,1,.36,1);
 }
 
-.premium-row:hover {
-  padding-left: .9rem;
-  background: linear-gradient(90deg, rgba(173,134,83,.075), transparent 72%);
-  border-color: rgba(220,197,157,.34);
-}
+@media (hover: hover) and (pointer: fine) {
+  .premium-row:hover {
+    padding-left: .9rem;
+    background: linear-gradient(90deg, rgba(173,134,83,.075), transparent 72%);
+    border-color: rgba(220,197,157,.34);
+  }
 
-.premium-row:hover::before {
-  transform: scaleY(1);
+  .premium-row:hover::before {
+    transform: scaleY(1);
+  }
 }
 
 /* --- Process cards --- */

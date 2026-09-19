@@ -6,28 +6,28 @@ const siteUrl = 'https://linartinc.com';
 
 const routeMeta = {
   '/': {
-    title: 'Linart Construction Inc. | Residential Construction & Remodeling in New Jersey',
-    description: 'Linart Construction Inc. provides residential additions, renovations, kitchens, bathrooms and structural remodeling throughout New Jersey. Family-owned since 2004.',
+    title: 'Linart Construction Inc. | Residential Construction & Remodeling in South Jersey',
+    description: 'Linart Construction Inc. provides residential additions, renovations, kitchens, bathrooms and structural remodeling throughout southern New Jersey. Family-owned since 2004.',
   },
   '/about': {
     title: 'About Linart Construction Inc. | Family-Owned Since 2004',
-    description: 'Meet the family-owned New Jersey residential construction company building under the Linart name since 2004.',
+    description: 'Meet the family-owned South Jersey residential construction company building under the Linart name since 2004.',
   },
   '/services': {
     title: 'Residential Construction Services | Linart Construction Inc.',
-    description: 'Home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing and structural remodeling in New Jersey.',
+    description: 'Home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing and structural remodeling in southern New Jersey.',
   },
   '/projects': {
     title: 'Projects | Linart Construction Inc.',
-    description: 'Selected residential additions and renovation work by Linart Construction Inc. throughout New Jersey.',
+    description: 'Selected residential additions and renovation work by Linart Construction Inc. throughout southern New Jersey.',
   },
   '/service-areas': {
-    title: 'New Jersey Service Areas | Linart Construction Inc.',
-    description: 'Linart Construction Inc. serves residential construction and remodeling clients throughout New Jersey.',
+    title: 'South Jersey Service Areas | Linart Construction Inc.',
+    description: 'Linart Construction serves homeowners across southern New Jersey — Burlington, Camden, Gloucester, Atlantic and Ocean counties, plus Mercer, Cumberland, Salem and Cape May.',
   },
   '/contact': {
     title: 'Start a Project | Linart Construction Inc.',
-    description: 'Contact Linart Construction Inc. about a residential addition, renovation or remodeling project in New Jersey.',
+    description: 'Contact Linart Construction Inc. about a residential addition, renovation or remodeling project in southern New Jersey.',
   },
 };
 

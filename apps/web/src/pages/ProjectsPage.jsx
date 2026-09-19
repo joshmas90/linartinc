@@ -1,7 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import Img from '@/components/Img';
 
 const projects = [
   {
@@ -91,10 +91,6 @@ const projects = [
 
 const ProjectsPage = () => (
   <>
-    <Helmet>
-      <title>Projects | Linart Construction Inc.</title>
-      <meta name="description" content="Selected residential additions and renovation work by Linart Construction Inc. throughout New Jersey." />
-    </Helmet>
 
     <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
@@ -123,18 +119,19 @@ const ProjectsPage = () => (
             >
               <div>
                 <div className={`project-frame ${project.size === 'large' ? 'aspect-[4/3]' : 'aspect-[5/4]'}`}>
-                  <img
+                  <Img
                     src={project.images[0][0]}
                     alt={project.images[0][1]}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                    fetchPriority={index === 0 ? 'high' : 'auto'}
-                    decoding="async"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    priority={index === 0}
                   />
                 </div>
                 <div className="mt-3 grid grid-cols-3 gap-3">
                   {project.images.slice(1).map(([src, alt]) => (
                     <div key={src} className="project-frame aspect-[4/3]">
-                      <img src={src} alt={alt} loading="lazy" decoding="async" />
+                      <Img src={src} alt={alt}
+                        sizes="(min-width: 1024px) 16vw, 31vw"
+                      />
                     </div>
                   ))}
                 </div>

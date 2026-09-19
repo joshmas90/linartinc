@@ -1,14 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import Img from '@/components/Img';
 
 const AboutPage = () => (
   <>
-    <Helmet>
-      <title>About Linart Construction Inc. | Family-Owned Since 2004</title>
-      <meta name="description" content="Linart Construction Inc. is a family-owned New Jersey residential construction company established in 2004." />
-    </Helmet>
 
     <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
@@ -62,19 +58,17 @@ const AboutPage = () => (
           <div>
             <div className="relative pb-16 sm:pl-10 lg:pb-20">
               <div className="project-frame ml-auto aspect-[4/5] w-[88%]">
-                <img
+                <Img
                   src="/images/about/linart-crew-framing.webp"
                   alt="Linart Construction crew framing a residential addition in New Jersey"
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(min-width: 1024px) 38vw, 88vw"
                 />
               </div>
               <div className="project-frame absolute bottom-0 left-0 aspect-[4/3] w-[62%] border-[8px] border-[#f3eee5] shadow-[0_18px_50px_rgba(11,13,16,0.18)]">
-                <img
+                <Img
                   src="/images/about/linart-truck-jobsite.webp"
                   alt="Linart Construction branded truck at an active residential jobsite"
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(min-width: 1024px) 26vw, 62vw"
                 />
               </div>
             </div>
@@ -101,19 +95,25 @@ const AboutPage = () => (
         <div className="mt-12 grid gap-6 md:grid-cols-12">
           <figure className="md:col-span-5">
             <div className="project-frame aspect-[5/4]">
-              <img src="/images/projects/details/wood-ceiling.webp" alt="Custom wood ceiling detail during installation" loading="lazy" decoding="async" />
+              <Img src="/images/projects/details/wood-ceiling.webp" alt="Custom wood ceiling detail during installation"
+                sizes="(min-width: 1024px) 30vw, 90vw"
+              />
             </div>
             <figcaption className="mt-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#5a534b]">Material alignment</figcaption>
           </figure>
           <figure className="md:col-span-3">
             <div className="project-frame aspect-[3/4]">
-              <img src="/images/projects/featured/finished-kitchen.webp" alt="Finished custom cabinetry and millwork" loading="lazy" decoding="async" />
+              <Img src="/images/projects/featured/finished-kitchen.webp" alt="Finished custom cabinetry and millwork"
+                sizes="(min-width: 1024px) 30vw, 90vw"
+              />
             </div>
             <figcaption className="mt-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#5a534b]">Finish consistency</figcaption>
           </figure>
           <figure className="md:col-span-4 md:pt-14">
             <div className="project-frame aspect-[4/3]">
-              <img src="/images/projects/featured/modern-bathroom.webp" alt="Finished bathroom tile and fixture detail" loading="lazy" decoding="async" />
+              <Img src="/images/projects/featured/modern-bathroom.webp" alt="Finished bathroom tile and fixture detail"
+                sizes="(min-width: 1024px) 30vw, 90vw"
+              />
             </div>
             <figcaption className="mt-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#5a534b]">Precise installation</figcaption>
           </figure>

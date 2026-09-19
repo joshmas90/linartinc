@@ -1,8 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Check, Phone } from 'lucide-react';
+import Img from '@/components/Img';
 
 const featured = [
   {
@@ -39,21 +39,14 @@ const services = [
 
 const HomePage = () => (
   <>
-    <Helmet>
-      <title>Linart Construction Inc. | Residential Construction & Remodeling in New Jersey</title>
-      <meta
-        name="description"
-        content="Linart Construction Inc. provides residential additions, renovations, kitchens, bathrooms and structural remodeling throughout New Jersey. Family-owned since 2004."
-      />
-    </Helmet>
 
     <section className="relative min-h-[94svh] overflow-hidden bg-[#0b0d10] text-white">
-      <img
+      <Img
         src="/images/home/linart-residence-hero.webp"
         alt="Large brick and stone residence under construction by Linart Construction"
         className="home-hero-image absolute inset-0 h-full w-full object-cover opacity-75"
-        fetchPriority="high"
-        decoding="async"
+        sizes="100vw"
+        priority
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/78 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/56 via-transparent to-black/24" />
@@ -135,7 +128,9 @@ const HomePage = () => (
         <div className="mt-14 grid gap-10 lg:grid-cols-12">
           <article className="lg:col-span-7">
             <div className="project-frame aspect-[4/3]">
-              <img src={featured[0].image} alt={featured[0].alt} loading="lazy" decoding="async" />
+              <Img src={featured[0].image} alt={featured[0].alt}
+                sizes="(min-width: 1024px) 56vw, 100vw"
+              />
             </div>
             <div className="mt-5 flex items-start justify-between gap-6 border-t hairline pt-4">
               <div>
@@ -150,7 +145,9 @@ const HomePage = () => (
             {featured.slice(1).map((item) => (
               <article key={item.number}>
                 <div className="project-frame aspect-[16/9]">
-                  <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
+                  <Img src={item.image} alt={item.alt}
+                    sizes="(min-width: 1024px) 40vw, (min-width: 640px) 48vw, 100vw"
+                  />
                 </div>
                 <div className="mt-4 flex items-start justify-between gap-5 border-t hairline pt-4">
                   <div>
@@ -240,13 +237,12 @@ const HomePage = () => (
               </p>
             </div>
             <div className="relative min-h-[340px] overflow-hidden border-t border-white/12 lg:min-h-0 lg:border-l lg:border-t-0">
-              <img
+              <Img
                 src="/images/projects/featured/finished-kitchen.webp"
                 alt=""
                 aria-hidden="true"
-                loading="lazy"
-                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/52 to-black/14" />
               <div className="relative flex h-full min-h-[340px] flex-col justify-end p-8 sm:p-12">

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { Mail, Phone, ArrowUpRight, Check, Copy } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { Mail, Phone, ArrowUpRight, Check, Copy, AlertCircle, Loader2 } from 'lucide-react';
+import Img from '@/components/Img';
 
 const initial = {
   name: '',
@@ -16,8 +16,17 @@ const initial = {
 const ContactPage = () => {
   const [form, setForm] = useState(initial);
   const [copyStatus, setCopyStatus] = useState('');
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({});
+  const honeypot = useRef('');
+  const startedAt = useRef(Date.now());
 
-  const change = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const change = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setFieldErrors((prev) => (prev[name] ? { ...prev, [name]: undefined } : prev));
+  };
 
   const projectBrief = `Name: ${form.name}
 Email: ${form.email}
@@ -30,11 +39,39 @@ Preferred contact: ${form.contact}
 Project description:
 ${form.message}`;
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
+    if (status === 'sending') return;
+
+    setStatus('sending');
+    setError('');
+    setFieldErrors({});
+
+    try {
+      const res = await fetch('/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, company: honeypot.current, started: startedAt.current }),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.ok) {
+        setStatus('sent');
+        return;
+      }
+      setFieldErrors(data.fields || {});
+      setError(data.error || 'Something went wrong sending your message.');
+      setStatus('error');
+    } catch {
+      setError('We could not reach the server. Call 609-209-7810, or copy the brief below and email it to us.');
+      setStatus('error');
+    }
+  };
+
+  /** Only offered once the direct submission has failed — never as the primary path. */
+  const emailFallback = () => {
     const subject = encodeURIComponent(`Linart project inquiry — ${form.service} — ${form.city || 'NJ'}`);
-    const body = encodeURIComponent(projectBrief);
-    window.location.href = `mailto:services@linartinc.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:services@linartinc.com?subject=${subject}&body=${encodeURIComponent(projectBrief)}`;
   };
 
   const copyBrief = async () => {
@@ -57,15 +94,16 @@ ${form.message}`;
     }
   };
 
+  const fieldError = (key) =>
+    fieldErrors[key] ? (
+      <span className="mt-2 block text-[13px] font-medium text-[#8c2f22]">{fieldErrors[key]}</span>
+    ) : null;
+
   const inputClass =
     'w-full border-0 border-b border-black/28 bg-transparent px-0 py-3.5 text-[17px] font-medium text-[#22262a] outline-none transition-colors placeholder:text-black/30 focus:border-[#9b7b4f] focus:ring-0';
 
   return (
     <>
-      <Helmet>
-        <title>Start a Project | Linart Construction Inc.</title>
-        <meta name="description" content="Contact Linart Construction Inc. about a residential addition, renovation or remodeling project in New Jersey." />
-      </Helmet>
 
       <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
         <div className="site-container">
@@ -105,11 +143,10 @@ ${form.message}`;
               </div>
 
               <div className="project-frame mt-10 aspect-[4/3]">
-                <img
+                <Img
                   src="/images/projects/company/linart-jobsite.webp"
                   alt="Linart Construction truck at a residential project site"
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(min-width: 1024px) 34vw, 90vw"
                 />
               </div>
               <p className="mt-4 text-[14px] leading-7 text-[#504a43]">
@@ -117,23 +154,68 @@ ${form.message}`;
               </p>
             </aside>
 
-            <form onSubmit={submit} className="border-t hairline">
+            {status === 'sent' ? (
+              <div className="border-t hairline pt-10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2f5d3f] text-white">
+                  <Check size={22} />
+                </div>
+                <h2 className="display-serif mt-6 text-4xl leading-none sm:text-5xl">Your project brief is in.</h2>
+                <p className="body-copy mt-5 max-w-xl">
+                  Thank you{form.name ? `, ${form.name.split(' ')[0]}` : ''}. We have your details and will follow up by{' '}
+                  {form.contact.toLowerCase()}, usually within one business day. If the project is time-sensitive, call
+                  609-209-7810 directly.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setForm(initial);
+                    setStatus('idle');
+                    setCopyStatus('');
+                    startedAt.current = Date.now();
+                  }}
+                  className="link-arrow mt-8 text-[#0b0d10]"
+                >
+                  Send another inquiry <ArrowUpRight size={15} />
+                </button>
+              </div>
+            ) : (
+            <form onSubmit={submit} noValidate className="relative border-t hairline">
+              {/* Honeypot — hidden from people, tempting to bots. */}
+              <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+                <label>
+                  Company
+                  <input
+                    type="text"
+                    name="company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    onChange={(e) => {
+                      honeypot.current = e.target.value;
+                    }}
+                  />
+                </label>
+              </div>
+
               <div className="grid gap-x-8 sm:grid-cols-2">
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Name</span>
                   <input required autoComplete="name" name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your name" />
+                  {fieldError('name')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">City / ZIP</span>
                   <input required autoComplete="postal-code" name="city" value={form.city} onChange={change} className={inputClass} placeholder="Project location" />
+                  {fieldError('city')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Email</span>
                   <input required autoComplete="email" type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="name@example.com" />
+                  {fieldError('email')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Phone</span>
                   <input required autoComplete="tel" inputMode="tel" type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="Phone number" />
+                  {fieldError('phone')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Type</span>
@@ -176,25 +258,54 @@ ${form.message}`;
                     className={`${inputClass} resize-none`}
                     placeholder="What are you looking to change?"
                   />
+                  {fieldError('message')}
                 </label>
               </div>
 
+              {status === 'error' && error && (
+                <div
+                  role="alert"
+                  className="mb-6 flex items-start gap-3 border-l-2 border-[#8c2f22] bg-[#8c2f22]/5 py-4 pl-4 text-[15px] leading-7 text-[#5f2118]"
+                >
+                  <AlertCircle size={17} className="mt-1 shrink-0" />
+                  <div>
+                    <p>{error}</p>
+                    <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                      <button type="button" onClick={copyBrief} className="premium-button premium-button-outline shrink-0">
+                        {copyStatus === 'Project brief copied' ? <Check size={16} /> : <Copy size={16} />}
+                        Copy Brief
+                      </button>
+                      <button type="button" onClick={emailFallback} className="premium-button premium-button-outline shrink-0">
+                        Open Email App <ArrowUpRight size={16} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="flex flex-col gap-5 border-t hairline pt-7 xl:flex-row xl:items-center xl:justify-between">
                 <p className="max-w-md text-[14px] leading-6 text-[#49443e]">
-                  Email Project Brief opens your preferred email app with these details ready to review and send. Nothing is submitted until you send the email.
+                  Your details go straight to our project inbox. We reply to every inquiry, usually within one business day.
                 </p>
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <button type="button" onClick={copyBrief} className="premium-button premium-button-outline shrink-0">
-                    {copyStatus === 'Project brief copied' ? <Check size={16} /> : <Copy size={16} />}
-                    Copy Brief
-                  </button>
-                  <button type="submit" className="premium-button-dark shrink-0">
-                    Email Project Brief <ArrowUpRight size={16} />
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="premium-button-dark shrink-0 disabled:cursor-not-allowed disabled:opacity-65"
+                >
+                  {status === 'sending' ? (
+                    <>
+                      Sending <Loader2 size={16} className="animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Project Brief <ArrowUpRight size={16} />
+                    </>
+                  )}
+                </button>
               </div>
               <p aria-live="polite" className="mt-3 min-h-6 text-[13px] font-semibold text-[#765326]">{copyStatus}</p>
             </form>
+            )}
           </div>
         </div>
       </section>

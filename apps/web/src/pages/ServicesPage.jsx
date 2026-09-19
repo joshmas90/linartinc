@@ -1,7 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import Img from '@/components/Img';
 
 const services = [
   {
@@ -62,10 +62,6 @@ const services = [
 
 const ServicesPage = () => (
   <>
-    <Helmet>
-      <title>Residential Construction Services | Linart Construction Inc.</title>
-      <meta name="description" content="Home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing and structural remodeling in New Jersey." />
-    </Helmet>
 
     <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
@@ -92,11 +88,10 @@ const ServicesPage = () => (
               Linart coordinates the visible finish with the structural and technical work behind it—from framing and exterior integration to cabinetry, tile and finish carpentry.
             </p>
             <div className="project-frame mt-8 aspect-[4/3]">
-              <img
+              <Img
                 src="/images/projects/details/wood-ceiling.webp"
                 alt="Wood ceiling installation detail by Linart Construction"
-                loading="lazy"
-                decoding="async"
+                sizes="(min-width: 1024px) 28vw, 90vw"
               />
             </div>
           </div>
@@ -111,7 +106,9 @@ const ServicesPage = () => (
               >
                 <span aria-hidden="true" className="text-[13px] font-bold tracking-[0.14em] text-[#504a43]">{service.number}</span>
                 <div className="project-frame aspect-[4/3] sm:aspect-square">
-                  <img src={service.image} alt={service.alt} loading="lazy" decoding="async" />
+                  <Img src={service.image} alt={service.alt}
+                    sizes="(min-width: 1024px) 34vw, 90vw"
+                  />
                 </div>
                 <div>
                   <h2 id={`${service.id}-title`} className="display-serif text-4xl leading-none sm:text-[2.65rem]">{service.title}</h2>
