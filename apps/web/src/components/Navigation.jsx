@@ -25,17 +25,25 @@ const Navigation = () => {
   useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#b58f5c]/20 bg-[#0a0b0d]/97 shadow-[0_10px_34px_rgba(0,0,0,0.24)] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#b58f5c]/30 bg-black shadow-[0_10px_34px_rgba(0,0,0,0.34)]">
       <div className="site-container">
         <div className={`flex items-center justify-between transition-all ${scrolled ? 'h-[68px]' : 'h-[82px]'}`}>
-          <Link to="/" className="relative z-50 flex items-center gap-3.5 text-white" aria-label="Linart Construction home">
-            <span className="relative flex h-10 w-10 items-center justify-center border border-[#b58f5c]/55 bg-black/25">
-              <span className="display-serif text-[2rem] leading-none text-[#d4bb91]">L</span>
-              <span className="absolute right-[5px] top-[8px] h-px w-[17px] rotate-[38deg] bg-[#b58f5c]" />
-            </span>
-            <span className="flex flex-col">
-              <span className="logo-wordmark text-[1.05rem] leading-none text-white">LINART</span>
-              <span className="logo-submark mt-1.5 text-[0.58rem] font-semibold text-white/74">
+          <Link
+            to="/"
+            className="relative z-50 flex items-center gap-3 text-white"
+            aria-label="Linart Construction home"
+            style={{ color: '#f7f1e7' }}
+          >
+            <img
+              src="/branding/linart-seal.png"
+              alt="Linart Construction Inc."
+              className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14"
+            />
+            <span className="hidden flex-col sm:flex">
+              <span className="logo-wordmark text-[1.05rem] leading-none" style={{ color: '#f7f1e7' }}>
+                LINART
+              </span>
+              <span className="logo-submark mt-1.5 text-[0.60rem] font-semibold" style={{ color: '#d7c19a' }}>
                 Construction Inc.
               </span>
             </span>
@@ -49,9 +57,8 @@ const Navigation = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`relative py-2 text-[0.9rem] font-bold uppercase tracking-[0.075em] ${
-                      active ? 'text-white' : 'text-white/88 hover:text-white'
-                    }`}
+                    className="relative py-2 text-[0.9rem] font-bold uppercase tracking-[0.075em] transition-opacity hover:opacity-100"
+                    style={{ color: active ? '#fffaf1' : '#e8e0d4', opacity: active ? 1 : 0.92 }}
                   >
                     {link.name}
                     <span className={`absolute bottom-0 left-0 h-px bg-[#b58f5c] transition-all ${active ? 'w-full' : 'w-0'}`} />
@@ -62,12 +69,12 @@ const Navigation = () => {
 
             <span className="h-6 w-px bg-white/12" />
 
-            <a href="tel:6092097810" className="flex items-center gap-2 text-[0.9rem] font-semibold text-white/90 hover:text-white">
+            <a href="tel:6092097810" className="flex items-center gap-2 text-[0.9rem] font-semibold hover:opacity-100" style={{ color: "#f3ece1", opacity: 0.94 }}>
               <Phone size={14} />
               609-209-7810
             </a>
 
-            <Link to="/contact" className="premium-button-light">
+            <Link to="/contact" className="premium-button-light border border-[#d9c19a]/55 shadow-[0_8px_24px_rgba(0,0,0,0.24)]">
               Start a Project
               <ArrowUpRight size={15} />
             </Link>

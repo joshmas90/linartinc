@@ -10,14 +10,18 @@ const Footer = () => {
       <div className="site-container py-16 sm:py-20">
         <div className="grid gap-12 border-b border-[#d4bb91]/18 pb-14 lg:grid-cols-[1.25fr_0.75fr_0.75fr_1fr]">
           <div>
-            <div className="flex items-center gap-3.5">
-              <span className="relative flex h-12 w-12 items-center justify-center border border-[#b58f5c]/55">
-                <span className="display-serif text-4xl leading-none text-[#d4bb91]">L</span>
-                <span className="absolute right-[6px] top-[10px] h-px w-[19px] rotate-[38deg] bg-[#b58f5c]" />
-              </span>
+            <div className="flex items-center gap-4">
+              <img
+                src="/branding/linart-seal.png"
+                alt="Linart Construction Inc."
+                className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
+              />
               <div>
-                <div className="logo-wordmark text-[18px] leading-none">LINART</div>
-                <div className="logo-submark mt-2 text-[0.62rem] font-semibold text-white/72">Construction Inc.</div>
+                <div className="logo-wordmark text-[20px] leading-none text-white">LINART</div>
+                <div className="logo-submark mt-2 text-[0.64rem] font-semibold text-[#d7c19a]">Construction Inc.</div>
+                <div className="mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/58">
+                  New Jersey · Since 2004
+                </div>
               </div>
             </div>
             <p className="mt-6 max-w-sm text-[16px] leading-8 text-white/78">

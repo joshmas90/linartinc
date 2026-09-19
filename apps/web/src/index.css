@@ -248,3 +248,23 @@
 .luxury-divider {
   border-color: rgba(173,134,83,.34);
 }
+
+
+/* Canonical Linart logo / header visibility */
+.site-header-logo img,
+footer img[alt="Linart Construction Inc."] {
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.28));
+}
+
+header a,
+header nav a,
+header button {
+  text-rendering: geometricPrecision;
+}
+
+@media (max-width: 640px) {
+  header .site-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

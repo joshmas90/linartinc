@@ -30,29 +30,29 @@ const HomePage = () => (
     </Helmet>
 
     <section className="relative min-h-[94svh] overflow-hidden bg-[#0b0d10] text-white">
-      <img src="https://horizons-cdn.hostinger.com/ee08914b-5384-4cd2-8f63-8b9f3f228829/remotemediafile_6619721_0_2022_05_05_12_30_52-sS9RR.jpeg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-75" />
-      <div className="absolute inset-0 hero-readable-vignette" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#08090a]/56 via-transparent to-black/20" />
+      <img src="https://horizons-cdn.hostinger.com/ee08914b-5384-4cd2-8f63-8b9f3f228829/remotemediafile_6619721_0_2022_05_05_12_30_52-sS9RR.jpeg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-68" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/78 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/56 via-transparent to-black/24" />
 
       <div className="site-container relative z-10 flex min-h-[94svh] items-end pb-14 pt-32 sm:pb-20 lg:items-center lg:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className="max-w-[880px]"
+          className="max-w-[900px] rounded-r-[2rem] border-l-2 border-[#b9905d] bg-black/38 px-5 py-7 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-[1px] sm:px-8 sm:py-9 lg:-ml-8 lg:pl-8"
         >
           <div className="mb-7 flex items-center gap-4">
             <span className="h-px w-12 bg-[#c19b68]" />
             <span className="text-[13px] font-bold uppercase tracking-[0.16em] text-[#e1c99e] hero-copy-shadow">New Jersey · Family-owned since 2004</span>
           </div>
 
-          <h1 className="display-serif text-[4.2rem] leading-[0.84] tracking-[-0.045em] sm:text-[6rem] lg:text-[8.2rem]">
+          <h1 className="display-serif hero-copy-shadow text-[4.2rem] leading-[0.84] tracking-[-0.045em] text-white sm:text-[6rem] lg:text-[8.2rem]">
             Built with
             <span className="block italic text-[#e0c89e]">intention.</span>
           </h1>
 
           <div className="mt-8 grid max-w-4xl gap-8 border-t border-[#d4bb91]/48 pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
-            <p className="max-w-2xl hero-copy-shadow text-[18px] leading-8 text-white/96 sm:text-[20px] sm:leading-9">
+            <p className="max-w-2xl hero-copy-shadow text-[18px] leading-8 text-white sm:text-[20px] sm:leading-9">
               Additions, renovations and structural remodeling for homeowners who care how the work is planned, managed and finished.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
