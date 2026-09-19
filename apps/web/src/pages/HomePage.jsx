@@ -59,7 +59,7 @@ const HomePage = () => (
               <Link to="/contact" className="premium-button-light">
                 Discuss Your Project <ArrowUpRight size={16} />
               </Link>
-              <Link to="/projects" className="premium-button border border-[#d4bb91]/50 bg-black/20 text-white hover:bg-black/35">
+              <Link to="/projects" className="premium-button premium-button-ghost">
                 Selected Work
               </Link>
             </div>
@@ -68,7 +68,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f3eee5] section-shell">
+    <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
@@ -96,7 +96,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f8f4ec] section-shell">
+    <section className="lux-light-section bg-[#f8f4ec] section-shell">
       <div className="site-container">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
@@ -158,7 +158,7 @@ const HomePage = () => (
               <Link
                 to="/services"
                 key={name}
-                className="group grid gap-3 border-b border-[#d4bb91]/22 py-6 sm:grid-cols-[60px_220px_1fr_24px] sm:items-start"
+                className="premium-row group grid gap-3 border-b border-[#d4bb91]/22 py-6 sm:grid-cols-[60px_220px_1fr_24px] sm:items-start"
               >
                 <span className="text-[12px] font-semibold tracking-[0.16em] text-white/80">{String(index + 1).padStart(2, '0')}</span>
                 <h3 className="text-[17px] font-semibold">{name}</h3>
@@ -171,7 +171,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#d7cec1] section-shell-tight">
+    <section className="lux-light-section bg-[#d7cec1] section-shell-tight">
       <div className="site-container">
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
@@ -192,7 +192,7 @@ const HomePage = () => (
             ['03', 'Build', 'Manage sequencing, site conditions and communication.'],
             ['04', 'Finish', 'Review details and close the project carefully.'],
           ].map(([n, title, copy]) => (
-            <div key={n} className="border-b border-black/16 py-7 md:border-b-0 md:border-r md:px-6 first:pl-0 last:border-r-0">
+            <div key={n} className="process-step border-b border-black/16 px-4 py-7 md:border-b-0 md:border-r md:px-6 first:pl-0 last:border-r-0">
               <span className="text-[12px] font-semibold tracking-[0.15em] text-[#595249]">{n}</span>
               <h3 className="mt-6 text-[17px] font-semibold">{title}</h3>
               <p className="mt-3 text-[15.5px] leading-7 text-[#3d3934]">{copy}</p>
@@ -202,9 +202,9 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f3eee5] section-shell">
+    <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
-        <div className="brand-stone brand-frame overflow-hidden text-white">
+        <div className="lux-cta-panel brand-stone brand-frame overflow-hidden text-white">
           <div className="grid lg:grid-cols-[1.3fr_0.7fr]">
             <div className="p-8 sm:p-12 lg:p-16">
               <p className="eyebrow">Start a Conversation</p>

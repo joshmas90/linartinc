@@ -31,7 +31,7 @@ const ServiceAreasPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f3eee5] section-shell">
+    <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20">
           <div>
@@ -53,7 +53,7 @@ const ServiceAreasPage = () => (
 
             <div className="mt-10 border-t hairline">
               {groups.map(([region, counties]) => (
-                <div key={region} className="grid gap-5 border-b hairline py-7 sm:grid-cols-[180px_1fr]">
+                <div key={region} className="premium-row grid gap-5 border-b hairline py-7 sm:grid-cols-[180px_1fr]">
                   <h3 className="font-semibold">{region}</h3>
                   <div className="flex flex-wrap gap-x-5 gap-y-2 text-[16px] leading-7 text-[#3f3b36]">
                     {counties.map((county) => <span key={county}>{county} County</span>)}

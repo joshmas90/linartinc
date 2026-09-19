@@ -74,7 +74,7 @@ const Navigation = () => {
               609-209-7810
             </a>
 
-            <Link to="/contact" className="premium-button-light !min-h-[48px] !px-6 border border-[#d9c19a]/55 shadow-[0_8px_24px_rgba(0,0,0,0.24)]">
+            <Link to="/contact" className="premium-button-light nav-premium-cta !min-h-[48px] !px-6">
               Start a Project
               <ArrowUpRight size={15} />
             </Link>

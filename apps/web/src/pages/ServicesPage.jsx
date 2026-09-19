@@ -64,7 +64,7 @@ const ServicesPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f3eee5] section-shell">
+    <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr] lg:gap-16">
           <div>
@@ -80,7 +80,7 @@ const ServicesPage = () => (
 
           <div className="border-t hairline">
             {services.map((service) => (
-              <div key={service.number} className="grid gap-5 border-b hairline py-8 sm:grid-cols-[60px_1fr]">
+              <div key={service.number} className="premium-row grid gap-5 border-b hairline py-8 sm:grid-cols-[60px_1fr]">
                 <span className="text-[13px] font-bold tracking-[0.14em] text-[#504a43]">{service.number}</span>
                 <div>
                   <h2 className="display-serif text-4xl leading-none sm:text-5xl">{service.title}</h2>
@@ -96,7 +96,7 @@ const ServicesPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#d7cec1] section-shell-tight">
+    <section className="lux-light-section bg-[#d7cec1] section-shell-tight">
       <div className="site-container flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow">Next Step</p>

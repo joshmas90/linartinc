@@ -62,7 +62,7 @@ const ProjectsPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f3eee5] section-shell">
+    <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="space-y-20 sm:space-y-28">
           {projects.map((project, index) => (
@@ -92,7 +92,7 @@ const ProjectsPage = () => (
       </div>
     </section>
 
-    <section className="brand-stone section-shell-tight text-white">
+    <section className="lux-cta-panel brand-stone section-shell-tight text-white">
       <div className="site-container flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow">Your Project</p>

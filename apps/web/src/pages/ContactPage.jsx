@@ -61,7 +61,7 @@ ${form.message}`
         </div>
       </section>
 
-      <section className="bg-[#f3eee5] section-shell">
+      <section className="lux-light-section bg-[#f3eee5] section-shell">
         <div className="site-container">
           <div className="grid gap-14 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
             <aside>

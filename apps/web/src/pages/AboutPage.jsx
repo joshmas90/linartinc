@@ -25,7 +25,7 @@ const AboutPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f3eee5] section-shell">
+    <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="grid gap-14 lg:grid-cols-[0.56fr_0.44fr] lg:gap-20">
           <div>
@@ -85,7 +85,7 @@ const AboutPage = () => (
               ['Continuity', 'The details should be carried consistently from planning through closeout.'],
               ['Accountability', 'A problem should have an owner, not a chain of excuses.'],
             ].map(([title, copy], i) => (
-              <div key={title} className="grid gap-3 border-b border-[#d4bb91]/22 py-6 sm:grid-cols-[70px_170px_1fr]">
+              <div key={title} className="premium-row grid gap-3 border-b border-[#d4bb91]/22 py-6 sm:grid-cols-[70px_170px_1fr]">
                 <span className="text-[12px] font-semibold tracking-[0.16em] text-white/54">0{i + 1}</span>
                 <h3 className="font-semibold">{title}</h3>
                 <p className="text-[16px] leading-8 text-white/80">{copy}</p>
@@ -96,7 +96,7 @@ const AboutPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#d7cec1] section-shell-tight">
+    <section className="lux-light-section bg-[#d7cec1] section-shell-tight">
       <div className="site-container flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow">See the Work</p>
