@@ -1,44 +1,62 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const services = [
   {
     number: '01',
+    id: 'home-additions',
     title: 'Home Additions',
     copy: 'Expansions planned to feel connected to the original house—not appended to it.',
     details: ['Structural framing', 'Exterior envelope', 'Interior integration', 'Finish coordination'],
+    image: '/images/home/addition-framing.webp',
+    alt: 'Linart Construction crew framing a large residential addition',
   },
   {
     number: '02',
+    id: 'whole-home-renovations',
     title: 'Whole-Home Renovations',
     copy: 'Large-scope renovation work coordinated across rooms, systems and trades.',
     details: ['Phased planning', 'Interior reconfiguration', 'Finish consistency', 'Trade coordination'],
+    image: '/images/projects/featured/interior-deck-connection.webp',
+    alt: 'Interior and exterior living spaces connected through a Linart renovation',
   },
   {
     number: '03',
+    id: 'kitchen-remodeling',
     title: 'Kitchen Remodeling',
     copy: 'Kitchens designed around circulation, storage, durable materials and clean installation.',
     details: ['Layout', 'Cabinetry', 'Lighting', 'Fixtures + finish work'],
+    image: '/images/projects/featured/finished-kitchen.webp',
+    alt: 'Finished custom kitchen cabinetry by Linart Construction',
   },
   {
     number: '04',
+    id: 'bathroom-remodeling',
     title: 'Bathroom Remodeling',
     copy: 'Bathrooms built around waterproofing, precise tilework and durable daily use.',
     details: ['Waterproofing', 'Tile', 'Fixtures', 'Ventilation + finish'],
+    image: '/images/projects/featured/modern-bathroom.webp',
+    alt: 'Finished modern bathroom with precise tile and fixture installation',
   },
   {
     number: '05',
+    id: 'basement-finishing',
     title: 'Basement Finishing',
     copy: 'Comfortable lower-level living space planned around the realities of the existing home.',
     details: ['Layout', 'Moisture considerations', 'Mechanical integration', 'Finish work'],
+    image: '/images/editorial/hardwood-restoration-progress.webp',
+    alt: 'Hardwood floor restoration in progress during a Linart interior renovation',
   },
   {
     number: '06',
+    id: 'structural-remodeling',
     title: 'Structural Remodeling',
     copy: 'Major reconfiguration and load-bearing changes approached with careful planning and sequencing.',
     details: ['Openings', 'Load-bearing changes', 'Reconfiguration', 'Trade coordination'],
+    image: '/images/about/linart-crew-framing.webp',
+    alt: 'Linart crew completing structural framing on a residential project',
   },
 ];
 
@@ -85,16 +103,24 @@ const ServicesPage = () => (
 
           <div className="border-t hairline">
             {services.map((service) => (
-              <div key={service.number} className="premium-row grid gap-5 border-b hairline py-8 sm:grid-cols-[60px_1fr]">
-                <span className="text-[13px] font-bold tracking-[0.14em] text-[#504a43]">{service.number}</span>
+              <article
+                id={service.id}
+                key={service.number}
+                aria-labelledby={`${service.id}-title`}
+                className="premium-row service-row grid scroll-mt-28 gap-5 border-b hairline py-8 sm:grid-cols-[52px_150px_1fr] lg:grid-cols-[52px_170px_1fr]"
+              >
+                <span aria-hidden="true" className="text-[13px] font-bold tracking-[0.14em] text-[#504a43]">{service.number}</span>
+                <div className="project-frame aspect-[4/3] sm:aspect-square">
+                  <img src={service.image} alt={service.alt} loading="lazy" decoding="async" />
+                </div>
                 <div>
-                  <h2 className="display-serif text-4xl leading-none sm:text-5xl">{service.title}</h2>
+                  <h2 id={`${service.id}-title`} className="display-serif text-4xl leading-none sm:text-[2.65rem]">{service.title}</h2>
                   <p className="body-copy mt-4 max-w-2xl">{service.copy}</p>
-                  <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-[13px] font-semibold uppercase tracking-[0.065em] text-[#3d3934] sm:grid-cols-4">
+                  <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-2 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#3d3934] xl:grid-cols-4">
                     {service.details.map((detail) => <span key={detail}>{detail}</span>)}
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

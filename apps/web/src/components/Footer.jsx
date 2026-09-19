@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
+import LinartBrand from '@/components/LinartBrand';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -10,20 +11,9 @@ const Footer = () => {
       <div className="site-container py-18 sm:py-24">
         <div className="grid gap-12 border-b border-[#d4bb91]/18 pb-14 lg:grid-cols-[1.25fr_0.75fr_0.75fr_1fr]">
           <div>
-            <div className="flex items-center gap-4">
-              <img
-                src="/branding/linart-seal.png"
-                alt="Linart Construction Inc."
-                className="h-28 w-28 shrink-0 object-contain sm:h-32 sm:w-32"
-              />
-              <div>
-                <div className="logo-wordmark text-[20px] leading-none text-white">LINART</div>
-                <div className="logo-submark mt-2 text-[0.64rem] font-semibold text-[#d7c19a]">Construction Inc.</div>
-                <div className="mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/58">
-                  New Jersey · Since 2004
-                </div>
-              </div>
-            </div>
+            <Link to="/" aria-label="Linart Construction home" className="inline-flex text-white">
+              <LinartBrand footer />
+            </Link>
             <p className="mt-6 max-w-sm text-[16px] leading-8 text-white/78">
               Residential additions, renovations and structural remodeling throughout New Jersey. Family-owned and building under the Linart name since 2004.
             </p>
@@ -41,10 +31,10 @@ const Footer = () => {
           <div>
             <p className="eyebrow">Services</p>
             <div className="mt-5 space-y-3 text-[16px] text-white/80">
-              <Link className="block hover:text-white" to="/services">Additions</Link>
-              <Link className="block hover:text-white" to="/services">Renovations</Link>
-              <Link className="block hover:text-white" to="/services">Kitchens & Baths</Link>
-              <Link className="block hover:text-white" to="/services">Structural Work</Link>
+              <Link className="block hover:text-white" to="/services#home-additions">Additions</Link>
+              <Link className="block hover:text-white" to="/services#whole-home-renovations">Renovations</Link>
+              <Link className="block hover:text-white" to="/services#kitchen-remodeling">Kitchens & Baths</Link>
+              <Link className="block hover:text-white" to="/services#structural-remodeling">Structural Work</Link>
             </div>
           </div>
 

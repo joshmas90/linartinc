@@ -29,12 +29,12 @@ const featured = [
 ];
 
 const services = [
-  ['Home Additions', 'Structure, envelope, interiors and finish work coordinated as one project.'],
-  ['Whole-Home Renovations', 'Multi-room renovations with one sequence, one point of accountability and one finish standard.'],
-  ['Kitchen Remodeling', 'Layout, cabinetry, lighting, fixtures and finish coordination for the room that works hardest.'],
-  ['Bathroom Remodeling', 'Waterproofing, tile, fixtures, ventilation and clean detailing built for long-term use.'],
-  ['Basement Finishing', 'Dry, comfortable living space planned around mechanicals, egress, storage and everyday use.'],
-  ['Structural Remodeling', 'Openings, load-bearing changes and substantial reconfiguration carefully planned and executed.'],
+  ['Home Additions', 'Structure, envelope, interiors and finish work coordinated as one project.', 'home-additions'],
+  ['Whole-Home Renovations', 'Multi-room renovations with one sequence, one point of accountability and one finish standard.', 'whole-home-renovations'],
+  ['Kitchen Remodeling', 'Layout, cabinetry, lighting, fixtures and finish coordination for the room that works hardest.', 'kitchen-remodeling'],
+  ['Bathroom Remodeling', 'Waterproofing, tile, fixtures, ventilation and clean detailing built for long-term use.', 'bathroom-remodeling'],
+  ['Basement Finishing', 'Dry, comfortable living space planned around mechanicals, egress, storage and everyday use.', 'basement-finishing'],
+  ['Structural Remodeling', 'Openings, load-bearing changes and substantial reconfiguration carefully planned and executed.', 'structural-remodeling'],
 ];
 
 const HomePage = () => (
@@ -51,7 +51,7 @@ const HomePage = () => (
       <img
         src="/images/home/linart-residence-hero.webp"
         alt="Large brick and stone residence under construction by Linart Construction"
-        className="absolute inset-0 h-full w-full object-cover object-[56%_center] opacity-75"
+        className="home-hero-image absolute inset-0 h-full w-full object-cover opacity-75"
         fetchPriority="high"
         decoding="async"
       />
@@ -178,9 +178,9 @@ const HomePage = () => (
           </div>
 
           <div className="border-t border-[#d4bb91]/22">
-            {services.map(([name, copy], index) => (
+            {services.map(([name, copy, slug], index) => (
               <Link
-                to="/services"
+                to={`/services#${slug}`}
                 key={name}
                 className="premium-row group grid gap-3 border-b border-[#d4bb91]/22 py-6 sm:grid-cols-[60px_220px_1fr_24px] sm:items-start"
               >
@@ -239,13 +239,25 @@ const HomePage = () => (
                 Tell us where the project is, what you want to change, and what a successful finished home needs to do for you.
               </p>
             </div>
-            <div className="flex flex-col justify-end border-t border-white/12 p-8 sm:p-12 lg:border-l lg:border-t-0">
-              <Link to="/contact" className="premium-button-light">
-                Start Your Project <ArrowUpRight size={16} />
-              </Link>
-              <a href="tel:6092097810" className="mt-5 flex items-center justify-center gap-2 text-[16px] text-white/88 hover:text-white">
-                <Phone size={15} /> 609-209-7810
-              </a>
+            <div className="relative min-h-[340px] overflow-hidden border-t border-white/12 lg:min-h-0 lg:border-l lg:border-t-0">
+              <img
+                src="/images/projects/featured/finished-kitchen.webp"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/52 to-black/14" />
+              <div className="relative flex h-full min-h-[340px] flex-col justify-end p-8 sm:p-12">
+                <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.16em] text-[#e0c89e]">Built in New Jersey</p>
+                <Link to="/contact" className="premium-button-light">
+                  Start Your Project <ArrowUpRight size={16} />
+                </Link>
+                <a href="tel:6092097810" className="mt-5 flex items-center justify-center gap-2 text-[16px] text-white/88 hover:text-white">
+                  <Phone size={15} /> 609-209-7810
+                </a>
+              </div>
             </div>
           </div>
         </div>

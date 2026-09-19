@@ -35,13 +35,23 @@ const ServiceAreasPage = () => (
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20">
           <div>
-            <div className="project-frame aspect-[4/5]">
-              <img
-                src="/images/projects/company/residential-project.webp"
-                alt="Linart Construction residential project underway in New Jersey"
-                loading="lazy"
-                decoding="async"
-              />
+            <div className="relative pb-16 sm:pr-8 lg:pb-20">
+              <div className="project-frame aspect-[4/5]">
+                <img
+                  src="/images/projects/company/residential-project.webp"
+                  alt="Linart Construction residential project underway in New Jersey"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="project-frame absolute bottom-0 right-0 aspect-[4/3] w-[62%] border-[8px] border-[#f3eee5] shadow-[0_18px_50px_rgba(11,13,16,0.18)]">
+                <img
+                  src="/images/about/linart-truck-jobsite.webp"
+                  alt="Linart Construction truck at an active New Jersey jobsite"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
             <div className="mt-4 flex items-start gap-3 text-[15px] leading-7 text-[#49443e]">
               <MapPin size={15} className="mt-0.5 shrink-0 text-[#a97f47]" />
@@ -53,7 +63,7 @@ const ServiceAreasPage = () => (
             <p className="eyebrow">Coverage</p>
             <h2 className="section-title mt-5">Local knowledge without the clutter.</h2>
             <p className="body-copy mt-6 max-w-2xl">
-              Coverage is supporting information, not the brand itself. The work, the process and the fit of the project remain the focus.
+              Each inquiry is evaluated around location, scope, schedule and the demands of the home. Share the municipality early so logistics, permitting and project fit can be discussed clearly.
             </p>
 
             <div className="mt-10 border-t hairline">

@@ -39,7 +39,7 @@ const AboutPage = () => (
                 The company focuses on residential additions, renovations, kitchens, bathrooms, basements and structural remodeling. The scope changes from project to project. The standard should not.
               </p>
               <p>
-                Planning, site management, communication and finish quality are treated as parts of the same job. That is the operating idea behind the company and the standard the redesigned site is built to communicate.
+                Planning, site management, communication and finish quality are treated as parts of the same job. That operating standard carries each project from the first conversation through the final detail.
               </p>
             </div>
 
@@ -82,6 +82,41 @@ const AboutPage = () => (
               Real Linart crews and active New Jersey residential work—the people, planning and accountability behind each project.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="lux-light-section bg-[#f8f4ec] section-shell-tight">
+      <div className="site-container">
+        <div className="grid gap-8 lg:grid-cols-[0.62fr_1fr] lg:items-end">
+          <div>
+            <p className="eyebrow">Built in the Details</p>
+            <h2 className="section-title mt-5 max-w-xl">Craft is visible long after the crew leaves.</h2>
+          </div>
+          <p className="body-copy max-w-2xl lg:justify-self-end">
+            The finished impression is carried by the details: clean transitions, aligned materials, durable assemblies and the discipline to resolve what most people never see.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-12">
+          <figure className="md:col-span-5">
+            <div className="project-frame aspect-[5/4]">
+              <img src="/images/projects/details/wood-ceiling.webp" alt="Custom wood ceiling detail during installation" loading="lazy" decoding="async" />
+            </div>
+            <figcaption className="mt-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#5a534b]">Material alignment</figcaption>
+          </figure>
+          <figure className="md:col-span-3">
+            <div className="project-frame aspect-[3/4]">
+              <img src="/images/projects/featured/finished-kitchen.webp" alt="Finished custom cabinetry and millwork" loading="lazy" decoding="async" />
+            </div>
+            <figcaption className="mt-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#5a534b]">Finish consistency</figcaption>
+          </figure>
+          <figure className="md:col-span-4 md:pt-14">
+            <div className="project-frame aspect-[4/3]">
+              <img src="/images/projects/featured/modern-bathroom.webp" alt="Finished bathroom tile and fixture detail" loading="lazy" decoding="async" />
+            </div>
+            <figcaption className="mt-4 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#5a534b]">Precise installation</figcaption>
+          </figure>
         </div>
       </div>
     </section>

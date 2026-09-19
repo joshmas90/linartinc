@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight, Check, Copy } from 'lucide-react';
 
 const initial = {
   name: '',
@@ -15,14 +15,11 @@ const initial = {
 
 const ContactPage = () => {
   const [form, setForm] = useState(initial);
+  const [copyStatus, setCopyStatus] = useState('');
 
   const change = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const submit = (e) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Linart project inquiry — ${form.service} — ${form.city || 'NJ'}`);
-    const body = encodeURIComponent(
-`Name: ${form.name}
+  const projectBrief = `Name: ${form.name}
 Email: ${form.email}
 Phone: ${form.phone}
 City / ZIP: ${form.city}
@@ -31,9 +28,33 @@ Timing: ${form.timing}
 Preferred contact: ${form.contact}
 
 Project description:
-${form.message}`
-    );
+${form.message}`;
+
+  const submit = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Linart project inquiry — ${form.service} — ${form.city || 'NJ'}`);
+    const body = encodeURIComponent(projectBrief);
     window.location.href = `mailto:services@linartinc.com?subject=${subject}&body=${body}`;
+  };
+
+  const copyBrief = async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(projectBrief);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = projectBrief;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+      }
+      setCopyStatus('Project brief copied');
+    } catch {
+      setCopyStatus('Copy unavailable—select Email Project Brief instead');
+    }
   };
 
   const inputClass =
@@ -64,7 +85,7 @@ ${form.message}`
       <section className="lux-light-section bg-[#f3eee5] section-shell">
         <div className="site-container">
           <div className="grid gap-14 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
-            <aside>
+            <aside className="self-start lg:sticky lg:top-28">
               <p className="eyebrow">Direct Contact</p>
               <a href="tel:6092097810" className="mt-5 flex items-center gap-3 text-xl font-semibold">
                 <Phone size={18} className="text-[#a97f47]" /> 609-209-7810
@@ -75,32 +96,44 @@ ${form.message}`
 
               <div className="mt-10 border-t hairline pt-6">
                 <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#514b44]">What helps</p>
-                <ul className="mt-4 space-y-3 text-[16px] leading-8 text-[#3f3a35]">
-                  <li>• Municipality or ZIP</li>
-                  <li>• Type of project</li>
-                  <li>• Approximate timing</li>
-                  <li>• A short description of the work</li>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-[16px] leading-8 text-[#3f3a35] marker:text-[#a97f47]">
+                  <li>Municipality or ZIP</li>
+                  <li>Type of project</li>
+                  <li>Approximate timing</li>
+                  <li>A short description of the work</li>
                 </ul>
               </div>
+
+              <div className="project-frame mt-10 aspect-[4/3]">
+                <img
+                  src="/images/projects/company/linart-jobsite.webp"
+                  alt="Linart Construction truck at a residential project site"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p className="mt-4 text-[14px] leading-7 text-[#504a43]">
+                Real crews, active homes and one accountable point of contact from planning through closeout.
+              </p>
             </aside>
 
             <form onSubmit={submit} className="border-t hairline">
               <div className="grid gap-x-8 sm:grid-cols-2">
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Name</span>
-                  <input required name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your name" />
+                  <input required autoComplete="name" name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your name" />
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">City / ZIP</span>
-                  <input required name="city" value={form.city} onChange={change} className={inputClass} placeholder="Project location" />
+                  <input required autoComplete="postal-code" name="city" value={form.city} onChange={change} className={inputClass} placeholder="Project location" />
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Email</span>
-                  <input required type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="name@example.com" />
+                  <input required autoComplete="email" type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="name@example.com" />
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Phone</span>
-                  <input required type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="Phone number" />
+                  <input required autoComplete="tel" inputMode="tel" type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="Phone number" />
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Type</span>
@@ -146,14 +179,21 @@ ${form.message}`
                 </label>
               </div>
 
-              <div className="flex flex-col gap-4 border-t hairline pt-7 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-5 border-t hairline pt-7 xl:flex-row xl:items-center xl:justify-between">
                 <p className="max-w-md text-[14px] leading-6 text-[#49443e]">
-                  This version opens your email application with the project brief pre-addressed to services@linartinc.com. A server-side submission can be added next.
+                  Email Project Brief opens your preferred email app with these details ready to review and send. Nothing is submitted until you send the email.
                 </p>
-                <button type="submit" className="premium-button-dark shrink-0">
-                  Email Project Brief <ArrowUpRight size={16} />
-                </button>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <button type="button" onClick={copyBrief} className="premium-button premium-button-outline shrink-0">
+                    {copyStatus === 'Project brief copied' ? <Check size={16} /> : <Copy size={16} />}
+                    Copy Brief
+                  </button>
+                  <button type="submit" className="premium-button-dark shrink-0">
+                    Email Project Brief <ArrowUpRight size={16} />
+                  </button>
+                </div>
               </div>
+              <p aria-live="polite" className="mt-3 min-h-6 text-[13px] font-semibold text-[#765326]">{copyStatus}</p>
             </form>
           </div>
         </div>
