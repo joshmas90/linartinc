@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0" stop-color="#171b20"/>
+    <stop offset="1" stop-color="#8a8175"/>
+  </linearGradient>
+  <linearGradient id="wash" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#f5f1e8" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#0b0d10" stop-opacity=".42"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="1100" fill="url(#bg)"/>
+<rect width="1600" height="1100" fill="url(#wash)"/>
+<path d="M150 790 L560 410 L905 690 L1210 465 L1480 790 Z" fill="#0b0d10" opacity=".62"/><path d="M520 430 L840 220 L1220 470 L910 690 Z" fill="#d7c6a9" opacity=".34"/><rect x="675" y="575" width="180" height="215" fill="#f5f1e8" opacity=".15"/>
+<line x1="110" y1="930" x2="1490" y2="930" stroke="#d7c6a9" stroke-opacity=".45"/>
+<text x="110" y="995" fill="#f5f1e8" font-family="Arial, sans-serif" font-size="27" letter-spacing="9">EXTERIOR / ADDITION</text>
+<text x="110" y="1045" fill="#d7c6a9" font-family="Arial, sans-serif" font-size="18" letter-spacing="5">REPLACE WITH LINART PROJECT</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0" stop-color="#171b20"/>
+    <stop offset="1" stop-color="#8a8175"/>
+  </linearGradient>
+  <linearGradient id="wash" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#f5f1e8" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#0b0d10" stop-opacity=".42"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="1100" fill="url(#bg)"/>
+<rect width="1600" height="1100" fill="url(#wash)"/>
+<rect x="165" y="250" width="1270" height="520" fill="#11161b" opacity=".48"/><rect x="240" y="320" width="260" height="320" fill="#d8d0c4" opacity=".22"/><rect x="540" y="320" width="260" height="320" fill="#f5f1e8" opacity=".14"/><rect x="840" y="320" width="260" height="320" fill="#d8d0c4" opacity=".2"/><path d="M310 745 H1265 L1110 560 H465 Z" fill="#c6b08a" opacity=".32"/>
+<line x1="110" y1="930" x2="1490" y2="930" stroke="#d7c6a9" stroke-opacity=".45"/>
+<text x="110" y="995" fill="#f5f1e8" font-family="Arial, sans-serif" font-size="27" letter-spacing="9">KITCHEN / INTERIOR</text>
+<text x="110" y="1045" fill="#d7c6a9" font-family="Arial, sans-serif" font-size="18" letter-spacing="5">REPLACE WITH LINART PROJECT</text>
+</svg>
