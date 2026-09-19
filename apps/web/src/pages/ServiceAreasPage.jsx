@@ -20,18 +20,18 @@ const ServiceAreasPage = () => (
       <div className="site-container">
         <p className="eyebrow">Where We Work</p>
         <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
-          <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
+          <h1 className="display-serif inner-hero-title max-w-[10ch]">
             New Jersey,
-            <span className="block italic text-[#e0c89e]">project by project.</span>
+            <span className="block italic text-[#e0c89e]">one project at a time.</span>
           </h1>
           <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px]">
-            Linart works throughout New Jersey. Project fit depends on scope, schedule and location—not on whether a town happens to appear in a marketing list.
+            Linart serves homeowners throughout New Jersey. Project fit depends on scope, schedule and location—not on how many towns can be listed on a page.
           </p>
         </div>
       </div>
     </section>
 
-    <section className="bg-[#f5f1e8] py-20 sm:py-28">
+    <section className="bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20">
           <div>
@@ -48,7 +48,7 @@ const ServiceAreasPage = () => (
             <p className="eyebrow">Coverage</p>
             <h2 className="section-title mt-5">Local knowledge without the clutter.</h2>
             <p className="body-copy mt-6 max-w-2xl">
-              The site no longer presents counties as generic white cards. Instead, coverage is treated as supporting information while the work and the company remain the focus.
+              Coverage is supporting information, not the brand itself. The work, the process and the fit of the project remain the focus.
             </p>
 
             <div className="mt-10 border-t hairline">

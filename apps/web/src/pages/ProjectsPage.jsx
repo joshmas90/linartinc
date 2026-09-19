@@ -7,7 +7,7 @@ const projects = [
   {
     image: '/placeholders/project-exterior.svg',
     kicker: 'Addition + Exterior',
-    title: 'Residence 01',
+    title: 'Project 01',
     location: 'New Jersey',
     scope: 'Addition · Exterior integration · Interior finish',
     size: 'large',
@@ -15,7 +15,7 @@ const projects = [
   {
     image: '/placeholders/project-kitchen.svg',
     kicker: 'Kitchen + Interior',
-    title: 'Residence 02',
+    title: 'Project 02',
     location: 'New Jersey',
     scope: 'Kitchen · Millwork · Lighting · Finish coordination',
     size: 'small',
@@ -23,7 +23,7 @@ const projects = [
   {
     image: '/placeholders/project-bath.svg',
     kicker: 'Bath + Millwork',
-    title: 'Residence 03',
+    title: 'Project 03',
     location: 'New Jersey',
     scope: 'Bath renovation · Tile · Fixtures · Finish work',
     size: 'small',
@@ -31,7 +31,7 @@ const projects = [
   {
     image: '/placeholders/project-whole-home.svg',
     kicker: 'Whole Home',
-    title: 'Residence 04',
+    title: 'Project 04',
     location: 'New Jersey',
     scope: 'Whole-home renovation · Structural work · Interiors',
     size: 'large',
@@ -50,19 +50,19 @@ const ProjectsPage = () => (
         <div className="grid gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
           <div>
             <p className="eyebrow">Selected Work</p>
-            <h1 className="display-serif mt-5 text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
-              Work worth
-              <span className="block italic text-[#e0c89e]">looking closely at.</span>
+            <h1 className="display-serif inner-hero-title mt-5 max-w-[10ch]">
+              Selected work,
+              <span className="block italic text-[#e0c89e]">presented with restraint.</span>
             </h1>
           </div>
           <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px] lg:justify-self-end">
-            This temporary portfolio structure is ready for Linart’s real project photography. Each project is presented as work—not as a generic card.
+            A portfolio should make the standard visible. The final Linart photography will live here at full scale, with concise project information and room for the work to lead.
           </p>
         </div>
       </div>
     </section>
 
-    <section className="bg-[#f5f1e8] py-16 sm:py-24">
+    <section className="bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="space-y-20 sm:space-y-28">
           {projects.map((project, index) => (
@@ -83,7 +83,7 @@ const ProjectsPage = () => (
                 <p className="mt-5 text-[14px] font-bold uppercase tracking-[0.095em] text-[#47423c]">{project.location}</p>
                 <p className="mt-3 max-w-lg text-[17px] leading-8 text-[#393631]">{project.scope}</p>
                 <div className="mt-8 text-[13px] font-bold uppercase tracking-[0.10em] text-[#735024]">
-                  Project photography to be replaced
+                  Temporary photography placeholder
                 </div>
               </div>
             </article>
@@ -92,7 +92,7 @@ const ProjectsPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#171b20] py-16 text-white sm:py-20">
+    <section className="brand-stone section-shell-tight text-white">
       <div className="site-container flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow">Your Project</p>

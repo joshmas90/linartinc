@@ -7,14 +7,14 @@ const Footer = () => {
 
   return (
     <footer className="brand-stone text-white">
-      <div className="site-container py-16 sm:py-20">
+      <div className="site-container py-18 sm:py-24">
         <div className="grid gap-12 border-b border-[#d4bb91]/18 pb-14 lg:grid-cols-[1.25fr_0.75fr_0.75fr_1fr]">
           <div>
             <div className="flex items-center gap-4">
               <img
                 src="/branding/linart-seal.png"
                 alt="Linart Construction Inc."
-                className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
+                className="h-28 w-28 shrink-0 object-contain sm:h-32 sm:w-32"
               />
               <div>
                 <div className="logo-wordmark text-[20px] leading-none text-white">LINART</div>
@@ -25,7 +25,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="mt-6 max-w-sm text-[16px] leading-8 text-white/78">
-              Residential additions, renovations and structural remodeling throughout New Jersey. Family-owned since 2004.
+              Residential additions, renovations and structural remodeling throughout New Jersey. Family-owned and building under the Linart name since 2004.
             </p>
           </div>
 

@@ -27,7 +27,7 @@ const Navigation = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#b58f5c]/30 bg-black shadow-[0_10px_34px_rgba(0,0,0,0.34)]">
       <div className="site-container">
-        <div className={`flex items-center justify-between transition-all ${scrolled ? 'h-[68px]' : 'h-[82px]'}`}>
+        <div className={`flex items-center justify-between transition-all ${scrolled ? 'h-[68px]' : 'h-[76px]'}`}>
           <Link
             to="/"
             className="relative z-50 flex items-center gap-3 text-white"
@@ -49,15 +49,15 @@ const Navigation = () => {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-7 lg:flex">
-            <nav className="flex items-center gap-7">
+          <div className="hidden items-center gap-6 lg:flex">
+            <nav className="flex items-center gap-6">
               {links.map((link) => {
                 const active = location.pathname === link.path;
                 return (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className="relative py-2 text-[0.9rem] font-bold uppercase tracking-[0.075em] transition-opacity hover:opacity-100"
+                    className="relative py-2 text-[0.82rem] font-bold uppercase tracking-[0.10em] transition-opacity hover:opacity-100"
                     style={{ color: active ? '#fffaf1' : '#e8e0d4', opacity: active ? 1 : 0.92 }}
                   >
                     {link.name}
@@ -69,12 +69,12 @@ const Navigation = () => {
 
             <span className="h-6 w-px bg-white/12" />
 
-            <a href="tel:6092097810" className="flex items-center gap-2 text-[0.9rem] font-semibold hover:opacity-100" style={{ color: "#f3ece1", opacity: 0.94 }}>
+            <a href="tel:6092097810" className="flex items-center gap-2 text-[0.82rem] font-semibold hover:opacity-100" style={{ color: "#f3ece1", opacity: 0.94 }}>
               <Phone size={14} />
               609-209-7810
             </a>
 
-            <Link to="/contact" className="premium-button-light border border-[#d9c19a]/55 shadow-[0_8px_24px_rgba(0,0,0,0.24)]">
+            <Link to="/contact" className="premium-button-light !min-h-[48px] !px-6 border border-[#d9c19a]/55 shadow-[0_8px_24px_rgba(0,0,0,0.24)]">
               Start a Project
               <ArrowUpRight size={15} />
             </Link>

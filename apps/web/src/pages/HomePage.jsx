@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Check, Phone } from 'lucide-react';
 
 const featured = [
-  { image: '/placeholders/project-exterior.svg', type: 'Addition + Exterior', title: 'A home that grows without looking added on.', number: '01' },
-  { image: '/placeholders/project-kitchen.svg', type: 'Interior Renovation', title: 'Quiet materials. Better flow. Built for daily use.', number: '02' },
-  { image: '/placeholders/project-bath.svg', type: 'Bath + Millwork', title: 'Precision where finish quality matters most.', number: '03' },
+  { image: '/placeholders/project-exterior.svg', type: 'Addition + Exterior', title: 'An addition should feel inevitable—not appended.', number: '01' },
+  { image: '/placeholders/project-kitchen.svg', type: 'Interior Renovation', title: 'Better proportion, clearer circulation, calmer material choices.', number: '02' },
+  { image: '/placeholders/project-bath.svg', type: 'Bath + Millwork', title: 'Where waterproofing, layout and finish quality must all agree.', number: '03' },
 ];
 
 const services = [
@@ -39,21 +39,21 @@ const HomePage = () => (
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className="max-w-[900px] rounded-r-[2rem] border-l-2 border-[#b9905d] bg-black/38 px-5 py-7 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-[1px] sm:px-8 sm:py-9 lg:-ml-8 lg:pl-8"
+          className="max-w-[860px] border-l border-[#b9905d]/70 pl-5 sm:pl-7 lg:pl-8"
         >
           <div className="mb-7 flex items-center gap-4">
             <span className="h-px w-12 bg-[#c19b68]" />
             <span className="text-[13px] font-bold uppercase tracking-[0.16em] text-[#e1c99e] hero-copy-shadow">New Jersey · Family-owned since 2004</span>
           </div>
 
-          <h1 className="display-serif hero-copy-shadow text-[4.2rem] leading-[0.84] tracking-[-0.045em] text-white sm:text-[6rem] lg:text-[8.2rem]">
+          <h1 className="display-serif hero-copy-shadow home-hero-title text-white">
             Built with
             <span className="block italic text-[#e0c89e]">intention.</span>
           </h1>
 
           <div className="mt-8 grid max-w-4xl gap-8 border-t border-[#d4bb91]/48 pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
             <p className="max-w-2xl hero-copy-shadow text-[18px] leading-8 text-white sm:text-[20px] sm:leading-9">
-              Additions, renovations and structural remodeling for homeowners who care how the work is planned, managed and finished.
+              Additions, renovations and structural remodeling—planned carefully, managed clearly, and finished to a consistent standard.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
               <Link to="/contact" className="premium-button-light">
@@ -68,7 +68,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f5f1e8] py-20 sm:py-28">
+    <section className="bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
@@ -96,12 +96,12 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f8f5ee] py-20 sm:py-28">
+    <section className="bg-[#f8f4ec] section-shell">
       <div className="site-container">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="eyebrow">Selected Work</p>
-            <h2 className="section-title mt-5">The work should speak first.</h2>
+            <h2 className="section-title mt-5">The work should carry the reputation.</h2>
           </div>
           <Link to="/projects" className="link-arrow text-[#0b0d10]">
             View project portfolio <ArrowRight size={16} />
@@ -142,12 +142,12 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="brand-stone py-20 text-white sm:py-28">
+    <section className="brand-stone section-shell text-white">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div>
             <p className="eyebrow">Capabilities</p>
-            <h2 className="section-title mt-5 max-w-md">One team. One standard.</h2>
+            <h2 className="section-title mt-5 max-w-md">One team.<br/>One standard.</h2>
             <p className="mt-6 max-w-md text-[16px] leading-8 text-white/82">
               Substantial residential work benefits from continuity. We coordinate the project as a whole rather than treating every trade as a separate experience.
             </p>
@@ -171,7 +171,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#d8d0c4] py-20 sm:py-24">
+    <section className="bg-[#d7cec1] section-shell-tight">
       <div className="site-container">
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
@@ -202,17 +202,17 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f5f1e8] py-20 sm:py-28">
+    <section className="bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="brand-stone brand-frame overflow-hidden text-white">
           <div className="grid lg:grid-cols-[1.3fr_0.7fr]">
             <div className="p-8 sm:p-12 lg:p-16">
               <p className="eyebrow">Start a Conversation</p>
               <h2 className="display-serif mt-5 max-w-3xl text-5xl leading-[0.95] sm:text-6xl">
-                Planning a serious renovation?
+                Planning a project worth doing properly?
               </h2>
               <p className="mt-6 max-w-2xl text-[17px] leading-8 text-white/84 sm:text-[18px]">
-                Tell us where the project is, what you are considering and how you want the finished home to work.
+                Tell us where the project is, what you want to change, and what a successful finished home needs to do for you.
               </p>
             </div>
             <div className="flex flex-col justify-end border-t border-white/12 p-8 sm:p-12 lg:border-l lg:border-t-0">

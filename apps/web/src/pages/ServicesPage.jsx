@@ -53,7 +53,7 @@ const ServicesPage = () => (
       <div className="site-container">
         <p className="eyebrow">Capabilities</p>
         <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
-          <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
+          <h1 className="display-serif inner-hero-title max-w-[10ch]">
             Residential work,
             <span className="block italic text-[#e0c89e]">properly coordinated.</span>
           </h1>
@@ -64,16 +64,18 @@ const ServicesPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#f5f1e8] py-16 sm:py-24">
+    <section className="bg-[#f3eee5] section-shell">
       <div className="site-container">
-        <div className="grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <div className="project-frame aspect-[4/5]">
+        <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr] lg:gap-16">
+          <div>
+            <p className="eyebrow">What We Handle</p>
+            <h2 className="display-serif mt-5 text-5xl leading-[0.95] sm:text-6xl">Substantial residential work, coordinated as a whole.</h2>
+            <p className="body-copy mt-6">
+              The final photography here should show real Linart craft at close range—framing, finish carpentry, tile, cabinetry, structural work, or another detail that feels unmistakably yours.
+            </p>
+            <div className="project-frame mt-8 aspect-[4/3]">
               <img src="/placeholders/service-detail.svg" alt="Temporary construction detail placeholder" />
             </div>
-            <p className="mt-4 text-[15px] leading-7 text-[#45413b]">
-              Replace this placeholder with a strong Linart detail image: craftsmanship, framing, millwork, tile or finish work.
-            </p>
           </div>
 
           <div className="border-t hairline">
@@ -94,7 +96,7 @@ const ServicesPage = () => (
       </div>
     </section>
 
-    <section className="bg-[#d8d0c4] py-16 sm:py-20">
+    <section className="bg-[#d7cec1] section-shell-tight">
       <div className="site-container flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow">Next Step</p>

@@ -50,7 +50,7 @@ ${form.message}`
         <div className="site-container">
           <p className="eyebrow">Project Inquiry</p>
           <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
-            <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
+            <h1 className="display-serif inner-hero-title max-w-[10ch]">
               Tell us what
               <span className="block italic text-[#e0c89e]">you’re planning.</span>
             </h1>
@@ -61,7 +61,7 @@ ${form.message}`
         </div>
       </section>
 
-      <section className="bg-[#f5f1e8] py-20 sm:py-28">
+      <section className="bg-[#f3eee5] section-shell">
         <div className="site-container">
           <div className="grid gap-14 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
             <aside>

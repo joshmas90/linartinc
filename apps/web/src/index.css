@@ -268,3 +268,94 @@ header button {
     padding-right: 1rem;
   }
 }
+
+
+/* Elite refinement v4 */
+:root {
+  --brand-black: #08090a;
+  --brand-graphite: #111316;
+  --brand-ivory: #f3eee5;
+  --brand-paper: #f8f4ec;
+  --brand-bronze: #ad8653;
+  --brand-champagne: #d7c19a;
+}
+
+.section-shell {
+  padding-top: clamp(5rem, 8vw, 8rem);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+.section-shell-tight {
+  padding-top: clamp(4rem, 6vw, 6rem);
+  padding-bottom: clamp(4rem, 6vw, 6rem);
+}
+
+.editorial-rule {
+  border-color: rgba(173,134,83,.26);
+}
+
+.raised-panel {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
+    #111316;
+  border: 1px solid rgba(215,193,154,.16);
+  box-shadow: 0 26px 80px rgba(0,0,0,.20);
+}
+
+.cream-panel {
+  background: rgba(255,255,255,.34);
+  border: 1px solid rgba(11,13,16,.08);
+  box-shadow: 0 16px 45px rgba(25,22,18,.05);
+}
+
+.display-measure {
+  max-width: 11ch;
+}
+
+.copy-measure {
+  max-width: 43rem;
+}
+
+.project-placeholder-note {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #7c6547;
+}
+
+.project-caption {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #403c37;
+}
+
+.brand-quiet {
+  color: #61594f;
+}
+
+.brand-quiet-dark {
+  color: rgba(255,255,255,.70);
+}
+
+.home-hero-title {
+  font-size: clamp(4rem, 8.2vw, 7.5rem);
+  line-height: .86;
+  letter-spacing: -.04em;
+}
+
+.inner-hero-title {
+  font-size: clamp(4rem, 7.6vw, 6.8rem);
+  line-height: .88;
+  letter-spacing: -.042em;
+}
+
+@media (max-width: 767px) {
+  .home-hero-title {
+    font-size: clamp(3.7rem, 18vw, 5.7rem);
+  }
+
+  .inner-hero-title {
+    font-size: clamp(3.5rem, 16vw, 5.3rem);
+  }
+}
