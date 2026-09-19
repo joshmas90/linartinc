@@ -107,7 +107,7 @@ const ServicesPage = () => (
                 <span aria-hidden="true" className="text-[13px] font-bold tracking-[0.14em] text-[#504a43]">{service.number}</span>
                 <div className="project-frame aspect-[4/3] sm:aspect-square">
                   <Img src={service.image} alt={service.alt}
-                    sizes="(min-width: 1024px) 34vw, 90vw"
+                    sizes="(min-width: 1024px) 170px, (min-width: 640px) 150px, 90vw"
                   />
                 </div>
                 <div>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Mail, Phone, ArrowUpRight, Check, Copy, AlertCircle, Loader2 } from 'lucide-react';
 import Img from '@/components/Img';
 
@@ -20,7 +20,13 @@ const ContactPage = () => {
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState({});
   const honeypot = useRef('');
-  const startedAt = useRef(Date.now());
+  const resultRef = useRef(null);
+  const errorRef = useRef(null);
+
+  useEffect(() => {
+    if (status === 'sent') resultRef.current?.focus();
+    if (status === 'error') errorRef.current?.focus();
+  }, [status]);
 
   const change = (e) => {
     const { name, value } = e.target;
@@ -46,12 +52,17 @@ ${form.message}`;
     setStatus('sending');
     setError('');
     setFieldErrors({});
+    setCopyStatus('');
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 15000);
 
     try {
       const res = await fetch('/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, company: honeypot.current, started: startedAt.current }),
+        body: JSON.stringify({ ...form, company: honeypot.current }),
+        signal: controller.signal,
       });
       const data = await res.json().catch(() => ({}));
 
@@ -62,9 +73,15 @@ ${form.message}`;
       setFieldErrors(data.fields || {});
       setError(data.error || 'Something went wrong sending your message.');
       setStatus('error');
-    } catch {
-      setError('We could not reach the server. Call 609-209-7810, or copy the brief below and email it to us.');
+    } catch (requestError) {
+      setError(
+        requestError.name === 'AbortError'
+          ? 'The request took too long. Call 609-209-7810, or copy the brief below and email it to us.'
+          : 'We could not reach the server. Call 609-209-7810, or copy the brief below and email it to us.',
+      );
       setStatus('error');
+    } finally {
+      window.clearTimeout(timeout);
     }
   };
 
@@ -96,8 +113,15 @@ ${form.message}`;
 
   const fieldError = (key) =>
     fieldErrors[key] ? (
-      <span className="mt-2 block text-[13px] font-medium text-[#8c2f22]">{fieldErrors[key]}</span>
+      <span id={`${key}-error`} className="mt-2 block text-[13px] font-medium text-[#8c2f22]">
+        {fieldErrors[key]}
+      </span>
     ) : null;
+
+  const errorAttributes = (key) => ({
+    'aria-invalid': fieldErrors[key] ? 'true' : undefined,
+    'aria-describedby': fieldErrors[key] ? `${key}-error` : undefined,
+  });
 
   const inputClass =
     'w-full border-0 border-b border-black/28 bg-transparent px-0 py-3.5 text-[17px] font-medium text-[#22262a] outline-none transition-colors placeholder:text-black/30 focus:border-[#9b7b4f] focus:ring-0';
@@ -155,7 +179,7 @@ ${form.message}`;
             </aside>
 
             {status === 'sent' ? (
-              <div className="border-t hairline pt-10">
+              <div ref={resultRef} tabIndex={-1} className="border-t hairline pt-10 outline-none">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2f5d3f] text-white">
                   <Check size={22} />
                 </div>
@@ -171,7 +195,9 @@ ${form.message}`;
                     setForm(initial);
                     setStatus('idle');
                     setCopyStatus('');
-                    startedAt.current = Date.now();
+                    setError('');
+                    setFieldErrors({});
+                    honeypot.current = '';
                   }}
                   className="link-arrow mt-8 text-[#0b0d10]"
                 >
@@ -179,7 +205,7 @@ ${form.message}`;
                 </button>
               </div>
             ) : (
-            <form onSubmit={submit} noValidate className="relative border-t hairline">
+            <form onSubmit={submit} aria-busy={status === 'sending'} className="relative border-t hairline">
               {/* Honeypot — hidden from people, tempting to bots. */}
               <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
                 <label>
@@ -199,27 +225,27 @@ ${form.message}`;
               <div className="grid gap-x-8 sm:grid-cols-2">
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Name</span>
-                  <input required autoComplete="name" name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your name" />
+                  <input required maxLength={120} autoComplete="name" name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your name" {...errorAttributes('name')} />
                   {fieldError('name')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">City / ZIP</span>
-                  <input required autoComplete="postal-code" name="city" value={form.city} onChange={change} className={inputClass} placeholder="Project location" />
+                  <input required maxLength={120} autoComplete="postal-code" name="city" value={form.city} onChange={change} className={inputClass} placeholder="Project location" {...errorAttributes('city')} />
                   {fieldError('city')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Email</span>
-                  <input required autoComplete="email" type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="name@example.com" />
+                  <input required maxLength={180} autoComplete="email" type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="name@example.com" {...errorAttributes('email')} />
                   {fieldError('email')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Phone</span>
-                  <input required autoComplete="tel" inputMode="tel" type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="Phone number" />
+                  <input required maxLength={60} autoComplete="tel" inputMode="tel" type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="Phone number" {...errorAttributes('phone')} />
                   {fieldError('phone')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Type</span>
-                  <select name="service" value={form.service} onChange={change} className={inputClass}>
+                  <select name="service" value={form.service} onChange={change} className={inputClass} {...errorAttributes('service')}>
                     <option>Home Addition</option>
                     <option>Whole-Home Renovation</option>
                     <option>Kitchen Remodeling</option>
@@ -228,24 +254,27 @@ ${form.message}`;
                     <option>Structural Remodeling</option>
                     <option>Other Residential Work</option>
                   </select>
+                  {fieldError('service')}
                 </label>
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Timing</span>
-                  <select name="timing" value={form.timing} onChange={change} className={inputClass}>
+                  <select name="timing" value={form.timing} onChange={change} className={inputClass} {...errorAttributes('timing')}>
                     <option>Planning / researching</option>
                     <option>Within 3 months</option>
                     <option>3–6 months</option>
                     <option>6–12 months</option>
                     <option>12+ months</option>
                   </select>
+                  {fieldError('timing')}
                 </label>
                 <label className="py-5 sm:col-span-2">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Preferred Contact</span>
-                  <select name="contact" value={form.contact} onChange={change} className={inputClass}>
+                  <select name="contact" value={form.contact} onChange={change} className={inputClass} {...errorAttributes('contact')}>
                     <option>Phone</option>
                     <option>Email</option>
                     <option>Text</option>
                   </select>
+                  {fieldError('contact')}
                 </label>
                 <label className="py-5 sm:col-span-2">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Description</span>
@@ -254,9 +283,12 @@ ${form.message}`;
                     name="message"
                     value={form.message}
                     onChange={change}
+                    minLength={10}
+                    maxLength={6000}
                     rows="6"
                     className={`${inputClass} resize-none`}
                     placeholder="What are you looking to change?"
+                    {...errorAttributes('message')}
                   />
                   {fieldError('message')}
                 </label>
@@ -264,8 +296,10 @@ ${form.message}`;
 
               {status === 'error' && error && (
                 <div
+                  ref={errorRef}
+                  tabIndex={-1}
                   role="alert"
-                  className="mb-6 flex items-start gap-3 border-l-2 border-[#8c2f22] bg-[#8c2f22]/5 py-4 pl-4 text-[15px] leading-7 text-[#5f2118]"
+                  className="mb-6 flex items-start gap-3 border-l-2 border-[#8c2f22] bg-[#8c2f22]/5 py-4 pl-4 text-[15px] leading-7 text-[#5f2118] outline-none"
                 >
                   <AlertCircle size={17} className="mt-1 shrink-0" />
                   <div>

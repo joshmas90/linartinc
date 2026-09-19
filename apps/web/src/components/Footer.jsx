@@ -15,7 +15,7 @@ const Footer = () => {
               <LinartBrand footer />
             </Link>
             <p className="mt-6 max-w-sm text-[16px] leading-8 text-white/78">
-              Residential additions, renovations and structural remodeling throughout southern New Jersey. Family-owned and building under the Linart name since 2004.
+              Residential additions, renovations and structural remodeling throughout New Jersey. Family-owned and building under the Linart name since 2004.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-3">
                 <MapPin size={15} className="mt-0.5 shrink-0 text-[#c9a978]" />
-                <span>Serving southern New Jersey</span>
+                <span>Serving New Jersey</span>
               </div>
               <Link to="/contact" className="link-arrow pt-2 text-white">
                 Discuss a project <ArrowUpRight size={15} />
@@ -60,9 +60,7 @@ const Footer = () => {
 
         <div className="flex flex-col gap-3 pt-7 text-[13px] text-white/66 sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} Linart Construction Inc. All rights reserved.</p>
-          {/* TODO: replace 00000000 with the real NJ Home Improvement Contractor registration number. */}
-          <p>NJ HIC Reg. #13VH00000000 · Licensed &amp; insured</p>
-          <p>Residential construction · South Jersey · Since 2004</p>
+          <p>Residential construction · New Jersey · Since 2004</p>
         </div>
       </div>
     </footer>
