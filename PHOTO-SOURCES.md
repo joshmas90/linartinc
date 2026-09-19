@@ -1,11 +1,13 @@
-# Linart project photography
+# Linart website photography
 
-The website images in `apps/web/public/images/projects` are optimized WebP derivatives of Linart Construction Facebook photographs supplied for this site update.
+The website images in `apps/web/public/images` are optimized WebP derivatives of Linart Construction Facebook photographs supplied for this site update.
 
 The source index is preserved below so each web asset can be traced back to the full-resolution archive and its Facebook photo ID.
 
 | Web folder | Facebook source indices |
 | --- | --- |
+| `home` | Cover photo `fbid=537208291434089`; 2, 51, 133 |
+| `about` | 27, 33 |
 | `hero` | 132 |
 | `featured` | 4, 38, 175 |
 | `company` | 33, 113 |

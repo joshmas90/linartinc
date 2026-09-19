@@ -6,24 +6,24 @@ import { ArrowRight, ArrowUpRight, Check, Phone } from 'lucide-react';
 
 const featured = [
   {
-    image: '/images/projects/featured/interior-deck-connection.webp',
-    alt: 'Finished interior transition to a new deck by Linart Construction',
-    type: 'Addition + Exterior',
-    title: 'An addition should feel inevitable—not appended.',
+    image: '/images/home/addition-framing.webp',
+    alt: 'Large second-story residential addition being framed by Linart Construction',
+    type: 'Addition in Progress',
+    title: 'Complex additions are built one coordinated decision at a time.',
     number: '01',
   },
   {
-    image: '/images/projects/featured/finished-kitchen.webp',
-    alt: 'Finished kitchen cabinetry, stone backsplash and range installation',
-    type: 'Interior Renovation',
-    title: 'Better proportion, clearer circulation, calmer material choices.',
+    image: '/images/home/finished-bathroom.webp',
+    alt: 'Finished bathroom with a freestanding tub, blue vanity and black fixtures',
+    type: 'Bathroom Remodeling',
+    title: 'Clean lines depend on careful layout and precise finish work.',
     number: '02',
   },
   {
-    image: '/images/projects/featured/modern-bathroom.webp',
-    alt: 'Finished bathroom with freestanding tub and black hexagonal tile',
-    type: 'Bath + Millwork',
-    title: 'Where waterproofing, layout and finish quality must all agree.',
+    image: '/images/home/elevated-deck-detail.webp',
+    alt: 'Elevated wood deck with cable railing and a finished covered area below',
+    type: 'Outdoor Living',
+    title: 'Structure and finish should read as one considered solution.',
     number: '03',
   },
 ];
@@ -49,9 +49,9 @@ const HomePage = () => (
 
     <section className="relative min-h-[94svh] overflow-hidden bg-[#0b0d10] text-white">
       <img
-        src="/images/projects/hero/elevated-deck.webp"
-        alt="Elevated deck addition built by Linart Construction in New Jersey"
-        className="absolute inset-0 h-full w-full object-cover opacity-68"
+        src="/images/home/linart-residence-hero.webp"
+        alt="Large brick and stone residence under construction by Linart Construction"
+        className="absolute inset-0 h-full w-full object-cover object-[56%_center] opacity-75"
         fetchPriority="high"
         decoding="async"
       />

@@ -60,16 +60,26 @@ const AboutPage = () => (
           </div>
 
           <div>
-            <div className="project-frame aspect-[4/5]">
-              <img
-                src="/images/projects/company/linart-jobsite.webp"
-                alt="Linart Construction truck at an active New Jersey residential jobsite"
-                loading="lazy"
-                decoding="async"
-              />
+            <div className="relative pb-16 sm:pl-10 lg:pb-20">
+              <div className="project-frame ml-auto aspect-[4/5] w-[88%]">
+                <img
+                  src="/images/about/linart-crew-framing.webp"
+                  alt="Linart Construction crew framing a residential addition in New Jersey"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="project-frame absolute bottom-0 left-0 aspect-[4/3] w-[62%] border-[8px] border-[#f3eee5] shadow-[0_18px_50px_rgba(11,13,16,0.18)]">
+                <img
+                  src="/images/about/linart-truck-jobsite.webp"
+                  alt="Linart Construction branded truck at an active residential jobsite"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
-            <p className="mt-4 text-[15px] leading-7 text-[#49443e]">
-              Real residential work in progress—planned, coordinated and managed by the Linart team.
+            <p className="mt-5 text-[15px] leading-7 text-[#49443e]">
+              Real Linart crews and active New Jersey residential work—the people, planning and accountability behind each project.
             </p>
           </div>
         </div>
