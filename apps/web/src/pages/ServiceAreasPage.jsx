@@ -74,9 +74,9 @@ const ServiceAreasPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-3 bg-deep-blue/10 px-6 py-3 rounded-full mb-6">
-              <MapPin className="text-deep-blue" size={24} />
-              <span className="text-deep-blue font-semibold text-lg">New Jersey & Beyond</span>
+            <div className="inline-flex items-center gap-3 bg-bronze/10 px-6 py-3 rounded-full mb-6">
+              <MapPin className="text-bronze" size={24} />
+              <span className="text-bronze font-semibold text-lg">New Jersey & Beyond</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-4">Where We Work</h2>
             <p className="text-lg text-slate-gray max-w-3xl mx-auto">
@@ -93,13 +93,13 @@ const ServiceAreasPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg p-8"
+                className="bg-[#FBFAF7] rounded-xl shadow-lg p-8"
               >
                 <h3 className="text-2xl font-bold text-charcoal mb-6">{region}</h3>
                 <ul className="space-y-3">
                   {counties.map((county) => (
                     <li key={county} className="flex items-start gap-3">
-                      <CheckCircle size={20} className="text-deep-blue flex-shrink-0 mt-1" />
+                      <CheckCircle size={20} className="text-bronze flex-shrink-0 mt-1" />
                       <span className="text-slate-gray">{county}</span>
                     </li>
                   ))}
@@ -152,7 +152,7 @@ const ServiceAreasPage = () => {
                   'Community reputation and accountability'
                 ].map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="text-deep-blue flex-shrink-0 mt-1" />
+                    <CheckCircle size={20} className="text-bronze flex-shrink-0 mt-1" />
                     <span className="text-slate-gray">{benefit}</span>
                   </li>
                 ))}
@@ -170,7 +170,7 @@ const ServiceAreasPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-xl shadow-lg p-8 md:p-12 text-center"
+            className="bg-[#FBFAF7] rounded-xl shadow-lg p-8 md:p-12 text-center"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-4">
               Don't See Your Area Listed?
@@ -180,7 +180,7 @@ const ServiceAreasPage = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-block bg-deep-blue text-warm-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="inline-block bg-charcoal text-warm-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Contact Us About Your Location
             </Link>
@@ -189,7 +189,7 @@ const ServiceAreasPage = () => {
       </section>
 
       {/* Service Commitment */}
-      <section className="py-16 bg-deep-blue text-warm-white">
+      <section className="py-16 bg-[#171D24] text-warm-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

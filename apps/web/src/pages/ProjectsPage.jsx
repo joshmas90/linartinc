@@ -106,8 +106,8 @@ const ProjectsPage = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   selectedCategory === category
-                    ? 'bg-deep-blue text-warm-white shadow-lg'
-                    : 'bg-white text-charcoal hover:bg-slate-gray/10 shadow'
+                    ? 'bg-charcoal text-warm-white shadow-lg ring-1 ring-bronze/30'
+                    : 'bg-[#FBFAF7] text-charcoal hover:bg-limestone/50 shadow-sm'
                 }`}
               >
                 {category}
@@ -133,7 +133,7 @@ const ProjectsPage = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+                  className="bg-[#FBFAF7] rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group"
                   onClick={() => setSelectedImage(project)}
                 >
                   <div className="relative h-64 overflow-hidden">
@@ -148,7 +148,7 @@ const ProjectsPage = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-charcoal mb-2">{project.title}</h3>
-                    <span className="inline-block bg-deep-blue/10 text-deep-blue px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="inline-block bg-bronze/10 text-[#765E3C] px-3 py-1 rounded-full text-sm font-semibold">
                       {project.category}
                     </span>
                   </div>
@@ -178,7 +178,7 @@ const ProjectsPage = () => {
             >
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 text-warm-white hover:text-deep-blue transition-colors duration-200"
+                className="absolute -top-12 right-0 text-warm-white hover:text-bronze transition-colors duration-200"
               >
                 <X size={32} />
               </button>

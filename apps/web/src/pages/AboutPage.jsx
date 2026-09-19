@@ -12,7 +12,7 @@ const AboutPage = () => {
       </Helmet>
 
       {/* Header */}
-      <section className="bg-slate-50 py-20">
+      <section className="bg-warm-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Our Story</h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -22,7 +22,7 @@ const AboutPage = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FBFAF7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
@@ -37,19 +37,19 @@ const AboutPage = () => {
                 When you hire Linart Construction, you are hiring a team that takes personal pride in every nail driven and every tile laid. We don't cut corners because our family name is on the line.
               </p>
 
-              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 mt-8">
+              <div className="bg-warm-white p-6 rounded-xl border border-[#D8D0C4] mt-8">
                 <h3 className="font-bold text-charcoal mb-4 text-xl">Why Homeowners Trust Us</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-deep-blue mt-1" size={20} />
+                    <CheckCircle className="text-bronze mt-1" size={20} />
                     <span><strong>Family-Owned Since 2004:</strong> Stability and accountability you can count on.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-deep-blue mt-1" size={20} />
+                    <CheckCircle className="text-bronze mt-1" size={20} />
                     <span><strong>Residential Specialists:</strong> We know homes inside and out.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-deep-blue mt-1" size={20} />
+                    <CheckCircle className="text-bronze mt-1" size={20} />
                     <span><strong>Serving NJ Homeowners:</strong> Local expertise in NJ building codes and styles.</span>
                   </li>
                 </ul>
@@ -67,14 +67,14 @@ const AboutPage = () => {
                 <h3 className="text-2xl font-bold mb-6">Our Experience by the Numbers</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex items-center gap-4">
-                    <Clock className="text-blue-400" size={32} />
+                    <Clock className="text-bronze" size={32} />
                     <div>
                       <div className="text-3xl font-bold">80+</div>
                       <div className="text-slate-400 text-sm">Years Combined Experience</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <Home className="text-blue-400" size={32} />
+                    <Home className="text-bronze" size={32} />
                     <div>
                       <div className="text-3xl font-bold">2004</div>
                       <div className="text-slate-400 text-sm">Year Established</div>
@@ -95,7 +95,7 @@ const AboutPage = () => {
             We believe that good communication is just as important as good carpentry. From our first meeting to the final walkthrough, we keep you informed. No hidden fees, no surprise delays, just honest work done right.
           </p>
           <div className="flex justify-center">
-            <Users size={48} className="text-deep-blue" />
+            <Users size={48} className="text-bronze" />
           </div>
         </div>
       </section>

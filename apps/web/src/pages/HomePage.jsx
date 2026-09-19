@@ -107,8 +107,8 @@ const HomePage = () => {
             alt="New Jersey residential construction project"
             className="h-full w-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0d1218]/95 via-[#0d1218]/78 to-[#0d1218]/28" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1218]/55 via-transparent to-[#0d1218]/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F14]/96 via-[#0B0F14]/76 to-[#0B0F14]/18" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F14]/62 via-transparent to-[#0B0F14]/18" />
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[92svh] max-w-7xl items-center px-5 pb-16 pt-32 sm:px-6 lg:px-8 lg:pt-36">
@@ -119,15 +119,15 @@ const HomePage = () => {
             className="max-w-4xl"
           >
             <div className="mb-7 flex items-center gap-3">
-              <span className="h-px w-10 bg-white/45" />
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75 sm:text-sm">
+              <span className="h-px w-10 bg-bronze" />
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D7C7A9] sm:text-sm">
                 New Jersey Residential Construction · Since 2004
               </p>
             </div>
 
             <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.045em] text-white sm:text-6xl md:text-7xl lg:text-[5.5rem]">
               Residential construction,
-              <span className="block text-white/72">elevated.</span>
+              <span className="block text-[#D7C7A9]">elevated.</span>
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/72 sm:text-xl">
@@ -163,10 +163,10 @@ const HomePage = () => {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 z-10 h-16 bg-gradient-to-t from-[#f6f5f2] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 z-10 h-16 bg-gradient-to-t from-[#F5F1E9] to-transparent" />
       </section>
 
-      <section className="bg-[#f6f5f2] py-24 sm:py-28">
+      <section className="bg-[#F5F1E9] py-24 sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
             <div>
@@ -204,7 +204,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="bg-white py-24 sm:py-28">
+      <section className="bg-[#FBFAF7] py-24 sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div>
@@ -226,13 +226,13 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.45, delay: index * 0.04 }}
-                className="group min-h-[320px] border-b border-r border-black/10 p-7 transition-colors duration-300 hover:bg-[#f7f6f3] sm:p-9"
+                className="group min-h-[320px] border-b border-r border-black/10 p-7 transition-colors duration-300 hover:bg-[#F2EDE4] sm:p-9"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold tracking-[0.2em] text-slate-400">
                     {service.number}
                   </span>
-                  <service.icon size={23} strokeWidth={1.5} className="text-slate-400 transition-colors group-hover:text-deep-blue" />
+                  <service.icon size={23} strokeWidth={1.5} className="text-[#8B8172] transition-colors group-hover:text-bronze" />
                 </div>
                 <h3 className="mt-14 text-2xl font-semibold tracking-[-0.025em] text-charcoal">
                   {service.title}
@@ -253,7 +253,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="bg-[#111820] py-24 text-white sm:py-28">
+      <section className="bg-[#0B0F14] py-24 text-white sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
@@ -282,12 +282,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="bg-[#f6f5f2] py-24 sm:py-28">
+      <section className="bg-[#F5F1E9] py-24 sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-[2rem] bg-deep-blue px-6 py-12 text-white sm:px-10 sm:py-14 lg:px-14">
+          <div className="overflow-hidden rounded-[2rem] border border-[#B0915D]/30 bg-[#171D24] px-6 py-12 text-white shadow-[0_30px_80px_rgba(11,15,20,0.16)] sm:px-10 sm:py-14 lg:px-14">
             <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C6A878]">
                   Start a Conversation
                 </p>
                 <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
@@ -301,14 +301,14 @@ const HomePage = () => {
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <Link
                   to="/contact"
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-bold text-deep-blue"
+                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#F5F1E9] px-7 text-sm font-bold text-charcoal"
                 >
                   Request an Estimate
                   <ArrowUpRight size={17} />
                 </Link>
                 <a
                   href="tel:6092097810"
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-white/25 px-7 text-sm font-semibold text-white"
+                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-[#B0915D]/45 px-7 text-sm font-semibold text-white"
                 >
                   <Phone size={17} />
                   609-209-7810

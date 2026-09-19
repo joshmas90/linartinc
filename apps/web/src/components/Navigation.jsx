@@ -33,7 +33,7 @@ const Navigation = () => {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled || !onHome
-          ? 'border-b border-white/10 bg-[#111820]/96 shadow-[0_10px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl'
+          ? 'border-b border-white/10 bg-[#0B0F14]/96 shadow-[0_10px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl'
           : 'bg-gradient-to-b from-black/45 to-transparent'
       }`}
     >
@@ -62,7 +62,7 @@ const Navigation = () => {
                   >
                     {link.name}
                     <span
-                      className={`absolute bottom-1 left-0 h-px bg-white transition-all duration-300 ${
+                      className={`absolute bottom-1 left-0 h-px bg-bronze transition-all duration-300 ${
                         active ? 'w-full' : 'w-0 group-hover:w-full'
                       }`}
                     />
@@ -83,7 +83,7 @@ const Navigation = () => {
 
             <Link
               to="/contact"
-              className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-[0.78rem] font-bold tracking-wide text-charcoal transition-transform hover:-translate-y-0.5"
+              className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#F5F1E9] px-5 text-[0.78rem] font-bold tracking-wide text-charcoal transition-transform hover:-translate-y-0.5"
             >
               Start a Project
               <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -108,7 +108,7 @@ const Navigation = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22 }}
-            className="fixed inset-0 z-40 bg-[#111820] lg:hidden"
+            className="fixed inset-0 z-40 bg-[#0B0F14] lg:hidden"
           >
             <div className="flex min-h-screen flex-col px-6 pb-8 pt-28">
               <div className="border-t border-white/12">

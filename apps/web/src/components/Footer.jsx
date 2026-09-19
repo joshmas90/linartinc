@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal text-slate-300 border-t border-slate-800">
+    <footer className="bg-charcoal text-slate-300 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
@@ -20,10 +20,10 @@ const Footer = () => {
               Your trusted partner for residential additions and remodeling in New Jersey. Family-owned and operated since 2004.
             </p>
             <div className="flex flex-col gap-2 pt-2">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-blue-400">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-bronze">
                 <CheckCircle size={14} /> Family Owned
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-blue-400">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-bronze">
                 <CheckCircle size={14} /> Fully Licensed & Insured
               </div>
             </div>
@@ -58,19 +58,19 @@ const Footer = () => {
             <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contact</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="text-deep-blue mt-0.5" size={18} />
+                <MapPin className="text-bronze mt-0.5" size={18} />
                 <span>Serving New Jersey &<br/>Surrounding Areas</span>
               </li>
               <li>
                 <a href="tel:6092097810" className="flex items-center gap-3 hover:text-white transition-colors">
-                  <Phone className="text-deep-blue" size={18} />
+                  <Phone className="text-bronze" size={18} />
                   609-209-7810
                 </a>
               </li>
               <li>
-                <a href="mailto:info@linartconstruction.com" className="flex items-center gap-3 hover:text-white transition-colors">
-                  <Mail className="text-deep-blue" size={18} />
-                  info@linartconstruction.com
+                <a href="mailto:services@linartinc.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                  <Mail className="text-bronze" size={18} />
+                  services@linartinc.com
                 </a>
               </li>
             </ul>
@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="border-t border-white/10 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>&copy; {currentYear} Linart Construction Inc. All rights reserved.</p>
           <p>Residential Additions & Remodeling Specialists</p>
         </div>

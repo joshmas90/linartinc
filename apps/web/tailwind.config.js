@@ -34,6 +34,12 @@ module.exports = {
         'deep-blue': {
           DEFAULT: 'hsl(var(--deep-blue))',
         },
+        bronze: {
+          DEFAULT: 'hsl(var(--bronze))',
+        },
+        limestone: {
+          DEFAULT: 'hsl(var(--limestone))',
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',

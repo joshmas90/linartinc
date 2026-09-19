@@ -62,7 +62,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services List */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-warm-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {services.map((service, index) => (
             <motion.div
@@ -87,9 +87,9 @@ const ServicesPage = () => {
                 <p className="text-lg text-slate-700 leading-relaxed">
                   {service.description}
                 </p>
-                <div className="bg-white p-6 rounded-lg border-l-4 border-deep-blue shadow-sm">
+                <div className="bg-[#FBFAF7] p-6 rounded-lg border-l-4 border-bronze shadow-sm">
                   <p className="text-slate-600 italic">
-                    <span className="font-bold text-deep-blue not-italic block mb-1">Why Choose This:</span>
+                    <span className="font-bold text-bronze not-italic block mb-1">Why Choose This:</span>
                     "{service.problemSolved}"
                   </p>
                 </div>
@@ -104,15 +104,15 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-deep-blue text-white">
+      <section className="py-20 bg-[#171D24] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-[#D8D0C4] mb-8">
             Don't settle for a contractor who cuts corners. Choose experience and quality.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-white text-deep-blue px-8 py-4 rounded-lg text-lg font-bold hover:bg-slate-100 transition-all duration-200 shadow-lg"
+            className="inline-flex items-center gap-2 bg-[#F5F1E9] text-charcoal px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#E8E0D3] transition-all duration-200 shadow-lg"
           >
             Request a Free Estimate <ArrowRight size={20} />
           </Link>

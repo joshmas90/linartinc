@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Phone, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
 const ContactPage = () => {
@@ -66,24 +66,31 @@ const ContactPage = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-warm-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Prominent Phone Number */}
-          <div className="bg-white rounded-xl shadow-md p-8 mb-10 text-center border border-slate-100">
+          <div className="bg-[#FBFAF7] rounded-xl shadow-md p-8 mb-10 text-center border border-[#E1D9CD]">
             <h2 className="text-2xl font-bold text-charcoal mb-4">Immediate Assistance</h2>
             <p className="text-slate-600 mb-6">Prefer to speak with someone right away?</p>
             <a 
               href="tel:6092097810" 
-              className="inline-flex items-center gap-3 text-3xl font-bold text-deep-blue hover:text-blue-700 transition-colors"
+              className="inline-flex items-center gap-3 text-3xl font-bold text-charcoal hover:text-bronze transition-colors"
             >
               <Phone size={32} />
               609-209-7810
             </a>
-            <p className="text-sm text-slate-500 mt-4 font-semibold uppercase tracking-wider">Free Estimates Available</p>
+            <div className="mt-5 flex flex-col items-center justify-center gap-2 text-sm text-slate-500 sm:flex-row sm:gap-4">
+              <span className="font-semibold uppercase tracking-wider">Free Estimates Available</span>
+              <span className="hidden text-[#B0915D] sm:inline">•</span>
+              <a href="mailto:services@linartinc.com" className="inline-flex items-center gap-2 font-semibold text-charcoal transition-colors hover:text-bronze">
+                <Mail size={16} />
+                services@linartinc.com
+              </a>
+            </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
+          <div className="bg-[#FBFAF7] rounded-xl shadow-lg p-8 md:p-12">
             <h2 className="text-2xl font-bold text-charcoal mb-6">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -97,7 +104,7 @@ const ContactPage = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-blue focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-warm-white border border-[#D8D0C4] rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze focus:border-transparent transition-all"
                     placeholder="Your Name"
                   />
                 </div>
@@ -112,7 +119,7 @@ const ContactPage = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-blue focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-warm-white border border-[#D8D0C4] rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze focus:border-transparent transition-all"
                     placeholder="609-209-7810"
                   />
                 </div>
@@ -128,7 +135,7 @@ const ContactPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-blue focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-warm-white border border-[#D8D0C4] rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze focus:border-transparent transition-all"
                   placeholder="name@example.com"
                 />
               </div>
@@ -143,14 +150,14 @@ const ContactPage = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-blue focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 bg-warm-white border border-[#D8D0C4] rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze focus:border-transparent transition-all resize-none"
                   placeholder="Tell us about your project (e.g., Kitchen Remodel, Home Addition...)"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-deep-blue text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-blue-800 transition-all duration-200 shadow-md flex items-center justify-center gap-2"
+                className="w-full bg-charcoal text-warm-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#171D24] transition-all duration-200 shadow-md flex items-center justify-center gap-2"
               >
                 <Send size={20} />
                 Request Free Estimate

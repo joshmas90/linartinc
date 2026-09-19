@@ -4,30 +4,32 @@
 
 @layer base {
   :root {
-    --charcoal: 214 29% 10%;
-    --slate-gray: 215 13% 43%;
-    --warm-white: 40 23% 97%;
-    --deep-blue: 215 78% 34%;
+    --charcoal: 216 28% 7%;
+    --slate-gray: 213 9% 45%;
+    --warm-white: 40 36% 95%;
+    --deep-blue: 212 25% 22%;
+    --bronze: 37 30% 50%;
+    --limestone: 37 26% 88%;
 
-    --background: 40 23% 97%;
-    --foreground: 214 29% 10%;
+    --background: 40 36% 95%;
+    --foreground: 216 28% 7%;
     --card: 0 0% 100%;
-    --card-foreground: 214 29% 10%;
+    --card-foreground: 216 28% 7%;
     --popover: 0 0% 100%;
-    --popover-foreground: 214 29% 10%;
-    --primary: 215 78% 34%;
+    --popover-foreground: 216 28% 7%;
+    --primary: 212 25% 22%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 40 17% 94%;
-    --secondary-foreground: 214 29% 10%;
-    --muted: 40 17% 94%;
-    --muted-foreground: 215 13% 43%;
-    --accent: 40 17% 94%;
-    --accent-foreground: 214 29% 10%;
+    --secondary: 37 26% 88%;
+    --secondary-foreground: 216 28% 7%;
+    --muted: 37 26% 88%;
+    --muted-foreground: 213 9% 45%;
+    --accent: 37 30% 50%;
+    --accent-foreground: 216 28% 7%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 18% 88%;
-    --input: 214 18% 88%;
-    --ring: 215 78% 34%;
+    --border: 37 18% 82%;
+    --input: 37 18% 82%;
+    --ring: 37 30% 50%;
     --radius: 0.75rem;
   }
 
@@ -37,11 +39,11 @@
 
   html {
     scroll-behavior: smooth;
-    background: #111820;
+    background: #0B0F14;
   }
 
   body {
-    @apply bg-white text-charcoal antialiased;
+    @apply bg-warm-white text-charcoal antialiased;
     margin: 0;
     min-width: 320px;
     font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -70,7 +72,7 @@
 
 @layer components {
   .premium-eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.22em] text-slate-400;
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-bronze;
   }
 
   .premium-heading {
@@ -109,6 +111,26 @@
 
   .bg-deep-blue {
     background-color: hsl(var(--deep-blue));
+  }
+
+  .text-bronze {
+    color: hsl(var(--bronze));
+  }
+
+  .bg-bronze {
+    background-color: hsl(var(--bronze));
+  }
+
+  .border-bronze {
+    border-color: hsl(var(--bronze));
+  }
+
+  .text-limestone {
+    color: hsl(var(--limestone));
+  }
+
+  .bg-limestone {
+    background-color: hsl(var(--limestone));
   }
 }
 
