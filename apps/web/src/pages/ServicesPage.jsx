@@ -1,125 +1,113 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
-const ServicesPage = () => {
-  const services = [
-    {
-      title: 'Home Additions',
-      description: 'Expand your square footage without moving. Whether you need a master suite addition, a second-story extension, or a larger family room, we manage the entire structural and finishing process.',
-      problemSolved: 'Perfect for growing families who love their neighborhood but have outgrown their current house.',
-      image: 'https://images.unsplash.com/photo-1650018984119-8a3fa781fa19'
-    },
-    {
-      title: 'Kitchen Remodeling',
-      description: 'We renovate kitchens to improve workflow, storage, and style. Our team handles demolition, plumbing, electrical, cabinet installation, and custom countertops to create a durable, beautiful kitchen.',
-      problemSolved: 'Solves issues with cramped layouts, outdated appliances, and insufficient storage space.',
-      image: 'https://images.unsplash.com/photo-1694678902977-e1ad83139572'
-    },
-    {
-      title: 'Bathroom Remodeling',
-      description: 'From hall baths to luxury master spas, we specialize in watertight, high-quality bathroom renovations. We install new vanities, tile showers, soaking tubs, and modern fixtures.',
-      problemSolved: 'Fixes water damage risks, outdated designs, and poor functionality in older bathrooms.',
-      image: 'https://images.unsplash.com/photo-1618836003104-ec6d67239040'
-    },
-    {
-      title: 'Basement Finishing',
-      description: 'Transform your cold, concrete basement into a warm, inviting living area. We frame, insulate, and finish basements to create home theaters, gyms, offices, or playrooms.',
-      problemSolved: 'Maximizes the usable space in your home by converting neglected storage areas into functional rooms.',
-      image: 'https://images.unsplash.com/photo-1539378404613-121bbd5e4b55'
-    },
-    {
-      title: 'Full Home Renovations',
-      description: 'Comprehensive gut renovations for older homes. We update systems (HVAC, electric, plumbing) while preserving character, or completely modernize the interior layout.',
-      problemSolved: 'Ideal for fixer-upper purchases or revitalizing an aging family property.',
-      image: 'https://images.unsplash.com/photo-1507955378777-934d1d6635af'
-    },
-    {
-      title: 'Structural Remodeling',
-      description: 'Expert removal of load-bearing walls, beam installation, and structural repairs. We ensure the integrity of your home while opening up floor plans.',
-      problemSolved: 'Enables open-concept living in older, compartmented homes safely and legally.',
-      image: 'https://images.unsplash.com/photo-1682697285306-9bf98aa0100d'
-    }
-  ];
+const services = [
+  {
+    number: '01',
+    title: 'Home Additions',
+    copy: 'Expansions planned to feel connected to the original house—not appended to it.',
+    details: ['Structural framing', 'Exterior envelope', 'Interior integration', 'Finish coordination'],
+  },
+  {
+    number: '02',
+    title: 'Whole-Home Renovations',
+    copy: 'Large-scope renovation work coordinated across rooms, systems and trades.',
+    details: ['Phased planning', 'Interior reconfiguration', 'Finish consistency', 'Trade coordination'],
+  },
+  {
+    number: '03',
+    title: 'Kitchen Remodeling',
+    copy: 'Kitchens designed around circulation, storage, durable materials and clean installation.',
+    details: ['Layout', 'Cabinetry', 'Lighting', 'Fixtures + finish work'],
+  },
+  {
+    number: '04',
+    title: 'Bathroom Remodeling',
+    copy: 'Bathrooms built around waterproofing, precise tilework and durable daily use.',
+    details: ['Waterproofing', 'Tile', 'Fixtures', 'Ventilation + finish'],
+  },
+  {
+    number: '05',
+    title: 'Basement Finishing',
+    copy: 'Comfortable lower-level living space planned around the realities of the existing home.',
+    details: ['Layout', 'Moisture considerations', 'Mechanical integration', 'Finish work'],
+  },
+  {
+    number: '06',
+    title: 'Structural Remodeling',
+    copy: 'Major reconfiguration and load-bearing changes approached with careful planning and sequencing.',
+    details: ['Openings', 'Load-bearing changes', 'Reconfiguration', 'Trade coordination'],
+  },
+];
 
-  return (
-    <>
-      <Helmet>
-        <title>Our Services - Residential Remodeling NJ</title>
-        <meta name="description" content="Expert residential services: Home additions, kitchen & bathroom remodeling, basement finishing, and structural renovations in New Jersey." />
-      </Helmet>
+const ServicesPage = () => (
+  <>
+    <Helmet>
+      <title>Residential Construction Services | Linart Construction Inc.</title>
+      <meta name="description" content="Home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing and structural remodeling in New Jersey." />
+    </Helmet>
 
-      {/* Header */}
-      <section className="bg-charcoal text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Professional craftsmanship for every room in your house.
+    <section className="bg-[#0b0d10] pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+      <div className="site-container">
+        <p className="eyebrow">Capabilities</p>
+        <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
+          <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
+            Residential work,
+            <span className="block italic text-[#d7c6a9]">properly coordinated.</span>
+          </h1>
+          <p className="max-w-xl text-sm leading-7 text-white/52 sm:text-base sm:leading-8">
+            The service list matters less than how the work is managed. Linart focuses on substantial residential projects where sequencing, communication and finish quality all matter.
           </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* Services List */}
-      <section className="py-20 bg-warm-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-10 items-center`}
-            >
-              <div className="w-full lg:w-1/2">
-                <div className="relative h-64 md:h-96 w-full rounded-xl overflow-hidden shadow-lg">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
+    <section className="bg-[#f5f1e8] py-16 sm:py-24">
+      <div className="site-container">
+        <div className="grid gap-12 lg:grid-cols-[0.38fr_0.62fr]">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <div className="project-frame aspect-[4/5]">
+              <img src="/placeholders/service-detail.svg" alt="Temporary construction detail placeholder" />
+            </div>
+            <p className="mt-4 text-xs leading-5 text-[#81786c]">
+              Replace this placeholder with a strong Linart detail image: craftsmanship, framing, millwork, tile or finish work.
+            </p>
+          </div>
+
+          <div className="border-t hairline">
+            {services.map((service) => (
+              <div key={service.number} className="grid gap-5 border-b hairline py-8 sm:grid-cols-[60px_1fr]">
+                <span className="text-[10px] tracking-[0.2em] text-[#8a8175]">{service.number}</span>
+                <div>
+                  <h2 className="display-serif text-4xl leading-none sm:text-5xl">{service.title}</h2>
+                  <p className="body-copy mt-4 max-w-2xl">{service.copy}</p>
+                  <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-xs uppercase tracking-[0.1em] text-[#69645c] sm:grid-cols-4">
+                    {service.details.map((detail) => <span key={detail}>{detail}</span>)}
+                  </div>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 space-y-6">
-                <h2 className="text-3xl font-bold text-charcoal">{service.title}</h2>
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="bg-[#FBFAF7] p-6 rounded-lg border-l-4 border-bronze shadow-sm">
-                  <p className="text-slate-600 italic">
-                    <span className="font-bold text-bronze not-italic block mb-1">Why Choose This:</span>
-                    "{service.problemSolved}"
-                  </p>
-                </div>
-                <div className="pt-2">
-                  <p className="text-sm font-semibold text-charcoal mb-2 uppercase tracking-wide"></p>
-                  <p className="text-slate-600"></p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-[#171D24] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-          <p className="text-xl text-[#D8D0C4] mb-8">
-            Don't settle for a contractor who cuts corners. Choose experience and quality.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-[#F5F1E9] text-charcoal px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#E8E0D3] transition-all duration-200 shadow-lg"
-          >
-            Request a Free Estimate <ArrowRight size={20} />
-          </Link>
+    <section className="bg-[#d8d0c4] py-16 sm:py-20">
+      <div className="site-container flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="eyebrow">Next Step</p>
+          <h2 className="display-serif mt-4 max-w-4xl text-5xl leading-none sm:text-6xl">
+            Tell us what you are considering. We’ll help define the right conversation.
+          </h2>
         </div>
-      </section>
-    </>
-  );
-};
+        <Link to="/contact" className="premium-button-dark shrink-0">
+          Discuss Your Project <ArrowUpRight size={16} />
+        </Link>
+      </div>
+    </section>
+  </>
+);
 
 export default ServicesPage;

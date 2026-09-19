@@ -1,167 +1,159 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
-import { Phone, Mail, Send } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
+import { Mail, Phone, ArrowUpRight } from 'lucide-react';
+
+const initial = {
+  name: '',
+  email: '',
+  phone: '',
+  city: '',
+  service: 'Home Addition',
+  timing: 'Planning / researching',
+  contact: 'Phone',
+  message: '',
+};
 
 const ContactPage = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
+  const [form, setForm] = useState(initial);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const change = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.phone || !formData.email || !formData.message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
+    const subject = encodeURIComponent(`Linart project inquiry — ${form.service} — ${form.city || 'NJ'}`);
+    const body = encodeURIComponent(
+`Name: ${form.name}
+Email: ${form.email}
+Phone: ${form.phone}
+City / ZIP: ${form.city}
+Project type: ${form.service}
+Timing: ${form.timing}
+Preferred contact: ${form.contact}
 
-    // Success simulation
-    toast({
-      title: "Request Sent Successfully!",
-      description: "Thanks for contacting Linart Construction. We'll be in touch shortly.",
-      variant: "default" 
-    });
-
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
+Project description:
+${form.message}`
+    );
+    window.location.href = `mailto:services@linartinc.com?subject=${subject}&body=${body}`;
   };
+
+  const inputClass =
+    'w-full border-0 border-b border-black/20 bg-transparent px-0 py-3 text-sm outline-none transition-colors placeholder:text-black/30 focus:border-[#9b7b4f] focus:ring-0';
 
   return (
     <>
       <Helmet>
-        <title>Contact Linart Construction - Free Estimates</title>
-        <meta name="description" content="Contact us today for a free estimate on your residential remodeling project in New Jersey. Call 609-209-7810." />
+        <title>Start a Project | Linart Construction Inc.</title>
+        <meta name="description" content="Contact Linart Construction Inc. about a residential addition, renovation or remodeling project in New Jersey." />
       </Helmet>
 
-      {/* Header */}
-      <section className="bg-charcoal text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-slate-300">
-            Contact Linart Construction Inc. to discuss your project and request a free estimate.
-          </p>
+      <section className="bg-[#0b0d10] pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+        <div className="site-container">
+          <p className="eyebrow">Project Inquiry</p>
+          <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
+            <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
+              Tell us what
+              <span className="block italic text-[#d7c6a9]">you’re planning.</span>
+            </h1>
+            <p className="max-w-xl text-sm leading-7 text-white/52 sm:text-base sm:leading-8">
+              The first conversation is about fit: where the project is, what you want to change, your timing and the level of work involved.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 bg-warm-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Prominent Phone Number */}
-          <div className="bg-[#FBFAF7] rounded-xl shadow-md p-8 mb-10 text-center border border-[#E1D9CD]">
-            <h2 className="text-2xl font-bold text-charcoal mb-4">Immediate Assistance</h2>
-            <p className="text-slate-600 mb-6">Prefer to speak with someone right away?</p>
-            <a 
-              href="tel:6092097810" 
-              className="inline-flex items-center gap-3 text-3xl font-bold text-charcoal hover:text-bronze transition-colors"
-            >
-              <Phone size={32} />
-              609-209-7810
-            </a>
-            <div className="mt-5 flex flex-col items-center justify-center gap-2 text-sm text-slate-500 sm:flex-row sm:gap-4">
-              <span className="font-semibold uppercase tracking-wider">Free Estimates Available</span>
-              <span className="hidden text-[#B0915D] sm:inline">•</span>
-              <a href="mailto:services@linartinc.com" className="inline-flex items-center gap-2 font-semibold text-charcoal transition-colors hover:text-bronze">
-                <Mail size={16} />
-                services@linartinc.com
+      <section className="bg-[#f5f1e8] py-20 sm:py-28">
+        <div className="site-container">
+          <div className="grid gap-14 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
+            <aside>
+              <p className="eyebrow">Direct Contact</p>
+              <a href="tel:6092097810" className="mt-5 flex items-center gap-3 text-xl font-semibold">
+                <Phone size={18} className="text-[#9b7b4f]" /> 609-209-7810
               </a>
-            </div>
-          </div>
+              <a href="mailto:services@linartinc.com" className="mt-4 flex items-center gap-3 text-sm text-[#5f5a52] hover:text-black">
+                <Mail size={17} className="text-[#9b7b4f]" /> services@linartinc.com
+              </a>
 
-          <div className="bg-[#FBFAF7] rounded-xl shadow-lg p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-charcoal mb-6">Send Us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-slate-700 mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-warm-white border border-[#D8D0C4] rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze focus:border-transparent transition-all"
-                    placeholder="Your Name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-bold text-slate-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-warm-white border border-[#D8D0C4] rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze focus:border-transparent transition-all"
-                    placeholder="609-209-7810"
-                  />
-                </div>
+              <div className="mt-10 border-t hairline pt-6">
+                <p className="text-xs uppercase tracking-[0.16em] text-[#77726a]">What helps</p>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-[#625d55]">
+                  <li>• Municipality or ZIP</li>
+                  <li>• Type of project</li>
+                  <li>• Approximate timing</li>
+                  <li>• A short description of the work</li>
+                </ul>
               </div>
+            </aside>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-bold text-slate-700 mb-2">
-                  Email Address *
+            <form onSubmit={submit} className="border-t hairline">
+              <div className="grid gap-x-8 sm:grid-cols-2">
+                <label className="py-5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77726a]">Name</span>
+                  <input required name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your name" />
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-warm-white border border-[#D8D0C4] rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze focus:border-transparent transition-all"
-                  placeholder="name@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-bold text-slate-700 mb-2">
-                  Project Description *
+                <label className="py-5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77726a]">City / ZIP</span>
+                  <input required name="city" value={form.city} onChange={change} className={inputClass} placeholder="Project location" />
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="5"
-                  className="w-full px-4 py-3 bg-warm-white border border-[#D8D0C4] rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze focus:border-transparent transition-all resize-none"
-                  placeholder="Tell us about your project (e.g., Kitchen Remodel, Home Addition...)"
-                ></textarea>
+                <label className="py-5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77726a]">Email</span>
+                  <input required type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="name@example.com" />
+                </label>
+                <label className="py-5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77726a]">Phone</span>
+                  <input required type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="Phone number" />
+                </label>
+                <label className="py-5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77726a]">Project Type</span>
+                  <select name="service" value={form.service} onChange={change} className={inputClass}>
+                    <option>Home Addition</option>
+                    <option>Whole-Home Renovation</option>
+                    <option>Kitchen Remodeling</option>
+                    <option>Bathroom Remodeling</option>
+                    <option>Basement Finishing</option>
+                    <option>Structural Remodeling</option>
+                    <option>Other Residential Work</option>
+                  </select>
+                </label>
+                <label className="py-5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77726a]">Timing</span>
+                  <select name="timing" value={form.timing} onChange={change} className={inputClass}>
+                    <option>Planning / researching</option>
+                    <option>Within 3 months</option>
+                    <option>3–6 months</option>
+                    <option>6–12 months</option>
+                    <option>12+ months</option>
+                  </select>
+                </label>
+                <label className="py-5 sm:col-span-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77726a]">Preferred Contact</span>
+                  <select name="contact" value={form.contact} onChange={change} className={inputClass}>
+                    <option>Phone</option>
+                    <option>Email</option>
+                    <option>Text</option>
+                  </select>
+                </label>
+                <label className="py-5 sm:col-span-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77726a]">Project Description</span>
+                  <textarea
+                    required
+                    name="message"
+                    value={form.message}
+                    onChange={change}
+                    rows="6"
+                    className={`${inputClass} resize-none`}
+                    placeholder="What are you looking to change?"
+                  />
+                </label>
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-charcoal text-warm-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#171D24] transition-all duration-200 shadow-md flex items-center justify-center gap-2"
-              >
-                <Send size={20} />
-                Request Free Estimate
-              </button>
+              <div className="flex flex-col gap-4 border-t hairline pt-7 sm:flex-row sm:items-center sm:justify-between">
+                <p className="max-w-md text-xs leading-5 text-[#81786c]">
+                  This version opens your email application with the project brief pre-addressed to services@linartinc.com. A server-side submission can be added next.
+                </p>
+                <button type="submit" className="premium-button-dark shrink-0">
+                  Email Project Brief <ArrowUpRight size={16} />
+                </button>
+              </div>
             </form>
           </div>
         </div>

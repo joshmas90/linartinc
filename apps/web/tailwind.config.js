@@ -11,9 +11,7 @@ module.exports = {
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
+      screens: { '2xl': '1440px' },
     },
     extend: {
       colors: {
@@ -22,24 +20,12 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        charcoal: {
-          DEFAULT: 'hsl(var(--charcoal))',
-        },
-        'slate-gray': {
-          DEFAULT: 'hsl(var(--slate-gray))',
-        },
-        'warm-white': {
-          DEFAULT: 'hsl(var(--warm-white))',
-        },
-        'deep-blue': {
-          DEFAULT: 'hsl(var(--deep-blue))',
-        },
-        bronze: {
-          DEFAULT: 'hsl(var(--bronze))',
-        },
-        limestone: {
-          DEFAULT: 'hsl(var(--limestone))',
-        },
+        charcoal: { DEFAULT: 'hsl(var(--charcoal))' },
+        'slate-gray': { DEFAULT: 'hsl(var(--slate-gray))' },
+        'warm-white': { DEFAULT: 'hsl(var(--warm-white))' },
+        'deep-blue': { DEFAULT: 'hsl(var(--deep-blue))' },
+        bronze: { DEFAULT: 'hsl(var(--bronze))' },
+        limestone: { DEFAULT: 'hsl(var(--limestone))' },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -73,20 +59,6 @@ module.exports = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: 0 },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
-        },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },

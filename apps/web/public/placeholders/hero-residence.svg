@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0" stop-color="#171b20"/>
+    <stop offset="1" stop-color="#8a8175"/>
+  </linearGradient>
+  <linearGradient id="wash" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#f5f1e8" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#0b0d10" stop-opacity=".42"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="1100" fill="url(#bg)"/>
+<rect width="1600" height="1100" fill="url(#wash)"/>
+<path d="M260 740 L630 370 L990 600 L1260 455 L1450 740 Z" fill="#0b0d10" opacity=".58"/><path d="M610 375 L930 165 L1280 455 L995 600 Z" fill="#c6b08a" opacity=".42"/><rect x="720" y="505" width="170" height="235" fill="#f5f1e8" opacity=".18"/><rect x="1060" y="565" width="185" height="175" fill="#f5f1e8" opacity=".12"/>
+<line x1="110" y1="930" x2="1490" y2="930" stroke="#d7c6a9" stroke-opacity=".45"/>
+<text x="110" y="995" fill="#f5f1e8" font-family="Arial, sans-serif" font-size="27" letter-spacing="9">LINART PROJECT PHOTOGRAPHY</text>
+<text x="110" y="1045" fill="#d7c6a9" font-family="Arial, sans-serif" font-size="18" letter-spacing="5">HERO IMAGE PLACEHOLDER</text>
+</svg>

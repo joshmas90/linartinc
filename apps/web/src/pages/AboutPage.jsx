@@ -1,106 +1,113 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
-import { CheckCircle, Users, Clock, Home } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
-const AboutPage = () => {
-  return (
-    <>
-      <Helmet>
-        <title>About Linart Construction Inc. - Family Owned Since 2004</title>
-        <meta name="description" content="Learn about Linart Construction Inc., a family-owned residential remodeling contractor serving New Jersey since 2004 with 80+ years of combined experience." />
-      </Helmet>
+const AboutPage = () => (
+  <>
+    <Helmet>
+      <title>About Linart Construction Inc. | Family-Owned Since 2004</title>
+      <meta name="description" content="Linart Construction Inc. is a family-owned New Jersey residential construction company established in 2004." />
+    </Helmet>
 
-      {/* Header */}
-      <section className="bg-warm-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Our Story</h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Honest work. Quality materials. A family business built on reputation.
+    <section className="bg-[#0b0d10] pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+      <div className="site-container">
+        <p className="eyebrow">About Linart</p>
+        <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
+          <h1 className="display-serif text-6xl leading-[0.88] tracking-[-0.045em] sm:text-8xl lg:text-[7.5rem]">
+            The family name
+            <span className="block italic text-[#d7c6a9]">is on the work.</span>
+          </h1>
+          <p className="max-w-xl text-sm leading-7 text-white/52 sm:text-base sm:leading-8">
+            Linart Construction has been family-owned since 2004. The company’s reputation is built one project at a time, in the same communities where the team lives and works.
           </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* Main Content */}
-      <section className="py-20 bg-[#FBFAF7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
-              <h2 className="text-3xl font-bold text-charcoal mb-4">Family-Owned & Operated Since 2004</h2>
+    <section className="bg-[#f5f1e8] py-20 sm:py-28">
+      <div className="site-container">
+        <div className="grid gap-14 lg:grid-cols-[0.56fr_0.44fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">The Company</p>
+            <h2 className="section-title mt-5">Established experience. Personal accountability.</h2>
+            <div className="mt-8 space-y-6 body-copy">
               <p>
-                Linart Construction Inc. was founded in 2004 with a clear mission: to provide New Jersey homeowners with a reliable, skilled, and honest partner for their renovation needs. We aren't a massive corporate franchise. We are a family-owned business that lives and works in the same communities you do.
+                Linart Construction Inc. was established in 2004 to provide New Jersey homeowners with experienced residential construction and remodeling services.
               </p>
               <p>
-                Over the last two decades, we have focused exclusively on residential projects. We understand that remodeling isn't just about lumber and drywall—it's about respecting your home, minimizing disruption to your daily life, and delivering a finished product that stands the test of time.
+                The company focuses on residential additions, renovations, kitchens, bathrooms, basements and structural remodeling. The work may change from project to project; the standard should not.
               </p>
               <p>
-                When you hire Linart Construction, you are hiring a team that takes personal pride in every nail driven and every tile laid. We don't cut corners because our family name is on the line.
+                Planning, site management, communication and finish quality are treated as parts of the same job. That is the operating idea behind the company and the standard the redesigned site is built to communicate.
               </p>
-
-              <div className="bg-warm-white p-6 rounded-xl border border-[#D8D0C4] mt-8">
-                <h3 className="font-bold text-charcoal mb-4 text-xl">Why Homeowners Trust Us</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-bronze mt-1" size={20} />
-                    <span><strong>Family-Owned Since 2004:</strong> Stability and accountability you can count on.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-bronze mt-1" size={20} />
-                    <span><strong>Residential Specialists:</strong> We know homes inside and out.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-bronze mt-1" size={20} />
-                    <span><strong>Serving NJ Homeowners:</strong> Local expertise in NJ building codes and styles.</span>
-                  </li>
-                </ul>
-              </div>
             </div>
 
-            <div className="space-y-8">
-              <img
-                src="https://images.unsplash.com/photo-1682697285306-9bf98aa0100d"
-                alt="Construction team reviewing plans"
-                className="w-full rounded-xl shadow-lg"
-              />
-              
-              <div className="bg-charcoal text-white p-8 rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-6">Our Experience by the Numbers</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex items-center gap-4">
-                    <Clock className="text-bronze" size={32} />
-                    <div>
-                      <div className="text-3xl font-bold">80+</div>
-                      <div className="text-slate-400 text-sm">Years Combined Experience</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Home className="text-bronze" size={32} />
-                    <div>
-                      <div className="text-3xl font-bold">2004</div>
-                      <div className="text-slate-400 text-sm">Year Established</div>
-                    </div>
-                  </div>
-                </div>
+            <div className="mt-12 grid grid-cols-2 border-y hairline sm:grid-cols-3">
+              <div className="py-6">
+                <div className="display-serif text-4xl">2004</div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.16em] text-[#77726a]">Established</div>
+              </div>
+              <div className="border-l hairline px-6 py-6">
+                <div className="display-serif text-4xl">80+</div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.16em] text-[#77726a]">Combined years</div>
+              </div>
+              <div className="col-span-2 border-t hairline py-6 sm:col-span-1 sm:border-l sm:border-t-0 sm:px-6">
+                <div className="display-serif text-4xl">NJ</div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.16em] text-[#77726a]">Residential focus</div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Service Commitment */}
-      <section className="py-20 bg-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-charcoal mb-6">Our Commitment to You</h2>
-          <p className="text-xl text-slate-700 leading-relaxed mb-8">
-            We believe that good communication is just as important as good carpentry. From our first meeting to the final walkthrough, we keep you informed. No hidden fees, no surprise delays, just honest work done right.
-          </p>
-          <div className="flex justify-center">
-            <Users size={48} className="text-bronze" />
+          <div>
+            <div className="project-frame aspect-[4/5]">
+              <img src="/placeholders/about-team.svg" alt="Temporary Linart team and project placeholder" />
+            </div>
+            <p className="mt-4 text-xs leading-5 text-[#81786c]">
+              Recommended replacement: Linart owner/team on a real project site, photographed naturally rather than posed.
+            </p>
           </div>
         </div>
-      </section>
-    </>
-  );
-};
+      </div>
+    </section>
+
+    <section className="bg-[#171b20] py-20 text-white sm:py-24">
+      <div className="site-container">
+        <div className="grid gap-12 lg:grid-cols-[0.55fr_1fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">What Clients Should Feel</p>
+            <h2 className="display-serif mt-5 text-5xl leading-[0.95] sm:text-6xl">Confidence before the finish line.</h2>
+          </div>
+          <div className="border-t border-white/14">
+            {[
+              ['Clarity', 'The scope, decisions and next steps should be understandable.'],
+              ['Respect', 'The home remains a home while construction is underway.'],
+              ['Continuity', 'The details should be carried consistently from planning through closeout.'],
+              ['Accountability', 'A problem should have an owner, not a chain of excuses.'],
+            ].map(([title, copy], i) => (
+              <div key={title} className="grid gap-3 border-b border-white/14 py-6 sm:grid-cols-[70px_170px_1fr]">
+                <span className="text-[10px] tracking-[0.2em] text-white/30">0{i + 1}</span>
+                <h3 className="font-semibold">{title}</h3>
+                <p className="text-sm leading-7 text-white/50">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-[#d8d0c4] py-16 sm:py-20">
+      <div className="site-container flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="eyebrow">See the Work</p>
+          <h2 className="display-serif mt-4 text-5xl leading-none sm:text-6xl">The portfolio should prove the promise.</h2>
+        </div>
+        <Link to="/projects" className="link-arrow text-[#0b0d10]">
+          View projects <ArrowRight size={16} />
+        </Link>
+      </div>
+    </section>
+  </>
+);
 
 export default AboutPage;
