@@ -24,7 +24,7 @@ const ServiceAreasPage = () => (
             New Jersey,
             <span className="block italic text-[#d7c6a9]">project by project.</span>
           </h1>
-          <p className="max-w-xl text-sm leading-7 text-white/52 sm:text-base sm:leading-8">
+          <p className="max-w-xl text-[16px] leading-8 text-white/76 sm:text-[17px]">
             Linart works throughout New Jersey. Project fit depends on scope, schedule and location—not on whether a town happens to appear in a marketing list.
           </p>
         </div>
@@ -38,7 +38,7 @@ const ServiceAreasPage = () => (
             <div className="project-frame aspect-[4/5]">
               <img src="/placeholders/service-map.svg" alt="Temporary New Jersey service area visual" />
             </div>
-            <div className="mt-4 flex items-start gap-3 text-xs leading-5 text-[#81786c]">
+            <div className="mt-4 flex items-start gap-3 text-[13px] leading-6 text-[#575149]">
               <MapPin size={15} className="mt-0.5 shrink-0 text-[#9b7b4f]" />
               Replace with a real New Jersey project map or a strong geographic/project montage once final assets are selected.
             </div>
@@ -55,7 +55,7 @@ const ServiceAreasPage = () => (
               {groups.map(([region, counties]) => (
                 <div key={region} className="grid gap-5 border-b hairline py-7 sm:grid-cols-[180px_1fr]">
                   <h3 className="font-semibold">{region}</h3>
-                  <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#68625a]">
+                  <div className="flex flex-wrap gap-x-5 gap-y-2 text-[15px] text-[#49443e]">
                     {counties.map((county) => <span key={county}>{county} County</span>)}
                   </div>
                 </div>
@@ -63,7 +63,7 @@ const ServiceAreasPage = () => (
             </div>
 
             <div className="mt-8 border-l-2 border-[#9b7b4f] pl-5">
-              <p className="text-sm leading-7 text-[#5f5a52]">
+              <p className="text-[15px] leading-7 text-[#45413b]">
                 Don’t see your area? Project scope matters. Contact Linart with the municipality and a short description of the work.
               </p>
               <Link to="/contact" className="link-arrow mt-4 text-[#0b0d10]">

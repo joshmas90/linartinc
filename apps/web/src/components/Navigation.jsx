@@ -42,7 +42,7 @@ const Navigation = () => {
             <span className="h-7 w-px bg-[#9b7b4f]" />
             <span className="flex flex-col">
               <span className="text-[0.93rem] font-semibold leading-none tracking-[0.12em]">LINART</span>
-              <span className="mt-1 text-[0.54rem] font-medium uppercase tracking-[0.24em] text-white/48">
+              <span className="mt-1 text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-white/70">
                 Construction Inc.
               </span>
             </span>
@@ -56,8 +56,8 @@ const Navigation = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`relative py-2 text-[0.76rem] font-semibold uppercase tracking-[0.13em] ${
-                      active ? 'text-white' : 'text-white/58 hover:text-white'
+                    className={`relative py-2 text-[0.84rem] font-bold uppercase tracking-[0.10em] ${
+                      active ? 'text-white' : 'text-white/80 hover:text-white'
                     }`}
                   >
                     {link.name}
@@ -69,7 +69,7 @@ const Navigation = () => {
 
             <span className="h-6 w-px bg-white/12" />
 
-            <a href="tel:6092097810" className="flex items-center gap-2 text-xs font-semibold text-white/66 hover:text-white">
+            <a href="tel:6092097810" className="flex items-center gap-2 text-[0.82rem] font-semibold text-white/84 hover:text-white">
               <Phone size={14} />
               609-209-7810
             </a>

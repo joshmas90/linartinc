@@ -30,9 +30,9 @@ const HomePage = () => (
     </Helmet>
 
     <section className="relative min-h-[94svh] overflow-hidden bg-[#0b0d10] text-white">
-      <img src="/placeholders/hero-residence.svg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-75" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0b0d10] via-[#0b0d10]/75 to-[#0b0d10]/15" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d10]/60 via-transparent to-black/25" />
+      <img src="https://horizons-cdn.hostinger.com/ee08914b-5384-4cd2-8f63-8b9f3f228829/remotemediafile_6619721_0_2022_05_05_12_30_52-sS9RR.jpeg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-75" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b0d10]/96 via-[#0b0d10]/72 to-[#0b0d10]/12" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d10]/58 via-transparent to-black/20" />
 
       <div className="site-container relative z-10 flex min-h-[94svh] items-end pb-14 pt-32 sm:pb-20 lg:items-center lg:pb-0">
         <motion.div
@@ -52,7 +52,7 @@ const HomePage = () => (
           </h1>
 
           <div className="mt-8 grid max-w-4xl gap-8 border-t border-white/18 pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
-            <p className="max-w-2xl text-base leading-8 text-white/66 sm:text-lg">
+            <p className="max-w-2xl text-[17px] leading-8 text-white/88 sm:text-[19px] sm:leading-9">
               Additions, renovations and structural remodeling for homeowners who care how the work is planned, managed and finished.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
@@ -87,7 +87,7 @@ const HomePage = () => (
               ].map(([value, label]) => (
                 <div key={value} className="py-6 sm:px-6 first:pl-0">
                   <div className="display-serif text-4xl">{value}</div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.14em] text-[#77726a]">{label}</div>
+                  <div className="mt-1 text-xs uppercase tracking-[0.14em] text-[#5f584f]">{label}</div>
                 </div>
               ))}
             </div>
@@ -118,7 +118,7 @@ const HomePage = () => (
                 <p className="eyebrow">{featured[0].type}</p>
                 <h3 className="display-serif mt-2 max-w-xl text-3xl leading-tight sm:text-4xl">{featured[0].title}</h3>
               </div>
-              <span className="text-xs tracking-[0.18em] text-[#8b8172]">{featured[0].number}</span>
+              <span className="text-xs tracking-[0.18em] text-[#6b6257]">{featured[0].number}</span>
             </div>
           </article>
 
@@ -133,7 +133,7 @@ const HomePage = () => (
                     <p className="eyebrow">{item.type}</p>
                     <h3 className="display-serif mt-2 text-2xl leading-tight">{item.title}</h3>
                   </div>
-                  <span className="text-xs tracking-[0.18em] text-[#8b8172]">{item.number}</span>
+                  <span className="text-xs tracking-[0.18em] text-[#6b6257]">{item.number}</span>
                 </div>
               </article>
             ))}
@@ -148,7 +148,7 @@ const HomePage = () => (
           <div>
             <p className="eyebrow">Capabilities</p>
             <h2 className="section-title mt-5 max-w-md">One team. One standard.</h2>
-            <p className="mt-6 max-w-md text-sm leading-7 text-white/52">
+            <p className="mt-6 max-w-md text-[15px] leading-7 text-white/74">
               Substantial residential work benefits from continuity. We coordinate the project as a whole rather than treating every trade as a separate experience.
             </p>
           </div>
@@ -162,7 +162,7 @@ const HomePage = () => (
               >
                 <span className="text-[10px] tracking-[0.2em] text-white/30">{String(index + 1).padStart(2, '0')}</span>
                 <h3 className="text-base font-semibold">{name}</h3>
-                <p className="text-sm leading-7 text-white/50">{copy}</p>
+                <p className="text-[15px] leading-7 text-white/72">{copy}</p>
                 <ArrowUpRight size={16} className="text-[#9b7b4f] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             ))}
@@ -195,7 +195,7 @@ const HomePage = () => (
             <div key={n} className="border-b border-black/16 py-7 md:border-b-0 md:border-r md:px-6 first:pl-0 last:border-r-0">
               <span className="text-[10px] tracking-[0.2em] text-[#766b5d]">{n}</span>
               <h3 className="mt-6 text-base font-semibold">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-[#625d55]">{copy}</p>
+              <p className="mt-3 text-sm leading-6 text-[#47433d]">{copy}</p>
             </div>
           ))}
         </div>
@@ -211,7 +211,7 @@ const HomePage = () => (
               <h2 className="display-serif mt-5 max-w-3xl text-5xl leading-[0.95] sm:text-6xl">
                 Planning a serious renovation?
               </h2>
-              <p className="mt-6 max-w-2xl text-sm leading-7 text-white/56 sm:text-base">
+              <p className="mt-6 max-w-2xl text-[15px] leading-7 text-white/76 sm:text-[17px]">
                 Tell us where the project is, what you are considering and how you want the finished home to work.
               </p>
             </div>
@@ -219,7 +219,7 @@ const HomePage = () => (
               <Link to="/contact" className="premium-button-light">
                 Start Your Project <ArrowUpRight size={16} />
               </Link>
-              <a href="tel:6092097810" className="mt-5 flex items-center justify-center gap-2 text-sm text-white/54 hover:text-white">
+              <a href="tel:6092097810" className="mt-5 flex items-center justify-center gap-2 text-[15px] text-white/80 hover:text-white">
                 <Phone size={15} /> 609-209-7810
               </a>
             </div>
