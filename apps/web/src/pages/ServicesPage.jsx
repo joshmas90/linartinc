@@ -28,8 +28,8 @@ const services = [
     title: 'Kitchen Remodeling',
     copy: 'Kitchens designed around circulation, storage, durable materials and clean installation.',
     details: ['Layout', 'Cabinetry', 'Lighting', 'Fixtures + finish work'],
-    image: '/images/projects/featured/finished-kitchen.webp',
-    alt: 'Finished custom kitchen cabinetry by Linart Construction',
+    image: '/images/projects/kitchen/kitchen-main.webp',
+    alt: 'Completed white kitchen with farmhouse sink by Linart Construction',
   },
   {
     number: '04',

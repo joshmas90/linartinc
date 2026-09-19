@@ -6,7 +6,7 @@ import Img from '@/components/Img';
 const projects = [
   {
     images: [
-      ['/images/projects/covered-porch/porch-main.webp', 'Covered porch interior with wood ceiling and composite decking'],
+      ['/images/projects/covered-porch/porch-main.webp', 'Completed covered porch with composite steps, white railing and finished gable'],
       ['/images/projects/covered-porch/porch-progress-01.webp', 'Covered porch wall and finish work in progress'],
       ['/images/projects/covered-porch/porch-progress-02.webp', 'Covered porch ceiling and open wall construction detail'],
       ['/images/projects/covered-porch/porch-exterior.webp', 'Exterior view of the covered porch and deck project'],
@@ -20,9 +20,9 @@ const projects = [
   },
   {
     images: [
-      ['/images/projects/kitchen/kitchen-main.webp', 'Finished kitchen range wall with white cabinetry and stone backsplash'],
-      ['/images/projects/kitchen/kitchen-wide.webp', 'Completed kitchen and island viewed from the connected living space'],
-      ['/images/projects/kitchen/dining-built-ins.webp', 'Dining area with built-in cabinetry and refinished flooring'],
+      ['/images/projects/kitchen/kitchen-main.webp', 'Completed white kitchen with subway tile, farmhouse sink and hardwood floors'],
+      ['/images/projects/kitchen/kitchen-sink-detail.webp', 'White shaker cabinetry and farmhouse sink beneath wide kitchen windows'],
+      ['/images/projects/kitchen/kitchen-cabinetry.webp', 'Full kitchen cabinetry run with dark counters and stone backsplash'],
       ['/images/projects/kitchen/kitchen-progress.webp', 'Kitchen cabinetry and flooring installation in progress'],
     ],
     kicker: 'Kitchen + Interior',

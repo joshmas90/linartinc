@@ -103,7 +103,7 @@ const AboutPage = () => (
           </figure>
           <figure className="md:col-span-3">
             <div className="project-frame aspect-[3/4]">
-              <Img src="/images/projects/featured/finished-kitchen.webp" alt="Finished custom cabinetry and millwork"
+              <Img src="/images/projects/kitchen/kitchen-cabinetry.webp" alt="Finished custom cabinetry and millwork"
                 sizes="(min-width: 1024px) 30vw, 90vw"
               />
             </div>

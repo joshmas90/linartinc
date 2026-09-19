@@ -161,12 +161,13 @@ export const responsiveImages = {
     ]
   },
   "/images/projects/covered-porch/porch-main.webp": {
-    "width": 1600,
-    "height": 1200,
+    "width": 1750,
+    "height": 1313,
     "candidates": [
       480,
       960,
-      1600
+      1600,
+      1750
     ]
   },
   "/images/projects/covered-porch/porch-progress-01.webp": {
@@ -232,15 +233,6 @@ export const responsiveImages = {
       1600
     ]
   },
-  "/images/projects/featured/finished-kitchen.webp": {
-    "width": 1200,
-    "height": 1600,
-    "candidates": [
-      480,
-      960,
-      1200
-    ]
-  },
   "/images/projects/featured/interior-deck-connection.webp": {
     "width": 1600,
     "height": 1200,
@@ -268,22 +260,24 @@ export const responsiveImages = {
       1600
     ]
   },
-  "/images/projects/kitchen/dining-built-ins.webp": {
-    "width": 1200,
-    "height": 1600,
+  "/images/projects/kitchen/kitchen-cabinetry.webp": {
+    "width": 2048,
+    "height": 1536,
     "candidates": [
       480,
       960,
-      1200
+      1600,
+      2048
     ]
   },
   "/images/projects/kitchen/kitchen-main.webp": {
-    "width": 1200,
-    "height": 1600,
+    "width": 2048,
+    "height": 1536,
     "candidates": [
       480,
       960,
-      1200
+      1600,
+      2048
     ]
   },
   "/images/projects/kitchen/kitchen-progress.webp": {
@@ -295,13 +289,14 @@ export const responsiveImages = {
       1600
     ]
   },
-  "/images/projects/kitchen/kitchen-wide.webp": {
-    "width": 1200,
-    "height": 1600,
+  "/images/projects/kitchen/kitchen-sink-detail.webp": {
+    "width": 2048,
+    "height": 1536,
     "candidates": [
       480,
       960,
-      1200
+      1600,
+      2048
     ]
   },
   "/images/projects/patio/patio-finished.webp": {

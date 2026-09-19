@@ -238,7 +238,7 @@ const HomePage = () => (
             </div>
             <div className="relative min-h-[340px] overflow-hidden border-t border-white/12 lg:min-h-0 lg:border-l lg:border-t-0">
               <Img
-                src="/images/projects/featured/finished-kitchen.webp"
+                src="/images/projects/kitchen/kitchen-main.webp"
                 alt=""
                 aria-hidden="true"
                 className="absolute inset-0 h-full w-full object-cover"
