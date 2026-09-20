@@ -1,6 +1,29 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, ArrowUpRight, Check, Copy, AlertCircle, Loader2 } from 'lucide-react';
-import Img from '@/components/Img';
+import {
+  AlertCircle,
+  ArrowUpRight,
+  Building2,
+  Check,
+  Copy,
+  Hammer,
+  Loader2,
+  Mail,
+  MapPin,
+  Phone,
+  ShieldCheck,
+} from 'lucide-react';
+
+const interestOptions = [
+  'New Custom Home Construction',
+  'Home Additions',
+  'Whole Home Renovations',
+  'Kitchen Renovations',
+  'Bathroom Renovations',
+  'Basement Finishing',
+  'Outdoor Living / Decks / Patios',
+  'Exterior Improvements',
+  'Other',
+];
 
 const initial = {
   name: '',
@@ -10,13 +33,14 @@ const initial = {
   service: 'New Custom Home Construction',
   timing: 'Planning / researching',
   contact: 'Phone',
+  interests: [],
   message: '',
 };
 
 const ContactPage = () => {
   const [form, setForm] = useState(initial);
   const [copyStatus, setCopyStatus] = useState('');
-  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [status, setStatus] = useState('idle');
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState({});
   const honeypot = useRef('');
@@ -34,6 +58,15 @@ const ContactPage = () => {
     setFieldErrors((prev) => (prev[name] ? { ...prev, [name]: undefined } : prev));
   };
 
+  const toggleInterest = (interest) => {
+    setForm((prev) => ({
+      ...prev,
+      interests: prev.interests.includes(interest)
+        ? prev.interests.filter((item) => item !== interest)
+        : [...prev.interests, interest],
+    }));
+  };
+
   const projectBrief = `Name: ${form.name}
 Email: ${form.email}
 Phone: ${form.phone}
@@ -41,6 +74,7 @@ City / ZIP: ${form.city}
 Project type: ${form.service}
 Timing: ${form.timing}
 Preferred contact: ${form.contact}
+Services interested in: ${form.interests.length ? form.interests.join(', ') : 'Not specified'}
 
 Project description:
 ${form.message}`;
@@ -70,6 +104,7 @@ ${form.message}`;
         setStatus('sent');
         return;
       }
+
       setFieldErrors(data.fields || {});
       setError(data.error || 'Something went wrong sending your message.');
       setStatus('error');
@@ -85,7 +120,6 @@ ${form.message}`;
     }
   };
 
-  /** Only offered once the direct submission has failed — never as the primary path. */
   const emailFallback = () => {
     const subject = encodeURIComponent(`Linart project inquiry — ${form.service} — ${form.city || 'NJ'}`);
     window.location.href = `mailto:services@linartinc.com?subject=${subject}&body=${encodeURIComponent(projectBrief)}`;
@@ -93,18 +127,7 @@ ${form.message}`;
 
   const copyBrief = async () => {
     try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(projectBrief);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = projectBrief;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        textarea.remove();
-      }
+      await navigator.clipboard.writeText(projectBrief);
       setCopyStatus('Project brief copied');
     } catch {
       setCopyStatus('Copy unavailable—select Email Project Brief instead');
@@ -124,41 +147,40 @@ ${form.message}`;
   });
 
   const inputClass =
-    'w-full border-0 border-b border-black/28 bg-transparent px-0 py-3.5 text-[17px] font-medium text-[#22262a] outline-none transition-colors placeholder:text-black/30 focus:border-[#9b7b4f] focus:ring-0';
+    'mt-2 w-full rounded-[6px] border border-black/18 bg-white/72 px-4 py-3.5 text-[16px] font-medium text-[#22262a] outline-none transition-colors placeholder:text-black/32 focus:border-[#9b7b4f] focus:ring-2 focus:ring-[#9b7b4f]/10';
 
   return (
     <>
-
-      <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+      <section className="lux-light-section bg-[#f7f4ed] pb-16 pt-32 sm:pt-36">
         <div className="site-container">
-          <p className="eyebrow">Project Inquiry</p>
-          <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
-            <h1 className="display-serif inner-hero-title max-w-[10ch]">
-              Tell us what
-              <span className="block italic text-[#e0c89e]">you’re planning.</span>
-            </h1>
-            <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px]">
-              From a new custom home to a substantial renovation, the first conversation is about fit: location, scope, timing and the level of coordination involved.
-            </p>
-          </div>
-        </div>
-      </section>
+          <div className="grid gap-12 xl:grid-cols-[0.39fr_0.61fr] xl:gap-14">
+            <aside className="self-start">
+              <div className="flex items-center gap-4">
+                <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-[#a1753e]">Get in touch</p>
+                <span className="h-px w-40 bg-[#b8925d]/55" />
+              </div>
 
-      <section className="lux-light-section bg-[#f3eee5] section-shell">
-        <div className="site-container">
-          <div className="grid gap-14 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
-            <aside className="self-start lg:sticky lg:top-28">
-              <p className="eyebrow">Direct Contact</p>
-              <a href="tel:6092097810" className="mt-5 flex items-center gap-3 text-xl font-semibold">
-                <Phone size={18} className="text-[#a97f47]" /> 609-209-7810
-              </a>
-              <a href="mailto:services@linartinc.com" className="mt-4 flex items-center gap-3 text-[16px] font-medium text-[#3f3a35] hover:text-black">
-                <Mail size={17} className="text-[#a97f47]" /> services@linartinc.com
+              <h1 className="display-serif mt-5 max-w-[9ch] text-[clamp(3.5rem,6vw,6.2rem)] leading-[0.92] tracking-[-0.04em] text-[#15181a]">
+                Let’s Build What’s Next
+              </h1>
+
+              <p className="mt-6 max-w-xl text-[17px] leading-8 text-[#56504a]">
+                Have a project in mind? We’d love to hear about it. Tell us what you’re planning and our team will get back to you promptly. Whether it’s a home addition, renovation, or new custom home, we’re here to help bring your vision to life.
+              </p>
+
+              <a href="tel:6092097810" className="mt-5 flex items-center gap-3 text-[18px] font-semibold text-[#17191b]">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#c49c5d] text-black"><Phone size={16} /></span>
+                609-209-7810
               </a>
 
-              <div className="mt-10 border-t hairline pt-6">
-                <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#514b44]">What helps</p>
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-[16px] leading-8 text-[#3f3a35] marker:text-[#a97f47]">
+              <a href="mailto:services@linartinc.com" className="mt-3 flex items-center gap-3 text-[16px] font-medium text-[#2d3032] hover:text-black">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#c49c5d] text-black"><Mail size={16} /></span>
+                services@linartinc.com
+              </a>
+
+              <div className="mt-6 border-t hairline pt-5">
+                <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#46413c]">What helps</p>
+                <ul className="mt-4 list-disc space-y-1.5 pl-5 text-[15px] leading-7 text-[#4a4540] marker:text-[#a1753e]">
                   <li>Municipality or ZIP</li>
                   <li>Type of project</li>
                   <li>Approximate timing</li>
@@ -166,29 +188,23 @@ ${form.message}`;
                 </ul>
               </div>
 
-              <div className="relative mt-10 overflow-hidden border border-[#ad8653]/35 bg-[#0c0e11] px-7 py-9 shadow-[0_24px_70px_rgba(25,20,14,.16)] sm:px-9">
-                <div className="pointer-events-none absolute inset-0 opacity-35" style={{ backgroundImage: 'linear-gradient(rgba(220,197,157,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(220,197,157,.08) 1px, transparent 1px), radial-gradient(circle at 20% 20%, rgba(173,134,83,.24), transparent 35%)', backgroundSize: '28px 28px, 28px 28px, auto' }} />
-                <div className="relative">
-                  <div className="flex items-center justify-between gap-4 border-b border-[#d4bb91]/25 pb-5"><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#dcc59d]">Linart · New Jersey</span><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">Est. 2004</span></div>
-                  <img src="/branding/linart-logo-lockup.png" alt="Linart Construction Inc." className="mx-auto mt-8 w-full max-w-[390px] drop-shadow-[0_12px_30px_rgba(0,0,0,.35)]" loading="lazy" decoding="async" />
-                  <div className="mx-auto mt-7 h-px w-24 bg-gradient-to-r from-transparent via-[#d4bb91] to-transparent" />
-                  <p className="mt-5 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-[#dcc59d]">Build · Renovate · Expand</p>
-                  <p className="mx-auto mt-3 max-w-sm text-center text-[14px] leading-6 text-white/66">Purposeful construction, disciplined coordination and a finish standard designed to hold up over time.</p>
-                </div>
-              </div>
-              <p className="mt-4 text-[14px] leading-7 text-[#504a43]">One accountable point of contact from the first project conversation through closeout.</p>
+              <img
+                src="/branding/linart-premium-contact-card.webp"
+                alt="Linart Construction Inc. premium brand mark"
+                className="mt-8 aspect-square w-full max-w-[540px] object-cover shadow-[0_22px_60px_rgba(33,27,20,.16)]"
+                loading="lazy"
+                decoding="async"
+              />
             </aside>
 
             {status === 'sent' ? (
-              <div ref={resultRef} tabIndex={-1} className="border-t hairline pt-10 outline-none">
+              <div ref={resultRef} tabIndex={-1} className="self-start rounded-[20px] border border-black/10 bg-white/70 p-8 shadow-[0_22px_70px_rgba(46,37,27,.08)] outline-none sm:p-10">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2f5d3f] text-white">
                   <Check size={22} />
                 </div>
-                <h2 className="display-serif mt-6 text-4xl leading-none sm:text-5xl">Your project brief is in.</h2>
+                <h2 className="display-serif mt-6 text-4xl leading-none sm:text-5xl">Your project inquiry is in.</h2>
                 <p className="body-copy mt-5 max-w-xl">
-                  Thank you{form.name ? `, ${form.name.split(' ')[0]}` : ''}. We have your details and will follow up by{' '}
-                  {form.contact.toLowerCase()}, usually within one business day. If the project is time-sensitive, call
-                  609-209-7810 directly.
+                  Thank you{form.name ? `, ${form.name.split(' ')[0]}` : ''}. We have your details and will follow up by {form.contact.toLowerCase()}, usually within one business day.
                 </p>
                 <button
                   type="button"
@@ -206,142 +222,204 @@ ${form.message}`;
                 </button>
               </div>
             ) : (
-            <form onSubmit={submit} aria-busy={status === 'sending'} className="cream-panel relative rounded-[28px] border border-black/10 p-6 shadow-[0_22px_70px_rgba(46,37,27,.08)] sm:p-8 lg:p-10">
-              <div className="mb-2 flex flex-col gap-4 border-b hairline pb-7 sm:flex-row sm:items-end sm:justify-between"><div><p className="eyebrow">Private Project Brief</p><h2 className="display-serif mt-4 text-4xl leading-none sm:text-5xl">Start with the essentials.</h2></div><p className="max-w-xs text-[13px] leading-6 text-[#5a534a]">Sent directly to <a className="font-bold text-[#765326] underline decoration-[#ad8653]/45 underline-offset-4" href="mailto:services@linartinc.com">services@linartinc.com</a>.</p></div>
-              {/* Honeypot — hidden from people, tempting to bots. */}
-              <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
-                <label>
-                  Company
-                  <input
-                    type="text"
-                    name="company"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    onChange={(e) => {
-                      honeypot.current = e.target.value;
-                    }}
-                  />
-                </label>
-              </div>
+              <form
+                onSubmit={submit}
+                aria-busy={status === 'sending'}
+                className="self-start rounded-[20px] border border-black/12 bg-white/52 p-6 shadow-[0_22px_70px_rgba(46,37,27,.08)] backdrop-blur-sm sm:p-8 lg:p-10"
+              >
+                <div className="flex flex-col gap-3 border-b hairline pb-5 sm:flex-row sm:items-center sm:justify-between">
+                  <h2 className="display-serif text-3xl leading-none sm:text-4xl">Project Inquiry</h2>
+                  <div className="flex items-center gap-4">
+                    <span className="hidden h-px w-28 bg-[#b8925d]/50 sm:block" />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#6a6259]">Tell us about your project</span>
+                  </div>
+                </div>
 
-              <div className="grid gap-x-8 sm:grid-cols-2">
-                <label className="py-5">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Name</span>
-                  <input required maxLength={120} autoComplete="name" name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your name" {...errorAttributes('name')} />
-                  {fieldError('name')}
-                </label>
-                <label className="py-5">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">City / ZIP</span>
-                  <input required maxLength={120} autoComplete="postal-code" name="city" value={form.city} onChange={change} className={inputClass} placeholder="Project location" {...errorAttributes('city')} />
-                  {fieldError('city')}
-                </label>
-                <label className="py-5">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Email</span>
-                  <input required maxLength={180} autoComplete="email" type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="name@example.com" {...errorAttributes('email')} />
-                  {fieldError('email')}
-                </label>
-                <label className="py-5">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Phone</span>
-                  <input required maxLength={60} autoComplete="tel" inputMode="tel" type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="Phone number" {...errorAttributes('phone')} />
-                  {fieldError('phone')}
-                </label>
-                <label className="py-5">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Type</span>
-                  <select name="service" value={form.service} onChange={change} className={inputClass} {...errorAttributes('service')}>
-                    <option>New Custom Home Construction</option>
-                    <option>Home Addition</option>
-                    <option>Whole-Home Renovation</option>
-                    <option>Kitchen Remodeling</option>
-                    <option>Bathroom Remodeling</option>
-                    <option>Basement Finishing</option>
-                    <option>Deck / Patio Construction</option>
-                    <option>Other Residential Work</option>
-                  </select>
-                  {fieldError('service')}
-                </label>
-                <label className="py-5">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Timing</span>
-                  <select name="timing" value={form.timing} onChange={change} className={inputClass} {...errorAttributes('timing')}>
-                    <option>Planning / researching</option>
-                    <option>Within 3 months</option>
-                    <option>3–6 months</option>
-                    <option>6–12 months</option>
-                    <option>12+ months</option>
-                  </select>
-                  {fieldError('timing')}
-                </label>
-                <label className="py-5 sm:col-span-2">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Preferred Contact</span>
-                  <select name="contact" value={form.contact} onChange={change} className={inputClass} {...errorAttributes('contact')}>
-                    <option>Phone</option>
-                    <option>Email</option>
-                    <option>Text</option>
-                  </select>
-                  {fieldError('contact')}
-                </label>
-                <label className="py-5 sm:col-span-2">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Description</span>
+                <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+                  <label>
+                    Company
+                    <input
+                      type="text"
+                      name="company"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      onChange={(e) => {
+                        honeypot.current = e.target.value;
+                      }}
+                    />
+                  </label>
+                </div>
+
+                <div className="mt-2 grid gap-x-6 sm:grid-cols-2">
+                  <label className="py-3">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Name *</span>
+                    <input required maxLength={120} autoComplete="name" name="name" value={form.name} onChange={change} className={inputClass} placeholder="Your full name" {...errorAttributes('name')} />
+                    {fieldError('name')}
+                  </label>
+
+                  <label className="py-3">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Email *</span>
+                    <input required maxLength={180} autoComplete="email" type="email" name="email" value={form.email} onChange={change} className={inputClass} placeholder="you@example.com" {...errorAttributes('email')} />
+                    {fieldError('email')}
+                  </label>
+
+                  <label className="py-3">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Phone *</span>
+                    <input required maxLength={60} autoComplete="tel" inputMode="tel" type="tel" name="phone" value={form.phone} onChange={change} className={inputClass} placeholder="(609) 123-4567" {...errorAttributes('phone')} />
+                    {fieldError('phone')}
+                  </label>
+
+                  <label className="py-3">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Preferred Contact Method *</span>
+                    <select name="contact" value={form.contact} onChange={change} className={inputClass} {...errorAttributes('contact')}>
+                      <option>Phone</option>
+                      <option>Email</option>
+                      <option>Text</option>
+                    </select>
+                    {fieldError('contact')}
+                  </label>
+
+                  <label className="py-3">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Project Type *</span>
+                    <select name="service" value={form.service} onChange={change} className={inputClass} {...errorAttributes('service')}>
+                      <option>New Custom Home Construction</option>
+                      <option>Home Addition</option>
+                      <option>Whole-Home Renovation</option>
+                      <option>Kitchen Remodeling</option>
+                      <option>Bathroom Remodeling</option>
+                      <option>Basement Finishing</option>
+                      <option>Deck / Patio Construction</option>
+                      <option>Other Residential Work</option>
+                    </select>
+                    {fieldError('service')}
+                  </label>
+
+                  <label className="py-3">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Timing *</span>
+                    <select name="timing" value={form.timing} onChange={change} className={inputClass} {...errorAttributes('timing')}>
+                      <option>Planning / researching</option>
+                      <option>Within 3 months</option>
+                      <option>3–6 months</option>
+                      <option>6–12 months</option>
+                      <option>12+ months</option>
+                    </select>
+                    {fieldError('timing')}
+                  </label>
+
+                  <label className="py-3 sm:col-span-2">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Service Areas / Municipality or ZIP *</span>
+                    <input required maxLength={120} autoComplete="postal-code" name="city" value={form.city} onChange={change} className={inputClass} placeholder="Town, city, or ZIP code" {...errorAttributes('city')} />
+                    {fieldError('city')}
+                  </label>
+                </div>
+
+                <fieldset className="mt-4">
+                  <legend className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Services Interested In (Check All That Apply)</legend>
+                  <div className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2 xl:grid-cols-3">
+                    {interestOptions.map((interest) => (
+                      <label key={interest} className="flex cursor-pointer items-start gap-3 text-[13px] leading-5 text-[#3f3b36]">
+                        <input
+                          type="checkbox"
+                          checked={form.interests.includes(interest)}
+                          onChange={() => toggleInterest(interest)}
+                          className="mt-0.5 h-4 w-4 rounded border-black/25 accent-[#9b7339]"
+                        />
+                        <span>{interest}</span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+
+                <label className="mt-6 block">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Project Description *</span>
                   <textarea
                     required
                     name="message"
                     value={form.message}
                     onChange={change}
                     minLength={10}
-                    maxLength={6000}
-                    rows="6"
-                    className={`${inputClass} resize-none`}
-                    placeholder="What are you looking to change?"
+                    maxLength={1000}
+                    rows="5"
+                    className={`${inputClass} min-h-[128px] resize-none`}
+                    placeholder="Tell us about your project, your goals, and any specific details..."
                     {...errorAttributes('message')}
                   />
-                  {fieldError('message')}
+                  <div className="mt-1 flex items-start justify-between gap-4">
+                    <div>{fieldError('message')}</div>
+                    <span className="text-[11px] text-[#777067]">{form.message.length}/1000</span>
+                  </div>
                 </label>
-              </div>
 
-              {status === 'error' && error && (
-                <div
-                  ref={errorRef}
-                  tabIndex={-1}
-                  role="alert"
-                  className="mb-6 flex items-start gap-3 border-l-2 border-[#8c2f22] bg-[#8c2f22]/5 py-4 pl-4 text-[15px] leading-7 text-[#5f2118] outline-none"
-                >
-                  <AlertCircle size={17} className="mt-1 shrink-0" />
-                  <div>
-                    <p>{error}</p>
-                    <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-                      <button type="button" onClick={copyBrief} className="premium-button premium-button-outline shrink-0">
-                        {copyStatus === 'Project brief copied' ? <Check size={16} /> : <Copy size={16} />}
-                        Copy Brief
-                      </button>
-                      <button type="button" onClick={emailFallback} className="premium-button premium-button-outline shrink-0">
-                        Open Email App <ArrowUpRight size={16} />
-                      </button>
+                {status === 'error' && error && (
+                  <div
+                    ref={errorRef}
+                    tabIndex={-1}
+                    role="alert"
+                    className="mt-5 flex items-start gap-3 border-l-2 border-[#8c2f22] bg-[#8c2f22]/5 py-4 pl-4 text-[14px] leading-6 text-[#5f2118] outline-none"
+                  >
+                    <AlertCircle size={17} className="mt-1 shrink-0" />
+                    <div>
+                      <p>{error}</p>
+                      <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                        <button type="button" onClick={copyBrief} className="premium-button premium-button-outline shrink-0">
+                          {copyStatus === 'Project brief copied' ? <Check size={16} /> : <Copy size={16} />}
+                          Copy Brief
+                        </button>
+                        <button type="button" onClick={emailFallback} className="premium-button premium-button-outline shrink-0">
+                          Open Email App <ArrowUpRight size={16} />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              <div className="flex flex-col gap-5 border-t hairline pt-7 xl:flex-row xl:items-center xl:justify-between">
-                <div className="max-w-lg"><p className="text-[14px] leading-6 text-[#49443e]">Your details go straight to our project inbox at <a className="font-semibold text-[#765326] hover:text-black" href="mailto:services@linartinc.com">services@linartinc.com</a>. We reply to every inquiry, usually within one business day.</p><div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-[11px] font-bold uppercase tracking-[0.1em] text-[#6b6257]"><span>Direct to Linart</span><span>Private inquiry</span><span>No mailing list</span></div></div>
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="premium-button-dark shrink-0 disabled:cursor-not-allowed disabled:opacity-65"
-                >
-                  {status === 'sending' ? (
-                    <>
-                      Sending <Loader2 size={16} className="animate-spin" />
-                    </>
-                  ) : (
-                    <>
-                      Send Project Brief <ArrowUpRight size={16} />
-                    </>
-                  )}
-                </button>
-              </div>
-              <p aria-live="polite" className="mt-3 min-h-6 text-[13px] font-semibold text-[#765326]">{copyStatus}</p>
-            </form>
+                <div className="mt-6 flex flex-col gap-5 border-t hairline pt-5 lg:flex-row lg:items-end lg:justify-between">
+                  <div className="max-w-xl">
+                    <p className="text-[12px] leading-5 text-[#555048]">
+                      Your details go straight to our project inbox at <a className="font-semibold text-[#765326]" href="mailto:services@linartinc.com">services@linartinc.com</a>. We reply to every inquiry, usually within one business day.
+                    </p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={status === 'sending'}
+                    className="premium-button-dark shrink-0 disabled:cursor-not-allowed disabled:opacity-65"
+                  >
+                    {status === 'sending' ? (
+                      <>
+                        Sending <Loader2 size={16} className="animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        Send Project Inquiry <ArrowUpRight size={16} />
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <p aria-live="polite" className="mt-3 min-h-5 text-[12px] font-semibold text-[#765326]">{copyStatus}</p>
+              </form>
             )}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-[#0b0d10] text-white">
+        <div className="site-container grid sm:grid-cols-2 xl:grid-cols-4">
+          {[
+            [ShieldCheck, 'Licensed & Insured', 'Your Project. Our Responsibility.'],
+            [Hammer, 'Quality Craftsmanship', 'Built to Last.'],
+            [MapPin, 'Local & Trusted', 'Proudly Serving New Jersey.'],
+            [Building2, 'Residential & Commercial', 'Projects of Every Scale.'],
+          ].map(([Icon, title, copy], index) => (
+            <div key={title} className={`flex min-h-[118px] items-center gap-4 py-6 sm:px-6 ${index > 0 ? 'sm:border-l sm:border-white/12' : ''}`}>
+              <Icon size={32} strokeWidth={1.5} className="shrink-0 text-[#d1ad72]" />
+              <div>
+                <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#e3c998]">{title}</p>
+                <p className="mt-1 text-[13px] text-white/65">{copy}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>

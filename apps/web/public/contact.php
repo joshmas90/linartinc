@@ -1,36 +1,14 @@
 <?php
-/**
- * Linart Construction Inc. — contact form handler
- *
- * Receives JSON from the /contact page, validates it, emails the lead to
- * services@linartinc.com, and attempts to append a private backup copy above
- * the web root before mail delivery.
- *
- * Deploy: this file must sit at the web root next to index.html.
- * Vite copies everything in public/ to the build output, so keeping it at
- * apps/web/public/contact.php is enough.
- */
-
 declare(strict_types=1);
 
 date_default_timezone_set('America/New_York');
 
-// ---------------------------------------------------------------------------
-// Configuration
-// ---------------------------------------------------------------------------
-
 const RECIPIENT      = 'services@linartinc.com';
-// Send from the existing domain mailbox so SPF/DKIM alignment is not dependent
-// on an unconfigured no-reply address.
 const SENDER         = 'services@linartinc.com';
 const SENDER_NAME    = 'Linart Website';
 const LOG_FILENAME   = 'linart-leads.log';
-const RATE_LIMIT_SEC = 20;   // minimum seconds between submissions per IP
+const RATE_LIMIT_SEC = 20;
 const MAX_BODY_BYTES = 32768;
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
 
 function respond(int $status, array $payload): void {
     http_response_code($status);
@@ -40,7 +18,6 @@ function respond(int $status, array $payload): void {
     exit;
 }
 
-/** Strip CR/LF so user input can never inject extra mail headers. */
 function header_safe(string $value): string {
     return trim(str_ireplace(["\r", "\n", "%0a", "%0d"], '', $value));
 }
@@ -49,11 +26,6 @@ function header_name(string $value): string {
     return trim((string) preg_replace('/["<>\\\\]/u', '', header_safe($value)));
 }
 
-/**
- * mbstring is present on most hosts but not guaranteed. Fall back to the
- * byte-safe functions rather than fataling on an undefined function, which
- * would return an empty body and look like a broken form.
- */
 function str_len(string $v): int {
     return function_exists('mb_strlen') ? mb_strlen($v, 'UTF-8') : strlen($v);
 }
@@ -73,10 +45,6 @@ function field_value(array $data, string $key, int $max): string {
     return is_scalar($value) ? clean((string) $value, $max) : '';
 }
 
-/**
- * Prefer a directory above the web root so the lead log is not publicly
- * readable. Falls back to the script directory if that is not writable.
- */
 function log_path(): string {
     $above = dirname(__DIR__) . DIRECTORY_SEPARATOR . LOG_FILENAME;
     if (@is_writable(dirname($above))) {
@@ -92,9 +60,7 @@ function client_ip(): string {
 function rate_limited(): bool {
     $file = sys_get_temp_dir() . '/linart-rl-' . hash('sha256', client_ip());
     $handle = @fopen($file, 'c+');
-    if ($handle === false) {
-        return false;
-    }
+    if ($handle === false) return false;
 
     if (!@flock($handle, LOCK_EX)) {
         fclose($handle);
@@ -118,10 +84,6 @@ function rate_limited(): bool {
     return $limited;
 }
 
-// ---------------------------------------------------------------------------
-// Request guards
-// ---------------------------------------------------------------------------
-
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     respond(405, ['ok' => false, 'error' => 'Method not allowed.']);
 }
@@ -133,18 +95,12 @@ if ((int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > MAX_BODY_BYTES) {
 $raw = file_get_contents('php://input') ?: '';
 $data = json_decode($raw, true);
 if (!is_array($data)) {
-    $data = $_POST; // tolerate a normal form post as a fallback
+    $data = $_POST;
 }
 
-// Honeypot: a real visitor never sees or fills this field.
-// Respond with success so bots do not learn they were caught.
 if (!empty($data['company'])) {
     respond(200, ['ok' => true]);
 }
-
-// ---------------------------------------------------------------------------
-// Validation
-// ---------------------------------------------------------------------------
 
 $name    = field_value($data, 'name', 120);
 $email   = field_value($data, 'email', 180);
@@ -153,7 +109,7 @@ $city    = field_value($data, 'city', 120);
 $service = field_value($data, 'service', 80);
 $timing  = field_value($data, 'timing', 80);
 $contact = field_value($data, 'contact', 40);
-$message = field_value($data, 'message', 6000);
+$message = field_value($data, 'message', 1000);
 
 $allowedServices = [
     'New Custom Home Construction',
@@ -165,6 +121,31 @@ $allowedServices = [
     'Deck / Patio Construction',
     'Other Residential Work',
 ];
+
+$allowedInterests = [
+    'New Custom Home Construction',
+    'Home Additions',
+    'Whole Home Renovations',
+    'Kitchen Renovations',
+    'Bathroom Renovations',
+    'Basement Finishing',
+    'Outdoor Living / Decks / Patios',
+    'Exterior Improvements',
+    'Other',
+];
+
+$interests = [];
+$rawInterests = $data['interests'] ?? [];
+if (is_array($rawInterests)) {
+    foreach (array_slice($rawInterests, 0, 12) as $interest) {
+        if (!is_scalar($interest)) continue;
+        $interest = clean((string) $interest, 120);
+        if (in_array($interest, $allowedInterests, true) && !in_array($interest, $interests, true)) {
+            $interests[] = $interest;
+        }
+    }
+}
+
 $allowedTimings = ['Planning / researching', 'Within 3 months', '3–6 months', '6–12 months', '12+ months'];
 $allowedContacts = ['Phone', 'Email', 'Text'];
 
@@ -182,29 +163,25 @@ if ($errors) {
     respond(422, ['ok' => false, 'error' => 'Please check the highlighted fields.', 'fields' => $errors]);
 }
 
-// Only valid submissions claim a rate-limit slot. A visitor can immediately
-// correct a validation error without being locked out for 20 seconds.
 if (rate_limited()) {
     header('Retry-After: ' . RATE_LIMIT_SEC);
     respond(429, ['ok' => false, 'error' => 'Please wait a moment before sending again.']);
 }
 
-// ---------------------------------------------------------------------------
-// Compose
-// ---------------------------------------------------------------------------
-
 $submittedAt = date('Y-m-d H:i:s T');
+$interestText = $interests ? implode(', ', $interests) : 'Not specified';
 
 $lines = [
     "New project inquiry from linartinc.com",
     "",
-    "Name:              {$name}",
-    "Email:             {$email}",
-    "Phone:             {$phone}",
-    "City / ZIP:        {$city}",
-    "Project type:      {$service}",
-    "Timing:            {$timing}",
-    "Preferred contact: {$contact}",
+    "Name:                 {$name}",
+    "Email:                {$email}",
+    "Phone:                {$phone}",
+    "City / ZIP:           {$city}",
+    "Project type:         {$service}",
+    "Timing:               {$timing}",
+    "Preferred contact:    {$contact}",
+    "Services interested:  {$interestText}",
     "",
     "Project description",
     "-------------------",
@@ -214,8 +191,8 @@ $lines = [
     "Submitted: {$submittedAt}",
     "IP:        " . client_ip(),
 ];
-$body = implode("\n", $lines);
 
+$body = implode("\n", $lines);
 $subjectCity = $city !== '' ? $city : 'NJ';
 $subject = "Website inquiry — {$service} — {$subjectCity} — {$name}";
 
@@ -227,10 +204,6 @@ $headers = [
     'Content-Transfer-Encoding: 8bit',
 ];
 
-// ---------------------------------------------------------------------------
-// Log first, then send. A logged lead survives a mail failure.
-// ---------------------------------------------------------------------------
-
 $leadLog = log_path();
 $previousUmask = umask(0077);
 $logged = @file_put_contents(
@@ -239,6 +212,7 @@ $logged = @file_put_contents(
     FILE_APPEND | LOCK_EX
 ) !== false;
 umask($previousUmask);
+
 if ($logged) {
     @chmod($leadLog, 0600);
 }

@@ -1,30 +1,60 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, Check, Phone } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Bath, Home, Plus, Hammer, Phone } from 'lucide-react';
 import Img from '@/components/Img';
 
-const featured = [
+const serviceHighlights = [
+  {
+    icon: Bath,
+    label: 'Kitchens & Bathrooms',
+    copy: 'Beautiful, functional spaces.',
+    to: '/services#kitchen-remodeling',
+  },
+  {
+    icon: Home,
+    label: 'New Custom Home Construction',
+    copy: 'Your vision. Our expertise.',
+    to: '/services#new-custom-home-construction',
+  },
+  {
+    icon: Plus,
+    label: 'Additions & Expansions',
+    copy: 'More space for what matters.',
+    to: '/services#home-additions',
+  },
+  {
+    icon: Hammer,
+    label: 'Whole Home Renovations',
+    copy: 'Reimagine every detail.',
+    to: '/services#whole-home-renovations',
+  },
+];
+
+const featuredProjects = [
+  {
+    image: '/images/projects/bathroom/bath-main.webp',
+    alt: 'Finished bathroom with freestanding tub and black hexagonal tile',
+    title: 'Luxury Bathroom Renovation',
+    copy: 'Classic design. Modern comfort.',
+  },
+  {
+    image: '/images/projects/bathroom/bathroom-shower-detail.webp',
+    alt: 'Walk-in shower with white tile and matte-black fixtures',
+    title: 'Modern Bathroom Remodel',
+    copy: 'Functionality meets elegance.',
+  },
+  {
+    image: '/images/projects/kitchen/kitchen-main.webp',
+    alt: 'Completed white kitchen with farmhouse sink and hardwood floors',
+    title: 'Open Concept Kitchen',
+    copy: 'Connected spaces built for daily life.',
+  },
   {
     image: '/images/home/covered-porch-addition.webp',
-    alt: 'Completed covered porch addition with a finished gable and white railing',
-    type: 'Completed Addition',
-    title: 'Complex additions are built one coordinated decision at a time.',
-    number: '01',
-  },
-  {
-    image: '/images/projects/bathroom/bathroom-tub-brick.webp',
-    alt: 'Freestanding soaking tub beneath wide windows beside exposed brick in a completed Linart bathroom renovation',
-    type: 'Bathroom Remodeling',
-    title: 'Clean lines depend on careful layout and precise finish work.',
-    number: '02',
-  },
-  {
-    image: '/images/home/elevated-deck-detail.webp',
-    alt: 'Elevated wood deck with cable railing and a finished covered area below',
-    type: 'Outdoor Living',
-    title: 'Structure and finish should read as one considered solution.',
-    number: '03',
+    alt: 'Completed covered porch addition with finished gable and white railing',
+    title: 'Additions & Outdoor Living',
+    copy: 'Built to feel like it was always there.',
   },
 ];
 
@@ -40,57 +70,114 @@ const services = [
 
 const HomePage = () => (
   <>
+    <section className="relative min-h-[650px] overflow-hidden bg-[#0b0d10] text-white sm:min-h-[700px] lg:min-h-[720px]">
+      <div className="absolute inset-0 grid lg:grid-cols-[0.58fr_0.42fr]">
+        <Img
+          src="/images/projects/bathroom/bath-main.webp"
+          alt="Finished Linart bathroom renovation with freestanding tub"
+          className="h-full w-full object-cover"
+          sizes="(min-width: 1024px) 58vw, 100vw"
+          priority
+        />
+        <Img
+          src="/images/projects/bathroom/bathroom-shower-detail.webp"
+          alt="Modern tiled shower completed by Linart Construction"
+          className="hidden h-full w-full object-cover lg:block"
+          sizes="42vw"
+          priority
+        />
+      </div>
 
-    <section className="relative min-h-[94svh] overflow-hidden bg-[#0b0d10] text-white">
-      <Img
-        src="/images/home/linart-residence-hero.webp"
-        alt="Large brick and stone residence under construction by Linart Construction in New Jersey"
-        className="home-hero-image absolute inset-0 h-full w-full object-cover opacity-75"
-        sizes="100vw"
-        priority
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/78 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/56 via-transparent to-black/24" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#08090b]/97 via-[#08090b]/80 to-[#08090b]/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-black/18" />
 
-      <div className="site-container relative z-10 flex min-h-[94svh] items-end pb-14 pt-32 sm:pb-20 lg:items-center lg:pb-0">
+      <div className="site-container relative z-10 flex min-h-[650px] items-center pb-14 pt-32 sm:min-h-[700px] lg:min-h-[720px]">
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className="max-w-[860px] border-l border-[#b9905d]/70 pl-5 sm:pl-7 lg:pl-8"
+          className="max-w-[790px]"
         >
-          <div className="mb-7 flex items-center gap-4">
-            <span className="h-px w-12 bg-[#c19b68]" />
-            <span className="text-[13px] font-bold uppercase tracking-[0.16em] text-[#e1c99e] hero-copy-shadow">New Jersey · Family-owned since 2004</span>
-          </div>
+          <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#e1c99e] hero-copy-shadow">
+            Expert craftsmanship. Lasting value.
+          </p>
 
-          <h1 className="display-serif hero-copy-shadow home-hero-title text-white">
-            Built with
-            <span className="block italic text-[#e0c89e]">intention.</span>
+          <h1 className="display-serif hero-copy-shadow mt-5 max-w-[9ch] text-[clamp(3.5rem,7vw,6.7rem)] leading-[0.9] tracking-[-0.045em] text-white">
+            Transforming Homes. Building What’s Next.
           </h1>
 
-          <div className="mt-8 grid max-w-4xl gap-8 border-t border-[#d4bb91]/48 pt-7 lg:grid-cols-[1fr_360px] lg:items-end">
-            <p className="max-w-2xl hero-copy-shadow text-[18px] leading-8 text-white sm:text-[20px] sm:leading-9">
-              New custom homes, additions, renovations, decks and patios—planned carefully, managed clearly, and finished to a consistent standard.
-            </p>
-            <div className="hero-cta-panel">
-              <Link to="/contact" className="hero-cta hero-cta-primary">
-                <span>
-                  <span className="hero-cta-kicker">Start a conversation</span>
-                  <span className="hero-cta-label">Discuss Your Project</span>
-                </span>
-                <span className="hero-cta-icon" aria-hidden="true"><ArrowUpRight size={17} /></span>
-              </Link>
-              <Link to="/projects" className="hero-cta hero-cta-secondary">
-                <span>
-                  <span className="hero-cta-kicker">See the standard</span>
-                  <span className="hero-cta-label">Explore Selected Work</span>
-                </span>
-                <span className="hero-cta-icon" aria-hidden="true"><ArrowRight size={17} /></span>
-              </Link>
-            </div>
+          <p className="mt-7 max-w-2xl text-[18px] leading-8 text-white/90 sm:text-[20px] sm:leading-9">
+            From refined renovations to new custom home construction, Linart delivers carefully coordinated residential work and timeless results across New Jersey.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link to="/contact" className="premium-button-light">
+              Start Your Project <ArrowUpRight size={16} />
+            </Link>
+            <Link to="/projects" className="premium-button-ghost">
+              View Our Work <ArrowRight size={16} />
+            </Link>
           </div>
         </motion.div>
+
+        <div className="absolute bottom-8 right-6 hidden max-w-[310px] border-r border-white/28 pr-5 text-right lg:block">
+          <p className="display-serif text-2xl italic leading-tight text-white/82">
+            “Spaces that inspire a better everyday.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section className="border-b border-black/10 bg-[#fbfaf7]">
+      <div className="site-container">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+          {serviceHighlights.map(({ icon: Icon, label, copy, to }, index) => (
+            <Link
+              key={label}
+              to={to}
+              className={`group flex min-h-[126px] items-center gap-4 py-6 sm:px-6 ${index > 0 ? 'sm:border-l sm:border-black/10' : ''}`}
+            >
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center text-[#a47b3d]">
+                <Icon size={36} strokeWidth={1.55} />
+              </div>
+              <div>
+                <h2 className="text-[14px] font-bold uppercase tracking-[0.055em] text-[#16191c]">{label}</h2>
+                <p className="mt-1 text-[14px] leading-6 text-[#59534d]">{copy}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="lux-light-section bg-white section-shell">
+      <div className="site-container">
+        <div className="flex flex-col gap-6 border-b hairline pb-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#9b7339]">Featured Projects</p>
+            <h2 className="display-serif mt-3 text-4xl leading-none sm:text-5xl">Real Projects. Lasting Results.</h2>
+          </div>
+          <Link to="/projects" className="premium-button premium-button-outline">
+            View All Projects <ArrowRight size={15} />
+          </Link>
+        </div>
+
+        <div className="mt-8 grid gap-7 sm:grid-cols-2 xl:grid-cols-4">
+          {featuredProjects.map((project) => (
+            <Link key={project.title} to="/projects" className="group">
+              <div className="project-frame aspect-[4/3] overflow-hidden">
+                <Img
+                  src={project.image}
+                  alt={project.alt}
+                  className="h-full w-full object-cover"
+                  sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <h3 className="mt-4 text-[15px] font-bold uppercase tracking-[0.035em] text-[#17191b]">{project.title}</h3>
+              <p className="mt-1 text-[15px] leading-6 text-[#5b554f]">{project.copy}</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -117,56 +204,6 @@ const HomePage = () => (
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="lux-light-section bg-[#f8f4ec] section-shell">
-      <div className="site-container">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="eyebrow">Selected Work</p>
-            <h2 className="section-title mt-5">The work should carry the reputation.</h2>
-          </div>
-          <Link to="/projects" className="link-arrow text-[#0b0d10]">
-            View project portfolio <ArrowRight size={16} />
-          </Link>
-        </div>
-
-        <div className="mt-14 grid gap-10 lg:grid-cols-12">
-          <article className="lg:col-span-7">
-            <div className="project-frame aspect-[4/3]">
-              <Img src={featured[0].image} alt={featured[0].alt}
-                sizes="(min-width: 1024px) 56vw, 100vw"
-              />
-            </div>
-            <div className="mt-5 flex items-start justify-between gap-6 border-t hairline pt-4">
-              <div>
-                <p className="eyebrow">{featured[0].type}</p>
-                <h3 className="display-serif mt-2 max-w-xl text-3xl leading-tight sm:text-4xl">{featured[0].title}</h3>
-              </div>
-              <span className="text-[13px] font-semibold tracking-[0.14em] text-[#514b44]">{featured[0].number}</span>
-            </div>
-          </article>
-
-          <div className="grid gap-10 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
-            {featured.slice(1).map((item) => (
-              <article key={item.number}>
-                <div className="project-frame aspect-[16/9]">
-                  <Img src={item.image} alt={item.alt}
-                    sizes="(min-width: 1024px) 40vw, (min-width: 640px) 48vw, 100vw"
-                  />
-                </div>
-                <div className="mt-4 flex items-start justify-between gap-5 border-t hairline pt-4">
-                  <div>
-                    <p className="eyebrow">{item.type}</p>
-                    <h3 className="display-serif mt-2 text-2xl leading-tight">{item.title}</h3>
-                  </div>
-                  <span className="text-[13px] font-semibold tracking-[0.14em] text-[#514b44]">{item.number}</span>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </div>
