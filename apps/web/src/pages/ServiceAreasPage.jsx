@@ -8,22 +8,22 @@ const groups = [
     number: '01',
     title: 'Core service area',
     note: 'Where we do most of our work',
-    counties: ['Burlington', 'Camden', 'Gloucester', 'Ocean'],
+    counties: ['Atlantic', 'Burlington', 'Camden', 'Gloucester', 'Ocean'],
   },
   {
     number: '02',
     title: 'Outer project reach',
     note: 'The farthest we typically travel',
     ranges: [
-      ['Central', ['Hunterdon', 'Mercer', 'Middlesex', 'Monmouth', 'Somerset', 'Union']],
-      ['South', ['Atlantic', 'Cape May', 'Cumberland', 'Salem']],
+      ['Central', ['Mercer', 'Middlesex', 'Monmouth']],
+      ['South', ['Cape May', 'Cumberland', 'Salem']],
     ],
   },
   {
     number: '03',
-    title: 'North Jersey',
-    note: 'Occasional projects—not our normal service area',
-    counties: ['Bergen', 'Essex', 'Hudson', 'Morris', 'Passaic', 'Sussex', 'Warren'],
+    title: 'Occasional projects only',
+    note: 'Project-dependent areas outside our normal service footprint',
+    counties: ['Hunterdon', 'Somerset', 'Union', 'Bergen', 'Essex', 'Hudson', 'Morris', 'Passaic', 'Sussex', 'Warren'],
   },
 ];
 
@@ -60,7 +60,7 @@ const ServiceAreasPage = () => (
             <p className="eyebrow">Our Community</p>
             <h2 className="section-title mt-5">Built nearby. Accountable long after.</h2>
             <p className="body-copy mt-6 max-w-2xl">
-              Working close to home means understanding New Jersey communities, housing stock and the practical realities of building here. Most of our work is concentrated across Burlington, Camden, Gloucester and Ocean counties, with select projects extending through Central and South Jersey.
+              Working close to home means understanding New Jersey communities, housing stock and the practical realities of building here. Most of our work is concentrated across Atlantic, Burlington, Camden, Gloucester and Ocean counties, with select projects extending through Central and South Jersey.
             </p>
 
             <div className="mt-10 border-t hairline">

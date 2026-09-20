@@ -426,26 +426,6 @@ footer a:hover .linart-brand-seal {
   stroke: rgba(10,12,12,.58);
 }
 
-.nj-service-map__core-ring {
-  fill: rgba(255,250,241,.88);
-  stroke: rgba(24,22,19,.22);
-  stroke-width: 1;
-}
-
-.nj-service-map__core-star {
-  fill: #17191a;
-  stroke: #fff5e5;
-  stroke-width: 1.2;
-}
-
-.nj-service-map__core-caption {
-  fill: #17191a;
-  font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .14em;
-}
-
 .nj-service-map__selection {
   display: grid;
   grid-template-columns: .8fr 1.2fr;

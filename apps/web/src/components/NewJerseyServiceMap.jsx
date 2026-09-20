@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { njCoreMarker, njServiceCounties, njServiceOutline } from '@/data/njServiceMap';
+import React, { useState } from 'react';
+import { njServiceCounties, njServiceOutline } from '@/data/njServiceMap';
 
 const tierDetails = {
   core: {
@@ -11,21 +11,14 @@ const tierDetails = {
     note: 'Project-dependent travel range',
   },
   north: {
-    label: 'North Jersey',
-    note: 'Occasional projects only',
+    label: 'Occasional projects only',
+    note: 'Project-dependent, outside our normal service area',
   },
 };
-
-const createStar = ([centerX, centerY]) => Array.from({ length: 10 }, (_, index) => {
-  const radius = index % 2 === 0 ? 13 : 5.6;
-  const angle = -Math.PI / 2 + (index * Math.PI) / 5;
-  return `${centerX + Math.cos(angle) * radius},${centerY + Math.sin(angle) * radius}`;
-}).join(' ');
 
 const NewJerseyServiceMap = () => {
   const [activeCounty, setActiveCounty] = useState('Burlington');
   const selected = njServiceCounties.find((county) => county.name === activeCounty) ?? njServiceCounties[0];
-  const starPoints = useMemo(() => createStar(njCoreMarker), []);
 
   return (
     <div className="nj-service-map">
@@ -45,7 +38,7 @@ const NewJerseyServiceMap = () => {
       >
         <title id="nj-service-map-title">Linart Construction New Jersey service area map</title>
         <desc id="nj-service-map-description">
-          County map showing Linart&apos;s core service area, typical outer project reach and occasional North Jersey coverage.
+          County map showing Linart&apos;s core service area, typical outer project reach and occasional project counties.
         </desc>
         <defs>
           <linearGradient id="nj-map-core" x1="0" y1="0" x2="1" y2="1">
@@ -97,9 +90,6 @@ const NewJerseyServiceMap = () => {
               {county.abbreviation}
             </text>
           ))}
-          <circle cx={njCoreMarker[0]} cy={njCoreMarker[1]} r="22" className="nj-service-map__core-ring" />
-          <polygon points={starPoints} className="nj-service-map__core-star" />
-          <text x={njCoreMarker[0] + 29} y={njCoreMarker[1] + 4} className="nj-service-map__core-caption">CORE</text>
         </g>
       </svg>
 
