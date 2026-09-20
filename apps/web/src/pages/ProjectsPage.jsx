@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
-import Img from '@/components/Img';
+import ProjectImageGallery from '@/components/ProjectImageGallery';
 
 const projects = [
   {
@@ -120,25 +120,11 @@ const ProjectsPage = () => (
               key={project.title}
               className={`grid gap-7 ${index % 2 ? 'lg:grid-cols-[0.42fr_0.58fr]' : 'lg:grid-cols-[0.62fr_0.38fr]'} lg:items-end`}
             >
-              <div>
-                <div className={`project-frame ${project.size === 'large' ? 'aspect-[4/3]' : 'aspect-[5/4]'}`}>
-                  <Img
-                    src={project.images[0][0]}
-                    alt={project.images[0][1]}
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    priority={index === 0}
-                  />
-                </div>
-                <div className="mt-3 grid grid-cols-3 gap-3">
-                  {project.images.slice(1).map(([src, alt]) => (
-                    <div key={src} className="project-frame aspect-[4/3]">
-                      <Img src={src} alt={alt}
-                        sizes="(min-width: 1024px) 16vw, 31vw"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <ProjectImageGallery
+                images={project.images}
+                size={project.size}
+                priority={index === 0}
+              />
 
               <div className={`${index % 2 ? 'lg:order-first lg:pr-10' : 'lg:pl-10'} border-t hairline pt-5`}>
                 <div className="flex items-center justify-between">
