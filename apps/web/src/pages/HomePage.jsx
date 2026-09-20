@@ -70,7 +70,7 @@ const services = [
 
 const HomePage = () => (
   <>
-    <section className="relative min-h-[560px] overflow-hidden bg-[#090b0d] text-white sm:min-h-[600px] lg:h-[calc(100svh-200px)] lg:min-h-[540px] lg:max-h-[600px]">
+    <section className="relative min-h-[560px] overflow-hidden bg-[#090b0d] text-white sm:min-h-[600px] lg:h-[calc(100svh-118px)] lg:min-h-[640px] lg:max-h-[760px]">
       <img
         src="/images/home/linart-premium-hero-clean.webp"
         alt="Luxury Linart bathroom with freestanding tub, exposed brick, marble shower and custom vanity"
@@ -94,11 +94,12 @@ const HomePage = () => (
           <p
             className="display-serif whitespace-nowrap text-[clamp(1.15rem,1.3vw,1.55rem)] font-medium italic leading-[1.04] tracking-[-0.012em] text-[#fff7e9]/92"
             style={{
+              fontFamily: '"Bodoni Moda", "Cormorant Garamond", Georgia, serif',
               textShadow:
                 '0 1px 0 rgba(255,255,255,.14), 0 2px 5px rgba(30,20,12,.48), 0 7px 18px rgba(24,16,10,.18)',
             }}
           >
-            Spaces worth coming home to.
+            â€œSpaces worth coming home to.â€
           </p>
           <span className="mt-4 ml-auto block h-px w-14 bg-[#c89a4f]/70" />
         </div>
