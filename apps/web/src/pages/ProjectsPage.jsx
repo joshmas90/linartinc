@@ -79,6 +79,19 @@ const projects = [
   },
   {
     images: [
+      ['/images/projects/custom-decks/custom-deck-main.webp', 'Finished custom composite deck with white posts and black balusters'],
+      ['/images/projects/custom-decks/custom-deck-exterior.webp', 'Custom deck exterior with white rail system and gray composite decking'],
+      ['/images/projects/custom-decks/custom-deck-stairs.webp', 'Composite deck stairs with white posts and black metal balusters'],
+      ['/images/projects/custom-decks/custom-deck-waterfront.webp', 'Large wood deck overlooking a waterfront property'],
+    ],
+    kicker: 'Custom Decks + Outdoor Living',
+    title: 'Custom Decks & Outdoor Living',
+    location: 'New Jersey',
+    scope: 'Composite and wood decking Â· Custom rail systems Â· Stairs Â· Structural framing Â· Exterior integration',
+    stage: 'Finished builds + detail views',
+    size: 'large',
+  },  {
+    images: [
       ['/images/projects/concrete/concrete-patio-wide.webp', 'Freshly poured concrete patio running along the side of a New Jersey home'],
       ['/images/projects/concrete/concrete-patio-entry.webp', 'Completed concrete patio and entry area beside a screened porch'],
       ['/images/projects/concrete/concrete-steps.webp', 'Newly poured concrete entry steps at a residential exterior'],
@@ -106,7 +119,7 @@ const ProjectsPage = () => (
             </h1>
           </div>
           <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px] lg:justify-self-end">
-            A portfolio should make the standard visible. These Linart projects show completed spaces, open-concept renovations, new-home and addition framing, and the work behind the finished result.
+            A portfolio should make the standard visible. These Linart projects show completed spaces, open-concept renovations, new-home and addition framing, custom decks and outdoor living, and the work behind the finished result.
           </p>
         </div>
       </div>
