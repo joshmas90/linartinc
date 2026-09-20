@@ -89,18 +89,16 @@ const HomePage = () => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/22 via-transparent to-black/10" />
 
-      <div className="pointer-events-none absolute bottom-0 right-0 z-[5] hidden h-[30%] w-[39%] lg:block">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(14,11,8,.18)_0%,rgba(14,11,8,.88)_54%,rgba(9,8,7,.96)_100%)] backdrop-blur-[10px]" />
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-transparent to-[rgba(14,11,8,.30)]" />
-        <div className="relative flex h-full items-center justify-center px-10 text-center">
-          <div className="max-w-[430px]">
-            <span className="mx-auto mb-5 block h-px w-20 bg-gradient-to-r from-transparent via-[#d8b36f] to-transparent" />
-            <p className="display-serif text-[clamp(2rem,2.6vw,3rem)] italic leading-[1.02] tracking-[-0.02em] text-[#fff8ed] drop-shadow-[0_2px_18px_rgba(0,0,0,.72)]">
-              “Spaces worth coming home to.”
-            </p>
-            <span className="mx-auto mt-5 block h-px w-20 bg-gradient-to-r from-transparent via-[#d8b36f] to-transparent" />
-          </div>
-        </div>
+      <div className="pointer-events-none absolute bottom-[7%] right-[3.5%] z-[5] hidden lg:block">
+        <p
+          className="display-serif max-w-[520px] text-right text-[clamp(2.2rem,2.9vw,3.35rem)] font-medium italic leading-[0.98] tracking-[-0.028em] text-[#fff7e9]/95"
+          style={{
+            textShadow:
+              '0 1px 0 rgba(255,255,255,.18), 0 2px 5px rgba(30,20,12,.58), 0 8px 22px rgba(24,16,10,.22)',
+          }}
+        >
+          “Spaces worth coming home to.”
+        </p>
       </div>
 
       <div className="site-container relative z-10 flex min-h-[560px] items-center pb-14 pt-28 sm:min-h-[600px] lg:min-h-[640px] lg:pt-24">
