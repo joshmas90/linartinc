@@ -193,15 +193,6 @@ export const responsiveImages = {
       1600
     ]
   },
-  "/images/projects/company/residential-project.webp": {
-    "width": 1600,
-    "height": 1200,
-    "candidates": [
-      480,
-      960,
-      1600
-    ]
-  },
   "/images/projects/covered-porch/porch-exterior.webp": {
     "width": 1600,
     "height": 1200,
@@ -354,16 +345,6 @@ export const responsiveImages = {
     "candidates": [
       480,
       960
-    ]
-  },
-  "/images/service-areas/local-patio-project.webp": {
-    "width": 2048,
-    "height": 1536,
-    "candidates": [
-      480,
-      960,
-      1600,
-      2048
     ]
   },
   "/images/services/bathroom-remodeling.webp": {

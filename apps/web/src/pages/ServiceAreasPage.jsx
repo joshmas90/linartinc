@@ -1,12 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, MapPin } from 'lucide-react';
-import Img from '@/components/Img';
+import NewJerseyServiceMap from '@/components/NewJerseyServiceMap';
 
 const groups = [
-  ['North Jersey', ['Bergen', 'Essex', 'Hudson', 'Morris', 'Passaic', 'Sussex', 'Warren']],
-  ['Central Jersey', ['Hunterdon', 'Mercer', 'Middlesex', 'Monmouth', 'Somerset', 'Union']],
-  ['South Jersey', ['Atlantic', 'Burlington', 'Camden', 'Cape May', 'Cumberland', 'Gloucester', 'Ocean', 'Salem']],
+  {
+    number: '01',
+    title: 'Core service area',
+    note: 'Where we do most of our work',
+    counties: ['Burlington', 'Camden', 'Gloucester', 'Ocean'],
+  },
+  {
+    number: '02',
+    title: 'Outer project reach',
+    note: 'The farthest we typically travel',
+    ranges: [
+      ['Central', ['Hunterdon', 'Mercer', 'Middlesex', 'Monmouth', 'Somerset', 'Union']],
+      ['South', ['Atlantic', 'Cape May', 'Cumberland', 'Salem']],
+    ],
+  },
+  {
+    number: '03',
+    title: 'North Jersey',
+    note: 'Occasional projects—not our normal service area',
+    counties: ['Bergen', 'Essex', 'Hudson', 'Morris', 'Passaic', 'Sussex', 'Warren'],
+  },
 ];
 
 const ServiceAreasPage = () => (
@@ -29,27 +47,12 @@ const ServiceAreasPage = () => (
 
     <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
-        <div className="grid gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[0.47fr_0.53fr] lg:gap-16 xl:gap-20">
           <div>
-            <div className="relative pb-16 sm:pr-8 lg:pb-20">
-              <div className="project-frame aspect-[4/5]">
-                <Img
-                  src="/images/projects/company/residential-project.webp"
-                  alt="Linart Construction residential project underway in New Jersey"
-                  sizes="(min-width: 1024px) 38vw, 90vw"
-                />
-              </div>
-              <div className="project-frame absolute bottom-0 right-0 aspect-[4/3] w-[62%] border-[8px] border-[#f3eee5] shadow-[0_18px_50px_rgba(11,13,16,0.18)]">
-                <Img
-                  src="/images/service-areas/local-patio-project.webp"
-                  alt="Fresh concrete foundation for a residential project in New Jersey"
-                  sizes="(min-width: 1024px) 24vw, 56vw"
-                />
-              </div>
-            </div>
-            <div className="mt-4 flex items-start gap-3 text-[15px] leading-7 text-[#49443e]">
+            <NewJerseyServiceMap />
+            <div className="mt-5 flex items-start gap-3 text-[15px] leading-7 text-[#49443e]">
               <MapPin size={15} className="mt-0.5 shrink-0 text-[#a97f47]" />
-              Proud to live, work and build in the New Jersey communities we call home.
+              Based locally and proud to build for homeowners throughout the New Jersey communities we call home.
             </div>
           </div>
 
@@ -57,15 +60,29 @@ const ServiceAreasPage = () => (
             <p className="eyebrow">Our Community</p>
             <h2 className="section-title mt-5">Built nearby. Accountable long after.</h2>
             <p className="body-copy mt-6 max-w-2xl">
-              Working close to home means understanding New Jersey communities, housing stock and the practical realities of building here. We welcome conversations from homeowners across the state and choose projects where our team can be fully present from planning through finish.
+              Working close to home means understanding New Jersey communities, housing stock and the practical realities of building here. Most of our work is concentrated across Burlington, Camden, Gloucester and Ocean counties, with select projects extending through Central and South Jersey.
             </p>
 
             <div className="mt-10 border-t hairline">
-              {groups.map(([region, counties]) => (
-                <div key={region} className="premium-row grid gap-5 border-b hairline py-7 sm:grid-cols-[180px_1fr]">
-                  <h3 className="font-semibold">{region}</h3>
-                  <div className="flex flex-wrap gap-x-5 gap-y-2 text-[16px] leading-7 text-[#3f3b36]">
-                    {counties.map((county) => <span key={county}>{county} County</span>)}
+              {groups.map((group) => (
+                <div key={group.title} className="premium-row grid gap-5 border-b hairline py-7 sm:grid-cols-[42px_185px_1fr]">
+                  <span className="service-area-index">{group.number}</span>
+                  <div>
+                    <h3 className="font-semibold">{group.title}</h3>
+                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.11em] text-[#8a6840]">{group.note}</p>
+                  </div>
+                  <div className="text-[15px] leading-7 text-[#3f3b36]">
+                    {group.counties && (
+                      <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+                        {group.counties.map((county) => <span key={county}>{county} County</span>)}
+                      </div>
+                    )}
+                    {group.ranges?.map(([range, counties]) => (
+                      <div key={range} className="service-area-range">
+                        <strong>{range}</strong>
+                        <span>{counties.map((county) => `${county} County`).join(' · ')}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ))}
@@ -73,7 +90,7 @@ const ServiceAreasPage = () => (
 
             <div className="mt-8 border-l-2 border-[#9b7b4f] pl-5">
               <p className="text-[16px] leading-8 text-[#3c3833]">
-                Your town may not be listed here, but it may still be a fit. Tell us where you live and what you are considering—we would be glad to talk it through.
+                Live near the edge of our service area? Tell us where you are and what you are considering. We will let you know honestly whether the project is a good fit.
               </p>
               <Link to="/contact" className="link-arrow mt-4 text-[#0b0d10]">
                 Start a local conversation <ArrowUpRight size={15} />

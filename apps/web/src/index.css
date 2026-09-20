@@ -305,6 +305,250 @@ footer a:hover .linart-brand-seal {
   opacity: 1;
 }
 
+/* County-level service footprint */
+.nj-service-map {
+  position: relative;
+  overflow: hidden;
+  padding: 1.35rem;
+  border: 1px solid rgba(104,80,51,.18);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.95), transparent 34%),
+    linear-gradient(145deg, #f8f3eb 0%, #eee5d8 62%, #e5d8c7 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.82),
+    0 24px 62px rgba(42,34,25,.12);
+}
+
+.nj-service-map::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 4%, #9b6f3c 26%, #dfc597 50%, #9b6f3c 74%, transparent 96%);
+}
+
+.nj-service-map__heading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(36,31,26,.13);
+}
+
+.nj-service-map__kicker,
+.nj-service-map__state {
+  display: block;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.nj-service-map__kicker { color: #8a6235; }
+.nj-service-map__state { color: rgba(40,35,29,.52); }
+
+.nj-service-map__heading h3 {
+  margin-top: .3rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 1;
+}
+
+.nj-service-map__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  margin: .35rem auto 0;
+  filter: drop-shadow(0 19px 22px rgba(48,37,24,.16));
+}
+
+.nj-service-map__county {
+  cursor: pointer;
+  stroke: rgba(249,242,231,.9);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+  transition:
+    filter .24s ease,
+    opacity .24s ease,
+    stroke-width .24s ease;
+}
+
+.nj-service-map__county--core { fill: url(#nj-map-core); }
+.nj-service-map__county--extended { fill: url(#nj-map-extended); }
+.nj-service-map__county--north { fill: url(#nj-map-north); }
+
+.nj-service-map__county:hover,
+.nj-service-map__county:focus,
+.nj-service-map__county.is-active {
+  outline: none;
+  filter: brightness(1.09) saturate(1.08);
+  stroke: #fffaf1;
+  stroke-width: 3;
+}
+
+.nj-service-map__outline {
+  pointer-events: none;
+  fill: none;
+  stroke: #17191a;
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.nj-service-map__label {
+  pointer-events: none;
+  font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-anchor: middle;
+  dominant-baseline: central;
+  paint-order: stroke;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
+.nj-service-map__label--core,
+.nj-service-map__label--extended {
+  fill: #2c251e;
+  stroke: rgba(255,250,241,.68);
+}
+
+.nj-service-map__label--north {
+  fill: rgba(255,250,241,.9);
+  stroke: rgba(10,12,12,.58);
+}
+
+.nj-service-map__core-ring {
+  fill: rgba(255,250,241,.88);
+  stroke: rgba(24,22,19,.22);
+  stroke-width: 1;
+}
+
+.nj-service-map__core-star {
+  fill: #17191a;
+  stroke: #fff5e5;
+  stroke-width: 1.2;
+}
+
+.nj-service-map__core-caption {
+  fill: #17191a;
+  font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.nj-service-map__selection {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 1rem;
+  align-items: center;
+  min-height: 78px;
+  padding: .85rem 1rem;
+  border: 1px solid rgba(79,60,38,.13);
+  background: rgba(255,252,246,.64);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.72);
+}
+
+.nj-service-map__selection span,
+.nj-service-map__selection strong,
+.nj-service-map__selection small { display: block; }
+
+.nj-service-map__selection span {
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #84643f;
+}
+
+.nj-service-map__selection strong {
+  margin-top: .22rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.nj-service-map__selection-tier {
+  padding-left: 1rem;
+  border-left: 1px solid rgba(67,52,34,.17);
+}
+
+.nj-service-map__selection-tier small {
+  margin-top: .28rem;
+  color: #655e55;
+  font-size: .72rem;
+  line-height: 1.4;
+}
+
+.nj-service-map__selection-tier--north span { color: #4e504d; }
+
+.nj-service-map__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem 1rem;
+  padding-top: .9rem;
+  color: #5e5850;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.nj-service-map__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+}
+
+.nj-service-map__swatch {
+  display: inline-block;
+  width: .7rem;
+  height: .7rem;
+  border: 1px solid rgba(31,28,24,.18);
+}
+
+.nj-service-map__swatch--core { background: linear-gradient(135deg, #e4c99d, #a8753d); }
+.nj-service-map__swatch--extended {
+  background-color: #d9cbb5;
+  background-image: radial-gradient(#9b7040 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.nj-service-map__swatch--north { background: #242625; }
+
+.service-area-index {
+  padding-top: .08rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #987044;
+}
+
+.service-area-range + .service-area-range {
+  margin-top: .45rem;
+  padding-top: .45rem;
+  border-top: 1px solid rgba(61,53,44,.1);
+}
+
+.service-area-range strong {
+  display: inline-block;
+  min-width: 4.75rem;
+  margin-right: .65rem;
+  color: #8a6840;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 639px) {
   .linart-brand {
     gap: .58rem;
@@ -320,6 +564,31 @@ footer a:hover .linart-brand-seal {
 
   .home-hero-image {
     object-position: 60% 34%;
+  }
+
+  .nj-service-map {
+    padding: 1rem;
+  }
+
+  .nj-service-map__heading h3 {
+    font-size: 1.65rem;
+  }
+
+  .nj-service-map__selection {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+
+  .nj-service-map__selection-tier {
+    padding-top: .7rem;
+    padding-left: 0;
+    border-top: 1px solid rgba(67,52,34,.17);
+    border-left: 0;
+  }
+
+  .service-area-range strong {
+    display: block;
+    margin-bottom: .1rem;
   }
 }
 
