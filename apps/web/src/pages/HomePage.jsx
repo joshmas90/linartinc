@@ -70,7 +70,7 @@ const services = [
 
 const HomePage = () => (
   <>
-    <section className="relative min-h-[560px] overflow-hidden bg-[#090b0d] text-white sm:min-h-[600px] lg:min-h-[640px]">
+    <section className="relative min-h-[560px] overflow-hidden bg-[#090b0d] text-white sm:min-h-[600px] lg:h-[calc(100svh-200px)] lg:min-h-[540px] lg:max-h-[600px]">
       <img
         src="/images/home/linart-premium-hero-clean.webp"
         alt="Luxury Linart bathroom with freestanding tub, exposed brick, marble shower and custom vanity"
@@ -90,9 +90,9 @@ const HomePage = () => (
       <div className="absolute inset-0 bg-gradient-to-t from-black/22 via-transparent to-black/10" />
 
       <div className="pointer-events-none absolute bottom-[8%] right-[4.5%] z-[5] hidden lg:block">
-        <div className="max-w-[410px] text-right">
+        <div className="max-w-[500px] text-right">
           <p
-            className="display-serif text-[clamp(1.65rem,1.9vw,2.25rem)] font-medium italic leading-[1.04] tracking-[-0.018em] text-[#fff7e9]/92"
+            className="display-serif whitespace-nowrap text-[clamp(1.15rem,1.3vw,1.55rem)] font-medium italic leading-[1.04] tracking-[-0.012em] text-[#fff7e9]/92"
             style={{
               textShadow:
                 '0 1px 0 rgba(255,255,255,.14), 0 2px 5px rgba(30,20,12,.48), 0 7px 18px rgba(24,16,10,.18)',
@@ -104,7 +104,7 @@ const HomePage = () => (
         </div>
       </div>
 
-      <div className="site-container relative z-10 flex min-h-[560px] items-center pb-14 pt-28 sm:min-h-[600px] lg:min-h-[640px] lg:pt-24">
+      <div className="site-container relative z-10 flex min-h-[560px] items-center pb-14 pt-28 sm:min-h-[600px] lg:h-full lg:min-h-0 lg:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}

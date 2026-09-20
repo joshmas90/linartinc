@@ -34,10 +34,10 @@ const projects = [
   },
   {
     images: [
+      ['/images/projects/bathroom/bathroom-vanity-shower.webp', 'Custom wood vanity beside a glass shower enclosure'],
       ['/images/projects/bathroom/bath-main.webp', 'Finished modern bathroom with freestanding tub and black hexagonal tile'],
       ['/images/projects/bathroom/bathroom-shower-detail.webp', 'Walk-in shower with white tile, patterned floor and matte-black fixtures'],
       ['/images/projects/bathroom/bath-detail-01.webp', 'Modern bathroom vanity, freestanding tub and window detail'],
-      ['/images/projects/bathroom/bathroom-vanity-shower.webp', 'Custom wood vanity beside a glass shower enclosure'],
       ['/images/projects/bathroom/bath-detail-02.webp', 'Modern walk-in shower with white tile and black fixtures'],
       ['/images/projects/bathroom/bath-detail-03.webp', 'Completed modern bathroom viewed from the entry'],
       ['/images/projects/bathroom/bathroom-overview-b.webp', 'Completed bathroom viewed from the entry with shower and vanity'],
