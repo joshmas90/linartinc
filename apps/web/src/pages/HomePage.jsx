@@ -33,28 +33,32 @@ const serviceHighlights = [
 
 const featuredProjects = [
   {
-    image: '/images/projects/bathroom/bath-main.webp',
-    alt: 'Finished bathroom with freestanding tub and black hexagonal tile',
+    image: '/images/home/linart-reference-hero.webp',
+    alt: 'Luxury bathroom renovation with freestanding tub and exposed brick',
     title: 'Luxury Bathroom Renovation',
     copy: 'Classic design. Modern comfort.',
+    position: 'object-left',
   },
   {
     image: '/images/projects/bathroom/bathroom-shower-detail.webp',
     alt: 'Walk-in shower with white tile and matte-black fixtures',
     title: 'Modern Bathroom Remodel',
     copy: 'Functionality meets elegance.',
+    position: 'object-center',
   },
   {
-    image: '/images/projects/kitchen/kitchen-main.webp',
-    alt: 'Completed white kitchen with farmhouse sink and hardwood floors',
-    title: 'Open Concept Kitchen',
-    copy: 'Connected spaces built for daily life.',
+    image: '/images/projects/bathroom/bathroom-double-vanity.webp',
+    alt: 'Custom double vanity with vessel sinks and black fixtures',
+    title: 'Custom Interiors',
+    copy: 'Details that make a difference.',
+    position: 'object-center',
   },
   {
     image: '/images/home/covered-porch-addition.webp',
     alt: 'Completed covered porch addition with finished gable and white railing',
     title: 'Additions & Outdoor Living',
     copy: 'Built to feel like it was always there.',
+    position: 'object-center',
   },
 ];
 
@@ -70,48 +74,52 @@ const services = [
 
 const HomePage = () => (
   <>
-    <section className="relative overflow-hidden bg-[#0d1013] text-white">
-      <div className="grid lg:min-h-[560px] lg:grid-cols-[0.42fr_0.58fr]">
-        <div className="relative z-10 flex items-center bg-[linear-gradient(135deg,#101316_0%,#161a1e_100%)] px-6 pb-14 pt-32 sm:px-10 sm:pb-16 lg:px-[max(3rem,calc((100vw-1320px)/2))] lg:pr-10 lg:pt-28">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75 }}
-            className="max-w-[650px]"
-          >
-            <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-[#e3c693]">
-              Expert craftsmanship. Lasting value.
-            </p>
+    <section className="relative min-h-[510px] overflow-hidden bg-[#0b0d10] text-white sm:min-h-[540px] lg:min-h-[570px]">
+      <Img
+        src="/images/home/linart-reference-hero.webp"
+        alt="Luxury Linart bathroom renovation with freestanding tub, exposed brick and glass shower"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+        sizes="100vw"
+        priority
+      />
 
-            <h1 className="display-serif mt-5 max-w-[9ch] text-[clamp(3.5rem,6vw,6rem)] leading-[0.9] tracking-[-0.045em] text-white">
-              Transforming Homes. Building What’s Next.
-            </h1>
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(90deg, rgba(9,11,14,.985) 0%, rgba(9,11,14,.95) 23%, rgba(9,11,14,.78) 37%, rgba(9,11,14,.34) 53%, rgba(9,11,14,.08) 68%, rgba(9,11,14,0) 100%)',
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/12" />
 
-            <p className="mt-7 max-w-xl text-[17px] leading-8 text-white/88 sm:text-[19px] sm:leading-9">
-              From luxury renovations to new custom home construction, Linart delivers exceptional craftsmanship and timeless results across New Jersey.
-            </p>
+      <div className="site-container relative z-10 flex min-h-[510px] items-center pb-12 pt-28 sm:min-h-[540px] sm:pb-14 lg:min-h-[570px] lg:pt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75 }}
+          className="max-w-[650px]"
+        >
+          <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-[#e3c693] hero-copy-shadow">
+            Expert craftsmanship. Lasting value.
+          </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link to="/contact" className="premium-button-light">
-                Start Your Project <ArrowUpRight size={16} />
-              </Link>
-              <Link to="/projects" className="premium-button-ghost">
-                View Our Work <ArrowRight size={16} />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
+          <h1 className="display-serif hero-copy-shadow mt-5 max-w-[11ch] text-[clamp(3.25rem,5vw,5.55rem)] leading-[0.92] tracking-[-0.045em] text-white">
+            Transforming Homes. Building What’s Next.
+          </h1>
 
-        <div className="relative min-h-[390px] overflow-hidden sm:min-h-[460px] lg:min-h-[560px]">
-          <Img
-            src="/images/home/linart-reference-hero.webp"
-            alt="Luxury Linart bathroom renovation with freestanding tub, exposed brick and glass shower"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-            sizes="(min-width: 1024px) 58vw, 100vw"
-            priority
-          />
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-20 bg-gradient-to-r from-[#121518] to-transparent lg:block" />
-        </div>
+          <p className="mt-6 max-w-[590px] text-[17px] leading-8 text-white/92 sm:text-[19px] sm:leading-9">
+            From luxury renovations to new custom home construction, Linart delivers exceptional craftsmanship and timeless results across New Jersey.
+          </p>
+
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Link to="/contact" className="premium-button-light">
+              Start Your Project <ArrowUpRight size={16} />
+            </Link>
+            <Link to="/projects" className="premium-button-ghost">
+              View Our Work <ArrowRight size={16} />
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
 
@@ -122,14 +130,14 @@ const HomePage = () => (
             <Link
               key={label}
               to={to}
-              className={`group flex min-h-[126px] items-center gap-4 py-6 sm:px-6 ${index > 0 ? 'sm:border-l sm:border-black/10' : ''}`}
+              className={`group flex min-h-[118px] items-center gap-4 py-5 sm:px-6 ${index > 0 ? 'sm:border-l sm:border-black/10' : ''}`}
             >
               <div className="flex h-14 w-14 shrink-0 items-center justify-center text-[#a47b3d] transition-transform duration-300 group-hover:-translate-y-0.5">
-                <Icon size={36} strokeWidth={1.55} />
+                <Icon size={37} strokeWidth={1.5} />
               </div>
               <div>
-                <h2 className="text-[14px] font-bold uppercase tracking-[0.055em] text-[#16191c]">{label}</h2>
-                <p className="mt-1 text-[14px] leading-6 text-[#59534d]">{copy}</p>
+                <h2 className="text-[13px] font-bold uppercase leading-5 tracking-[0.055em] text-[#16191c]">{label}</h2>
+                <p className="mt-1 text-[14px] leading-5 text-[#59534d]">{copy}</p>
               </div>
             </Link>
           ))}
@@ -137,7 +145,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="lux-light-section bg-white section-shell-tight">
+    <section className="lux-light-section bg-white py-12 sm:py-14 lg:py-16">
       <div className="site-container">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
@@ -152,19 +160,19 @@ const HomePage = () => (
           </Link>
         </div>
 
-        <div className="mt-8 grid gap-7 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-7 grid gap-7 sm:grid-cols-2 xl:grid-cols-4">
           {featuredProjects.map((project) => (
             <Link key={project.title} to="/projects" className="group">
               <div className="project-frame aspect-[4/3] overflow-hidden">
                 <Img
                   src={project.image}
                   alt={project.alt}
-                  className="h-full w-full object-cover"
+                  className={`h-full w-full object-cover ${project.position}`}
                   sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
                 />
               </div>
-              <h3 className="mt-4 text-[15px] font-bold uppercase tracking-[0.035em] text-[#17191b]">{project.title}</h3>
-              <p className="mt-1 text-[15px] leading-6 text-[#5b554f]">{project.copy}</p>
+              <h3 className="mt-3 text-[14px] font-bold uppercase tracking-[0.035em] text-[#17191b]">{project.title}</h3>
+              <p className="mt-1 text-[14px] leading-6 text-[#5b554f]">{project.copy}</p>
             </Link>
           ))}
         </div>
