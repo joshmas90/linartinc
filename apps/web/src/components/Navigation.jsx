@@ -75,9 +75,15 @@ const Navigation = () => {
 
             <span className="h-6 w-px bg-white/12" />
 
-            <a href="tel:6092097810" className="flex items-center gap-2 text-[0.82rem] font-semibold hover:opacity-100" style={{ color: "#f3ece1", opacity: 0.94 }}>
-              <Phone size={14} />
-              609-209-7810
+            <a
+              href="tel:6092097810"
+              className="group flex min-h-[46px] items-center gap-2.5 rounded-full border border-[#c89a4f]/70 bg-[linear-gradient(180deg,rgba(28,25,21,.98),rgba(10,10,10,.98))] px-5 text-[0.88rem] font-extrabold tracking-[0.02em] text-[#efd19a] shadow-[inset_0_1px_0_rgba(255,255,255,.06),0_8px_22px_rgba(0,0,0,.28),0_0_22px_rgba(181,132,65,.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#e2ba73] hover:text-[#fff1d2] hover:shadow-[inset_0_1px_0_rgba(255,255,255,.08),0_12px_28px_rgba(0,0,0,.34),0_0_26px_rgba(181,132,65,.15)]"
+              aria-label="Call Linart Construction at 609-209-7810"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#d4aa66]/35 bg-[#c89a4f]/10 text-[#e8c27f] transition-colors group-hover:bg-[#c89a4f]/16">
+                <Phone size={14} strokeWidth={2} />
+              </span>
+              <span>609-209-7810</span>
             </a>
 
             <Link to="/contact" className="premium-button-light nav-premium-cta !min-h-[48px] !px-6">

@@ -89,6 +89,20 @@ const HomePage = () => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/22 via-transparent to-black/10" />
 
+      <div className="pointer-events-none absolute bottom-0 right-0 z-[5] hidden h-[30%] w-[39%] lg:block">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(14,11,8,.18)_0%,rgba(14,11,8,.88)_54%,rgba(9,8,7,.96)_100%)] backdrop-blur-[10px]" />
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-transparent to-[rgba(14,11,8,.30)]" />
+        <div className="relative flex h-full items-center justify-center px-10 text-center">
+          <div className="max-w-[430px]">
+            <span className="mx-auto mb-5 block h-px w-20 bg-gradient-to-r from-transparent via-[#d8b36f] to-transparent" />
+            <p className="display-serif text-[clamp(2rem,2.6vw,3rem)] italic leading-[1.02] tracking-[-0.02em] text-[#fff8ed] drop-shadow-[0_2px_18px_rgba(0,0,0,.72)]">
+              “Spaces worth coming home to.”
+            </p>
+            <span className="mx-auto mt-5 block h-px w-20 bg-gradient-to-r from-transparent via-[#d8b36f] to-transparent" />
+          </div>
+        </div>
+      </div>
+
       <div className="site-container relative z-10 flex min-h-[560px] items-center pb-14 pt-28 sm:min-h-[600px] lg:min-h-[640px] lg:pt-24">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -98,7 +112,7 @@ const HomePage = () => (
         >
           <div className="flex items-center gap-4">
             <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#ddb97c] hero-copy-shadow">
-              Expert craftsmanship. Lasting value.
+              One Crew, Start to Finish
             </p>
             <span className="hidden h-px w-20 bg-gradient-to-r from-[#a97c3d] to-transparent sm:block" />
           </div>
