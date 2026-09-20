@@ -6,6 +6,15 @@ import Img from '@/components/Img';
 const services = [
   {
     number: '01',
+    id: 'new-custom-home-construction',
+    title: 'New Custom Home Construction',
+    copy: 'Ground-up residential construction coordinated from structure and exterior envelope through interior systems and finish work.',
+    details: ['Preconstruction coordination', 'Structural framing', 'Exterior envelope', 'Interior finish'],
+    image: '/images/home/linart-residence-hero.webp',
+    alt: 'Large custom residence under construction by Linart Construction in New Jersey',
+  },
+  {
+    number: '02',
     id: 'home-additions',
     title: 'Home Additions',
     copy: 'Expansions planned to feel connected to the original house—not appended to it.',
@@ -14,16 +23,16 @@ const services = [
     alt: 'Linart Construction crew framing a large residential addition',
   },
   {
-    number: '02',
+    number: '03',
     id: 'whole-home-renovations',
     title: 'Whole-Home Renovations',
     copy: 'Large-scope renovation work coordinated across rooms, systems and trades.',
     details: ['Phased planning', 'Interior reconfiguration', 'Finish consistency', 'Trade coordination'],
-    image: '/images/projects/featured/interior-deck-connection.webp',
-    alt: 'Interior and exterior living spaces connected through a Linart renovation',
+    image: '/images/home/open-kitchen.webp',
+    alt: 'Open finished kitchen and adjoining living space by Linart Construction',
   },
   {
-    number: '03',
+    number: '04',
     id: 'kitchen-remodeling',
     title: 'Kitchen Remodeling',
     copy: 'Kitchens designed around circulation, storage, durable materials and clean installation.',
@@ -32,16 +41,16 @@ const services = [
     alt: 'Completed white kitchen with custom cabinetry and a butcher-block island',
   },
   {
-    number: '04',
+    number: '05',
     id: 'bathroom-remodeling',
     title: 'Bathroom Remodeling',
     copy: 'Bathrooms built around waterproofing, precise tilework and durable daily use.',
     details: ['Waterproofing', 'Tile', 'Fixtures', 'Ventilation + finish'],
-    image: '/images/services/bathroom-remodeling.webp',
-    alt: 'Modern bathroom with a freestanding tub, black fixtures and tiled shower',
+    image: '/images/projects/bathroom/bathroom-shower-flowers.webp',
+    alt: 'Finished bathroom with glass shower, bright tile and refined fixtures',
   },
   {
-    number: '05',
+    number: '06',
     id: 'basement-finishing',
     title: 'Basement Finishing',
     copy: 'Comfortable lower-level living space planned around the realities of the existing home.',
@@ -50,7 +59,7 @@ const services = [
     alt: 'Hardwood floor restoration in progress during a Linart interior renovation',
   },
   {
-    number: '06',
+    number: '07',
     id: 'structural-remodeling',
     title: 'Structural Remodeling',
     copy: 'Major reconfiguration and load-bearing changes approached with careful planning and sequencing.',
@@ -83,14 +92,14 @@ const ServicesPage = () => (
         <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr] lg:gap-16">
           <div>
             <p className="eyebrow">What We Handle</p>
-            <h2 className="display-serif mt-5 text-5xl leading-[0.95] sm:text-6xl">Substantial residential work, coordinated as a whole.</h2>
+            <h2 className="display-serif mt-5 text-5xl leading-[0.95] sm:text-6xl">From a new custom home to a whole-home transformation.</h2>
             <p className="body-copy mt-6">
-              Linart coordinates the visible finish with the structural and technical work behind it—from framing and exterior integration to cabinetry, tile and finish carpentry.
+              Linart coordinates the visible finish with the structural and technical work behind it—from new custom home framing and exterior integration to cabinetry, tile and finish carpentry.
             </p>
             <div className="project-frame mt-8 aspect-[4/3]">
               <Img
-                src="/images/projects/details/wood-ceiling.webp"
-                alt="Wood ceiling installation detail by Linart Construction"
+                src="/images/projects/bathroom/bathroom-vanity-progress.webp"
+                alt="Custom wood vanity installation in progress during a Linart bathroom renovation"
                 sizes="(min-width: 1024px) 28vw, 90vw"
               />
             </div>

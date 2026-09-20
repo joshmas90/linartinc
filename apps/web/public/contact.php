@@ -156,6 +156,7 @@ $contact = field_value($data, 'contact', 40);
 $message = field_value($data, 'message', 6000);
 
 $allowedServices = [
+    'New Custom Home Construction',
     'Home Addition',
     'Whole-Home Renovation',
     'Kitchen Remodeling',

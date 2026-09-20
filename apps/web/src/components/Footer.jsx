@@ -31,6 +31,7 @@ const Footer = () => {
           <div>
             <p className="eyebrow">Services</p>
             <div className="mt-5 space-y-3 text-[16px] text-white/80">
+              <Link className="block hover:text-white" to="/services#new-custom-home-construction">Custom Homes</Link>
               <Link className="block hover:text-white" to="/services#home-additions">Additions</Link>
               <Link className="block hover:text-white" to="/services#whole-home-renovations">Renovations</Link>
               <Link className="block hover:text-white" to="/services#kitchen-remodeling">Kitchens & Baths</Link>

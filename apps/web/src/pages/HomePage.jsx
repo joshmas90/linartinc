@@ -13,8 +13,8 @@ const featured = [
     number: '01',
   },
   {
-    image: '/images/home/finished-bathroom.webp',
-    alt: 'Finished bathroom with a freestanding tub, blue vanity and black fixtures',
+    image: '/images/projects/bathroom/bathroom-tub-detail.webp',
+    alt: 'Freestanding tub beside exposed brick in a completed Linart bathroom renovation',
     type: 'Bathroom Remodeling',
     title: 'Clean lines depend on careful layout and precise finish work.',
     number: '02',
@@ -29,6 +29,7 @@ const featured = [
 ];
 
 const services = [
+  ['New Custom Home Construction', 'Ground-up homes coordinated from structure and envelope through interiors, systems and finish work.', 'new-custom-home-construction'],
   ['Home Additions', 'Structure, envelope, interiors and finish work coordinated as one project.', 'home-additions'],
   ['Whole-Home Renovations', 'Multi-room renovations with one sequence, one point of accountability and one finish standard.', 'whole-home-renovations'],
   ['Kitchen Remodeling', 'Layout, cabinetry, lighting, fixtures and finish coordination for the room that works hardest.', 'kitchen-remodeling'],
@@ -70,7 +71,7 @@ const HomePage = () => (
 
           <div className="mt-8 grid max-w-4xl gap-8 border-t border-[#d4bb91]/48 pt-7 lg:grid-cols-[1fr_360px] lg:items-end">
             <p className="max-w-2xl hero-copy-shadow text-[18px] leading-8 text-white sm:text-[20px] sm:leading-9">
-              Additions, renovations and structural remodeling—planned carefully, managed clearly, and finished to a consistent standard.
+              New custom homes, additions, renovations and structural remodeling—planned carefully, managed clearly, and finished to a consistent standard.
             </p>
             <div className="hero-cta-panel">
               <Link to="/contact" className="hero-cta hero-cta-primary">
@@ -178,7 +179,7 @@ const HomePage = () => (
             <p className="eyebrow">Capabilities</p>
             <h2 className="section-title mt-5 max-w-md">One team.<br/>One standard.</h2>
             <p className="mt-6 max-w-md text-[16px] leading-8 text-white/82">
-              Substantial residential work benefits from continuity. We coordinate the project as a whole rather than treating every trade as a separate experience.
+              From new custom home construction to major renovations, substantial residential work benefits from continuity. We coordinate the project as a whole rather than treating every trade as a separate experience.
             </p>
           </div>
 

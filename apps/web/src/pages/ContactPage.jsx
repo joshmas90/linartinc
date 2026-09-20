@@ -7,7 +7,7 @@ const initial = {
   email: '',
   phone: '',
   city: '',
-  service: 'Home Addition',
+  service: 'New Custom Home Construction',
   timing: 'Planning / researching',
   contact: 'Phone',
   message: '',
@@ -138,7 +138,7 @@ ${form.message}`;
               <span className="block italic text-[#e0c89e]">you’re planning.</span>
             </h1>
             <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px]">
-              The first conversation is about fit: where the project is, what you want to change, your timing and the level of work involved.
+              From a new custom home to a substantial renovation, the first conversation is about fit: location, scope, timing and the level of coordination involved.
             </p>
           </div>
         </div>
@@ -166,16 +166,17 @@ ${form.message}`;
                 </ul>
               </div>
 
-              <div className="project-frame mt-10 aspect-[4/3]">
-                <Img
-                  src="/images/contact/completed-garage.webp"
-                  alt="Completed detached garage built for a New Jersey homeowner"
-                  sizes="(min-width: 1024px) 34vw, 90vw"
-                />
+              <div className="relative mt-10 overflow-hidden border border-[#ad8653]/35 bg-[#0c0e11] px-7 py-9 shadow-[0_24px_70px_rgba(25,20,14,.16)] sm:px-9">
+                <div className="pointer-events-none absolute inset-0 opacity-35" style={{ backgroundImage: 'linear-gradient(rgba(220,197,157,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(220,197,157,.08) 1px, transparent 1px), radial-gradient(circle at 20% 20%, rgba(173,134,83,.24), transparent 35%)', backgroundSize: '28px 28px, 28px 28px, auto' }} />
+                <div className="relative">
+                  <div className="flex items-center justify-between gap-4 border-b border-[#d4bb91]/25 pb-5"><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#dcc59d]">Linart · New Jersey</span><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">Est. 2004</span></div>
+                  <img src="/branding/linart-logo-lockup.png" alt="Linart Construction Inc." className="mx-auto mt-8 w-full max-w-[390px] drop-shadow-[0_12px_30px_rgba(0,0,0,.35)]" loading="lazy" decoding="async" />
+                  <div className="mx-auto mt-7 h-px w-24 bg-gradient-to-r from-transparent via-[#d4bb91] to-transparent" />
+                  <p className="mt-5 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-[#dcc59d]">Build · Renovate · Expand</p>
+                  <p className="mx-auto mt-3 max-w-sm text-center text-[14px] leading-6 text-white/66">Purposeful construction, disciplined coordination and a finish standard designed to hold up over time.</p>
+                </div>
               </div>
-              <p className="mt-4 text-[14px] leading-7 text-[#504a43]">
-                Real crews, active homes and one accountable point of contact from planning through closeout.
-              </p>
+              <p className="mt-4 text-[14px] leading-7 text-[#504a43]">One accountable point of contact from the first project conversation through closeout.</p>
             </aside>
 
             {status === 'sent' ? (
@@ -205,7 +206,8 @@ ${form.message}`;
                 </button>
               </div>
             ) : (
-            <form onSubmit={submit} aria-busy={status === 'sending'} className="relative border-t hairline">
+            <form onSubmit={submit} aria-busy={status === 'sending'} className="cream-panel relative rounded-[28px] border border-black/10 p-6 shadow-[0_22px_70px_rgba(46,37,27,.08)] sm:p-8 lg:p-10">
+              <div className="mb-2 flex flex-col gap-4 border-b hairline pb-7 sm:flex-row sm:items-end sm:justify-between"><div><p className="eyebrow">Private Project Brief</p><h2 className="display-serif mt-4 text-4xl leading-none sm:text-5xl">Start with the essentials.</h2></div><p className="max-w-xs text-[13px] leading-6 text-[#5a534a]">Sent directly to <a className="font-bold text-[#765326] underline decoration-[#ad8653]/45 underline-offset-4" href="mailto:services@linartinc.com">services@linartinc.com</a>.</p></div>
               {/* Honeypot — hidden from people, tempting to bots. */}
               <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
                 <label>
@@ -246,6 +248,7 @@ ${form.message}`;
                 <label className="py-5">
                   <span className="text-[13px] font-bold uppercase tracking-[0.11em] text-[#49433d]">Project Type</span>
                   <select name="service" value={form.service} onChange={change} className={inputClass} {...errorAttributes('service')}>
+                    <option>New Custom Home Construction</option>
                     <option>Home Addition</option>
                     <option>Whole-Home Renovation</option>
                     <option>Kitchen Remodeling</option>
@@ -318,9 +321,7 @@ ${form.message}`;
               )}
 
               <div className="flex flex-col gap-5 border-t hairline pt-7 xl:flex-row xl:items-center xl:justify-between">
-                <p className="max-w-md text-[14px] leading-6 text-[#49443e]">
-                  Your details go straight to our project inbox. We reply to every inquiry, usually within one business day.
-                </p>
+                <div className="max-w-lg"><p className="text-[14px] leading-6 text-[#49443e]">Your details go straight to our project inbox at <a className="font-semibold text-[#765326] hover:text-black" href="mailto:services@linartinc.com">services@linartinc.com</a>. We reply to every inquiry, usually within one business day.</p><div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-[11px] font-bold uppercase tracking-[0.1em] text-[#6b6257]"><span>Direct to Linart</span><span>Private inquiry</span><span>No mailing list</span></div></div>
                 <button
                   type="submit"
                   disabled={status === 'sending'}

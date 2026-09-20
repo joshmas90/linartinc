@@ -193,6 +193,120 @@ export const responsiveImages = {
       1600
     ]
   },
+  "/images/projects/bathroom/bathroom-double-vanity.webp": {
+    "width": 1050,
+    "height": 1400,
+    "candidates": [
+      480,
+      960,
+      1050
+    ]
+  },
+  "/images/projects/bathroom/bathroom-overview-a.webp": {
+    "width": 1050,
+    "height": 1400,
+    "candidates": [
+      480,
+      960,
+      1050
+    ]
+  },
+  "/images/projects/bathroom/bathroom-overview-b.webp": {
+    "width": 1400,
+    "height": 1050,
+    "candidates": [
+      480,
+      960,
+      1400
+    ]
+  },
+  "/images/projects/bathroom/bathroom-shower-detail.webp": {
+    "width": 1050,
+    "height": 1400,
+    "candidates": [
+      480,
+      960,
+      1050
+    ]
+  },
+  "/images/projects/bathroom/bathroom-shower-flowers.webp": {
+    "width": 720,
+    "height": 960,
+    "candidates": [
+      480,
+      720
+    ]
+  },
+  "/images/projects/bathroom/bathroom-shower-wide.webp": {
+    "width": 1050,
+    "height": 1400,
+    "candidates": [
+      480,
+      960,
+      1050
+    ]
+  },
+  "/images/projects/bathroom/bathroom-tub-brick.webp": {
+    "width": 720,
+    "height": 960,
+    "candidates": [
+      480,
+      720
+    ]
+  },
+  "/images/projects/bathroom/bathroom-tub-detail.webp": {
+    "width": 720,
+    "height": 960,
+    "candidates": [
+      480,
+      720
+    ]
+  },
+  "/images/projects/bathroom/bathroom-vanity-progress.webp": {
+    "width": 1400,
+    "height": 1050,
+    "candidates": [
+      480,
+      960,
+      1400
+    ]
+  },
+  "/images/projects/bathroom/bathroom-vanity-shower.webp": {
+    "width": 1050,
+    "height": 1400,
+    "candidates": [
+      480,
+      960,
+      1050
+    ]
+  },
+  "/images/projects/concrete/concrete-patio-entry.webp": {
+    "width": 1400,
+    "height": 1050,
+    "candidates": [
+      480,
+      960,
+      1400
+    ]
+  },
+  "/images/projects/concrete/concrete-patio-wide.webp": {
+    "width": 1400,
+    "height": 1050,
+    "candidates": [
+      480,
+      960,
+      1400
+    ]
+  },
+  "/images/projects/concrete/concrete-steps.webp": {
+    "width": 1400,
+    "height": 1050,
+    "candidates": [
+      480,
+      960,
+      1400
+    ]
+  },
   "/images/projects/covered-porch/porch-exterior.webp": {
     "width": 1600,
     "height": 1200,

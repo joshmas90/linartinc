@@ -26,18 +26,21 @@ const projects = [
       ['/images/projects/kitchen/kitchen-progress.webp', 'Kitchen cabinetry and flooring installation in progress'],
     ],
     kicker: 'Kitchen + Interior',
-    title: 'Connected Kitchen Renovation',
+    title: 'Open Concept Kitchen Renovation',
     location: 'New Jersey',
-    scope: 'Cabinetry · Flooring · Lighting · Backsplash · Connected living space',
+    scope: 'Cabinetry · Flooring · Lighting · Backsplash · Open-concept living space',
     stage: 'Finished + progress views',
     size: 'small',
   },
   {
     images: [
-      ['/images/projects/bathroom/bath-main.webp', 'Finished bathroom with freestanding tub and black hexagonal tile'],
-      ['/images/projects/bathroom/bath-detail-01.webp', 'Bathroom vanity, freestanding tub and window detail'],
-      ['/images/projects/bathroom/bath-detail-02.webp', 'Walk-in shower with white tile and black fixtures'],
-      ['/images/projects/bathroom/bath-detail-03.webp', 'Completed bathroom viewed from the entry'],
+      ['/images/projects/bathroom/bathroom-tub-brick.webp', 'Freestanding tub beside exposed brick in a completed bathroom renovation'],
+      ['/images/projects/bathroom/bathroom-shower-detail.webp', 'Walk-in shower with white tile, patterned floor and matte-black fixtures'],
+      ['/images/projects/bathroom/bathroom-double-vanity.webp', 'Double vessel-sink vanity with dark wood top and black fixtures'],
+      ['/images/projects/bathroom/bathroom-vanity-shower.webp', 'Custom wood vanity beside a glass shower enclosure'],
+      ['/images/projects/bathroom/bathroom-shower-wide.webp', 'Wide view of the tiled shower and custom vanity area'],
+      ['/images/projects/bathroom/bathroom-overview-a.webp', 'Completed bathroom with tiled shower, vanity and patterned floor'],
+      ['/images/projects/bathroom/bathroom-overview-b.webp', 'Completed bathroom viewed from the entry with shower and vanity'],
     ],
     kicker: 'Bathroom + Tile',
     title: 'Modern Bathroom Renovation',
@@ -53,11 +56,11 @@ const projects = [
       ['/images/projects/addition/addition-progress-02.webp', 'Framing crew working on a residential addition'],
       ['/images/projects/addition/addition-progress-03.webp', 'Roof framing stage of a residential addition'],
     ],
-    kicker: 'Addition + Structure',
-    title: 'Residential Addition Framing',
+    kicker: 'Ground-Up Building + Expansion',
+    title: 'New Home Construction + Additions',
     location: 'New Jersey',
-    scope: 'Site preparation · Structural framing · Roof integration · Exterior tie-in',
-    stage: 'Construction sequence',
+    scope: 'Site preparation · Structural framing · Roof systems · Exterior integration',
+    stage: 'Framing + structural sequence',
     size: 'large',
   },
   {
@@ -76,15 +79,15 @@ const projects = [
   },
   {
     images: [
-      ['/images/projects/patio/patio-finished.webp', 'Finished poured concrete patio beside a New Jersey home'],
-      ['/images/projects/patio/patio-prep-01.webp', 'Excavated and compacted patio area before concrete placement'],
-      ['/images/projects/patio/patio-prep-02.webp', 'Formed patio area prepared for a concrete pour'],
+      ['/images/projects/concrete/concrete-patio-wide.webp', 'Freshly poured concrete patio running along the side of a New Jersey home'],
+      ['/images/projects/concrete/concrete-patio-entry.webp', 'Completed concrete patio and entry area beside a screened porch'],
+      ['/images/projects/concrete/concrete-steps.webp', 'Newly poured concrete entry steps at a residential exterior'],
     ],
     kicker: 'Concrete + Hardscape',
-    title: 'Poured Concrete Patio',
+    title: 'Concrete Patio + Entry Work',
     location: 'New Jersey',
-    scope: 'Excavation · Base preparation · Forming · Concrete placement',
-    stage: 'Preparation + finished result',
+    scope: 'Site preparation · Forming · Patio slab · Entry steps',
+    stage: 'Completed flatwork + entry details',
     size: 'small',
   },
 ];
@@ -103,7 +106,7 @@ const ProjectsPage = () => (
             </h1>
           </div>
           <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px] lg:justify-self-end">
-            A portfolio should make the standard visible. These Linart projects show completed spaces, construction details and the work behind the finished result.
+            A portfolio should make the standard visible. These Linart projects show completed spaces, open-concept renovations, new-home and addition framing, and the work behind the finished result.
           </p>
         </div>
       </div>

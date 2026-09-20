@@ -21,7 +21,7 @@ export const routeMeta = {
   '/services': {
     title: 'Residential Construction Services | Linart Construction Inc.',
     description:
-      'Home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing and structural remodeling in New Jersey.',
+      'New custom home construction, home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing and structural remodeling in New Jersey.',
   },
   '/projects': {
     title: 'Projects | Linart Construction Inc.',
