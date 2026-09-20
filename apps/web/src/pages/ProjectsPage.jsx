@@ -90,18 +90,22 @@ const projects = [
     scope: 'Composite and wood decking Â· Custom rail systems Â· Stairs Â· Structural framing Â· Exterior integration',
     stage: 'Finished builds + detail views',
     size: 'large',
-  },  {
+  },
+  {
     images: [
-      ['/images/projects/concrete/concrete-patio-wide.webp', 'Freshly poured concrete patio running along the side of a New Jersey home'],
-      ['/images/projects/concrete/concrete-patio-entry.webp', 'Completed concrete patio and entry area beside a screened porch'],
-      ['/images/projects/concrete/concrete-steps.webp', 'Newly poured concrete entry steps at a residential exterior'],
+      ['/images/projects/hardscape/hardscape-pool-main.webp', 'Custom paver pool surround with integrated deck access and finished waterline'],
+      ['/images/projects/hardscape/hardscape-pool-wide.webp', 'Wide view of a custom paver pool deck with curved spa and contrasting border'],
+      ['/images/projects/hardscape/hardscape-pool-sunset.webp', 'Panoramic view of a custom paver pool surround at sunset'],
+      ['/images/projects/hardscape/hardscape-brick-walk.webp', 'Curved reclaimed-brick walkway with contrasting border through a landscaped side yard'],
+      ['/images/projects/hardscape/hardscape-brick-steps.webp', 'Rebuilt brick entry steps and landing with clean mortar joints'],
+      ['/images/projects/hardscape/hardscape-concrete-flatwork.webp', 'New concrete flatwork and slab installation beside a residential exterior'],
     ],
-    kicker: 'Concrete + Hardscape',
-    title: 'Concrete Patio + Entry Work',
+    kicker: 'Pavers + Masonry + Hardscape',
+    title: 'Custom Hardscapes & Masonry',
     location: 'New Jersey',
-    scope: 'Site preparation · Forming · Patio slab · Entry steps',
-    stage: 'Completed flatwork + entry details',
-    size: 'small',
+    scope: 'Pool decks Â· Interlocking pavers Â· Brick walks Â· Masonry steps Â· Concrete flatwork',
+    stage: 'Finished work + installation views',
+    size: 'large',
   },
 ];
 
@@ -119,7 +123,7 @@ const ProjectsPage = () => (
             </h1>
           </div>
           <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px] lg:justify-self-end">
-            A portfolio should make the standard visible. These Linart projects show completed spaces, open-concept renovations, new-home and addition framing, custom decks and outdoor living, and the work behind the finished result.
+            A portfolio should make the standard visible. These Linart projects show completed spaces, open-concept renovations, new-home and addition framing, custom decks, masonry and outdoor hardscapes, and the work behind the finished result.
           </p>
         </div>
       </div>
