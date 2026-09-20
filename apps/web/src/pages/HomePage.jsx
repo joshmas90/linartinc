@@ -72,7 +72,7 @@ const HomePage = () => (
   <>
     <section className="relative min-h-[560px] overflow-hidden bg-[#090b0d] text-white sm:min-h-[600px] lg:min-h-[640px]">
       <img
-        src="/images/home/linart-premium-hero-generated.webp"
+        src="/images/home/linart-premium-hero-clean.webp"
         alt="Luxury Linart bathroom with freestanding tub, exposed brick, marble shower and custom vanity"
         className="absolute inset-0 h-full w-full object-cover object-center"
         loading="eager"
