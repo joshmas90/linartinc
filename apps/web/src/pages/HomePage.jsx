@@ -89,16 +89,19 @@ const HomePage = () => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/22 via-transparent to-black/10" />
 
-      <div className="pointer-events-none absolute bottom-[7%] right-[3.5%] z-[5] hidden lg:block">
-        <p
-          className="display-serif max-w-[520px] text-right text-[clamp(2.2rem,2.9vw,3.35rem)] font-medium italic leading-[0.98] tracking-[-0.028em] text-[#fff7e9]/95"
-          style={{
-            textShadow:
-              '0 1px 0 rgba(255,255,255,.18), 0 2px 5px rgba(30,20,12,.58), 0 8px 22px rgba(24,16,10,.22)',
-          }}
-        >
-          “Spaces worth coming home to.”
-        </p>
+      <div className="pointer-events-none absolute bottom-[8%] right-[4.5%] z-[5] hidden lg:block">
+        <div className="max-w-[410px] text-right">
+          <p
+            className="display-serif text-[clamp(1.65rem,1.9vw,2.25rem)] font-medium italic leading-[1.04] tracking-[-0.018em] text-[#fff7e9]/92"
+            style={{
+              textShadow:
+                '0 1px 0 rgba(255,255,255,.14), 0 2px 5px rgba(30,20,12,.48), 0 7px 18px rgba(24,16,10,.18)',
+            }}
+          >
+            Spaces worth coming home to.
+          </p>
+          <span className="mt-4 ml-auto block h-px w-14 bg-[#c89a4f]/70" />
+        </div>
       </div>
 
       <div className="site-container relative z-10 flex min-h-[560px] items-center pb-14 pt-28 sm:min-h-[600px] lg:min-h-[640px] lg:pt-24">
@@ -106,27 +109,28 @@ const HomePage = () => (
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="max-w-[700px]"
+          className="max-w-[620px]"
         >
           <div className="flex items-center gap-4">
-            <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#ddb97c] hero-copy-shadow">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#ddb97c] hero-copy-shadow sm:text-[11.5px]">
               One Crew, Start to Finish
             </p>
             <span className="hidden h-px w-20 bg-gradient-to-r from-[#a97c3d] to-transparent sm:block" />
           </div>
 
-          <h1 className="display-serif hero-copy-shadow mt-5 max-w-[10.5ch] text-[clamp(3.45rem,5vw,5.7rem)] leading-[0.92] tracking-[-0.045em] text-white">
-            Transforming Homes. Building What’s Next.
+          <h1 className="display-serif hero-copy-shadow mt-5 max-w-[12.5ch] text-[clamp(2.85rem,4.15vw,4.75rem)] leading-[0.94] tracking-[-0.038em] text-white">
+            <span className="block">Transforming Homes.</span>
+            <span className="mt-1 block">Building What’s Next.</span>
           </h1>
 
-          <p className="mt-6 max-w-[590px] text-[17px] leading-8 text-white/90 sm:text-[19px] sm:leading-9">
+          <p className="mt-5 max-w-[540px] text-[15.5px] leading-7 text-white/86 sm:text-[16.5px] sm:leading-8">
             From luxury renovations to new custom home construction, Linart delivers exceptional craftsmanship and timeless results across New Jersey.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/contact"
-              className="group inline-flex min-h-[60px] items-center justify-between gap-8 rounded-[3px] border border-[#e1bd78]/55 bg-[linear-gradient(180deg,#c89a4f_0%,#9b702c_100%)] px-8 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.28),0_14px_34px_rgba(0,0,0,.28)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f0d39a]/80 hover:shadow-[inset_0_1px_0_rgba(255,255,255,.32),0_18px_42px_rgba(0,0,0,.34),0_0_24px_rgba(184,132,59,.14)]"
+              className="group inline-flex min-h-[54px] items-center justify-between gap-7 rounded-[3px] border border-[#e1bd78]/55 bg-[linear-gradient(180deg,#c89a4f_0%,#9b702c_100%)] px-7 text-[11.5px] font-extrabold uppercase tracking-[0.095em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.28),0_12px_28px_rgba(0,0,0,.26)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f0d39a]/80 hover:shadow-[inset_0_1px_0_rgba(255,255,255,.32),0_16px_36px_rgba(0,0,0,.32),0_0_20px_rgba(184,132,59,.12)]"
             >
               Start Your Project
               <ArrowUpRight size={17} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -134,7 +138,7 @@ const HomePage = () => (
 
             <Link
               to="/projects"
-              className="group inline-flex min-h-[60px] items-center justify-between gap-8 rounded-[3px] border border-[#c89a4f]/75 bg-[linear-gradient(180deg,rgba(14,16,18,.72),rgba(6,7,8,.58))] px-8 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.06),0_14px_34px_rgba(0,0,0,.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#e1bd78] hover:bg-[linear-gradient(180deg,rgba(34,29,23,.78),rgba(8,9,10,.68))]"
+              className="group inline-flex min-h-[54px] items-center justify-between gap-7 rounded-[3px] border border-[#c89a4f]/65 bg-[linear-gradient(180deg,rgba(14,16,18,.68),rgba(6,7,8,.54))] px-7 text-[11.5px] font-extrabold uppercase tracking-[0.095em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.05),0_12px_28px_rgba(0,0,0,.20)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#e1bd78] hover:bg-[linear-gradient(180deg,rgba(34,29,23,.76),rgba(8,9,10,.64))]"
             >
               View Our Work
               <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
