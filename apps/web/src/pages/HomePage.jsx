@@ -33,32 +33,28 @@ const serviceHighlights = [
 
 const featuredProjects = [
   {
-    image: '/images/home/linart-reference-hero.webp',
-    alt: 'Luxury bathroom renovation with freestanding tub and exposed brick',
+    image: '/images/projects/bathroom/bath-main.webp',
+    alt: 'Finished bathroom with freestanding tub and black hexagonal tile',
     title: 'Luxury Bathroom Renovation',
     copy: 'Classic design. Modern comfort.',
-    position: 'object-left',
   },
   {
-    image: '/images/projects/bathroom/bathroom-shower-detail.webp',
-    alt: 'Walk-in shower with white tile and matte-black fixtures',
-    title: 'Modern Bathroom Remodel',
-    copy: 'Functionality meets elegance.',
-    position: 'object-center',
+    image: '/images/projects/kitchen/kitchen-main.webp',
+    alt: 'Completed Linart kitchen renovation with white cabinetry and hardwood floors',
+    title: 'Kitchen Remodeling',
+    copy: 'Refined layouts. Everyday function.',
   },
   {
     image: '/images/projects/bathroom/bathroom-double-vanity.webp',
     alt: 'Custom double vanity with vessel sinks and black fixtures',
     title: 'Custom Interiors',
     copy: 'Details that make a difference.',
-    position: 'object-center',
   },
   {
     image: '/images/home/covered-porch-addition.webp',
     alt: 'Completed covered porch addition with finished gable and white railing',
     title: 'Additions & Outdoor Living',
     copy: 'Built to feel like it was always there.',
-    position: 'object-center',
   },
 ];
 
@@ -74,49 +70,62 @@ const services = [
 
 const HomePage = () => (
   <>
-    <section className="relative min-h-[510px] overflow-hidden bg-[#0b0d10] text-white sm:min-h-[540px] lg:min-h-[570px]">
-      <Img
-        src="/images/home/linart-reference-hero.webp"
-        alt="Luxury Linart bathroom renovation with freestanding tub, exposed brick and glass shower"
+    <section className="relative min-h-[560px] overflow-hidden bg-[#090b0d] text-white sm:min-h-[600px] lg:min-h-[640px]">
+      <img
+        src="/images/home/linart-premium-hero-generated.webp"
+        alt="Luxury Linart bathroom with freestanding tub, exposed brick, marble shower and custom vanity"
         className="absolute inset-0 h-full w-full object-cover object-center"
-        sizes="100vw"
-        priority
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
       />
 
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(90deg, rgba(9,11,14,.985) 0%, rgba(9,11,14,.95) 23%, rgba(9,11,14,.78) 37%, rgba(9,11,14,.34) 53%, rgba(9,11,14,.08) 68%, rgba(9,11,14,0) 100%)',
+            'linear-gradient(90deg, rgba(7,9,11,.995) 0%, rgba(7,9,11,.995) 25%, rgba(7,9,11,.97) 34%, rgba(7,9,11,.88) 41%, rgba(7,9,11,.62) 49%, rgba(7,9,11,.30) 58%, rgba(7,9,11,.08) 70%, rgba(7,9,11,0) 100%)',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/12" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/22 via-transparent to-black/10" />
 
-      <div className="site-container relative z-10 flex min-h-[510px] items-center pb-12 pt-28 sm:min-h-[540px] sm:pb-14 lg:min-h-[570px] lg:pt-24">
+      <div className="site-container relative z-10 flex min-h-[560px] items-center pb-14 pt-28 sm:min-h-[600px] lg:min-h-[640px] lg:pt-24">
         <motion.div
-          initial={{ opacity: 0, y: 22 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75 }}
-          className="max-w-[650px]"
+          transition={{ duration: 0.7 }}
+          className="max-w-[700px]"
         >
-          <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-[#e3c693] hero-copy-shadow">
-            Expert craftsmanship. Lasting value.
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#ddb97c] hero-copy-shadow">
+              Expert craftsmanship. Lasting value.
+            </p>
+            <span className="hidden h-px w-20 bg-gradient-to-r from-[#a97c3d] to-transparent sm:block" />
+          </div>
 
-          <h1 className="display-serif hero-copy-shadow mt-5 max-w-[11ch] text-[clamp(3.25rem,5vw,5.55rem)] leading-[0.92] tracking-[-0.045em] text-white">
+          <h1 className="display-serif hero-copy-shadow mt-5 max-w-[10.5ch] text-[clamp(3.45rem,5vw,5.7rem)] leading-[0.92] tracking-[-0.045em] text-white">
             Transforming Homes. Building What’s Next.
           </h1>
 
-          <p className="mt-6 max-w-[590px] text-[17px] leading-8 text-white/92 sm:text-[19px] sm:leading-9">
+          <p className="mt-6 max-w-[590px] text-[17px] leading-8 text-white/90 sm:text-[19px] sm:leading-9">
             From luxury renovations to new custom home construction, Linart delivers exceptional craftsmanship and timeless results across New Jersey.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link to="/contact" className="premium-button-light">
-              Start Your Project <ArrowUpRight size={16} />
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Link
+              to="/contact"
+              className="group inline-flex min-h-[60px] items-center justify-between gap-8 rounded-[3px] border border-[#e1bd78]/55 bg-[linear-gradient(180deg,#c89a4f_0%,#9b702c_100%)] px-8 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.28),0_14px_34px_rgba(0,0,0,.28)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f0d39a]/80 hover:shadow-[inset_0_1px_0_rgba(255,255,255,.32),0_18px_42px_rgba(0,0,0,.34),0_0_24px_rgba(184,132,59,.14)]"
+            >
+              Start Your Project
+              <ArrowUpRight size={17} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-            <Link to="/projects" className="premium-button-ghost">
-              View Our Work <ArrowRight size={16} />
+
+            <Link
+              to="/projects"
+              className="group inline-flex min-h-[60px] items-center justify-between gap-8 rounded-[3px] border border-[#c89a4f]/75 bg-[linear-gradient(180deg,rgba(14,16,18,.72),rgba(6,7,8,.58))] px-8 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.06),0_14px_34px_rgba(0,0,0,.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#e1bd78] hover:bg-[linear-gradient(180deg,rgba(34,29,23,.78),rgba(8,9,10,.68))]"
+            >
+              View Our Work
+              <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </motion.div>
@@ -167,7 +176,7 @@ const HomePage = () => (
                 <Img
                   src={project.image}
                   alt={project.alt}
-                  className={`h-full w-full object-cover ${project.position}`}
+                  className="h-full w-full object-cover"
                   sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
                 />
               </div>
