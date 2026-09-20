@@ -6,12 +6,14 @@
 		<link rel="apple-touch-icon" href="/branding/linart-seal.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="theme-color" content="#0b0d10" />
+		<meta name="author" content="Linart Construction Inc." />
 		<link data-react-helmet="true" rel="canonical" href="https://linartinc.com/" />
-		<meta data-react-helmet="true" name="description" content="Linart Construction Inc. provides new custom homes, additions, renovations, kitchens, bathrooms, decks and patios throughout New Jersey. Family-owned since 2004." />
+		<meta data-react-helmet="true" name="description" content="Family-owned since 2004. Linart Construction builds custom homes, additions, renovations, kitchens, bathrooms, basements, decks and patios across New Jersey." />
+		<meta data-react-helmet="true" name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 		<meta data-react-helmet="true" property="og:type" content="website" />
 		<meta data-react-helmet="true" property="og:site_name" content="Linart Construction Inc." />
-		<meta data-react-helmet="true" property="og:title" content="Linart Construction Inc. | Residential Construction &amp; Remodeling in New Jersey" />
-		<meta data-react-helmet="true" property="og:description" content="Linart Construction Inc. provides new custom homes, additions, renovations, kitchens, bathrooms, decks and patios throughout New Jersey. Family-owned since 2004." />
+		<meta data-react-helmet="true" property="og:title" content="New Jersey Custom Homes &amp; Remodeling | Linart Construction" />
+		<meta data-react-helmet="true" property="og:description" content="Family-owned since 2004. Linart Construction builds custom homes, additions, renovations, kitchens, bathrooms, basements, decks and patios across New Jersey." />
 		<meta data-react-helmet="true" property="og:url" content="https://linartinc.com/" />
 		<meta data-react-helmet="true" property="og:image" content="https://linartinc.com/branding/linart-home-social.webp" />
 		<meta data-react-helmet="true" property="og:image:alt" content="Brick and stone residence by Linart Construction Inc." />
@@ -19,8 +21,8 @@
 		<meta data-react-helmet="true" property="og:image:height" content="630" />
 		<meta data-react-helmet="true" property="og:locale" content="en_US" />
 		<meta data-react-helmet="true" name="twitter:card" content="summary_large_image" />
-		<meta data-react-helmet="true" name="twitter:title" content="Linart Construction Inc. | Residential Construction &amp; Remodeling in New Jersey" />
-		<meta data-react-helmet="true" name="twitter:description" content="Linart Construction Inc. provides new custom homes, additions, renovations, kitchens, bathrooms, decks and patios throughout New Jersey. Family-owned since 2004." />
+		<meta data-react-helmet="true" name="twitter:title" content="New Jersey Custom Homes &amp; Remodeling | Linart Construction" />
+		<meta data-react-helmet="true" name="twitter:description" content="Family-owned since 2004. Linart Construction builds custom homes, additions, renovations, kitchens, bathrooms, basements, decks and patios across New Jersey." />
 		<meta data-react-helmet="true" name="twitter:image" content="https://linartinc.com/branding/linart-home-social.webp" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,25 +33,47 @@
 		<link
 			rel="preload"
 			as="image"
-			href="/images/home/linart-residence-hero-1600.webp"
-			imagesrcset="/images/home/linart-residence-hero-480.webp 480w, /images/home/linart-residence-hero-960.webp 960w, /images/home/linart-residence-hero-1600.webp 1600w, /images/home/linart-residence-hero-2048.webp 2048w"
-			imagesizes="100vw"
+			href="/images/home/linart-premium-hero-generated.webp"
 			fetchpriority="high"
 		/>
-		<title data-react-helmet="true">Linart Construction Inc. | Residential Construction &amp; Remodeling in New Jersey</title>
+		<title data-react-helmet="true">New Jersey Custom Homes &amp; Remodeling | Linart Construction</title>
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "GeneralContractor",
-			"name": "Linart Construction Inc.",
-			"url": "https://linartinc.com",
-			"logo": "https://linartinc.com/branding/linart-seal.png",
-			"image": "https://linartinc.com/branding/linart-home-social.webp",
-			"telephone": "+1-609-209-7810",
-			"email": "services@linartinc.com",
-			"foundingDate": "2004",
-			"areaServed": { "@type": "State", "name": "New Jersey" },
-			"serviceType": ["New custom home construction", "Home additions", "Whole-home renovations", "Kitchen remodeling", "Bathroom remodeling", "Basement finishing", "Decks and patios"]
+			"@graph": [
+				{
+					"@type": "GeneralContractor",
+					"@id": "https://linartinc.com/#business",
+					"name": "Linart Construction Inc.",
+					"url": "https://linartinc.com/",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://linartinc.com/branding/linart-seal.png"
+					},
+					"image": "https://linartinc.com/branding/linart-home-social.webp",
+					"telephone": "+1-609-209-7810",
+					"email": "services@linartinc.com",
+					"foundingDate": "2004",
+					"areaServed": { "@type": "State", "name": "New Jersey" },
+					"serviceType": [
+						"New custom home construction",
+						"Home additions",
+						"Whole-home renovations",
+						"Kitchen remodeling",
+						"Bathroom remodeling",
+						"Basement finishing",
+						"Deck and patio construction"
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": "https://linartinc.com/#website",
+					"url": "https://linartinc.com/",
+					"name": "Linart Construction Inc.",
+					"publisher": { "@id": "https://linartinc.com/#business" },
+					"inLanguage": "en-US"
+				}
+			]
 		}
 		</script>
 	</head>

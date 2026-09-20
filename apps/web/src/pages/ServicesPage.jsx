@@ -1,77 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Img from '@/components/Img';
-
-const services = [
-  {
-    number: '01',
-    id: 'new-custom-home-construction',
-    title: 'New Custom Home Construction',
-    copy: 'Ground-up residential construction coordinated from structure and exterior envelope through interior systems and finish work.',
-    details: ['Preconstruction coordination', 'Structural framing', 'Exterior envelope', 'Interior finish'],
-    image: '/images/home/linart-residence-hero.webp',
-    alt: 'Large custom residence under construction by Linart Construction in New Jersey',
-  },
-  {
-    number: '02',
-    id: 'home-additions',
-    title: 'Home Additions',
-    copy: 'Expansions planned to feel connected to the original house—not appended to it.',
-    details: ['Structural framing', 'Exterior envelope', 'Interior integration', 'Finish coordination'],
-    image: '/images/home/addition-framing.webp',
-    alt: 'Linart Construction crew framing a large residential addition',
-  },
-  {
-    number: '03',
-    id: 'whole-home-renovations',
-    title: 'Whole-Home Renovations',
-    copy: 'Large-scope renovation work coordinated across rooms, systems and trades.',
-    details: ['Phased planning', 'Interior reconfiguration', 'Finish consistency', 'Trade coordination'],
-    image: '/images/home/open-kitchen.webp',
-    alt: 'Open finished kitchen and adjoining living space by Linart Construction',
-  },
-  {
-    number: '04',
-    id: 'kitchen-remodeling',
-    title: 'Kitchen Remodeling',
-    copy: 'Kitchens designed around circulation, storage, durable materials and clean installation.',
-    details: ['Layout', 'Cabinetry', 'Lighting', 'Fixtures + finish work'],
-    image: '/images/services/kitchen-remodeling.webp',
-    alt: 'Completed white kitchen with custom cabinetry and a butcher-block island',
-  },
-  {
-    number: '05',
-    id: 'bathroom-remodeling',
-    title: 'Bathroom Remodeling',
-    copy: 'Bathrooms built around waterproofing, precise tilework and durable daily use.',
-    details: ['Waterproofing', 'Tile', 'Fixtures', 'Ventilation + finish'],
-    image: '/images/projects/bathroom/bathroom-shower-flowers.webp',
-    alt: 'Finished bathroom with glass shower, bright tile and refined fixtures',
-  },
-  {
-    number: '06',
-    id: 'basement-finishing',
-    title: 'Basement Finishing',
-    copy: 'Comfortable lower-level living space planned around the realities of the existing home.',
-    details: ['Layout', 'Moisture considerations', 'Mechanical integration', 'Finish work'],
-    image: '/images/editorial/hardwood-restoration-progress.webp',
-    alt: 'Hardwood floor restoration in progress during a Linart interior renovation',
-  },
-  {
-    number: '07',
-    id: 'decks-patios',
-    title: 'Decks/Patios',
-    copy: 'Decks and patios planned as durable extensions of the home, with careful attention to structure, drainage, circulation and finish.',
-    details: ['Custom decks', 'Patio construction', 'Railings + stairs', 'Exterior integration'],
-    image: '/images/services/structural-deck-framing.webp',
-    alt: 'Deck framing and foundation work at a New Jersey home',
-  },
-];
+import { serviceDetails } from '@/content/serviceDetails';
 
 const ServicesPage = () => (
   <>
-
     <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
         <p className="eyebrow">Capabilities</p>
@@ -106,7 +40,7 @@ const ServicesPage = () => (
           </div>
 
           <div className="border-t hairline">
-            {services.map((service) => (
+            {serviceDetails.map((service) => (
               <article
                 id={service.id}
                 key={service.number}
@@ -120,11 +54,18 @@ const ServicesPage = () => (
                   />
                 </div>
                 <div className="min-w-0">
-                  <h2 id={`${service.id}-title`} className="display-serif break-words text-[2.15rem] leading-[0.98] sm:text-[2.3rem] lg:text-[2.45rem] xl:text-[2.6rem]">{service.title}</h2>
-                  <p className="body-copy mt-4 max-w-2xl">{service.copy}</p>
+                  <h2 id={`${service.id}-title`} className="display-serif break-words text-[2.15rem] leading-[0.98] sm:text-[2.3rem] lg:text-[2.45rem] xl:text-[2.6rem]">
+                    <Link to={`/services/${service.slug}`} className="transition-colors hover:text-[#765326]">
+                      {service.title}
+                    </Link>
+                  </h2>
+                  <p className="body-copy mt-4 max-w-2xl">{service.summary}</p>
                   <div className="mt-6 grid min-w-0 grid-cols-1 gap-x-8 gap-y-3 text-[11px] font-semibold uppercase leading-5 tracking-[0.045em] text-[#3d3934] sm:grid-cols-2">
                     {service.details.map((detail) => <span key={detail} className="min-w-0 break-words">{detail}</span>)}
                   </div>
+                  <Link to={`/services/${service.slug}`} className="link-arrow mt-6 text-[#17191b]">
+                    Explore {service.title} <ArrowRight size={15} />
+                  </Link>
                 </div>
               </article>
             ))}

@@ -9,25 +9,25 @@ const serviceHighlights = [
     icon: Bath,
     label: 'Kitchens & Bathrooms',
     copy: 'Beautiful, functional spaces.',
-    to: '/services#kitchen-remodeling',
+    to: '/services/kitchen-remodeling',
   },
   {
     icon: Home,
     label: 'New Custom Home Construction',
     copy: 'Your vision. Our expertise.',
-    to: '/services#new-custom-home-construction',
+    to: '/services/custom-homes',
   },
   {
     icon: Plus,
     label: 'Additions & Expansions',
     copy: 'More space for what matters.',
-    to: '/services#home-additions',
+    to: '/services/home-additions',
   },
   {
     icon: Hammer,
     label: 'Whole Home Renovations',
     copy: 'Reimagine every detail.',
-    to: '/services#whole-home-renovations',
+    to: '/services/whole-home-renovations',
   },
 ];
 
@@ -59,13 +59,13 @@ const featuredProjects = [
 ];
 
 const services = [
-  ['New Custom Home Construction', 'Ground-up homes coordinated from structure and envelope through interiors, systems and finish work.', 'new-custom-home-construction'],
-  ['Home Additions', 'Structure, envelope, interiors and finish work coordinated as one project.', 'home-additions'],
-  ['Whole-Home Renovations', 'Multi-room renovations with one sequence, one point of accountability and one finish standard.', 'whole-home-renovations'],
-  ['Kitchen Remodeling', 'Layout, cabinetry, lighting, fixtures and finish coordination for the room that works hardest.', 'kitchen-remodeling'],
-  ['Bathroom Remodeling', 'Waterproofing, tile, fixtures, ventilation and clean detailing built for long-term use.', 'bathroom-remodeling'],
-  ['Basement Finishing', 'Dry, comfortable living space planned around mechanicals, egress, storage and everyday use.', 'basement-finishing'],
-  ['Decks/Patios', 'Custom decks and patios planned for durable outdoor living, clean integration and long-term use.', 'decks-patios'],
+  ['New Custom Home Construction', 'Ground-up homes coordinated from structure and envelope through interiors, systems and finish work.', '/services/custom-homes'],
+  ['Home Additions', 'Structure, envelope, interiors and finish work coordinated as one project.', '/services/home-additions'],
+  ['Whole-Home Renovations', 'Multi-room renovations with one sequence, one point of accountability and one finish standard.', '/services/whole-home-renovations'],
+  ['Kitchen Remodeling', 'Layout, cabinetry, lighting, fixtures and finish coordination for the room that works hardest.', '/services/kitchen-remodeling'],
+  ['Bathroom Remodeling', 'Waterproofing, tile, fixtures, ventilation and clean detailing built for long-term use.', '/services/bathroom-remodeling'],
+  ['Basement Finishing', 'Dry, comfortable living space planned around mechanicals, egress, storage and everyday use.', '/services/basement-finishing'],
+  ['Decks/Patios', 'Custom decks and patios planned for durable outdoor living, clean integration and long-term use.', '/services/decks-patios'],
 ];
 
 const HomePage = () => (
@@ -244,7 +244,7 @@ const HomePage = () => (
           <div className="border-t border-[#d4bb91]/22">
             {services.map(([name, copy, slug], index) => (
               <Link
-                to={`/services#${slug}`}
+                to={slug}
                 key={name}
                 className="premium-row group grid gap-3 border-b border-[#d4bb91]/22 py-6 sm:grid-cols-[60px_220px_1fr_24px] sm:items-start"
               >

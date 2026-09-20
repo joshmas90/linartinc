@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import HomePage from '@/pages/HomePage';
 import AboutPage from '@/pages/AboutPage';
 import ServicesPage from '@/pages/ServicesPage';
+import ServiceDetailPage from '@/pages/ServiceDetailPage';
 import ProjectsPage from '@/pages/ProjectsPage';
 import ServiceAreasPage from '@/pages/ServiceAreasPage';
 import ContactPage from '@/pages/ContactPage';
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:serviceSlug" element={<ServiceDetailPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/service-areas" element={<ServiceAreasPage />} />
             <Route path="/contact" element={<ContactPage />} />

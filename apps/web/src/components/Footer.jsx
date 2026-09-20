@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="brand-stone text-white">
       <div className="site-container py-18 sm:py-24">
-        <div className="grid gap-12 border-b border-[#d4bb91]/18 pb-14 lg:grid-cols-[1.25fr_0.75fr_0.75fr_1fr]">
+        <div className="grid gap-12 border-b border-[#d4bb91]/18 pb-14 lg:grid-cols-[1.25fr_0.75fr_0.9fr_1fr]">
           <div>
             <Link to="/" aria-label="Linart Construction home" className="inline-flex text-white">
               <LinartBrand footer />
@@ -30,12 +30,14 @@ const Footer = () => {
 
           <div>
             <p className="eyebrow">Services</p>
-            <div className="mt-5 space-y-3 text-[16px] text-white/80">
-              <Link className="block hover:text-white" to="/services#new-custom-home-construction">Custom Homes</Link>
-              <Link className="block hover:text-white" to="/services#home-additions">Additions</Link>
-              <Link className="block hover:text-white" to="/services#whole-home-renovations">Renovations</Link>
-              <Link className="block hover:text-white" to="/services#kitchen-remodeling">Kitchens & Baths</Link>
-              <Link className="block hover:text-white" to="/services#decks-patios">Decks &amp; Patios</Link>
+            <div className="mt-5 space-y-3 text-[15px] text-white/80">
+              <Link className="block hover:text-white" to="/services/custom-homes">Custom Homes</Link>
+              <Link className="block hover:text-white" to="/services/home-additions">Home Additions</Link>
+              <Link className="block hover:text-white" to="/services/whole-home-renovations">Whole-Home Renovations</Link>
+              <Link className="block hover:text-white" to="/services/kitchen-remodeling">Kitchen Remodeling</Link>
+              <Link className="block hover:text-white" to="/services/bathroom-remodeling">Bathroom Remodeling</Link>
+              <Link className="block hover:text-white" to="/services/basement-finishing">Basement Finishing</Link>
+              <Link className="block hover:text-white" to="/services/decks-patios">Decks &amp; Patios</Link>
             </div>
           </div>
 
