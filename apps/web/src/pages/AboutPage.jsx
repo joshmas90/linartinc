@@ -56,7 +56,7 @@ const AboutPage = () => (
           </div>
 
           <div>
-            <div className="relative pb-16 sm:pl-10 lg:pb-20">
+            <div className="relative pb-24 sm:pl-10 sm:pb-28 lg:pb-32">
               <div className="project-frame ml-auto aspect-[4/5] w-[88%]">
                 <Img
                   src="/images/about/linart-crew-framing.webp"
@@ -64,11 +64,20 @@ const AboutPage = () => (
                   sizes="(min-width: 1024px) 38vw, 88vw"
                 />
               </div>
-              <div className="project-frame absolute bottom-0 left-0 aspect-[4/3] w-[62%] border-[8px] border-[#f3eee5] shadow-[0_18px_50px_rgba(11,13,16,0.18)]">
+
+              <div className="project-frame absolute bottom-0 left-0 aspect-[4/3] w-[54%] border-[8px] border-[#f3eee5] shadow-[0_18px_50px_rgba(11,13,16,0.18)]">
                 <Img
                   src="/images/about/linart-truck-jobsite.webp"
                   alt="Linart Construction branded truck at an active residential jobsite"
-                  sizes="(min-width: 1024px) 26vw, 62vw"
+                  sizes="(min-width: 1024px) 22vw, 54vw"
+                />
+              </div>
+
+              <div className="project-frame absolute bottom-5 right-0 aspect-[4/3] w-[48%] border-[8px] border-[#f3eee5] shadow-[0_18px_50px_rgba(11,13,16,0.18)]">
+                <Img
+                  src="/images/home/addition-framing.webp"
+                  alt="Structural framing underway on a substantial Linart residential addition"
+                  sizes="(min-width: 1024px) 20vw, 48vw"
                 />
               </div>
             </div>
