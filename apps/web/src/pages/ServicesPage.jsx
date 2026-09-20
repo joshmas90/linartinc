@@ -89,10 +89,10 @@ const ServicesPage = () => (
 
     <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
-        <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr] lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[0.30fr_minmax(0,0.70fr)] lg:gap-14 xl:grid-cols-[0.32fr_minmax(0,0.68fr)] xl:gap-16">
           <div>
             <p className="eyebrow">What We Handle</p>
-            <h2 className="display-serif mt-5 text-5xl leading-[0.95] sm:text-6xl">From a new custom home to a whole-home transformation.</h2>
+            <h2 className="display-serif mt-5 max-w-[12ch] text-4xl leading-[0.98] sm:text-5xl xl:text-6xl">From a new custom home to a whole-home transformation.</h2>
             <p className="body-copy mt-6">
               Linart coordinates the visible finish with the structural and technical work behind it—from new custom home framing and exterior integration to cabinetry, tile and finish carpentry.
             </p>
@@ -111,19 +111,19 @@ const ServicesPage = () => (
                 id={service.id}
                 key={service.number}
                 aria-labelledby={`${service.id}-title`}
-                className="premium-row service-row grid scroll-mt-28 gap-5 border-b hairline py-8 sm:grid-cols-[52px_150px_1fr] lg:grid-cols-[52px_170px_1fr]"
+                className="premium-row service-row grid min-w-0 scroll-mt-28 gap-5 border-b hairline py-8 md:grid-cols-[44px_140px_minmax(0,1fr)] lg:grid-cols-[44px_150px_minmax(0,1fr)] xl:grid-cols-[48px_164px_minmax(0,1fr)]"
               >
                 <span aria-hidden="true" className="text-[13px] font-bold tracking-[0.14em] text-[#504a43]">{service.number}</span>
                 <div className="project-frame aspect-[4/3] sm:aspect-square">
                   <Img src={service.image} alt={service.alt}
-                    sizes="(min-width: 1024px) 170px, (min-width: 640px) 150px, 90vw"
+                    sizes="(min-width: 1280px) 164px, (min-width: 1024px) 150px, (min-width: 768px) 140px, 90vw"
                   />
                 </div>
-                <div>
-                  <h2 id={`${service.id}-title`} className="display-serif text-4xl leading-none sm:text-[2.65rem]">{service.title}</h2>
+                <div className="min-w-0">
+                  <h2 id={`${service.id}-title`} className="display-serif break-words text-[2.15rem] leading-[0.98] sm:text-[2.3rem] lg:text-[2.45rem] xl:text-[2.6rem]">{service.title}</h2>
                   <p className="body-copy mt-4 max-w-2xl">{service.copy}</p>
-                  <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-2 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#3d3934] xl:grid-cols-4">
-                    {service.details.map((detail) => <span key={detail}>{detail}</span>)}
+                  <div className="mt-6 grid min-w-0 grid-cols-1 gap-x-8 gap-y-3 text-[11px] font-semibold uppercase leading-5 tracking-[0.045em] text-[#3d3934] sm:grid-cols-2">
+                    {service.details.map((detail) => <span key={detail} className="min-w-0 break-words">{detail}</span>)}
                   </div>
                 </div>
               </article>
@@ -134,10 +134,10 @@ const ServicesPage = () => (
     </section>
 
     <section className="lux-light-section bg-[#d7cec1] section-shell-tight">
-      <div className="site-container flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+      <div className="site-container flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="eyebrow">Next Step</p>
-          <h2 className="display-serif mt-4 max-w-4xl text-5xl leading-none sm:text-6xl">
+          <h2 className="display-serif mt-4 max-w-4xl text-4xl leading-[0.98] sm:text-5xl lg:text-6xl">
             Tell us what you are considering. We’ll help define the right conversation.
           </h2>
         </div>
