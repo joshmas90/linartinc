@@ -99,7 +99,7 @@ const HomePage = () => (
                 '0 1px 0 rgba(255,255,255,.14), 0 2px 5px rgba(30,20,12,.48), 0 7px 18px rgba(24,16,10,.18)',
             }}
           >
-            â€œSpaces worth coming home to.â€
+            &ldquo;Spaces worth coming home to.&rdquo;
           </p>
           <span className="mt-4 ml-auto block h-px w-14 bg-[#c89a4f]/70" />
         </div>
