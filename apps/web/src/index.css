@@ -174,6 +174,137 @@ footer a:hover .linart-brand-seal {
   object-position: 56% 34%;
 }
 
+.hero-cta-panel {
+  display: grid;
+  gap: .65rem;
+  padding: .5rem;
+  border: 1px solid rgba(224,200,158,.28);
+  background:
+    linear-gradient(145deg, rgba(32,29,25,.72), rgba(8,9,10,.58));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    0 22px 60px rgba(0,0,0,.28);
+  backdrop-filter: blur(14px) saturate(112%);
+}
+
+.hero-cta {
+  position: relative;
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: .9rem 1rem .9rem 1.2rem;
+  border: 1px solid transparent;
+  overflow: hidden;
+  transition:
+    transform .32s cubic-bezier(.22,1,.36,1),
+    border-color .32s ease,
+    background .32s ease,
+    box-shadow .32s ease;
+}
+
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.24) 49%, transparent 78%);
+  transform: translateX(-115%);
+  transition: transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+}
+
+.hero-cta:hover::before {
+  transform: translateX(115%);
+}
+
+.hero-cta:focus-visible {
+  outline: 2px solid #e0c89e;
+  outline-offset: 3px;
+}
+
+.hero-cta-primary {
+  border-color: rgba(255,255,255,.72);
+  background: linear-gradient(135deg, #fffaf1 0%, #e4cfad 55%, #f8efe1 100%);
+  color: #15110d;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 14px 34px rgba(0,0,0,.24),
+    0 0 30px rgba(180,137,79,.10);
+}
+
+.hero-cta-primary:hover {
+  border-color: #fff8eb;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 18px 42px rgba(0,0,0,.30),
+    0 0 34px rgba(202,160,101,.16);
+}
+
+.hero-cta-secondary {
+  border-color: rgba(224,200,158,.42);
+  background: linear-gradient(145deg, rgba(26,25,23,.82), rgba(7,8,9,.72));
+  color: #fffaf1;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.065);
+}
+
+.hero-cta-secondary:hover {
+  border-color: rgba(224,200,158,.76);
+  background: linear-gradient(145deg, rgba(43,37,30,.90), rgba(10,11,12,.82));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.09),
+    0 15px 36px rgba(0,0,0,.24);
+}
+
+.hero-cta-kicker,
+.hero-cta-label {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.hero-cta-kicker {
+  margin-bottom: .3rem;
+  font-size: .63rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: .67;
+}
+
+.hero-cta-label {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.05;
+}
+
+.hero-cta-icon {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: 0 0 2.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: .72;
+  transition: transform .32s cubic-bezier(.22,1,.36,1), opacity .32s ease;
+}
+
+.hero-cta:hover .hero-cta-icon {
+  transform: translate(.12rem,-.12rem);
+  opacity: 1;
+}
+
 @media (max-width: 639px) {
   .linart-brand {
     gap: .58rem;
@@ -914,6 +1045,9 @@ header nav a span {
   .premium-button,
   .premium-button::before,
   .premium-button svg,
+  .hero-cta,
+  .hero-cta::before,
+  .hero-cta-icon,
   .link-arrow::after,
   .link-arrow svg,
   .project-frame,

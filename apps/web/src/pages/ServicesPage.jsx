@@ -28,8 +28,8 @@ const services = [
     title: 'Kitchen Remodeling',
     copy: 'Kitchens designed around circulation, storage, durable materials and clean installation.',
     details: ['Layout', 'Cabinetry', 'Lighting', 'Fixtures + finish work'],
-    image: '/images/projects/kitchen/kitchen-main.webp',
-    alt: 'Completed white kitchen with farmhouse sink by Linart Construction',
+    image: '/images/services/kitchen-remodeling.webp',
+    alt: 'Completed white kitchen with custom cabinetry and a butcher-block island',
   },
   {
     number: '04',
@@ -37,8 +37,8 @@ const services = [
     title: 'Bathroom Remodeling',
     copy: 'Bathrooms built around waterproofing, precise tilework and durable daily use.',
     details: ['Waterproofing', 'Tile', 'Fixtures', 'Ventilation + finish'],
-    image: '/images/projects/featured/modern-bathroom.webp',
-    alt: 'Finished modern bathroom with precise tile and fixture installation',
+    image: '/images/services/bathroom-remodeling.webp',
+    alt: 'Modern bathroom with a freestanding tub, black fixtures and tiled shower',
   },
   {
     number: '05',
@@ -55,8 +55,8 @@ const services = [
     title: 'Structural Remodeling',
     copy: 'Major reconfiguration and load-bearing changes approached with careful planning and sequencing.',
     details: ['Openings', 'Load-bearing changes', 'Reconfiguration', 'Trade coordination'],
-    image: '/images/about/linart-crew-framing.webp',
-    alt: 'Linart crew completing structural framing on a residential project',
+    image: '/images/services/structural-deck-framing.webp',
+    alt: 'Structural deck framing and foundation work at a New Jersey home',
   },
 ];
 

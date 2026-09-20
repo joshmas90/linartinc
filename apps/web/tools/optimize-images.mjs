@@ -8,7 +8,8 @@
  * true pixel widths, re-encodes the source with a 2048px cap, and generates the
  * manifest consumed by <Img>. Sources narrower than a target are never enlarged
  * or mislabeled in srcset. Pass one or more source paths to process only those
- * photos while still refreshing the complete manifest.
+ * photos while still refreshing the complete manifest, or pass --manifest-only
+ * to refresh metadata without re-encoding any image.
  *
  * Run this whenever you add project photos. Until the manifest is regenerated,
  * <Img> safely falls back to the original photo without a responsive srcset.
@@ -23,7 +24,13 @@ const MANIFEST = path.resolve('src/generated/imageManifest.js');
 const WIDTHS = [480, 960, 1600, 2048];
 const QUALITY = 80;
 const MAX_EDGE = 2048;
-const requestedFiles = new Set(process.argv.slice(2).map((file) => path.resolve(file)));
+const args = process.argv.slice(2);
+const manifestOnly = args.includes('--manifest-only');
+const requestedFiles = new Set(args.filter((arg) => arg !== '--manifest-only').map((file) => path.resolve(file)));
+
+if (manifestOnly && requestedFiles.size > 0) {
+  throw new Error('--manifest-only cannot be combined with image source paths.');
+}
 async function* walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const filenames = new Set(entries.filter((entry) => entry.isFile()).map((entry) => entry.name));
@@ -63,7 +70,7 @@ for await (const file of walk(ROOT)) {
   const outputHeight = Math.round(height * (outputWidth / width));
   const candidates = [...new Set(WIDTHS.map((target) => Math.min(outputWidth, target)))].sort((a, b) => a - b);
   const absoluteFile = path.resolve(file);
-  const shouldProcess = requestedFiles.size === 0 || requestedFiles.has(absoluteFile);
+  const shouldProcess = !manifestOnly && (requestedFiles.size === 0 || requestedFiles.has(absoluteFile));
 
   for (const w of candidates) expectedVariants.add(path.resolve(`${base}-${w}.webp`));
 

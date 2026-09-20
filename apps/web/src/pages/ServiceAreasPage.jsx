@@ -14,14 +14,14 @@ const ServiceAreasPage = () => (
 
     <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
-        <p className="eyebrow">Where We Work</p>
+        <p className="eyebrow">Proudly Local</p>
         <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <h1 className="display-serif inner-hero-title max-w-[10ch]">
-            New Jersey,
-            <span className="block italic text-[#e0c89e]">one project at a time.</span>
+            New Jersey is home.
+            <span className="block italic text-[#e0c89e]">So is the work.</span>
           </h1>
           <p className="max-w-xl text-[17px] leading-8 text-white/88 sm:text-[18px]">
-            Linart serves homeowners throughout New Jersey. Project fit depends on scope, schedule and location—not on how many towns can be listed on a page.
+            Linart is rooted here, lives here and builds for neighbors across New Jersey. That local connection shapes how we communicate, care for each home and stand behind the finished work.
           </p>
         </div>
       </div>
@@ -41,23 +41,23 @@ const ServiceAreasPage = () => (
               </div>
               <div className="project-frame absolute bottom-0 right-0 aspect-[4/3] w-[62%] border-[8px] border-[#f3eee5] shadow-[0_18px_50px_rgba(11,13,16,0.18)]">
                 <Img
-                  src="/images/about/linart-truck-jobsite.webp"
-                  alt="Linart Construction truck at an active New Jersey jobsite"
+                  src="/images/service-areas/local-patio-project.webp"
+                  alt="Fresh concrete foundation for a residential project in New Jersey"
                   sizes="(min-width: 1024px) 24vw, 56vw"
                 />
               </div>
             </div>
             <div className="mt-4 flex items-start gap-3 text-[15px] leading-7 text-[#49443e]">
               <MapPin size={15} className="mt-0.5 shrink-0 text-[#a97f47]" />
-              Residential additions, renovations and structural work throughout New Jersey.
+              Proud to live, work and build in the New Jersey communities we call home.
             </div>
           </div>
 
           <div>
-            <p className="eyebrow">Coverage</p>
-            <h2 className="section-title mt-5">Local knowledge without the clutter.</h2>
+            <p className="eyebrow">Our Community</p>
+            <h2 className="section-title mt-5">Built nearby. Accountable long after.</h2>
             <p className="body-copy mt-6 max-w-2xl">
-              Each inquiry is evaluated around location, scope, schedule and the demands of the home. Share the municipality early so logistics, permitting and project fit can be discussed clearly.
+              Working close to home means understanding New Jersey communities, housing stock and the practical realities of building here. We welcome conversations from homeowners across the state and choose projects where our team can be fully present from planning through finish.
             </p>
 
             <div className="mt-10 border-t hairline">
@@ -73,10 +73,10 @@ const ServiceAreasPage = () => (
 
             <div className="mt-8 border-l-2 border-[#9b7b4f] pl-5">
               <p className="text-[16px] leading-8 text-[#3c3833]">
-                Don’t see your area? Project scope matters. Contact Linart with the municipality and a short description of the work.
+                Your town may not be listed here, but it may still be a fit. Tell us where you live and what you are considering—we would be glad to talk it through.
               </p>
               <Link to="/contact" className="link-arrow mt-4 text-[#0b0d10]">
-                Check project fit <ArrowUpRight size={15} />
+                Start a local conversation <ArrowUpRight size={15} />
               </Link>
             </div>
           </div>

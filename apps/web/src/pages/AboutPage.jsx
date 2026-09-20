@@ -95,7 +95,7 @@ const AboutPage = () => (
         <div className="mt-12 grid gap-6 md:grid-cols-12">
           <figure className="md:col-span-5">
             <div className="project-frame aspect-[5/4]">
-              <Img src="/images/projects/details/wood-ceiling.webp" alt="Custom wood ceiling detail during installation"
+              <Img src="/images/about/butcher-block-detail.webp" alt="Finished butcher-block work surface and surrounding cabinetry"
                 sizes="(min-width: 1024px) 30vw, 90vw"
               />
             </div>
@@ -103,7 +103,7 @@ const AboutPage = () => (
           </figure>
           <figure className="md:col-span-3">
             <div className="project-frame aspect-[3/4]">
-              <Img src="/images/projects/kitchen/kitchen-cabinetry.webp" alt="Finished custom cabinetry and millwork"
+              <Img src="/images/about/kitchen-cabinetry-detail.webp" alt="Finished custom cabinetry, stone backsplash and range wall"
                 sizes="(min-width: 1024px) 30vw, 90vw"
               />
             </div>
@@ -111,7 +111,7 @@ const AboutPage = () => (
           </figure>
           <figure className="md:col-span-4 md:pt-14">
             <div className="project-frame aspect-[4/3]">
-              <Img src="/images/projects/featured/modern-bathroom.webp" alt="Finished bathroom tile and fixture detail"
+              <Img src="/images/about/bathroom-craft.webp" alt="Finished bathroom with freestanding tub, blue vanity and large-format tile"
                 sizes="(min-width: 1024px) 30vw, 90vw"
               />
             </div>

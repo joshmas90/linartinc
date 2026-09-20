@@ -168,8 +168,8 @@ ${form.message}`;
 
               <div className="project-frame mt-10 aspect-[4/3]">
                 <Img
-                  src="/images/projects/company/linart-jobsite.webp"
-                  alt="Linart Construction truck at a residential project site"
+                  src="/images/contact/completed-garage.webp"
+                  alt="Completed detached garage built for a New Jersey homeowner"
                   sizes="(min-width: 1024px) 34vw, 90vw"
                 />
               </div>

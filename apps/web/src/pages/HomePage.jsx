@@ -6,9 +6,9 @@ import Img from '@/components/Img';
 
 const featured = [
   {
-    image: '/images/home/addition-framing.webp',
-    alt: 'Large second-story residential addition being framed by Linart Construction',
-    type: 'Addition in Progress',
+    image: '/images/home/covered-porch-addition.webp',
+    alt: 'Completed covered porch addition with a finished gable and white railing',
+    type: 'Completed Addition',
     title: 'Complex additions are built one coordinated decision at a time.',
     number: '01',
   },
@@ -68,16 +68,24 @@ const HomePage = () => (
             <span className="block italic text-[#e0c89e]">intention.</span>
           </h1>
 
-          <div className="mt-8 grid max-w-4xl gap-8 border-t border-[#d4bb91]/48 pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+          <div className="mt-8 grid max-w-4xl gap-8 border-t border-[#d4bb91]/48 pt-7 lg:grid-cols-[1fr_360px] lg:items-end">
             <p className="max-w-2xl hero-copy-shadow text-[18px] leading-8 text-white sm:text-[20px] sm:leading-9">
               Additions, renovations and structural remodeling—planned carefully, managed clearly, and finished to a consistent standard.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <Link to="/contact" className="premium-button-light">
-                Discuss Your Project <ArrowUpRight size={16} />
+            <div className="hero-cta-panel">
+              <Link to="/contact" className="hero-cta hero-cta-primary">
+                <span>
+                  <span className="hero-cta-kicker">Start a conversation</span>
+                  <span className="hero-cta-label">Discuss Your Project</span>
+                </span>
+                <span className="hero-cta-icon" aria-hidden="true"><ArrowUpRight size={17} /></span>
               </Link>
-              <Link to="/projects" className="premium-button premium-button-ghost">
-                Selected Work
+              <Link to="/projects" className="hero-cta hero-cta-secondary">
+                <span>
+                  <span className="hero-cta-kicker">See the standard</span>
+                  <span className="hero-cta-label">Explore Selected Work</span>
+                </span>
+                <span className="hero-cta-icon" aria-hidden="true"><ArrowRight size={17} /></span>
               </Link>
             </div>
           </div>
@@ -238,7 +246,7 @@ const HomePage = () => (
             </div>
             <div className="relative min-h-[340px] overflow-hidden border-t border-white/12 lg:min-h-0 lg:border-l lg:border-t-0">
               <Img
-                src="/images/projects/kitchen/kitchen-main.webp"
+                src="/images/home/open-kitchen.webp"
                 alt=""
                 aria-hidden="true"
                 className="absolute inset-0 h-full w-full object-cover"
