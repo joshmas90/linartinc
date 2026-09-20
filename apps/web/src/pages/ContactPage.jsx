@@ -254,7 +254,7 @@ ${form.message}`;
                     <option>Kitchen Remodeling</option>
                     <option>Bathroom Remodeling</option>
                     <option>Basement Finishing</option>
-                    <option>Structural Remodeling</option>
+                    <option>Deck / Patio Construction</option>
                     <option>Other Residential Work</option>
                   </select>
                   {fieldError('service')}

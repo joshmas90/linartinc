@@ -43,7 +43,7 @@ const Navigation = () => {
   }, [open]);
 
   return (
-    <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-[#b58f5c]/30 bg-black/95 shadow-[0_10px_34px_rgba(0,0,0,0.34)] backdrop-blur-xl">
+    <header className={`site-header fixed inset-x-0 top-0 z-50 border-b border-[#b58f5c]/30 shadow-[0_10px_34px_rgba(0,0,0,0.34)] ${open ? 'bg-[#0b0d10]' : 'bg-black/95 backdrop-blur-xl'}`}>
       <div className="site-container">
         <div className={`flex items-center justify-between transition-all ${scrolled ? 'h-[68px]' : 'h-[76px]'}`}>
           <Link
@@ -107,9 +107,10 @@ const Navigation = () => {
             id="mobile-navigation"
             role="navigation"
             aria-label="Site navigation"
-            className="fixed inset-0 z-40 bg-[#0b0d10] lg:hidden"
+            className="fixed left-0 top-0 z-40 w-screen overflow-y-auto overscroll-contain lg:hidden"
+            style={{ height: '100dvh', backgroundColor: '#0b0d10' }}
           >
-            <div className="flex min-h-screen flex-col px-6 pb-8 pt-28">
+            <div className="flex min-h-full flex-col px-6 pb-[calc(2rem+env(safe-area-inset-bottom))] pt-28">
               <div className="border-t border-white/12">
                 {[{ name: 'Home', path: '/' }, ...links, { name: 'Contact', path: '/contact' }].map((link, i) => {
                   const active = location.pathname === link.path;

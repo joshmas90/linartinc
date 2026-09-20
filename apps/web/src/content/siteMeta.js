@@ -11,7 +11,7 @@ export const routeMeta = {
   '/': {
     title: 'Linart Construction Inc. | Residential Construction & Remodeling in New Jersey',
     description:
-      'Linart Construction Inc. provides residential additions, renovations, kitchens, bathrooms and structural remodeling throughout New Jersey. Family-owned since 2004.',
+      'Linart Construction Inc. provides new custom homes, additions, renovations, kitchens, bathrooms, decks and patios throughout New Jersey. Family-owned since 2004.',
   },
   '/about': {
     title: 'About Linart Construction Inc. | Family-Owned Since 2004',
@@ -21,7 +21,7 @@ export const routeMeta = {
   '/services': {
     title: 'Residential Construction Services | Linart Construction Inc.',
     description:
-      'New custom home construction, home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing and structural remodeling in New Jersey.',
+      'New custom home construction, home additions, whole-home renovations, kitchen and bathroom remodeling, basement finishing, decks and patios in New Jersey.',
   },
   '/projects': {
     title: 'Projects | Linart Construction Inc.',

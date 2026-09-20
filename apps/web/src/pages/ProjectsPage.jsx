@@ -34,12 +34,12 @@ const projects = [
   },
   {
     images: [
-      ['/images/projects/bathroom/bathroom-tub-brick.webp', 'Freestanding tub beside exposed brick in a completed bathroom renovation'],
+      ['/images/projects/bathroom/bath-main.webp', 'Finished modern bathroom with freestanding tub and black hexagonal tile'],
       ['/images/projects/bathroom/bathroom-shower-detail.webp', 'Walk-in shower with white tile, patterned floor and matte-black fixtures'],
-      ['/images/projects/bathroom/bathroom-double-vanity.webp', 'Double vessel-sink vanity with dark wood top and black fixtures'],
+      ['/images/projects/bathroom/bath-detail-01.webp', 'Modern bathroom vanity, freestanding tub and window detail'],
       ['/images/projects/bathroom/bathroom-vanity-shower.webp', 'Custom wood vanity beside a glass shower enclosure'],
-      ['/images/projects/bathroom/bathroom-shower-wide.webp', 'Wide view of the tiled shower and custom vanity area'],
-      ['/images/projects/bathroom/bathroom-overview-a.webp', 'Completed bathroom with tiled shower, vanity and patterned floor'],
+      ['/images/projects/bathroom/bath-detail-02.webp', 'Modern walk-in shower with white tile and black fixtures'],
+      ['/images/projects/bathroom/bath-detail-03.webp', 'Completed modern bathroom viewed from the entry'],
       ['/images/projects/bathroom/bathroom-overview-b.webp', 'Completed bathroom viewed from the entry with shower and vanity'],
     ],
     kicker: 'Bathroom + Tile',

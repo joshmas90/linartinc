@@ -15,7 +15,7 @@ const Footer = () => {
               <LinartBrand footer />
             </Link>
             <p className="mt-6 max-w-sm text-[16px] leading-8 text-white/78">
-              Residential additions, renovations and structural remodeling throughout New Jersey. Family-owned and building under the Linart name since 2004.
+              New custom homes, additions, renovations, decks and patios throughout New Jersey. Family-owned and building under the Linart name since 2004.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ const Footer = () => {
               <Link className="block hover:text-white" to="/services#home-additions">Additions</Link>
               <Link className="block hover:text-white" to="/services#whole-home-renovations">Renovations</Link>
               <Link className="block hover:text-white" to="/services#kitchen-remodeling">Kitchens & Baths</Link>
-              <Link className="block hover:text-white" to="/services#structural-remodeling">Structural Work</Link>
+              <Link className="block hover:text-white" to="/services#decks-patios">Decks &amp; Patios</Link>
             </div>
           </div>
 

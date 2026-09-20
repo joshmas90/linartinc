@@ -32,7 +32,7 @@ const AboutPage = () => (
                 Linart Construction Inc. was established in 2004 to provide New Jersey homeowners with experienced residential construction and remodeling services.
               </p>
               <p>
-                The company focuses on residential additions, renovations, kitchens, bathrooms, basements and structural remodeling. The scope changes from project to project. The standard should not.
+                The company focuses on new custom homes, residential additions, renovations, kitchens, bathrooms, basements, decks and patios. The scope changes from project to project. The standard should not.
               </p>
               <p>
                 Planning, site management, communication and finish quality are treated as parts of the same job. That operating standard carries each project from the first conversation through the final detail.

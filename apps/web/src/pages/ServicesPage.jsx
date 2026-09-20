@@ -60,12 +60,12 @@ const services = [
   },
   {
     number: '07',
-    id: 'structural-remodeling',
-    title: 'Structural Remodeling',
-    copy: 'Major reconfiguration and load-bearing changes approached with careful planning and sequencing.',
-    details: ['Openings', 'Load-bearing changes', 'Reconfiguration', 'Trade coordination'],
+    id: 'decks-patios',
+    title: 'Decks/Patios',
+    copy: 'Decks and patios planned as durable extensions of the home, with careful attention to structure, drainage, circulation and finish.',
+    details: ['Custom decks', 'Patio construction', 'Railings + stairs', 'Exterior integration'],
     image: '/images/services/structural-deck-framing.webp',
-    alt: 'Structural deck framing and foundation work at a New Jersey home',
+    alt: 'Deck framing and foundation work at a New Jersey home',
   },
 ];
 

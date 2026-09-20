@@ -13,8 +13,8 @@ const featured = [
     number: '01',
   },
   {
-    image: '/images/projects/bathroom/bathroom-tub-detail.webp',
-    alt: 'Freestanding tub beside exposed brick in a completed Linart bathroom renovation',
+    image: '/images/projects/bathroom/bathroom-tub-brick.webp',
+    alt: 'Freestanding soaking tub beneath wide windows beside exposed brick in a completed Linart bathroom renovation',
     type: 'Bathroom Remodeling',
     title: 'Clean lines depend on careful layout and precise finish work.',
     number: '02',
@@ -35,7 +35,7 @@ const services = [
   ['Kitchen Remodeling', 'Layout, cabinetry, lighting, fixtures and finish coordination for the room that works hardest.', 'kitchen-remodeling'],
   ['Bathroom Remodeling', 'Waterproofing, tile, fixtures, ventilation and clean detailing built for long-term use.', 'bathroom-remodeling'],
   ['Basement Finishing', 'Dry, comfortable living space planned around mechanicals, egress, storage and everyday use.', 'basement-finishing'],
-  ['Structural Remodeling', 'Openings, load-bearing changes and substantial reconfiguration carefully planned and executed.', 'structural-remodeling'],
+  ['Decks/Patios', 'Custom decks and patios planned for durable outdoor living, clean integration and long-term use.', 'decks-patios'],
 ];
 
 const HomePage = () => (
@@ -71,7 +71,7 @@ const HomePage = () => (
 
           <div className="mt-8 grid max-w-4xl gap-8 border-t border-[#d4bb91]/48 pt-7 lg:grid-cols-[1fr_360px] lg:items-end">
             <p className="max-w-2xl hero-copy-shadow text-[18px] leading-8 text-white sm:text-[20px] sm:leading-9">
-              New custom homes, additions, renovations and structural remodeling—planned carefully, managed clearly, and finished to a consistent standard.
+              New custom homes, additions, renovations, decks and patios—planned carefully, managed clearly, and finished to a consistent standard.
             </p>
             <div className="hero-cta-panel">
               <Link to="/contact" className="hero-cta hero-cta-primary">

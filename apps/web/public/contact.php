@@ -162,7 +162,7 @@ $allowedServices = [
     'Kitchen Remodeling',
     'Bathroom Remodeling',
     'Basement Finishing',
-    'Structural Remodeling',
+    'Deck / Patio Construction',
     'Other Residential Work',
 ];
 $allowedTimings = ['Planning / researching', 'Within 3 months', '3–6 months', '6–12 months', '12+ months'];
