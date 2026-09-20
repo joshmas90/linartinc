@@ -103,6 +103,15 @@ export const responsiveImages = {
       1600
     ]
   },
+  "/images/home/linart-reference-hero.webp": {
+    "width": 988,
+    "height": 424,
+    "candidates": [
+      480,
+      960,
+      988
+    ]
+  },
   "/images/home/linart-residence-hero.webp": {
     "width": 2048,
     "height": 865,

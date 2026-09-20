@@ -70,60 +70,47 @@ const services = [
 
 const HomePage = () => (
   <>
-    <section className="relative min-h-[650px] overflow-hidden bg-[#0b0d10] text-white sm:min-h-[700px] lg:min-h-[720px]">
-      <div className="absolute inset-0 grid lg:grid-cols-[0.58fr_0.42fr]">
-        <Img
-          src="/images/projects/bathroom/bath-main.webp"
-          alt="Finished Linart bathroom renovation with freestanding tub"
-          className="h-full w-full object-cover"
-          sizes="(min-width: 1024px) 58vw, 100vw"
-          priority
-        />
-        <Img
-          src="/images/projects/bathroom/bathroom-shower-detail.webp"
-          alt="Modern tiled shower completed by Linart Construction"
-          className="hidden h-full w-full object-cover lg:block"
-          sizes="42vw"
-          priority
-        />
-      </div>
+    <section className="relative overflow-hidden bg-[#0d1013] text-white">
+      <div className="grid lg:min-h-[560px] lg:grid-cols-[0.42fr_0.58fr]">
+        <div className="relative z-10 flex items-center bg-[linear-gradient(135deg,#101316_0%,#161a1e_100%)] px-6 pb-14 pt-32 sm:px-10 sm:pb-16 lg:px-[max(3rem,calc((100vw-1320px)/2))] lg:pr-10 lg:pt-28">
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75 }}
+            className="max-w-[650px]"
+          >
+            <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-[#e3c693]">
+              Expert craftsmanship. Lasting value.
+            </p>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#08090b]/97 via-[#08090b]/80 to-[#08090b]/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-black/18" />
+            <h1 className="display-serif mt-5 max-w-[9ch] text-[clamp(3.5rem,6vw,6rem)] leading-[0.9] tracking-[-0.045em] text-white">
+              Transforming Homes. Building What’s Next.
+            </h1>
 
-      <div className="site-container relative z-10 flex min-h-[650px] items-center pb-14 pt-32 sm:min-h-[700px] lg:min-h-[720px]">
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75 }}
-          className="max-w-[790px]"
-        >
-          <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#e1c99e] hero-copy-shadow">
-            Expert craftsmanship. Lasting value.
-          </p>
+            <p className="mt-7 max-w-xl text-[17px] leading-8 text-white/88 sm:text-[19px] sm:leading-9">
+              From luxury renovations to new custom home construction, Linart delivers exceptional craftsmanship and timeless results across New Jersey.
+            </p>
 
-          <h1 className="display-serif hero-copy-shadow mt-5 max-w-[9ch] text-[clamp(3.5rem,7vw,6.7rem)] leading-[0.9] tracking-[-0.045em] text-white">
-            Transforming Homes. Building What’s Next.
-          </h1>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link to="/contact" className="premium-button-light">
+                Start Your Project <ArrowUpRight size={16} />
+              </Link>
+              <Link to="/projects" className="premium-button-ghost">
+                View Our Work <ArrowRight size={16} />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
 
-          <p className="mt-7 max-w-2xl text-[18px] leading-8 text-white/90 sm:text-[20px] sm:leading-9">
-            From refined renovations to new custom home construction, Linart delivers carefully coordinated residential work and timeless results across New Jersey.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link to="/contact" className="premium-button-light">
-              Start Your Project <ArrowUpRight size={16} />
-            </Link>
-            <Link to="/projects" className="premium-button-ghost">
-              View Our Work <ArrowRight size={16} />
-            </Link>
-          </div>
-        </motion.div>
-
-        <div className="absolute bottom-8 right-6 hidden max-w-[310px] border-r border-white/28 pr-5 text-right lg:block">
-          <p className="display-serif text-2xl italic leading-tight text-white/82">
-            “Spaces that inspire a better everyday.”
-          </p>
+        <div className="relative min-h-[390px] overflow-hidden sm:min-h-[460px] lg:min-h-[560px]">
+          <Img
+            src="/images/home/linart-reference-hero.webp"
+            alt="Luxury Linart bathroom renovation with freestanding tub, exposed brick and glass shower"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            priority
+          />
+          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-20 bg-gradient-to-r from-[#121518] to-transparent lg:block" />
         </div>
       </div>
     </section>
@@ -137,7 +124,7 @@ const HomePage = () => (
               to={to}
               className={`group flex min-h-[126px] items-center gap-4 py-6 sm:px-6 ${index > 0 ? 'sm:border-l sm:border-black/10' : ''}`}
             >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center text-[#a47b3d]">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center text-[#a47b3d] transition-transform duration-300 group-hover:-translate-y-0.5">
                 <Icon size={36} strokeWidth={1.55} />
               </div>
               <div>
@@ -150,11 +137,14 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="lux-light-section bg-white section-shell">
+    <section className="lux-light-section bg-white section-shell-tight">
       <div className="site-container">
-        <div className="flex flex-col gap-6 border-b hairline pb-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#9b7339]">Featured Projects</p>
+            <div className="flex items-center gap-4">
+              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#9b7339]">Featured Projects</p>
+              <span className="h-px w-10 bg-[#b8925d]/50" />
+            </div>
             <h2 className="display-serif mt-3 text-4xl leading-none sm:text-5xl">Real Projects. Lasting Results.</h2>
           </div>
           <Link to="/projects" className="premium-button premium-button-outline">
