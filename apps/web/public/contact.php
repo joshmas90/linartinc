@@ -122,30 +122,6 @@ $allowedServices = [
     'Other Residential Work',
 ];
 
-$allowedInterests = [
-    'New Custom Home Construction',
-    'Home Additions',
-    'Whole Home Renovations',
-    'Kitchen Renovations',
-    'Bathroom Renovations',
-    'Basement Finishing',
-    'Outdoor Living / Decks / Patios',
-    'Exterior Improvements',
-    'Other',
-];
-
-$interests = [];
-$rawInterests = $data['interests'] ?? [];
-if (is_array($rawInterests)) {
-    foreach (array_slice($rawInterests, 0, 12) as $interest) {
-        if (!is_scalar($interest)) continue;
-        $interest = clean((string) $interest, 120);
-        if (in_array($interest, $allowedInterests, true) && !in_array($interest, $interests, true)) {
-            $interests[] = $interest;
-        }
-    }
-}
-
 $allowedTimings = ['Planning / researching', 'Within 3 months', '3–6 months', '6–12 months', '12+ months'];
 $allowedContacts = ['Phone', 'Email', 'Text'];
 
@@ -169,7 +145,6 @@ if (rate_limited()) {
 }
 
 $submittedAt = date('Y-m-d H:i:s T');
-$interestText = $interests ? implode(', ', $interests) : 'Not specified';
 
 $lines = [
     "New project inquiry from linartinc.com",
@@ -181,7 +156,6 @@ $lines = [
     "Project type:         {$service}",
     "Timing:               {$timing}",
     "Preferred contact:    {$contact}",
-    "Services interested:  {$interestText}",
     "",
     "Project description",
     "-------------------",

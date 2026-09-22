@@ -15,18 +15,6 @@ import {
 
 const PROJECT_INBOX = 'services@linartinc.com';
 
-const interestOptions = [
-  'New Custom Home Construction',
-  'Home Additions',
-  'Whole Home Renovations',
-  'Kitchen Renovations',
-  'Bathroom Renovations',
-  'Basement Finishing',
-  'Outdoor Living / Decks / Patios',
-  'Exterior Improvements',
-  'Other',
-];
-
 const initial = {
   name: '',
   email: '',
@@ -35,7 +23,6 @@ const initial = {
   service: 'New Custom Home Construction',
   timing: 'Planning / researching',
   contact: 'Phone',
-  interests: [],
   message: '',
 };
 
@@ -78,15 +65,6 @@ const ContactPage = () => {
     setFieldErrors((prev) => (prev[name] ? { ...prev, [name]: undefined } : prev));
   };
 
-  const toggleInterest = (interest) => {
-    setForm((prev) => ({
-      ...prev,
-      interests: prev.interests.includes(interest)
-        ? prev.interests.filter((item) => item !== interest)
-        : [...prev.interests, interest],
-    }));
-  };
-
   const projectBrief = `Name: ${form.name}
 Email: ${form.email}
 Phone: ${form.phone}
@@ -94,7 +72,6 @@ City / ZIP: ${form.city}
 Project type: ${form.service}
 Timing: ${form.timing}
 Preferred contact: ${form.contact}
-Services interested in: ${form.interests.length ? form.interests.join(', ') : 'Not specified'}
 
 Project description:
 ${form.message}`;
@@ -350,22 +327,6 @@ ${form.message}`;
                 </label>
               </div>
 
-              <fieldset className="mt-4">
-                <legend className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Services Interested In (Check All That Apply)</legend>
-                <div className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2 xl:grid-cols-3">
-                  {interestOptions.map((interest) => (
-                    <label key={interest} className="flex cursor-pointer items-start gap-3 text-[13px] leading-5 text-[#3f3b36]">
-                      <input
-                        type="checkbox"
-                        checked={form.interests.includes(interest)}
-                        onChange={() => toggleInterest(interest)}
-                        className="mt-0.5 h-4 w-4 rounded border-black/25 accent-[#9b7339]"
-                      />
-                      <span>{interest}</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
 
               <label className="mt-6 block">
                 <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Project Description *</span>
