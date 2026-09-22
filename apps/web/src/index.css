@@ -1824,3 +1824,84 @@ header nav a span {
     padding-top: calc(9rem + env(safe-area-inset-top, 0px));
   }
 }
+
+
+/* ================================================================
+   LINART iPhone hero trust and bottom-anchored CTA pass
+   Phone portrait only; keep tablet, desktop and existing menu untouched.
+   ================================================================ */
+@media (max-width: 639px) and (orientation: portrait) {
+  /* The parent and animated inner column must BOTH be flex columns so
+     margin-top:auto can consume the unused hero space below the copy. */
+  .iphone-edge-hero .iphone-edge-hero-content {
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .iphone-edge-hero .iphone-edge-hero-copy {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* "contents" avoids changing the original desktop/tablet CTA layout. */
+  .iphone-edge-hero .iphone-edge-hero-bottom {
+    display: block;
+    margin-top: auto;
+    padding-top: clamp(1.5rem, 4svh, 2.5rem);
+    width: 100%;
+  }
+
+  .iphone-edge-hero .iphone-hero-trust-signals {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid rgba(225, 189, 120, .34);
+    border-bottom: 1px solid rgba(225, 189, 120, .34);
+    background: linear-gradient(
+      180deg,
+      rgba(8, 10, 12, .52),
+      rgba(8, 10, 12, .28)
+    );
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+
+  .iphone-edge-hero .iphone-hero-trust-card {
+    display: flex;
+    min-height: 84px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: .35rem;
+    padding: .65rem .55rem;
+  }
+
+  .iphone-edge-hero .iphone-hero-trust-card + .iphone-hero-trust-card {
+    border-left: 1px solid rgba(225, 189, 120, .24);
+  }
+
+  .iphone-edge-hero .iphone-hero-trust-value {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.45rem, 6vw, 1.7rem);
+    line-height: 1;
+    color: #f6e7cb;
+  }
+
+  .iphone-edge-hero .iphone-hero-trust-label {
+    font-size: .625rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .88);
+    overflow-wrap: normal;
+  }
+
+  .iphone-edge-hero .iphone-edge-hero-ctas {
+    margin-top: .875rem;
+  }
+}
