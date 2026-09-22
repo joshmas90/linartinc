@@ -149,7 +149,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="border-b border-black/10 bg-[#fbfaf7]">
+    <section className="iphone-home-services border-b border-black/10 bg-[#fbfaf7]">
       <div className="site-container">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4">
           {serviceHighlights.map(({ icon: Icon, label, copy, to }, index) => (
@@ -205,7 +205,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="lux-light-section bg-[#f3eee5] section-shell">
+    <section className="iphone-home-intro lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
@@ -214,9 +214,10 @@ const HomePage = () => (
           </div>
           <div className="lg:pt-10">
             <p className="body-copy max-w-2xl text-[19px] sm:text-[21px] sm:leading-9">
-              The best renovation experience is not defined by a single finish. It is defined by the decisions made before demolition, the communication during construction and the discipline to carry details through to completion.
+              <span className="sm:hidden">Whether building a custom home or transforming an existing one, we make decisions early, communicate clearly throughout construction and carry the details through to completion.</span>
+              <span className="hidden sm:inline">The best renovation experience is not defined by a single finish. It is defined by the decisions made before demolition, the communication during construction and the discipline to carry details through to completion.</span>
             </p>
-            <div className="mt-10 grid border-y hairline sm:grid-cols-3 sm:divide-x divide-black/10">
+            <div className="iphone-home-stats mt-10 grid border-y hairline sm:grid-cols-3 sm:divide-x divide-black/10">
               {[
                 ['2004', 'Family-owned since'],
                 ['80+', 'Years combined experience'],
@@ -233,14 +234,15 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="brand-stone section-shell text-white">
+    <section className="iphone-home-capabilities brand-stone section-shell text-white">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div>
             <p className="eyebrow">Capabilities</p>
             <h2 className="section-title mt-5 max-w-md">One team.<br/>One standard.</h2>
-            <p className="mt-6 max-w-md text-[16px] leading-8 text-white/82">
-              From new custom home construction to major renovations, substantial residential work benefits from continuity. We coordinate the project as a whole rather than treating every trade as a separate experience.
+            <p className="iphone-capabilities-intro mt-6 max-w-md text-[16px] leading-8 text-white/82">
+              <span className="sm:hidden">From new custom homes to major renovations, we coordinate each project as a whole, with consistent communication and one standard of workmanship.</span>
+              <span className="hidden sm:inline">From new custom home construction to major renovations, substantial residential work benefits from continuity. We coordinate the project as a whole rather than treating every trade as a separate experience.</span>
             </p>
           </div>
 
@@ -262,12 +264,12 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="lux-light-section bg-[#d7cec1] section-shell-tight">
+    <section className="iphone-home-process lux-light-section bg-[#d7cec1] section-shell-tight">
       <div className="site-container">
-        <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div className="iphone-process-intro grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <p className="eyebrow">The Process</p>
-            <h2 className="display-serif mt-4 max-w-4xl text-5xl leading-[0.95] tracking-[-0.035em] sm:text-6xl">
+            <h2 className="iphone-process-title display-serif mt-4 max-w-4xl text-5xl leading-[0.95] tracking-[-0.035em] sm:text-6xl">
               Clear decisions before construction. Clear communication during it.
             </h2>
           </div>
@@ -276,7 +278,7 @@ const HomePage = () => (
           </Link>
         </div>
 
-        <div className="mt-14 grid border-t border-black/16 md:grid-cols-4">
+        <div className="iphone-process-steps mt-14 grid border-t border-black/16 md:grid-cols-4">
           {[
             ['01', 'Consult', 'Define the scope, priorities and constraints.'],
             ['02', 'Plan', 'Coordinate decisions before work begins.'],
@@ -293,7 +295,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="lux-light-section bg-[#f3eee5] section-shell">
+    <section className="iphone-home-cta lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="lux-cta-panel brand-stone brand-frame overflow-hidden text-white">
           <div className="grid lg:grid-cols-[1.3fr_0.7fr]">
@@ -311,7 +313,7 @@ const HomePage = () => (
                 src="/images/home/open-kitchen.webp"
                 alt=""
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="iphone-home-cta-photo absolute inset-0 h-full w-full object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/52 to-black/14" />
