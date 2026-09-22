@@ -6,7 +6,7 @@ import { serviceDetails } from '@/content/serviceDetails';
 
 const ServicesPage = () => (
   <>
-    <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+    <section className="brand-stone architectural-hero pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
         <p className="eyebrow">Capabilities</p>
         <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
@@ -24,7 +24,7 @@ const ServicesPage = () => (
     <section className="lux-light-section bg-[#f3eee5] section-shell">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.30fr_minmax(0,0.70fr)] lg:gap-14 xl:grid-cols-[0.32fr_minmax(0,0.68fr)] xl:gap-16">
-          <div>
+          <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="eyebrow">What We Handle</p>
             <h2 className="display-serif mt-5 max-w-[12ch] text-4xl leading-[0.98] sm:text-5xl xl:text-6xl">From a new custom home to a whole-home transformation.</h2>
             <p className="body-copy mt-6">

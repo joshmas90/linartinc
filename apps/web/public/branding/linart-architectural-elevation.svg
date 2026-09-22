@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 640" fill="none">
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1320" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".24" stop-color="white" stop-opacity=".16"/>
+      <stop offset=".48" stop-color="white" stop-opacity=".7"/>
+      <stop offset=".72" stop-color="white" stop-opacity="1"/>
+      <stop offset="1" stop-color="white" stop-opacity=".92"/>
+    </linearGradient>
+    <mask id="fadeMask">
+      <rect width="1320" height="640" fill="url(#fade)"/>
+    </mask>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="#D7C19A" stroke-opacity=".16" stroke-width=".65"/>
+    </pattern>
+  </defs>
+
+  <g mask="url(#fadeMask)">
+    <rect x="300" width="1020" height="640" fill="url(#grid)" opacity=".42"/>
+
+    <g stroke="#D7C19A" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M496 494H1268" stroke-opacity=".62" stroke-width="1.2"/>
+      <path d="M592 494V326L836 154L1078 326V494" stroke-opacity=".78" stroke-width="1.45"/>
+      <path d="M528 334L836 118L1144 334" stroke-opacity=".88" stroke-width="1.7"/>
+      <path d="M620 306L836 154L1052 306" stroke-opacity=".38" stroke-width=".9"/>
+
+      <path d="M738 494V334H934V494" stroke-opacity=".6" stroke-width="1.2"/>
+      <path d="M770 494V370H902V494" stroke-opacity=".54" stroke-width="1.05"/>
+      <path d="M804 370V494M868 370V494" stroke-opacity=".34" stroke-width=".8"/>
+
+      <path d="M624 366H706V448H624Z" stroke-opacity=".56" stroke-width="1.05"/>
+      <path d="M638 380H692V434H638Z" stroke-opacity=".32" stroke-width=".8"/>
+      <path d="M665 380V434M638 407H692" stroke-opacity=".3" stroke-width=".7"/>
+
+      <path d="M966 366H1048V448H966Z" stroke-opacity=".56" stroke-width="1.05"/>
+      <path d="M980 380H1034V434H980Z" stroke-opacity=".32" stroke-width=".8"/>
+      <path d="M1007 380V434M980 407H1034" stroke-opacity=".3" stroke-width=".7"/>
+
+      <path d="M1084 494V386L1180 320L1276 386V494" stroke-opacity=".55" stroke-width="1.05"/>
+      <path d="M1058 394L1180 306L1302 394" stroke-opacity=".66" stroke-width="1.25"/>
+      <path d="M1110 404H1160V454H1110Z" stroke-opacity=".4" stroke-width=".85"/>
+      <path d="M1198 404H1248V454H1198Z" stroke-opacity=".4" stroke-width=".85"/>
+
+      <path d="M516 526H1272" stroke-opacity=".31" stroke-width=".8" stroke-dasharray="4 8"/>
+      <path d="M560 548H1228" stroke-opacity=".22" stroke-width=".75" stroke-dasharray="2 9"/>
+
+      <path d="M1228 122V528" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="4 7"/>
+      <path d="M1218 138H1238M1218 494H1238" stroke-opacity=".48" stroke-width="1"/>
+      <path d="M1264 168V520" stroke-opacity=".18" stroke-width=".7" stroke-dasharray="2 8"/>
+
+      <path d="M452 494V558M496 494V558M1268 494V558" stroke-opacity=".3" stroke-width=".8"/>
+      <path d="M452 546H1268" stroke-opacity=".26" stroke-width=".75"/>
+      <path d="M452 538V554M1268 538V554" stroke-opacity=".42" stroke-width="1"/>
+
+      <path d="M836 80V124M816 102H856" stroke-opacity=".42" stroke-width=".9"/>
+      <circle cx="836" cy="102" r="11" stroke-opacity=".34" stroke-width=".75"/>
+      <circle cx="1180" cy="306" r="7" stroke-opacity=".28" stroke-width=".75"/>
+      <circle cx="496" cy="494" r="6" stroke-opacity=".3" stroke-width=".75"/>
+    </g>
+  </g>
+</svg>

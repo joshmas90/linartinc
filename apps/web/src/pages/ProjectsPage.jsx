@@ -112,7 +112,7 @@ const projects = [
 const ProjectsPage = () => (
   <>
 
-    <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+    <section className="brand-stone architectural-hero pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
           <div>

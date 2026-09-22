@@ -6,7 +6,7 @@ import Img from '@/components/Img';
 const AboutPage = () => (
   <>
 
-    <section className="brand-stone pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
+    <section className="brand-stone architectural-hero pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
       <div className="site-container">
         <p className="eyebrow">About Linart</p>
         <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
