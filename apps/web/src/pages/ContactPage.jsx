@@ -310,7 +310,8 @@ ${form.message}`;
                 <label className="py-3">
                   <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Timing <span className="font-medium tracking-[0.08em] text-[#8b8277]">(Optional)</span></span>
                   <select name="timing" value={form.timing} onChange={change} className={inputClass} {...errorAttributes('timing')}>
-                    <option value="">Not sure / not specified</option>`r`n                    <option>Planning / researching</option>
+                    <option value="">Not sure / not specified</option>
+                    <option>Planning / researching</option>
                     <option>Within 3 months</option>
                     <option>3–6 months</option>
                     <option>6–12 months</option>
@@ -336,7 +337,7 @@ ${form.message}`;
                   maxLength={1000}
                   rows="5"
                   className={`${inputClass} min-h-[128px] resize-none`}
-                  placeholder="Optional â€” tell us about your project, goals, or any details you would like us to know..."
+                  placeholder="Optional - tell us about your project, goals, or any details you would like us to know..."
                   {...errorAttributes('message')}
                 />
                 <div className="mt-1 flex items-start justify-between gap-4">
