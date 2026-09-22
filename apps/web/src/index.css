@@ -1663,3 +1663,164 @@ header nav a span {
     object-position: 56% 45%;
   }
 }
+
+
+/* ================================================================
+   LINART iPhone edge-to-edge hero / safe-area treatment
+   Layout adjustments are constrained to phone portrait and landscape.
+   Existing tablet and desktop layout rules are unchanged.
+   ================================================================ */
+@media (max-width: 639px) {
+  /* Keep the status-bar/notch clear on every route when viewport-fit=cover. */
+  .site-header {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+
+  .site-header .site-container {
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+  }
+
+  .skip-link {
+    top: calc(.75rem + env(safe-area-inset-top, 0px));
+  }
+
+  /* On the homepage, the photo itself continues under the translucent header. */
+  .site-header.iphone-edge-header {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 9, 11, .77) 0%,
+      rgba(7, 9, 11, .53) 60%,
+      rgba(7, 9, 11, .24) 100%
+    ) !important;
+    border-bottom-color: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .iphone-edge-hero,
+  .iphone-edge-hero .iphone-edge-hero-content {
+    /* A minimum, never a fixed height: long copy and both CTAs can grow. */
+    min-height: calc(100svh + 1.5rem);
+  }
+
+  .iphone-edge-hero::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0 0 auto;
+    height: calc(14rem + env(safe-area-inset-top, 0px));
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(7, 9, 11, .64) 0%,
+      rgba(7, 9, 11, .22) 61%,
+      transparent 100%
+    );
+  }
+
+  .iphone-edge-hero .iphone-edge-hero-content {
+    box-sizing: border-box;
+    align-items: flex-start;
+    padding-top: calc(8rem + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(3rem + env(safe-area-inset-bottom, 0px));
+    padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+  }
+
+  .iphone-edge-hero .iphone-edge-hero-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .iphone-edge-hero .iphone-edge-hero-ctas {
+    margin-top: 1.5rem;
+    gap: .75rem;
+  }
+
+  .iphone-edge-hero .iphone-edge-hero-ctas > a {
+    min-height: 54px;
+    flex-shrink: 0;
+  }
+
+  /* The nav drawer must begin below the enlarged safe-area header. */
+  .iphone-edge-nav-content {
+    padding-top: calc(7.75rem + env(safe-area-inset-top, 0px));
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  /* Preserve original non-homepage spacing below the taller iPhone header. */
+  main > .architectural-hero:first-child {
+    padding-top: calc(9rem + env(safe-area-inset-top, 0px));
+  }
+
+  main > .contact-premium-page:first-child {
+    padding-top: calc(8rem + env(safe-area-inset-top, 0px));
+  }
+
+  main > .brand-stone:first-child:not(.architectural-hero):not(.iphone-edge-hero) {
+    padding-top: calc(9rem + env(safe-area-inset-top, 0px));
+  }
+}
+
+/* iPhone landscape: protect Dynamic Island sides without changing iPad rules. */
+@media (orientation: landscape) and (max-width: 950px) and (max-height: 500px) {
+  .site-header {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+
+  .site-header .site-container {
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+  }
+
+  .site-header.iphone-edge-header {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 9, 11, .77),
+      rgba(7, 9, 11, .28)
+    ) !important;
+    border-bottom-color: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .iphone-edge-hero,
+  .iphone-edge-hero .iphone-edge-hero-content {
+    min-height: calc(100svh + 1.5rem);
+  }
+
+  .iphone-edge-hero .iphone-edge-hero-content {
+    box-sizing: border-box;
+    align-items: flex-start;
+    padding-top: calc(7rem + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+    padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+  }
+
+  .iphone-edge-nav-content {
+    padding-top: calc(7.75rem + env(safe-area-inset-top, 0px));
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  main > .architectural-hero:first-child {
+    padding-top: calc(9rem + env(safe-area-inset-top, 0px));
+  }
+
+  main > .contact-premium-page:first-child {
+    padding-top: calc(8rem + env(safe-area-inset-top, 0px));
+  }
+
+  main > .brand-stone:first-child:not(.architectural-hero):not(.iphone-edge-hero) {
+    padding-top: calc(9rem + env(safe-area-inset-top, 0px));
+  }
+}
