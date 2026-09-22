@@ -21,7 +21,7 @@ const initial = {
   phone: '',
   city: '',
   service: 'New Custom Home Construction',
-  timing: 'Planning / researching',
+  timing: '',
   contact: 'Phone',
   message: '',
 };
@@ -85,7 +85,6 @@ ${form.message}`;
     if (!emailPattern.test(form.email.trim())) next.email = 'Please enter a valid email address.';
     if (phoneDigits.length < 10) next.phone = 'Please enter a phone number with at least 10 digits.';
     if (!form.city.trim()) next.city = 'Please enter the project city or ZIP.';
-    if (form.message.trim().length < 10) next.message = 'Please describe the work briefly.';
 
     setFieldErrors(next);
 
@@ -184,14 +183,14 @@ ${form.message}`;
   });
 
   const inputClass =
-    'mt-2 w-full rounded-[6px] border border-black/18 bg-white/72 px-4 py-3.5 text-[16px] font-medium text-[#22262a] outline-none transition-colors placeholder:text-black/32 focus:border-[#9b7b4f] focus:ring-2 focus:ring-[#9b7b4f]/10';
+    'contact-premium-field mt-2 w-full rounded-[8px] border border-black/18 bg-white/72 px-4 py-3.5 text-[16px] font-medium text-[#22262a] outline-none transition-all placeholder:text-black/32 focus:border-[#9b7b4f] focus:ring-2 focus:ring-[#9b7b4f]/10';
 
   return (
     <>
-      <section className="lux-light-section bg-[#f7f4ed] pb-16 pt-32 sm:pt-36">
+      <section className="contact-premium-page lux-light-section bg-[#f7f4ed] pb-16 pt-32 sm:pt-36">
         <div className="site-container">
           <div className="grid gap-12 xl:grid-cols-[0.39fr_0.61fr] xl:gap-14">
-            <aside className="self-start">
+            <aside className="contact-premium-aside self-start xl:sticky xl:top-28">
               <div className="flex items-center gap-4">
                 <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-[#a1753e]">Get in touch</p>
                 <span className="h-px w-40 bg-[#b8925d]/55" />
@@ -220,15 +219,15 @@ ${form.message}`;
                 <ul className="mt-4 list-disc space-y-1.5 pl-5 text-[15px] leading-7 text-[#4a4540] marker:text-[#a1753e]">
                   <li>Municipality or ZIP</li>
                   <li>Type of project</li>
-                  <li>Approximate timing</li>
-                  <li>A short description of the work</li>
+                  <li>Approximate timing, if known</li>
+                  <li>A short description, if helpful</li>
                 </ul>
               </div>
 
               <img
                 src="/branding/linart-premium-contact-card.webp"
                 alt="Linart Construction Inc. premium brand mark"
-                className="mt-8 aspect-square w-full max-w-[540px] object-cover shadow-[0_22px_60px_rgba(33,27,20,.16)]"
+                className="contact-brand-card mt-8 aspect-square w-full max-w-[500px] object-cover shadow-[0_22px_60px_rgba(33,27,20,.16)]"
                 loading="lazy"
                 decoding="async"
               />
@@ -239,7 +238,7 @@ ${form.message}`;
               onSubmit={submit}
               noValidate
               aria-busy={status === 'sending'}
-              className="relative self-start rounded-[20px] border border-black/12 bg-white/52 p-6 shadow-[0_22px_70px_rgba(46,37,27,.08)] backdrop-blur-sm sm:p-8 lg:p-10"
+              className="contact-premium-form relative self-start rounded-[22px] border border-black/12 bg-white/52 p-6 shadow-[0_22px_70px_rgba(46,37,27,.08)] backdrop-blur-sm sm:p-8 lg:p-10"
             >
               <div className="flex flex-col gap-3 border-b hairline pb-5 sm:flex-row sm:items-center sm:justify-between">
                 <h2 className="display-serif text-3xl leading-none sm:text-4xl">Project Inquiry</h2>
@@ -309,9 +308,9 @@ ${form.message}`;
                 </label>
 
                 <label className="py-3">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Timing *</span>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Timing <span className="font-medium tracking-[0.08em] text-[#8b8277]">(Optional)</span></span>
                   <select name="timing" value={form.timing} onChange={change} className={inputClass} {...errorAttributes('timing')}>
-                    <option>Planning / researching</option>
+                    <option value="">Not sure / not specified</option>`r`n                    <option>Planning / researching</option>
                     <option>Within 3 months</option>
                     <option>3–6 months</option>
                     <option>6–12 months</option>
@@ -329,7 +328,7 @@ ${form.message}`;
 
 
               <label className="mt-6 block">
-                <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Project Description *</span>
+                <span className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#3f3b36]">Project Description <span className="font-medium tracking-[0.08em] text-[#8b8277]">(Optional)</span></span>
                 <textarea
                   name="message"
                   value={form.message}
@@ -337,7 +336,7 @@ ${form.message}`;
                   maxLength={1000}
                   rows="5"
                   className={`${inputClass} min-h-[128px] resize-none`}
-                  placeholder="Tell us about your project, your goals, and any specific details..."
+                  placeholder="Optional â€” tell us about your project, goals, or any details you would like us to know..."
                   {...errorAttributes('message')}
                 />
                 <div className="mt-1 flex items-start justify-between gap-4">

@@ -131,9 +131,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL))             $errors['email']   =
 if (preg_match_all('/\d/', $phone) < 10)                    $errors['phone']   = 'Please enter a phone number with at least 10 digits.';
 if ($city === '')                                           $errors['city']    = 'Please enter the project city or ZIP.';
 if (!in_array($service, $allowedServices, true))             $errors['service'] = 'Please choose a valid project type.';
-if (!in_array($timing, $allowedTimings, true))               $errors['timing']  = 'Please choose a valid project timing.';
+if ($timing !== '' && !in_array($timing, $allowedTimings, true)) $errors['timing'] = 'Please choose a valid project timing.';
 if (!in_array($contact, $allowedContacts, true))             $errors['contact'] = 'Please choose a valid contact method.';
-if (str_len($message) < 10)                                 $errors['message'] = 'Please describe the work briefly.';
 
 if ($errors) {
     respond(422, ['ok' => false, 'error' => 'Please check the highlighted fields.', 'fields' => $errors]);
@@ -145,6 +144,8 @@ if (rate_limited()) {
 }
 
 $submittedAt = date('Y-m-d H:i:s T');
+$timingDisplay = $timing !== '' ? $timing : 'Not specified';
+$messageDisplay = $message !== '' ? $message : 'Not provided';
 
 $lines = [
     "New project inquiry from linartinc.com",
@@ -154,12 +155,12 @@ $lines = [
     "Phone:                {$phone}",
     "City / ZIP:           {$city}",
     "Project type:         {$service}",
-    "Timing:               {$timing}",
+    "Timing:               {$timingDisplay}",
     "Preferred contact:    {$contact}",
     "",
     "Project description",
     "-------------------",
-    $message,
+    $messageDisplay,
     "",
     "-------------------",
     "Submitted: {$submittedAt}",
