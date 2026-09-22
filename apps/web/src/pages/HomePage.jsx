@@ -70,11 +70,11 @@ const services = [
 
 const HomePage = () => (
   <>
-    <section className="relative min-h-[560px] overflow-hidden bg-[#090b0d] text-white sm:min-h-[600px] lg:h-[calc(100svh-118px)] lg:min-h-[640px] lg:max-h-[760px]">
+    <section className="iphone-edge-hero relative min-h-[560px] overflow-hidden bg-[#090b0d] text-white sm:min-h-[600px] lg:h-[calc(100svh-118px)] lg:min-h-[640px] lg:max-h-[760px]">
       <img
         src="/images/home/linart-premium-hero-clean.webp"
         alt="Luxury Linart bathroom with freestanding tub, exposed brick, marble shower and custom vanity"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="iphone-edge-hero-photo absolute inset-0 h-full w-full object-cover object-center"
         loading="eager"
         decoding="async"
         fetchPriority="high"
@@ -105,12 +105,12 @@ const HomePage = () => (
         </div>
       </div>
 
-      <div className="site-container relative z-10 flex min-h-[560px] items-center pb-14 pt-28 sm:min-h-[600px] lg:h-full lg:min-h-0 lg:pt-20">
+      <div className="iphone-edge-hero-content site-container relative z-10 flex min-h-[560px] items-center pb-14 pt-28 sm:min-h-[600px] lg:h-full lg:min-h-0 lg:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="max-w-[620px]"
+          className="iphone-edge-hero-copy max-w-[620px]"
         >
           <div className="flex items-center gap-4">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#ddb97c] hero-copy-shadow sm:text-[11.5px]">
@@ -128,7 +128,7 @@ const HomePage = () => (
             From luxury renovations to new custom home construction, Linart delivers exceptional craftsmanship and timeless results across New Jersey.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className="iphone-edge-hero-ctas mt-7 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/contact"
               className="group inline-flex min-h-[54px] items-center justify-between gap-7 rounded-[3px] border border-[#e1bd78]/55 bg-[linear-gradient(180deg,#c89a4f_0%,#9b702c_100%)] px-7 text-[11.5px] font-extrabold uppercase tracking-[0.095em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.28),0_12px_28px_rgba(0,0,0,.26)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f0d39a]/80 hover:shadow-[inset_0_1px_0_rgba(255,255,255,.32),0_16px_36px_rgba(0,0,0,.32),0_0_20px_rgba(184,132,59,.12)]"
