@@ -1556,3 +1556,110 @@ header nav a span {
       inset 0 1px 0 rgba(255,255,255,.84);
   }
 }
+
+
+/* ================================================================
+   LINART iPhone homepage final-pass refinements
+   All selectors below are homepage-scoped and only affect narrow
+   phone viewports. Tablet and desktop layouts are unchanged.
+   ================================================================ */
+@media (max-width: 639px) {
+  /* Keep four service links comfortably tappable without oversized gaps. */
+  .iphone-home-services a {
+    min-height: 92px;
+    gap: .875rem;
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+  }
+
+  .iphone-home-services a > div:first-child {
+    width: 48px;
+    height: 48px;
+  }
+
+  .iphone-home-services a > div:first-child svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Reclaim blank vertical space in the company milestones. */
+  .iphone-home-intro .iphone-home-stats {
+    margin-top: 1.75rem;
+  }
+
+  .iphone-home-intro .iphone-home-stats > div {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  /* The whole service row is already a Link: tighten its inner rhythm. */
+  .iphone-home-capabilities .iphone-capabilities-intro {
+    margin-top: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .iphone-home-capabilities .premium-row {
+    gap: .55rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .iphone-home-capabilities .premium-row > h3 {
+    padding-right: 1.5rem;
+  }
+
+  .iphone-home-capabilities .premium-row > p {
+    padding-right: 1.5rem;
+    line-height: 1.65;
+  }
+
+  .iphone-home-capabilities .premium-row > svg {
+    position: absolute;
+    right: .125rem;
+    bottom: 1.3rem;
+  }
+
+  .iphone-home-capabilities .premium-row:focus-visible {
+    outline: 2px solid #dcc59d;
+    outline-offset: 3px;
+  }
+
+  /* Avoid an orphaned "Clear" and bring the process steps closer together. */
+  .iphone-home-process {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .iphone-home-process .iphone-process-intro {
+    gap: 1.5rem;
+  }
+
+  .iphone-home-process .iphone-process-title {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 8.8vw, 2.75rem);
+    line-height: 1.03;
+    letter-spacing: -.035em;
+  }
+
+  .iphone-home-process .iphone-process-steps {
+    margin-top: 2.25rem;
+  }
+
+  .iphone-home-process .iphone-process-steps > .process-step {
+    padding: 1.25rem 0;
+  }
+
+  .iphone-home-process .process-step h3 {
+    margin-top: .65rem;
+  }
+
+  .iphone-home-process .process-step p {
+    margin-top: .5rem;
+    line-height: 1.65;
+  }
+
+  /* Refocus the existing authentic kitchen photograph, never replace it. */
+  .iphone-home-cta .iphone-home-cta-photo {
+    object-position: 56% 45%;
+  }
+}
