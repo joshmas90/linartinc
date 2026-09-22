@@ -128,7 +128,22 @@ const HomePage = () => (
             From luxury renovations to new custom home construction, Linart delivers exceptional craftsmanship and timeless results across New Jersey.
           </p>
 
-          <div className="iphone-edge-hero-ctas mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className="iphone-edge-hero-bottom contents">
+            <div className="iphone-hero-trust-signals hidden" role="group" aria-label="Linart company credentials">
+              <div className="iphone-hero-trust-card">
+                <span className="iphone-hero-trust-value">2004</span>
+                <span className="iphone-hero-trust-label">Family-owned since</span>
+              </div>
+              <div className="iphone-hero-trust-card">
+                <span className="iphone-hero-trust-value">80+</span>
+                <span className="iphone-hero-trust-label">Years combined experience</span>
+              </div>
+              <div className="iphone-hero-trust-card">
+                <span className="iphone-hero-trust-value">NJ</span>
+                <span className="iphone-hero-trust-label">Residential work statewide</span>
+              </div>
+            </div>
+            <div className="iphone-edge-hero-ctas mt-7 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/contact"
               className="group inline-flex min-h-[54px] items-center justify-between gap-7 rounded-[3px] border border-[#e1bd78]/55 bg-[linear-gradient(180deg,#c89a4f_0%,#9b702c_100%)] px-7 text-[11.5px] font-extrabold uppercase tracking-[0.095em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.28),0_12px_28px_rgba(0,0,0,.26)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f0d39a]/80 hover:shadow-[inset_0_1px_0_rgba(255,255,255,.32),0_16px_36px_rgba(0,0,0,.32),0_0_20px_rgba(184,132,59,.12)]"
@@ -144,6 +159,7 @@ const HomePage = () => (
               View Our Work
               <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
+            </div>
           </div>
         </motion.div>
       </div>
