@@ -233,7 +233,7 @@ const HomePage = () => (
               <span className="sm:hidden">Whether building a custom home or transforming an existing one, we make decisions early, communicate clearly throughout construction and carry the details through to completion.</span>
               <span className="hidden sm:inline">The best renovation experience is not defined by a single finish. It is defined by the decisions made before demolition, the communication during construction and the discipline to carry details through to completion.</span>
             </p>
-            <div className="iphone-home-stats mt-10 grid border-y hairline sm:grid-cols-3 sm:divide-x divide-black/10">
+            <div className="iphone-home-stats mt-10 hidden border-y hairline sm:grid sm:grid-cols-3 sm:divide-x divide-black/10">
               {[
                 ['2004', 'Family-owned since'],
                 ['80+', 'Years combined experience'],
