@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 date_default_timezone_set('America/New_York');
 
-const RECIPIENT      = 'services@linartinc.com';
+const RECIPIENT      = 'services@linartinc.com, linartinc@yahoo.com';
 const SENDER         = 'services@linartinc.com';
 const SENDER_NAME    = 'Linart Website';
 const LOG_FILENAME   = 'linart-leads.log';
