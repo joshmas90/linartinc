@@ -11,3 +11,9 @@ yarn-error.log*
 pnpm-debug.log*
 .DS_Store
 Thumbs.db
+
+# Private LINART host state and test mail sinks
+linart-config.php
+linart-private/
+*.log
+supabase/.temp/

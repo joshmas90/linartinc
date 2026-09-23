@@ -33,6 +33,7 @@ const ContactPage = () => {
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState({});
   const honeypot = useRef('');
+  const requestId = useRef(crypto.randomUUID());
   const statusDialogRef = useRef(null);
   const formRef = useRef(null);
 
@@ -114,7 +115,7 @@ ${form.message}`;
       const res = await fetch('/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, company: honeypot.current }),
+        body: JSON.stringify({ ...form, company: honeypot.current, request_id: requestId.current }),
         signal: controller.signal,
       });
       const data = await res.json().catch(() => ({}));
@@ -131,8 +132,8 @@ ${form.message}`;
     } catch (requestError) {
       setError(
         requestError.name === 'AbortError'
-          ? 'The request took too long, so delivery could not be confirmed.'
-          : 'We could not reach the mail endpoint, so delivery could not be confirmed.',
+          ? 'Delivery could not be confirmed. Contact LINART before sending again to avoid a duplicate inquiry.'
+          : 'Delivery could not be confirmed. Contact LINART before sending again to avoid a duplicate inquiry.',
       );
       setStatus('error');
     } finally {
@@ -162,6 +163,7 @@ ${form.message}`;
   };
 
   const resetForm = () => {
+    requestId.current = crypto.randomUUID();
     setForm(initial);
     setStatus('idle');
     setCopyStatus('');

@@ -56,7 +56,7 @@ ErrorDocument 404 /404.html
     Header set Cache-Control "public, max-age=2592000"
   </If>
 
-  <If "%{REQUEST_URI} =~ m#^/contact\.php$#">
+  <If "%{REQUEST_URI} =~ m#^/(contact\.php|studio/.*)$#">
     Header set Cache-Control "no-store"
   </If>
 
@@ -76,3 +76,6 @@ ErrorDocument 404 /404.html
   AddType image/webp .webp
   AddType application/xml .xml
 </IfModule>
+
+# Authorization header is needed by native Project Studio requests on PHP/FastCGI.
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1

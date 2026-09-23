@@ -7,9 +7,13 @@
     "dev": "concurrently --kill-others --raw \"npm run dev --prefix apps/web\"",
     "build": "concurrently --raw \"npm run build --prefix apps/web\"",
     "start": "concurrently --kill-others --raw",
-    "lint": "concurrently --raw \"npm run lint --prefix apps/web\""
+    "lint": "concurrently --raw \"npm run lint --prefix apps/web\"",
+    "test:studio:db": "node tests/studio-schema.mjs",
+    "test:studio:php": "php tests/studio-validation.php",
+    "test:studio:http": "python3 tests/studio-http.py"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
     "concurrently": "^10.0.4",
     "knip": "^6.32.1"
   },
