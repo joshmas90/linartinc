@@ -33,6 +33,8 @@ const ContactPage = () => {
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState({});
   const honeypot = useRef('');
+  const inquiryKey = useRef(crypto.randomUUID());
+  const [deliveryUncertain, setDeliveryUncertain] = useState(false);
   const statusDialogRef = useRef(null);
   const formRef = useRef(null);
 
@@ -100,6 +102,7 @@ ${form.message}`;
   const submit = async (e) => {
     e.preventDefault();
     if (status === 'sending') return;
+    if (deliveryUncertain) { setError('Delivery is unconfirmed. Contact LINART before sending again to avoid a duplicate inquiry.'); setStatus('error'); return; }
     if (!validateClient()) return;
 
     setStatus('sending');
@@ -114,7 +117,7 @@ ${form.message}`;
       const res = await fetch('/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, company: honeypot.current }),
+        body: JSON.stringify({ ...form, request_id: inquiryKey.current, company: honeypot.current }),
         signal: controller.signal,
       });
       const data = await res.json().catch(() => ({}));
@@ -124,15 +127,17 @@ ${form.message}`;
         return;
       }
 
+      if (res.status >= 500 || res.status === 409 || (!data.fields && !data.error)) setDeliveryUncertain(true);
       const responseFields = data.fields || {};
       setFieldErrors(responseFields);
       setError(data.error || 'We could not confirm delivery of your project inquiry.');
       setStatus(Object.keys(responseFields).length ? 'validation' : 'error');
     } catch (requestError) {
+      setDeliveryUncertain(true);
       setError(
         requestError.name === 'AbortError'
-          ? 'The request took too long, so delivery could not be confirmed.'
-          : 'We could not reach the mail endpoint, so delivery could not be confirmed.',
+          ? 'Delivery could not be confirmed. Contact LINART before sending again to avoid a duplicate inquiry.'
+          : 'Delivery could not be confirmed. Contact LINART before sending again to avoid a duplicate inquiry.',
       );
       setStatus('error');
     } finally {
@@ -162,6 +167,8 @@ ${form.message}`;
   };
 
   const resetForm = () => {
+    if (deliveryUncertain) { setError('Please contact LINART to confirm receipt before starting another inquiry.'); return; }
+    inquiryKey.current = crypto.randomUUID();
     setForm(initial);
     setStatus('idle');
     setCopyStatus('');

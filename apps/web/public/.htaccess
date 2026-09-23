@@ -56,7 +56,7 @@ ErrorDocument 404 /404.html
     Header set Cache-Control "public, max-age=2592000"
   </If>
 
-  <If "%{REQUEST_URI} =~ m#^/contact\.php$#">
+  <If "%{REQUEST_URI} =~ m#^/(contact|studio|studio-admin|studio-runtime)\.php$#">
     Header set Cache-Control "no-store"
   </If>
 
